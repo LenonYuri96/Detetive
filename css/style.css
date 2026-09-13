@@ -1,0 +1,451 @@
+/* =========================================================
+   1. VARIÁVEIS DE COR E PALETA CYBERPUNK / STUDIO DARK
+   ========================================================= */
+:root {
+  --bg-dark: #070a0f;
+  --panel-bg: #0f1622;
+  --panel-card: #131c2b;
+  --terminal-bg: #04060a;
+  --card-border: #1e2c40;
+  --line-connector: #00d2ff;
+
+  --neon-blue: #00d2ff;
+  --neon-violet: #9d4edd;
+  --neon-green: #00f59b;
+  --neon-amber: #ffb703;
+  --neon-red: #ff5252;
+
+  --text-main: #f8fafc;
+  --text-sub: #cbd5e1;
+  --text-muted: #8c9ba5;
+
+  /* Bootstrap 5 Theme Overrides */
+  --bs-body-color: #f8fafc;
+  --bs-body-bg: #070a0f;
+  --bs-card-color: #f8fafc;
+  --bs-border-color: #1e2c40;
+}
+
+/* =========================================================
+   2. REGRAS GERAIS & SCROLLBAR
+   ========================================================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-main);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+p,
+li {
+  color: var(--text-sub);
+}
+
+.terminal-font {
+  font-family: "Fira Code", monospace;
+}
+
+code {
+  color: var(--neon-blue) !important;
+  background-color: #060a10;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #1e2c40;
+  font-family: "Fira Code", monospace;
+}
+
+/* Scrollbar Dark */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #04060a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e2c40;
+  border-radius: 4px;
+  border: 1px solid #283a54;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-blue);
+}
+
+/* =========================================================
+   3. CARDS, ALERTAS E COMPONENTES BÁSICOS
+   ========================================================= */
+.bg-panel {
+  background-color: var(--panel-bg) !important;
+  color: var(--text-main) !important;
+}
+
+.bg-terminal {
+  background-color: var(--terminal-bg) !important;
+  color: var(--text-main) !important;
+}
+
+.bg-black {
+  background-color: #04060a !important;
+  color: var(--text-main) !important;
+}
+
+.card {
+  background-color: var(--panel-bg);
+  color: var(--text-main) !important;
+  border-color: var(--card-border) !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+}
+
+.card-header {
+  background-color: #0b111a !important;
+  border-bottom: 1px solid var(--card-border) !important;
+  color: #ffffff !important;
+}
+
+.text-light-sub {
+  color: var(--text-sub) !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.extra-small {
+  font-size: 0.78rem !important;
+  line-height: 1.4;
+}
+
+.text-danger-emphasis {
+  color: #ff7b72 !important;
+}
+
+.alert-success {
+  background-color: #092616 !important;
+  border-color: var(--neon-green) !important;
+  color: #d1fae5 !important;
+}
+
+.alert-danger {
+  background-color: #380b10 !important;
+  border-color: var(--neon-red) !important;
+  color: #ffe4e6 !important;
+}
+
+/* Tabelas Forenses */
+.table-dark {
+  --bs-table-bg: #06090e;
+  --bs-table-border-color: #172233;
+  color: var(--text-main) !important;
+}
+
+.table-dark th,
+.table-dark td {
+  color: var(--text-main) !important;
+  border-color: #172233 !important;
+  vertical-align: middle;
+}
+
+.table-secondary,
+.table-secondary th,
+.table-secondary td {
+  background-color: #131d2b !important;
+  color: var(--neon-blue) !important;
+  font-weight: 700;
+  border-bottom: 2px solid #23344d !important;
+}
+
+/* =========================================================
+   4. MOTOR GRÁFICO DO ORGANOGRAMA (CIRCUIT TREE VISUAL)
+   ========================================================= */
+.org-circuit-container {
+  position: relative;
+  background: radial-gradient(circle at 50% 10%, #111a28 0%, #06090e 100%);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 35px 20px;
+  overflow-x: auto;
+}
+
+/* Nós Centrais */
+.tree-node-hub {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+
+.tree-stem-down {
+  width: 2px;
+  height: 30px;
+  background: linear-gradient(180deg, var(--neon-blue), rgba(0, 210, 255, 0.4));
+  margin: 0 auto;
+  box-shadow: 0 0 8px var(--neon-blue);
+}
+
+/* Barra de Conexão Horizontal dos Departamentos */
+.tree-distribution-row {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 30px;
+  padding-top: 30px;
+}
+
+/* O Barramento Horizontal (Linha Neon) */
+.tree-distribution-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--neon-blue) 15%,
+    var(--neon-blue) 85%,
+    transparent 100%
+  );
+  box-shadow: 0 0 10px var(--neon-blue);
+}
+
+/* Cada Coluna da Árvore */
+.tree-dept-col {
+  position: relative;
+  flex: 1;
+  min-width: 175px;
+}
+
+/* Linha Vertical que desce da barra para cada departamento */
+.tree-dept-col::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 30px;
+  background-color: var(--neon-blue);
+  box-shadow: 0 0 6px var(--neon-blue);
+}
+
+/* Card do Departamento */
+.tree-dept-box {
+  background-color: #0b1119;
+  border: 1px solid #1c2a3d;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.tree-dept-box:hover {
+  transform: translateY(-3px);
+  border-color: var(--neon-blue) !important;
+  box-shadow: 0 8px 25px rgba(0, 210, 255, 0.15);
+}
+
+/* Badge de Liderança dentro do Departamento */
+.dept-lead-header {
+  border-bottom: 1px solid #1a273a;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+/* Pílula do Colaborador */
+.tree-person-card {
+  background: #0f1724;
+  border: 1px solid #1f2d42;
+  border-radius: 6px;
+  padding: 7px 10px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.tree-person-card:last-child {
+  margin-bottom: 0;
+}
+
+.tree-person-card:hover {
+  background-color: #172336;
+  border-color: var(--neon-blue);
+}
+
+.tree-person-card.lead-card {
+  background: linear-gradient(135deg, #131e30, #0c1421);
+  border: 1px solid #2b3e5c;
+}
+
+/* =========================================================
+   5. MICROTRIADAS - DIAGRAMAS RELACIONAIS
+   ========================================================= */
+.triad-box-modern {
+  background: #0a0f16;
+  border: 1px solid #1f2d40;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.triad-box-modern::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+}
+
+.triad-box-modern.triad-primary::after {
+  background-color: var(--neon-blue);
+}
+.triad-box-modern.triad-danger::after {
+  background-color: var(--neon-red);
+}
+.triad-box-modern.triad-warning::after {
+  background-color: var(--neon-amber);
+}
+.triad-box-modern.triad-info::after {
+  background-color: var(--neon-green);
+}
+
+.triad-link-vector {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 16px 0;
+  position: relative;
+}
+
+.vector-connector {
+  flex-grow: 1;
+  height: 1px;
+  background: dashed 1px #263852;
+  margin: 0 8px;
+  position: relative;
+}
+
+.vector-connector::after {
+  content: "⟷";
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   6. BLUEPRINT ARQUITETÔNICO DA COPA (PLANTA FORENSE)
+   ========================================================= */
+.blueprint-tactical-grid {
+  position: relative;
+  background-color: #04070c;
+  background-image:
+    linear-gradient(rgba(0, 210, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 210, 255, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+  border: 1px solid #1a2b40;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.blueprint-tactical-grid::before {
+  content: "PLANTA PERICIAL // COPA: ZONA CEGA SEM CFTV";
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-family: "Fira Code", monospace;
+  font-size: 0.65rem;
+  color: rgba(255, 82, 82, 0.7);
+  letter-spacing: 1px;
+}
+
+.tactical-station-box {
+  background-color: #0a111a;
+  border: 1px solid #23354d;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+}
+
+.tactical-stamp-danger {
+  border: 1px dashed var(--neon-red);
+  background: rgba(255, 82, 82, 0.08);
+  color: #ff7b72;
+  padding: 6px 12px;
+  font-family: "Fira Code", monospace;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* =========================================================
+   7. ELEMENTOS DE COR E SWATCHES
+   ========================================================= */
+.color-swatch-sm {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  display: inline-block;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.color-swatch-inline {
+  width: 13px;
+  height: 13px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-right: 6px;
+  vertical-align: middle;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.color-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.swatch-container {
+  border-left: 3px solid var(--neon-blue);
+}
+
+.profile-card {
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--neon-blue) !important;
+}

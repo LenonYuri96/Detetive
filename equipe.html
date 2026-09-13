@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossiê Completo de Pessoal & Métricas — Vértice Produções Digitais</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Montserrat:wght@400;600;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Chart.js para os Gráficos Analíticos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header Fixo Unificado -->
+    <header class="navbar navbar-dark bg-dark border-bottom border-secondary px-4 py-3 sticky-top">
+        <div class="d-flex align-items-center flex-wrap gap-3">
+            <span class="badge bg-danger text-light px-3 py-2 fw-bold font-monospace">CONFIDENCIAL // EFETIVO 24</span>
+            <div>
+                <h1 class="h5 m-0 text-light fw-bold">Vértice Produções Digitais Ltda.</h1>
+                <small class="text-muted font-monospace">DOSSIÊ BIOGRÁFICO INTEGRAL, PALETA CROMÁTICA & ANÁLISE
+                    COMPORTAMENTAL</small>
+            </div>
+        </div>
+        <!-- Navegação Completa entre os 4 Módulos -->
+        <nav class="d-flex align-items-center flex-wrap gap-2 mt-2 mt-md-0">
+            <a href="index.html" class="btn btn-outline-info btn-sm font-monospace">
+                📟 Terminal do Jogo
+            </a>
+            <a href="historia.html" class="btn btn-outline-warning btn-sm font-monospace">
+                📜 História & Espaço
+            </a>
+            <a href="setores.html" class="btn btn-outline-light btn-sm font-monospace">
+                ⚙️ Setores & Pipeline
+            </a>
+            <a href="equipe.html" class="btn btn-info btn-sm font-monospace text-dark fw-bold">
+                👥 Equipe & Métricas (24)
+            </a>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+
+        <!-- Banner Principal -->
+        <section class="card bg-panel border-secondary shadow-lg mb-5 p-4 p-md-5">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-8">
+                    <span
+                        class="badge bg-warning text-dark text-uppercase px-3 py-2 mb-3 fw-bold font-monospace">Auditoria
+                        Humana Forense</span>
+                    <h2 class="display-6 fw-bold text-light">Perfil Psicológico, Estético e Operacional</h2>
+                    <p class="text-light-sub lead fs-6 mt-3">
+                        Nenhum arquivo é corrompido sem intervenção humana. A investigação técnica da Vértice exige o
+                        entendimento profundo de quem são os 24 profissionais, suas marcas registradas, gostos musicais,
+                        hábitos de trabalho e sua cor física de identidade.
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="p-3 bg-black rounded border border-secondary font-monospace small">
+                        <span class="text-info fw-bold">> EFETIVO CADASTRADO:</span> 24 Colaboradores<br>
+                        <span class="text-info fw-bold">> FAIXA ETÁRIA:</span> 22 a 47 anos<br>
+                        <span class="text-warning fw-bold">> CORES CATALOGADAS:</span> 24 Identidades HEX<br>
+                        <span class="text-success fw-bold">> STATUS FORENSE:</span> Mapeamento 100%
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE GRÁFICOS ANALÍTICOS (CHART.JS) -->
+        <section class="mb-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="h4 text-warning fw-bold font-monospace m-0">📊 PAINEL DE MÉTRICAS & GRÁFICOS DA EQUIPE</h3>
+                <span class="badge bg-secondary font-monospace">ANÁLISE DE DADOS FORENSES</span>
+            </div>
+
+            <div class="row g-4">
+                <!-- Gráfico 1: Tipos de Criatividade -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card bg-panel border-secondary h-100 p-3 shadow">
+                        <h6 class="text-info font-monospace fw-bold mb-3">🧠 TIPOS DE CRIATIVIDADE</h6>
+                        <div class="chart-container" style="position: relative; height:240px;">
+                            <canvas id="creativityChart"></canvas>
+                        </div>
+                        <small class="text-muted text-center d-block mt-2 font-monospace extra-small">Predomínio de
+                            perfis analíticos e de precisão</small>
+                    </div>
+                </div>
+
+                <!-- Gráfico 2: Estilos Musicais na Empresa -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card bg-panel border-secondary h-100 p-3 shadow">
+                        <h6 class="text-info font-monospace fw-bold mb-3">🎵 ESTILOS MUSICAIS NAS ILHAS</h6>
+                        <div class="chart-container" style="position: relative; height:240px;">
+                            <canvas id="musicChart"></canvas>
+                        </div>
+                        <small class="text-muted text-center d-block mt-2 font-monospace extra-small">Gostos sonoros que
+                            ritmam o ritmo de trabalho</small>
+                    </div>
+                </div>
+
+                <!-- Gráfico 3: Distribuição por Faixa Etária -->
+                <div class="col-lg-4 col-md-12">
+                    <div class="card bg-panel border-secondary h-100 p-3 shadow">
+                        <h6 class="text-info font-monospace fw-bold mb-3">⏳ FAIXA ETÁRIA DOS 24 INTEGRANTES</h6>
+                        <div class="chart-container" style="position: relative; height:240px;">
+                            <canvas id="ageChart"></canvas>
+                        </div>
+                        <small class="text-muted text-center d-block mt-2 font-monospace extra-small">Equilíbrio entre
+                            veteranos fundadores e novos talentos</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DA TABELA DE MAPEAMENTO ESTÉTICO COMPLETA COM AMOSTRAS REAIS DE COR -->
+        <section class="card bg-panel border-warning shadow mb-5">
+            <div class="card-header bg-dark d-flex justify-content-between align-items-center py-3">
+                <h3 class="h5 text-warning fw-bold m-0 font-monospace">🎨 TABELA MASTER DE MAPEAMENTO ESTÉTICO E CORES
+                </h3>
+                <span class="badge bg-warning text-dark font-monospace fw-bold">PALETA REAL</span>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped table-hover m-0 font-monospace small align-middle">
+                        <thead>
+                            <tr class="table-secondary">
+                                <th>COLABORADOR</th>
+                                <th>COR REAL (AMOSTRA FÍSICA)</th>
+                                <th>CÓDIGO HEX</th>
+                                <th>ESTILO MUSICAL</th>
+                                <th>TIPO DE CRIATIVIDADE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="fw-bold text-light">Daniel Azevedo</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box"
+                                            style="background-color: #2B2B2B; border: 1px solid #777;"></span>
+                                        <span class="text-light">Grafite</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#2B2B2B</code></td>
+                                <td>Rock Progressivo / Metal Sinfônico</td>
+                                <td>Algorítmica & Estrutural</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">Marina Valente</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box" style="background-color: #CC8800;"></span>
+                                        <span class="text-light">Mostarda / Ocre</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#CC8800</code></td>
+                                <td>Jazz Fusion / Bossa Nova</td>
+                                <td>Narrativa & Visceral</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">Clara Mendes</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box"
+                                            style="background-color: #002244; border: 1px solid #0055aa;"></span>
+                                        <span class="text-light">Marinho Tático</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#002244</code></td>
+                                <td>Neoclássico / Instrumental</td>
+                                <td>Sistêmica & Organizacional</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">Camila Rocha</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box" style="background-color: #FF007F;"></span>
+                                        <span class="text-light">Rosa Magenta</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#FF007F</code></td>
+                                <td>Indie Pop / Lo-Fi Beats</td>
+                                <td>Ágil & Conectiva</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">Marcelo "Tchelo" Ribeiro</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box" style="background-color: #008055;"></span>
+                                        <span class="text-light">Verde Esmeralda</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#008055</code></td>
+                                <td>Soul / Funk 70s / R&B</td>
+                                <td>Social & Persuasiva</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">Lucas "Kiko" Siqueira</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box" style="background-color: #CC5500;"></span>
+                                        <span class="text-light">Laranja Queimado</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#CC5500</code></td>
+                                <td>Grunge / Metal 90s / Punk</td>
+                                <td>Caótica & de Solução Rápida</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">Bruno Prado</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box" style="background-color: #7F7F7F;"></span>
+                                        <span class="text-light">Cinza Neutro N5</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#7F7F7F</code></td>
+                                <td>Techno Minimalista / Industrial</td>
+                                <td>Cirúrgica & Geométrica</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">Thiago Neves</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box" style="background-color: #FFBF00;"></span>
+                                        <span class="text-light">Âmbar Tonal</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#FFBF00</code></td>
+                                <td>Post-Rock Instrumental</td>
+                                <td>Sensorial & Micrográfica</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">Gabriel "Gabi" Lima</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box"
+                                            style="background-color: #00FFFF; box-shadow: 0 0 5px #00ffff;"></span>
+                                        <span class="text-light">Ciano Neon</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#00FFFF</code></td>
+                                <td>Hyperpop / Vaporwave / Future Bass</td>
+                                <td>Disruptiva & Experimental</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">Rafael Torres</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box" style="background-color: #0047AB;"></span>
+                                        <span class="text-light">Azul Cobalto</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#0047AB</code></td>
+                                <td>IDM / Eletrônica Complexa</td>
+                                <td>Arquitetônica & Vetorial</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">Felipe "Lipe" Santos</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box" style="background-color: #FF2400;"></span>
+                                        <span class="text-light">Vermelho Escarlate</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#FF2400</code></td>
+                                <td>Hip-Hop Instrumental / Boombap</td>
+                                <td>Cinética & Expressiva</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">Juliana Costa</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box"
+                                            style="background-color: #301934; border: 1px solid #774488;"></span>
+                                        <span class="text-light">Roxo Profundo</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#301934</code></td>
+                                <td>Ambient / Drone Music</td>
+                                <td>Analítica & Simulada</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">Victor Hugo</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box" style="background-color: #556B2F;"></span>
+                                        <span class="text-light">Verde Oliva</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#556B2F</code></td>
+                                <td>Lo-Fi Hip Hop / Indie Rock</td>
+                                <td>Empática & Observacional</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">Beatriz Nogueira</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box"
+                                            style="background-color: #000000; border: 1px solid #666;"></span>
+                                        <span class="text-light">Preto Absoluto / OLED</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#000000</code></td>
+                                <td>Trip-Hop / Rock Alternativo</td>
+                                <td>Crítica & Desconstrutiva</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">Larissa "Lari" Mendonça</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box" style="background-color: #E3FF00;"></span>
+                                        <span class="text-light">Amarelo Neon</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#E3FF00</code></td>
+                                <td>Drum and Bass / EDM</td>
+                                <td>Improvisacional & Visual</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">Rodrigo Maia</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box" style="background-color: #414A4C;"></span>
+                                        <span class="text-light">Cinza Chumbo</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#414A4C</code></td>
+                                <td>Shoegaze / Post-Punk</td>
+                                <td>Microscópica & Restaurativa</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">Sofia Chen</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box" style="background-color: #960018;"></span>
+                                        <span class="text-light">Vermelho Carmim</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#960018</code></td>
+                                <td>Soundtracks de Games / Neoclássico</td>
+                                <td>Atmosférica & Pictórica</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">Henrique Moura</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box" style="background-color: #800020;"></span>
+                                        <span class="text-light">Bordô / Vinho</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#800020</code></td>
+                                <td>Blues Elétrico / Rock Clássico</td>
+                                <td>Narrativa pelo Ritmo e Cor</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">Vanessa Freitas</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box" style="background-color: #C8A2C8;"></span>
+                                        <span class="text-light">Lilás</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#C8A2C8</code></td>
+                                <td>K-Pop / Pop Internacional</td>
+                                <td>Metódica & Indexada</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">Diego "Digão" Martins</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box" style="background-color: #40E0D0;"></span>
+                                        <span class="text-light">Turquesa</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#40E0D0</code></td>
+                                <td>Nu-Disco / Synthwave / Funk 80s</td>
+                                <td>Híbrida & Versátil</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">Gustavo "Guga" Lima</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box"
+                                            style="background-color: #00FF00; box-shadow: 0 0 6px #00ff00;"></span>
+                                        <span class="text-light">Verde Terminal CRT</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#00FF00</code></td>
+                                <td>Chiptune / Synthwave Industrial / Darkwave</td>
+                                <td>Lógica & Fortificada</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">André "Sombra" Silveira</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box" style="background-color: #555555;"></span>
+                                        <span class="text-light">Cinza Asfalto</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#555555</code></td>
+                                <td>Post-Punk / Coldwave</td>
+                                <td>Prática & Operacional</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">Mateus Xavier</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box"
+                                            style="background-color: #7DF9FF; box-shadow: 0 0 6px #7df9ff;"></span>
+                                        <span class="text-light">Azul Elétrico</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#7DF9FF</code></td>
+                                <td>Synthwave / Retrowave / Game Audio</td>
+                                <td>Rendimento & Escala</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold text-light">Helena Castro</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="color-swatch-box"
+                                            style="background-color: #000080; border: 1px solid #3366cc;"></span>
+                                        <span class="text-light">Azul Marinho Profundo</span>
+                                    </div>
+                                </td>
+                                <td><code class="text-info">#000080</code></td>
+                                <td>Instrumental Brasileiro / Bossa Nova</td>
+                                <td>Histórico-Preservacionista</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- BARRA DE FILTROS DOS 24 CARDS -->
+        <div class="d-flex flex-wrap gap-2 mb-4 justify-content-center">
+            <button class="btn btn-outline-light btn-sm font-monospace active filter-btn"
+                onclick="filterSector('all')">Todos os 24 Integrantes</button>
+            <button class="btn btn-outline-warning btn-sm font-monospace filter-btn"
+                onclick="filterSector('direcao')">Direção & Produção (5)</button>
+            <button class="btn btn-outline-info btn-sm font-monospace filter-btn"
+                onclick="filterSector('modelagem')">Modelagem & Assets (4)</button>
+            <button class="btn btn-outline-primary btn-sm font-monospace filter-btn"
+                onclick="filterSector('animacao')">Rigging & Animação (4)</button>
+            <button class="btn btn-outline-danger btn-sm font-monospace filter-btn" onclick="filterSector('pos')">VFX,
+                Edição & Cor (7)</button>
+            <button class="btn btn-outline-success btn-sm font-monospace filter-btn" onclick="filterSector('ti')">TI &
+                Datacenter (4)</button>
+        </div>
+
+        <!-- FICHAS DETALHADAS COMPLETAS DOS 24 INTEGRANTES (TEXTO INTEGRAL) -->
+        <div class="row g-4" id="team-grid">
+
+            <!-- 1. Daniel Azevedo -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="direcao">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #2B2B2B !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Daniel Azevedo</h4>
+                                <small class="text-info font-monospace">Diretor Técnico e Sócio-Fundador</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">43 anos •
+                                Escorpião</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview"
+                                style="background-color: #2B2B2B; border: 1px solid #777;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Cinza Grafite (#2B2B2B)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 14/11/1982 (43 anos) | Escorpião</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> Rock Progressivo e Metal Sinfônico (Rush,
+                                Dream Theater, Tool)</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Cinza Grafite (<code>#2B2B2B</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Algorítmica e Estrutural.</em> Daniel cria
+                                através de regras, equações e lógica espacial. Para ele, uma imagem bonita é a
+                                consequência matemática de um sistema bem construído.</li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Guarda em sua gaveta o primeiro processador Pentium III que queimou tentando renderizar um
+                            projeto em 2005. Vê a Vértice como um relógio suíço; quando engrenagens falham, ele prefere
+                            consertá-las sozinho de madrugada a ter que explicar a alguém como fazer.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Marina Valente -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="direcao">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #CC8800 !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Marina Valente</h4>
+                                <small class="text-info font-monospace">Diretora de Arte e Sócia-Fundadora</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">42 anos • Áries</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview" style="background-color: #CC8800;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Amarelo Ocre / Mostarda
+                                    (#CC8800)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 26/03/1984 (42 anos) | Áries</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> Bossa Nova, Jazz Fusion e MPB Clássica
+                                (Miles Davis, Elis Regina)</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Amarelo Ocre / Mostarda (<code>#CC8800</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Narrativa e Visceral.</em> Marina pensa no
+                                sentimento que a imagem provoca antes de pensar na ferramenta.</li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Mantém um diário visual desenhado à mão de todos os projetos que a Vértice já fez. Tem uma
+                            percepção quase mística sobre cores e luz, conseguindo identificar se um tom de pele em 3D
+                            parece "morto" em menos de um segundo de observação.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Clara Mendes -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="direcao">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #002244 !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Clara Mendes</h4>
+                                <small class="text-info font-monospace">Produtora Executiva</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">40 anos • Leão</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview"
+                                style="background-color: #002244; border: 1px solid #0055aa;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Azul Marinho Tático
+                                    (#002244)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 08/08/1986 (40 anos) | Leão</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> Música Clássica Contemporânea e Neoclássico
+                                (Max Richter, Ludovico Einaudi)</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Azul Marinho Tático (<code>#002244</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Sistêmica e Organizacional.</em> Para
+                                Clara, criar é desenhar fluxos invisíveis que impedem o caos de destruir a arte.</li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Teve um início de carreira marcante no setor de radiodifusão ao vivo, onde um segundo de
+                            atraso custava milhares de reais. Nunca esqueceu a sensação. Usa canetas-tinteiro azuis para
+                            assinar aprovações físicas e mantém um caderno preto trancado a chave com anotações pessoais
+                            sobre a postura de cada cliente da empresa.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Camila Rocha -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="direcao">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #FF007F !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Camila Rocha</h4>
+                                <small class="text-info font-monospace">Assistente de Produção</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">28 anos • Touro</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview" style="background-color: #FF007F;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Rosa Magenta (#FF007F)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 19/05/1998 (28 anos) | Touro</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> Indie Pop, Synth-pop e Lo-Fi Beats</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Rosa Magenta (<code>#FF007F</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Ágil e Conectiva.</em> Camila cria
+                                soluções de comunicação instantâneas entre pessoas que estão sob alto estresse.</li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Desenvolveu um "método de leitura de sala": sabe quando uma reunião de aprovação vai dar
+                            errado observando apenas o número de vezes que o cliente pisca ou cruza os braços. Coleciona
+                            pins de projetos concluídos em sua mochila de trabalho.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Marcelo "Tchelo" Ribeiro -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="direcao">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #008055 !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Marcelo "Tchelo" Ribeiro</h4>
+                                <small class="text-info font-monospace">Atendimento e Comercial</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">35 anos • Aquário</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview" style="background-color: #008055;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Verde Esmeralda
+                                    (#008055)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 03/02/1991 (35 anos) | Aquário</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> Soul, R&B dos anos 70 e Funk Americano
+                                (Stevie Wonder, Earth Wind & Fire)</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Verde Esmeralda (<code>#008055</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Social e Persuasiva.</em> Tchelo cria
+                                pontes narrativas que fazem clientes industriais entenderem a poesia da computação
+                                gráfica.</li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Ex-ator de teatro universitário. Guarda a gravata que usou na assinatura do primeiro grande
+                            contrato do Projeto Cronos como amuleto de sorte em reuniões de crise.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Lucas "Kiko" Siqueira -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="modelagem">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #CC5500 !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Lucas "Kiko" Siqueira</h4>
+                                <small class="text-info font-monospace">Generalista 3D e Veterano</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">35 anos • Libra</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview" style="background-color: #CC5500;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Laranja Queimado
+                                    (#CC5500)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 12/10/1990 (35 anos) | Libra</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> Grunge, Heavy Metal dos anos 90 e Punk Rock
+                                (Nirvana, Megadeth)</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Laranja Queimado (<code>#CC5500</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Caótica e de Solução Rápida.</em> Kiko é o
+                                Mago do Improviso: resolve problemas insolúveis usando combinações bizarras de
+                                ferramentas antigas.</li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Entrou na Vértice como estagiário carregando caixas. Guarda até hoje o seu primeiro crachá
+                            improvisado feito em papel cartão por Marina em 2011. Acredita sinceramente que softwares
+                            antigos tinham mais "alma" que os atuais.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Bruno Prado -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="modelagem">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #7F7F7F !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Bruno Prado</h4>
+                                <small class="text-info font-monospace">Modelador Senior Hard-Surface</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">39 anos • Leão</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview" style="background-color: #7F7F7F;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Cinza Neutro N5
+                                    (#7F7F7F)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 29/07/1987 (39 anos) | Leão</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> Techno Minimalista e Industrial Berlinense
+                                (Klangkuenstler, Paul Kalkbrenner)</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Cinza Neutro N5 (<code>#7F7F7F</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Cirúrgica e Geométrica.</em> Bruno enxerga
+                                a perfeição na precisão dos milímetros e no fluxo limpo de polígonos.</li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Filho de um engenheiro mecânico da Fiat. Passou a infância dentro de oficinas desmontando
+                            carburadores e motores. Para Bruno, uma malha 3D mal construída com "triângulos perdidos"
+                            causa o mesmo desconforto físico que uma peça mecânica torta.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Thiago Neves -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="modelagem">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #FFBF00 !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Thiago Neves</h4>
+                                <small class="text-info font-monospace">Artista de Shading e Texturas</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">32 anos •
+                                Capricórnio</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview" style="background-color: #FFBF00;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Âmbar Tonal (#FFBF00)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 17/01/1994 (32 anos) | Capricórnio</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> Post-Rock Instrumental (Mogwai, Explosions
+                                in the Sky)</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Âmbar Tonal (<code>#FFBF00</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Sensorial e Micrográfica.</em> Thiago cria
+                                focando nas imperfeições da matéria: ferrugem, poeira, marcas de dedos e desgaste do
+                                tempo.</li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Fotógrafo amador de superfícies abandonadas. Passa fins de semana fotografando paredes
+                            descascadas e metais oxidados para criar mapas de textura próprios. Inspeciona o mundo real
+                            sempre procurando como a luz reage à sujeira.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. Gabriel "Gabi" Lima -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="modelagem">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #00FFFF !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Gabriel "Gabi" Lima</h4>
+                                <small class="text-info font-monospace">Junior 3D</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">22 anos • Touro</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview"
+                                style="background-color: #00FFFF; box-shadow: 0 0 6px #00ffff;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Ciano Neon (#00FFFF)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 11/05/2004 (22 anos) | Touro</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> Hyperpop, Vaporwave e Future Bass</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Ciano Neon (<code>#00FFFF</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Disruptiva e Experimental.</em> Aprendeu
+                                3D sozinho no YouTube e em comunidades do Discord; cria sem medo de quebrar regras
+                                clássicas.</li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Entrou na empresa após vencer um campeonato universitário de renderização rápida. Vê Daniel
+                            como uma figura paternal/mentora, mas esconde que costuma usar ferramentas baseadas em IA em
+                            computadores pessoais para gerar ideias de conceitos antes de modelar.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. Rafael Torres -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="animacao">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #0047AB !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Rafael Torres</h4>
+                                <small class="text-info font-monospace">Lead de Rigging e Animação</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">41 anos • Virgem</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview" style="background-color: #0047AB;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Azul Cobalto (#0047AB)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 05/09/1985 (41 anos) | Virgem</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> IDM / Eletrônica Complexa (Aphex Twin,
+                                Autechre, Squarepusher)</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Azul Cobalto (<code>#0047AB</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Arquitetônica e Vetorial.</em> Rafael
+                                pensa no movimento como uma série de equações matemáticas contínuas.</li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Ex-estudante de Física Teórica que migrou para a computação gráfica. Desenvolveu um tique
+                            nervoso de estalar os nós dos dedos na exata frequência do metrônomo de 24 quadros por
+                            segundo quando está concentrado em um rig complexo.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11. Felipe "Lipe" Santos -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="animacao">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #FF2400 !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Felipe "Lipe" Santos</h4>
+                                <small class="text-info font-monospace">Animador 3D Senior</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">32 anos •
+                                Capricórnio</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview" style="background-color: #FF2400;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Vermelho Escarlate
+                                    (#FF2400)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 22/12/1993 (32 anos) | Capricórnio</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> Funk, Hip-Hop Instrumental e Boombap (J
+                                Dilla, Nujabes)</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Vermelho Escarlate (<code>#FF2400</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Cinética e Expressiva.</em> Lipe foca no
+                                ritmo, no peso, na aceleração e no "sabor" do movimento.</li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Praticou dança de rua na adolescência. Antes de animar a rotação de uma peça mecânica ou o
+                            passo de um personagem, ele levanta da cadeira e atua o movimento fisicamente na frente da
+                            ilha para entender a física do peso corporal.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12. Juliana Costa -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="animacao">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #301934 !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Juliana Costa</h4>
+                                <small class="text-info font-monospace">TD de Rigging e Física</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">34 anos • Áries</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview"
+                                style="background-color: #301934; border: 1px solid #774488;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Roxo Profundo (#301934)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 14/04/1992 (34 anos) | Áries</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> Ambient / Drone Music (Stars of the Lid,
+                                Brian Eno)</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Roxo Profundo (<code>#301934</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Analítica e Simulada.</em> Juliana cria
+                                algoritmos de colisão e sistemas de tecidos e fumaça que respondem a leis físicas
+                                virtuais.</li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Apelidada de "Calculadora" por Guga Lima. Guarda em seu computador pessoal milhares de
+                            linhas de scripts Python autorais que otimizam a simulação de dinâmica de fluidos. Fala tão
+                            baixo nas reuniões que obriga todos na sala a fazerem silêncio para ouvi-la.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 13. Victor Hugo -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="animacao">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #556B2F !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Victor Hugo</h4>
+                                <small class="text-info font-monospace">Animador Junior</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">22 anos •
+                                Escorpião</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview" style="background-color: #556B2F;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Verde Oliva (#556B2F)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 30/10/2003 (22 anos) | Escorpião</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> Lo-Fi Hip Hop e Indie Rock Nacional</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Verde Oliva (<code>#556B2F</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Empática e Observacional.</em> Captura
+                                nuances do comportamento humano e detalhes de movimento do cotidiano.</li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Mantém um tirinha/webcomic secreta no Instagram onde desenha os bastidores da Vértice
+                            transformando os funcionários em robôs de 3D. Tem pavor de cometer um erro que faça Rafael
+                            Torres suspirar fundo.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 14. Beatriz Nogueira -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="pos">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #000000 !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Beatriz Nogueira</h4>
+                                <small class="text-info font-monospace">Lead de Composição e VFX</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">38 anos • Gêmeos</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview"
+                                style="background-color: #000000; border: 1px solid #666;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Preto Absoluto / OLED
+                                    (#000000)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 02/06/1988 (38 anos) | Gêmeos</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> Trip-Hop e Rock Alternativo (Massive
+                                Attack, Portishead, Radiohead)</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Preto Absoluto / OLED (<code>#000000</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Crítica e Desconstrutiva.</em> Beatriz
+                                enxerga qualquer imagem como uma ilusão formada por camadas isoladas que precisam ser
+                                calibradas perfeitamente.</li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Trabalhou na pós-produção de um longa-metragem premiado antes de ir para a Vértice. Ficou
+                            conhecida por recusar um pacote inteiro de renders da MaqTec porque a luz da lâmpada no 3D
+                            não refletia a refração correta da poeira da cena.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 15. Larissa "Lari" Mendonça -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="pos">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #E3FF00 !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Larissa "Lari" Mendonça</h4>
+                                <small class="text-info font-monospace">Compositora Senior</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">31 anos • Leão</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview" style="background-color: #E3FF00;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Amarelo Neon (#E3FF00)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 18/08/1995 (31 anos) | Leão</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> Drum and Bass e EDM (Pendulum, Noisia)</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Amarelo Neon (<code>#E3FF00</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Improvisacional e Visual.</em> Resolve "na
+                                marra" inconsistências de renderização usando truques de ilusionismo digital 2D.</li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Conhecida como a "Salva-Vidas da Composição". É a única pessoa da equipe que consegue
+                            trabalhar ouvindo música eletrônica em volume máximo no fone de ouvido sem errar uma única
+                            máscara de seleção no Nuke.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 16. Rodrigo Maia -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="pos">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #414A4C !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Rodrigo Maia</h4>
+                                <small class="text-info font-monospace">Artista de Rotoscopia e Clean Up</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">29 anos •
+                                Capricórnio</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview" style="background-color: #414A4C;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Cinza Chumbo (#414A4C)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 09/01/1997 (29 anos) | Capricórnio</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> Shoegaze e Post-Punk (My Bloody Valentine,
+                                Joy Division)</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Cinza Chumbo (<code>#414A4C</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Microscópica e Restaurativa.</em> Encontra
+                                paz no trabalho repetitivo de limpar pixel por pixel imperfeições e cabos indesejados.
+                            </li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Rodrigo possui uma acuidade visual fora do comum. Durante um projeto em 2023, descobriu uma
+                            reflexão no vidro de um carro 3D que mostrava acidentalmente o desktop do modelador gravado
+                            na textura de reflexo (HDRI).
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 17. Sofia Chen -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="pos">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #960018 !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Sofia Chen</h4>
+                                <small class="text-info font-monospace">Concept Artist e Matte Painter</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">34 anos •
+                                Sagitário</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview" style="background-color: #960018;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Vermelho Carmim
+                                    (#960018)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 23/11/1991 (34 anos) | Sagitário</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> Trilhas Sonoras de Videogames e Neoclássico
+                                (Austin Wintory, Gustavo Santaolalla)</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Vermelho Carmim (<code>#960018</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Atmosférica e Pictórica.</em> Sofia amplia
+                                mundos 3D limitados pintando cenários de fundo épicos com coerência de perspectiva
+                                impecável.</li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Filha de restauradores de arte antiga. Passa horas estudando pinturas do Renascimento para
+                            entender como os mestres clássicos pintavam névoa, nuvens e a decadência das estruturas.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 18. Henrique Moura -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="pos">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #800020 !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Henrique Moura</h4>
+                                <small class="text-info font-monospace">Editor Lead e Colorista</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">43 anos • Peixes</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview" style="background-color: #800020;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Bordô / Vinho (#800020)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 19/03/1983 (43 anos) | Peixes</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> Blues Elétrico e Rock Clássico (Stevie Ray
+                                Vaughan, Pink Floyd)</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Bordô / Vinho (<code>#800020</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Narrativa pelo Ritmo e Cor.</em> Henrique
+                                conta histórias através do tempo do corte e da temperatura psicológica da imagem.</li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Toca guitarra em uma banda de blues nos fins de semana. Considera a timeline de um projeto
+                            audiovisual uma partitura musical: cada corte é uma nota e o fluxo de cores indica a
+                            tonalidade emocional da cena.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 19. Vanessa Freitas -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="pos">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #C8A2C8 !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Vanessa Freitas</h4>
+                                <small class="text-info font-monospace">Assistente de Ilha de Edição</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">27 anos • Câncer</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview" style="background-color: #C8A2C8;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Lilás (#C8A2C8)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 07/07/1999 (27 anos) | Câncer</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> K-Pop e Pop Internacional (BT21, Dua Lipa)
+                            </li>
+                            <li><strong>🎨 Cor Favorita:</strong> Lilás (<code>#C8A2C8</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Metódica e Indexada.</em> Vanessa encontra
+                                ordem no caos de terabytes de material bruto desorganizado.</li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Mão direita de Henrique Moura. Criou um sistema próprio de planilhas integradas aos arquivos
+                            do Premiere que prevê exatamente quanto tempo um render de exportação vai levar com base no
+                            número de efeitos aplicados por corte.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 20. Diego "Digão" Martins -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="pos">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #40E0D0 !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Diego "Digão" Martins</h4>
+                                <small class="text-info font-monospace">Generalista de Motion</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">30 anos • Virgem</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview" style="background-color: #40E0D0;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Turquesa (#40E0D0)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 31/08/1996 (30 anos) | Virgem</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> Nu-Disco, Synthwave e Funk dos Anos 80</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Turquesa (<code>#40E0D0</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Híbrida e Versátil.</em> Conecta gráficos
+                                2D em movimento com a estrutura narrativa do 3D.</li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            O funcionário mais popular da empresa. É quem organiza os aniversários na copa, o bolão da
+                            firma e quem sabe exatamente quem está chateado com quem antes mesmo de a produção perceber.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 21. Gustavo "Guga" Lima -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="ti">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #00FF00 !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Gustavo "Guga" Lima</h4>
+                                <small class="text-info font-monospace">Chefe de TI e SysAdmin</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">38 anos • Aquário</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview"
+                                style="background-color: #00FF00; box-shadow: 0 0 8px #00ff00;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Verde Terminal CRT
+                                    (#00FF00)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 11/02/1988 (38 anos) | Aquário</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> Chiptune, Synthwave Industrial e Darkwave
+                                (Perturbator, Carpenter Brut)</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Verde Terminal CRT (<code>#00FF00</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Lógica e Fortificada.</em> Guga cria
+                                arquiteturas virtuais de rede invulneráveis e sistemas de redundância.</li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Ex-hacker ético em fóruns de segurança dos anos 2000. Trata os servidores da Vértice como
+                            seus filhos. Mantém uma xícara preta com o símbolo do Linux na mesa e se recusa
+                            terminantemente a usar sistemas operacionais proprietários em suas máquinas pessoais.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 22. André "Sombra" Silveira -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="ti">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #555555 !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">André "Sombra" Silveira</h4>
+                                <small class="text-info font-monospace">Suporte Técnico de TI</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">31 anos • Gêmeos</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview" style="background-color: #555555;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Cinza Asfalto (#555555)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 27/05/1995 (31 anos) | Gêmeos</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> Post-Punk e Coldwave (Joy Division, Molchat
+                                Doma)</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Cinza Asfalto (<code>#555555</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Prática e Operacional.</em> Resolve falhas
+                                físicas de hardware com precisão e velocidade cirúrgicas.</li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Ganhou o apelido "Sombra" porque consegue entrar, trocar uma placa de vídeo queimada em uma
+                            workstation sob a mesa de um artista sem interromper a conversa do usuário, e sair sem fazer
+                            ruído.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 23. Mateus Xavier -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="ti">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #7DF9FF !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Mateus Xavier</h4>
+                                <small class="text-info font-monospace">Operador de Render Farm</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">24 anos • Libra</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview"
+                                style="background-color: #7DF9FF; box-shadow: 0 0 6px #7df9ff;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Azul Elétrico (#7DF9FF)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 04/10/2001 (24 anos) | Libra</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> Synthwave, Retrowave e Game Audio</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Azul Elétrico (<code>#7DF9FF</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Rendimento e Escala.</em> Otimiza fluxos
+                                de processamento massivo de dados para evitar gargalos de hardware.</li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Colecionador de hardware retrô. Passa o turno da noite monitorando as luzes piscantes do
+                            Data Center enquanto joga RPGs clássicos de anos 90 em uma máquina portátil personalizada.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 24. Helena Castro -->
+            <div class="col-md-6 col-lg-6 member-card" data-sector="ti">
+                <div class="card bg-panel border-secondary h-100 shadow profile-card"
+                    style="border-left: 6px solid #000080 !important;">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h4 class="h5 fw-bold text-light m-0">Helena Castro</h4>
+                                <small class="text-info font-monospace">Gerente de Arquivo e Documentação</small>
+                            </div>
+                            <span class="badge bg-dark border border-secondary font-monospace">47 anos • Gêmeos</span>
+                        </div>
+                        <div
+                            class="swatch-container my-3 p-2 bg-black rounded border border-dark d-flex align-items-center gap-3">
+                            <span class="color-swatch-preview"
+                                style="background-color: #000080; border: 1px solid #3366cc;"></span>
+                            <div>
+                                <strong class="small d-block text-light font-monospace">Azul Marinho Profundo
+                                    (#000080)</strong>
+                                <span class="text-muted extra-small font-monospace">Amostra real da cor de
+                                    identidade</span>
+                            </div>
+                        </div>
+                        <ul class="text-light-sub small list-unstyled mb-3">
+                            <li><strong>📅 Data de Nascimento / Signo:</strong> 15/06/1979 (47 anos) | Gêmeos</li>
+                            <li><strong>🎵 Estilo Musical Favorito:</strong> Música Instrumental Brasileira e Bossa Nova
+                                (Hermeto Pascoal, Tom Jobim)</li>
+                            <li><strong>🎨 Cor Favorita:</strong> Azul Marinho Profundo (<code>#000080</code>)</li>
+                            <li><strong>🧠 Tipo de Criatividade:</strong> <em>Histórico-Preservacionista.</em> Helena
+                                constrói a ponta final da cadeia: a preservação eterna da memória técnica da empresa.
+                            </li>
+                        </ul>
+                        <div class="p-3 bg-dark rounded border border-secondary small text-light">
+                            <strong class="text-warning d-block font-monospace extra-small mb-1">📌 PROFUNDIDADE & MARCA
+                                REGISTRADA:</strong>
+                            Formada em Arquivologia pela UFMG. É a única pessoa na Vértice que manuseia as fitas
+                            magnéticas LTO com luvas especiais e conhece o conteúdo dos papéis assinados por Daniel e
+                            Marina na fundação em 2011.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Botão Final de Ação -->
+        <div class="text-center my-5">
+            <a href="index.html" class="btn btn-primary btn-lg px-5 py-3 font-monospace shadow">
+                🕵️ RETORNAR AO TERMINAL DE AUDITORIA ➔
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="text-center py-4 border-top border-secondary text-muted font-monospace small">
+        Vértice Produções Digitais Ltda. • Dossiê Confidencial Completo de Recursos Humanos
+    </footer>
+
+    <!-- SCRIPT DOS GRÁFICOS & FILTROS -->
+    <script>
+        // 1. Gráfico de Criatividade
+        const ctxCreativity = document.getElementById('creativityChart').getContext('2d');
+        new Chart(ctxCreativity, {
+            type: 'doughnut',
+            data: {
+                labels: ['Algorítmica/Lógica', 'Narrativa/Visceral', 'Sistêmica/Organiz.', 'Cirúrgica/Geométr.', 'Cinética/Expressiva', 'Crítica/Desconstr.', 'Outros'],
+                datasets: [{
+                    data: [5, 4, 3, 3, 3, 3, 3],
+                    backgroundColor: ['#00d2ff', '#cc8800', '#002244', '#7f7f7f', '#ff2400', '#e3ff00', '#9d4edd'],
+                    borderColor: '#131b26',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+
+        // 2. Gráfico de Estilo Musical
+        const ctxMusic = document.getElementById('musicChart').getContext('2d');
+        new Chart(ctxMusic, {
+            type: 'bar',
+            data: {
+                labels: ['Rock/Metal', 'Eletrônica/IDM', 'Jazz/Bossa', 'Lo-Fi/Indie', 'Funk/Hip-Hop', 'Post-Rock/Soundtrack'],
+                datasets: [{
+                    label: 'Integrantes',
+                    data: [5, 6, 3, 4, 3, 3],
+                    backgroundColor: '#ffb703',
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { ticks: { color: '#8c9ba5', font: { size: 10 } }, grid: { display: false } },
+                    y: { ticks: { color: '#8c9ba5', stepSize: 1 }, grid: { color: '#233042' } }
+                },
+                plugins: { legend: { display: false } }
+            }
+        });
+
+        // 3. Gráfico de Faixas Etárias
+        const ctxAge = document.getElementById('ageChart').getContext('2d');
+        new Chart(ctxAge, {
+            type: 'line',
+            data: {
+                labels: ['20-25 anos', '26-30 anos', '31-35 anos', '36-40 anos', '41-45 anos', '46+ anos'],
+                datasets: [{
+                    label: 'Quantidade',
+                    data: [3, 4, 8, 4, 4, 1],
+                    borderColor: '#00f59b',
+                    backgroundColor: 'rgba(0, 245, 155, 0.15)',
+                    fill: true,
+                    tension: 0.3,
+                    pointBackgroundColor: '#00f59b'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { ticks: { color: '#8c9ba5', font: { size: 10 } }, grid: { display: false } },
+                    y: { ticks: { color: '#8c9ba5', stepSize: 1 }, grid: { color: '#233042' } }
+                },
+                plugins: { legend: { display: false } }
+            }
+        });
+
+        // 4. Filtro por Setor
+        function filterSector(sector) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active', 'btn-light'));
+            event.target.classList.add('active');
+
+            const cards = document.querySelectorAll('.member-card');
+            cards.forEach(card => {
+                if (sector === 'all' || card.getAttribute('data-sector') === sector) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
