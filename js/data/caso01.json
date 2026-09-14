@@ -1,0 +1,169 @@
+{
+  "caso": {
+    "codigo": "VRT-MAQ-2026-017",
+    "titulo": "Operação Último Frame",
+    "cliente": "MaqTec Industrial",
+    "prazo": "20h00",
+    "momento_incidente": "19h42",
+    "culpado": "Gabi Lima",
+    "motivo": "Alterou a geometria do robô após o Freeze 1 para impressionar a diretoria, sabendo que a v07 era a única oficial."
+  },
+  "missoes_taticas": [
+    {
+      "etapa": 1,
+      "sabotagem": {
+        "titulo": "Injetar Pista Falsa de Modelagem Antiga",
+        "descricao": "Espalhe que a versão correta era a v06 de Bruno Prado. Rivais que caírem perdem 15% de integridade e travam por 20s.",
+        "codigo_isca_base": "TRP-V06-BRUNO"
+      },
+      "alianca": {
+        "titulo": "Transmitir Frequência Limpa",
+        "descricao": "Forneça a um grupo aliado a dica de que arquivos de documentação PDF têm prioridade sobre nomes de arquivos."
+      }
+    },
+    {
+      "etapa": 2,
+      "sabotagem": {
+        "titulo": "Falso Rastro no 3ds Max",
+        "descricao": "Vaze o boato de que Kiko Siqueira exportou o modelo de um HD antigo. Os rivais perderão tempo investigando a estação WS-3D-01.",
+        "codigo_isca_base": "TRP-KIKO-MAX"
+      },
+      "alianca": {
+        "titulo": "Compartilhar Timestamp Suspeito",
+        "descricao": "Avise seus aliados para filtrarem apenas os arquivos criados entre 18h40 e 18h50."
+      }
+    },
+    {
+      "etapa": 3,
+      "sabotagem": {
+        "titulo": "Aprovação Verbal Clandestina",
+        "descricao": "Convença equipes rivais de que houve uma autorização informal no WhatsApp com validade jurídica aceita.",
+        "codigo_isca_base": "TRP-OK-VERBAL"
+      },
+      "alianca": {
+        "titulo": "Alerta de Protocolo",
+        "descricao": "Lembre sua equipe aliada de que no Protocolo Vértice nenhuma alteração existe sem Ordem de Serviço assinada."
+      }
+    },
+    {
+      "etapa": 4,
+      "sabotagem": {
+        "titulo": "Desvio para a Cena 03",
+        "descricao": "Alimente o rumor de que a tomada danificada foi a Cena 03. Rivais gastarão tempo inspecionando arquivos já aprovados.",
+        "codigo_isca_base": "TRP-SCENE03-ERR"
+      },
+      "alianca": {
+        "titulo": "Vetor de Cena",
+        "descricao": "Confirme para seus aliados que a contaminação ocorreu especificamente na tomada 04."
+      }
+    },
+    {
+      "etapa": 5,
+      "sabotagem": {
+        "titulo": "Falso Frame Corrompido",
+        "descricao": "Espalhe que o frame defeituoso foi o 0101 do passe v02. Isso fará equipes rivais auditarem renders anteriores.",
+        "codigo_isca_base": "TRP-RENDER-V02"
+      },
+      "alianca": {
+        "titulo": "Canal OpenEXR",
+        "descricao": "Informe a seus aliados que o render v03 possui o canal Cryptomatte duplicado."
+      }
+    },
+    {
+      "etapa": 6,
+      "sabotagem": {
+        "titulo": "Falso Patch no After Effects",
+        "descricao": "Espalhe que o corte final foi composto no After Effects sem passar pelo Nuke.",
+        "codigo_isca_base": "TRP-AFTER-EFFECTS"
+      },
+      "alianca": {
+        "titulo": "Rastro do Read Node",
+        "descricao": "Indique aos aliados que o script do Nuke foi gravado exatamente às 19h18."
+      }
+    },
+    {
+      "etapa": 7,
+      "sabotagem": {
+        "titulo": "Inversão de Vídeos Finais",
+        "descricao": "Convença os adversários de que o arquivo 'projeto_final.mp4' (o primeiro) foi o submetido à revisão.",
+        "codigo_isca_base": "TRP-FINAL1-MP4"
+      },
+      "alianca": {
+        "titulo": "Checksum Confirmado",
+        "descricao": "Avise seus aliados para checarem o arquivo gerado às 19h31."
+      }
+    },
+    {
+      "etapa": 8,
+      "sabotagem": {
+        "titulo": "Distração de Criação Isolada",
+        "descricao": "Faça os rivais sustentarem que o crime ocorreu na criação às 18h47 e não na inserção da cena às 18h53.",
+        "codigo_isca_base": "TRP-CRIA-1847"
+      },
+      "alianca": {
+        "titulo": "Momento da Ruptura",
+        "descricao": "Destaque aos aliados que um arquivo isolado em disco não contamina o pipeline até entrar na cena."
+      }
+    },
+    {
+      "etapa": 9,
+      "sabotagem": {
+        "titulo": "Acusação de Conspiração Coletiva",
+        "descricao": "Espalhe que todos os 5 membros que sabiam da conversa devem ser indiciados juntos.",
+        "codigo_isca_base": "TRP-TODOS-CULPADOS"
+      },
+      "alianca": {
+        "titulo": "Isolamento de Suspeitos",
+        "descricao": "Explique aos aliados a diferença entre ter ciência da conversa e tomar a decisão de inserir o arquivo."
+      }
+    },
+    {
+      "etapa": 10,
+      "sabotagem": {
+        "titulo": "Culpar a Diretoria",
+        "descricao": "Espalhe que Marina Valente ordenou a substituição formal no master de entrega.",
+        "codigo_isca_base": "TRP-MARINA-ORDENOU"
+      },
+      "alianca": {
+        "titulo": "Interpretação de Depoimento",
+        "descricao": "Revele aos aliados que o depoimento de Marina prova que seu pedido foi estritamente para avaliação preliminar."
+      }
+    },
+    {
+      "etapa": 11,
+      "sabotagem": {
+        "titulo": "Desculpa da Distração de Pastas",
+        "descricao": "Alimente a tese de que o operador se confundiu e não sabia qual era a versão homologada.",
+        "codigo_isca_base": "TRP-ERRO-INVOLUNTARIO"
+      },
+      "alianca": {
+        "titulo": "Prova da Má-Fé",
+        "descricao": "Mostre aos aliados que o operador consultou o PDF de aprovação da v07 apenas 4 minutos antes de usar a v08."
+      }
+    },
+    {
+      "etapa": 12,
+      "sabotagem": {
+        "titulo": "Falha de Sincronização de Rede",
+        "descricao": "Afirme que os servidores SAN tiveram um bug de cache de rede que duplicou os nós.",
+        "codigo_isca_base": "TRP-BUG-SAN"
+      },
+      "alianca": {
+        "titulo": "Sequência Conclusiva",
+        "descricao": "Ajude os aliados a montarem a sequência: 17h40 -> 18h47 -> 18h49 -> 18h51 -> 18h53."
+      }
+    },
+    {
+      "etapa": 13,
+      "sabotagem": {
+        "titulo": "Acusação ao Editor Final",
+        "descricao": "Espalhe a última isca desesperada acusando Henrique Moura pelo corte final.",
+        "codigo_isca_base": "TRP-HENRIQUE-CULPADO"
+      },
+      "alianca": {
+        "titulo": "Laudo Pericial Imbatível",
+        "descricao": "Entregue a confirmação de que Gabi Lima confessou perante Clara após a apresentação dos logs."
+      }
+    }
+  ]
+}

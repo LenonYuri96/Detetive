@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Dossiê Histórico & Espaço Físico — Vértice Produções Digitais</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,38 +16,67 @@
 
 <body>
 
-    <!-- Header Fixo com Navegação Completa -->
-    <header class="navbar navbar-dark bg-dark border-bottom border-secondary px-4 py-3 sticky-top">
-        <div class="d-flex align-items-center flex-wrap gap-3">
-            <span class="badge bg-warning text-dark px-3 py-2 fw-bold font-monospace">DOSSIÊ #FASE-03</span>
-            <div>
-                <h1 class="h5 m-0 text-light fw-bold">Vértice Produções Digitais Ltda.</h1>
-                <small class="text-muted font-monospace">LEVANTAMENTO ARQUITETÔNICO & MEMÓRIA TÉCNICA</small>
+    <!-- Header Fixo Unificado com Navbar Toggler para Mobile -->
+    <header
+        class="navbar navbar-expand-xl navbar-dark bg-dark border-bottom border-secondary sticky-top px-3 py-2 py-md-3">
+        <div class="container-fluid px-0">
+
+            <!-- Identificação da Empresa / Logo -->
+            <div class="d-flex align-items-center gap-2 me-auto">
+                <span class="badge bg-warning text-dark px-2 py-1 fw-bold font-monospace extra-small">#FASE-03</span>
+                <div>
+                    <h1 class="h6 m-0 text-light fw-bold text-nowrap mobile-brand-title">Dossiê Histórico</h1>
+                    <small class="text-muted font-monospace d-none d-sm-block extra-small">ESPAÇO FÍSICO & ARQUITETURA
+                        PERICIAL</small>
+                </div>
             </div>
+
+            <!-- Botão Hamburguer para Celulares e Tablets -->
+            <button class="navbar-toggler border-secondary p-2 ms-2" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navMenuHistoria" aria-controls="navMenuHistoria" aria-expanded="false"
+                aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links de Navegação Unificados (6 Módulos) -->
+            <div class="collapse navbar-collapse mt-3 mt-xl-0" id="navMenuHistoria">
+                <nav
+                    class="d-flex flex-column flex-xl-row align-items-stretch align-items-xl-center gap-2 ms-xl-auto font-monospace small">
+                    <a href="index.html" class="btn btn-outline-info btn-sm text-start text-xl-center">
+                        📟 Terminal do Jogo
+                    </a>
+                    <a href="historia.html" class="btn btn-warning btn-sm text-start text-xl-center text-dark fw-bold">
+                        📜 História & Espaço
+                    </a>
+                    <a href="setores.html" class="btn btn-outline-light btn-sm text-start text-xl-center">
+                        ⚙️ Setores & Pipeline
+                    </a>
+                    <a href="equipe.html" class="btn btn-outline-info btn-sm text-start text-xl-center">
+                        👥 Equipe (24)
+                    </a>
+                    <a href="rede-humana.html" class="btn btn-outline-danger btn-sm text-start text-xl-center">
+                        🕸️ Rede Humana
+                    </a>
+                    <a href="protocolo.html" class="btn btn-outline-success btn-sm text-start text-xl-center">
+                        🛡️ Protocolo Vértice
+                    </a>
+                </nav>
+            </div>
+
         </div>
-        <!-- Menu de Navegação -->
-        <nav class="d-flex align-items-center gap-2 mt-2 mt-md-0">
-            <a href="index.html" class="btn btn-outline-info btn-sm font-monospace">
-                📟 Terminal do Jogo
-            </a>
-            <a href="historia.html" class="btn btn-warning btn-sm font-monospace text-dark fw-bold">
-                📜 História & Espaço
-            </a>
-            <a href="setores.html" class="btn btn-outline-light btn-sm font-monospace">
-                ⚙️ Setores & Pipeline
-            </a>
-        </nav>
     </header>
 
-    <main class="container my-5">
+    <main class="container my-3 my-md-5 px-3 px-sm-4">
 
         <!-- Banner de Introdução -->
-        <div class="card bg-panel border-secondary shadow-lg mb-5 p-4 p-md-5">
-            <div class="row align-items-center g-4">
+        <section class="card bg-panel border-secondary shadow-lg mb-4 mb-md-5 p-3 p-sm-4 p-md-5">
+            <div class="row align-items-center g-3 g-md-4">
                 <div class="col-lg-8">
-                    <span class="badge bg-primary text-uppercase px-3 py-2 mb-3">Auditoria de Infraestrutura</span>
-                    <h2 class="display-6 fw-bold text-light">O Espaço Físico e a Arquitetura da Vértice</h2>
-                    <p class="text-light-sub lead fs-6 mt-3">
+                    <span
+                        class="badge bg-primary text-uppercase px-2 py-1 mb-2 mb-md-3 font-monospace extra-small">Auditoria
+                        de Infraestrutura</span>
+                    <h2 class="h3 h2-md fw-bold text-light">O Espaço Físico e a Arquitetura da Vértice</h2>
+                    <p class="text-light-sub lead fs-6 mt-2 mt-md-3 mb-0">
                         Na computação gráfica profissional, o espaço físico espelha a taxonomia dos dados. Das estações
                         superaquecidas da Sala 402 até o andar corporativo no bairro Funcionários, cada alteração
                         arquitetônica respondeu diretamente a uma crise de produção, gargalos de rede ou necessidades
@@ -58,46 +87,46 @@
                     <div class="evidence-frame p-2 bg-black border border-secondary rounded shadow">
                         <img src="imagens/VISÃO GERAL DA VÉRTICE.jpg" alt="Visão Geral da Sede Vértice"
                             class="img-fluid rounded">
-                        <div class="text-muted small font-monospace mt-2 text-start px-2">
+                        <div class="text-muted extra-small font-monospace mt-2 text-start px-1">
                             <span>FIG. 00 // REGISTRO GERAL DA SEDE</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Linha do Tempo & Seções -->
+        <!-- Linha do Tempo & Seções Históricas -->
         <div class="timeline">
 
             <!-- 1. 2011 — SALA 402 -->
-            <article class="timeline-item mb-5">
+            <article class="timeline-item mb-4 mb-md-5">
                 <div class="card bg-panel border-secondary shadow">
-                    <div class="card-header bg-dark d-flex justify-content-between align-items-center">
-                        <span class="badge bg-info text-dark fw-bold font-monospace">2011 — FUNDAÇÃO</span>
-                        <span class="text-muted small font-monospace">SALA 402 • ED. GUIMARÃES</span>
+                    <div
+                        class="card-header bg-dark d-flex justify-content-between align-items-center flex-wrap gap-2 py-2 py-md-3">
+                        <span class="badge bg-info text-dark fw-bold font-monospace extra-small">2011 — FUNDAÇÃO</span>
+                        <span class="text-muted extra-small font-monospace">SALA 402 • ED. GUIMARÃES</span>
                     </div>
-                    <div class="card-body p-4">
-                        <div class="row g-4">
+                    <div class="card-body p-3 p-md-4">
+                        <div class="row g-3 g-md-4 align-items-center">
                             <div class="col-lg-7">
-                                <h3 class="h4 text-warning fw-bold">1. A Sede Primordial: Sala 402</h3>
-                                <p class="text-light-sub mt-3">
+                                <h3 class="h5 h4-md text-warning fw-bold">1. A Sede Primordial: Sala 402</h3>
+                                <p class="text-light-sub mt-2 small">
                                     Quando <strong>Daniel Azevedo</strong> e <strong>Marina Valente</strong> assinaram o
                                     contrato de locação da Sala 402 do Edifício Guimarães, no centro de Belo Horizonte,
                                     o estúdio operava no limiar entre a precariedade e a ambição técnica. O espaço de
                                     pouco mais de 35 metros quadrados abrigava o ecossistema completo sem qualquer
                                     barreira arquitetônica.
                                 </p>
-                                <ul class="text-light-sub small ps-3">
-                                    <li><strong>A Disposição Inicial:</strong> A mesa de Daniel ficava colada à janela
-                                        para dissipar o calor dos processadores overclockados. Marina ocupava a parede
-                                        oposta, sob lâmpadas fluorescentes de alta fidelidade cromática. No centro, uma
-                                        mesa de madeira recuperada servia para desdobrar plantas da Valvutech e
-                                        storyboards.</li>
-                                    <li><strong>O Pipeline Físico:</strong> Sem divisórias. Um quadro branco marcava
-                                        entregas em azul (técnico) e vermelho (criativo).</li>
+                                <ul class="text-light-sub extra-small ps-3 mb-0">
+                                    <li class="mb-1"><strong>A Disposição Inicial:</strong> A mesa de Daniel ficava
+                                        colada à janela para dissipar o calor dos processadores overclockados. Marina
+                                        ocupava a parede oposta, sob iluminação fluorescente neutra. No centro, uma mesa
+                                        de madeira recuperada servia para plantas da Valvutech e storyboards.</li>
+                                    <li class="mb-1"><strong>O Pipeline Físico:</strong> Sem divisórias. Um quadro
+                                        branco marcava entregas em azul (técnico) e vermelho (criativo).</li>
                                     <li><strong>A Terceira Estação:</strong> Com a chegada de <strong>Lucas "Kiko"
                                             Siqueira</strong>, uma bancada de compensado naval tornou-se o hub de
-                                        ingestão com HDs externos descapotados e leitores de cartão.</li>
+                                        ingestão com HDs externos e leitores de cartão.</li>
                                 </ul>
                             </div>
                             <div class="col-lg-5">
@@ -113,27 +142,30 @@
             </article>
 
             <!-- 2. 2012-2013 — SALA 403 -->
-            <article class="timeline-item mb-5">
+            <article class="timeline-item mb-4 mb-md-5">
                 <div class="card bg-panel border-secondary shadow">
-                    <div class="card-header bg-dark d-flex justify-content-between align-items-center">
-                        <span class="badge bg-info text-dark fw-bold font-monospace">2012–2013 — DIVISÃO</span>
-                        <span class="text-muted small font-monospace">SALAS 402 & 403</span>
+                    <div
+                        class="card-header bg-dark d-flex justify-content-between align-items-center flex-wrap gap-2 py-2 py-md-3">
+                        <span class="badge bg-info text-dark fw-bold font-monospace extra-small">2012–2013 —
+                            DIVISÃO</span>
+                        <span class="text-muted extra-small font-monospace">SALAS 402 & 403</span>
                     </div>
-                    <div class="card-body p-4">
-                        <div class="row g-4">
+                    <div class="card-body p-3 p-md-4">
+                        <div class="row g-3 g-md-4 align-items-center">
                             <div class="col-lg-7">
-                                <h3 class="h4 text-info fw-bold">2. A Primeira Expansão e o Abismo Funcional</h3>
-                                <p class="text-light-sub mt-3">
+                                <h3 class="h5 h4-md text-info fw-bold">2. A Primeira Expansão e o Abismo Funcional</h3>
+                                <p class="text-light-sub mt-2 small">
                                     Os contratos com a Construtora Alvorada e a Agência Impacto Visual exigiram a
                                     locação da Sala 403 contígua, gerando a primeira segregação física da empresa:
                                 </p>
-                                <ul class="text-light-sub small ps-3">
-                                    <li><strong>Sala 402 (Núcleo Técnico):</strong> Workstations de modelagem,
-                                        iluminação e render, com ruído contínuo de ventoinhas e ar-condicionado de
-                                        janela.</li>
-                                    <li><strong>Sala 403 (Produção e Atendimento):</strong> Sob gestão de <strong>Clara
-                                            Mendes</strong>, com arquivo de aço para pastas suspensas, quadros Kanban
-                                        com cartões coloridos e mesa formal para 8 pessoas.</li>
+                                <ul class="text-light-sub extra-small ps-3 mb-0">
+                                    <li class="mb-1"><strong>Sala 402 (Núcleo Técnico):</strong> Workstations de
+                                        modelagem, iluminação e render, com ruído contínuo de ventoinhas e
+                                        ar-condicionado de janela.</li>
+                                    <li class="mb-1"><strong>Sala 403 (Produção e Atendimento):</strong> Sob gestão de
+                                        <strong>Clara Mendes</strong>, com arquivo de aço para pastas suspensas, quadros
+                                        Kanban com cartões coloridos e mesa formal para 8 pessoas.
+                                    </li>
                                     <li><strong>A Fissura Invisível:</strong> Pela primeira vez surgiram portas físicas
                                         entre atendimento e técnicos, gerando atrasos em alterações e desalinhamentos de
                                         versão.</li>
@@ -151,29 +183,31 @@
             </article>
 
             <!-- 3. 2014 — PROJETO CRONOS -->
-            <article class="timeline-item mb-5">
+            <article class="timeline-item mb-4 mb-md-5">
                 <div class="card bg-panel border-danger shadow-lg">
-                    <div class="card-header bg-danger text-white d-flex justify-content-between align-items-center">
-                        <span class="badge bg-black text-danger fw-bold font-monospace">2014 — CRISE OPERACIONAL</span>
-                        <span class="font-monospace small">INCIDENTE MAQTEC</span>
+                    <div
+                        class="card-header bg-danger text-white d-flex justify-content-between align-items-center flex-wrap gap-2 py-2 py-md-3">
+                        <span class="badge bg-black text-danger fw-bold font-monospace extra-small">2014 — CRISE
+                            OPERACIONAL</span>
+                        <span class="font-monospace extra-small">INCIDENTE MAQTEC</span>
                     </div>
-                    <div class="card-body p-4">
-                        <div class="row g-4">
+                    <div class="card-body p-3 p-md-4">
+                        <div class="row g-3 g-md-4 align-items-center">
                             <div class="col-lg-7">
-                                <h3 class="h4 text-danger fw-bold">3. O Impacto Físico do Projeto Cronos</h3>
-                                <p class="text-light-sub mt-3">
+                                <h3 class="h5 h4-md text-danger fw-bold">3. O Impacto Físico do Projeto Cronos</h3>
+                                <p class="text-light-sub mt-2 small">
                                     Durante a execução do vídeo de 6 minutos da escavadeira industrial da
                                     <strong>MaqTec</strong>, o Edifício Guimarães entrou em colapso. Oito estações
                                     extras de freelancers foram espremidas na Sala 403, nobreaks apitavam sem parar e
                                     cabos de rede cruzavam o piso cobertos com fita zebrada.
                                 </p>
                                 <div
-                                    class="p-3 bg-black border-start border-danger border-4 rounded font-monospace small text-danger-emphasis mb-3">
+                                    class="p-3 bg-black border-start border-danger border-4 rounded font-monospace extra-small text-danger-emphasis mb-3">
                                     O ponto de falha: Anotações de engenharia feitas em guardanapos e post-its foram
                                     perdidas no meio da bagunça física, gerando arquivos duplicados e renders com peças
                                     sobrepostas.
                                 </div>
-                                <p class="text-light-sub small mb-0">
+                                <p class="text-light-sub extra-small mb-0">
                                     <em>A lição definitiva:</em> O espaço físico desordenado corrompe a estrutura de
                                     dados digital.
                                 </p>
@@ -191,39 +225,43 @@
             </article>
 
             <!-- 4. 2015 — ARQUITETURA DO PROTOCOLO -->
-            <article class="timeline-item mb-5">
+            <article class="timeline-item mb-4 mb-md-5">
                 <div class="card bg-panel border-success shadow">
-                    <div class="card-header bg-dark d-flex justify-content-between align-items-center">
-                        <span class="badge bg-success text-white fw-bold font-monospace">2015 — PADRONIZAÇÃO</span>
-                        <span class="text-muted small font-monospace">ZONAS & PROTOCOLO</span>
+                    <div
+                        class="card-header bg-dark d-flex justify-content-between align-items-center flex-wrap gap-2 py-2 py-md-3">
+                        <span class="badge bg-success text-white fw-bold font-monospace extra-small">2015 —
+                            PADRONIZAÇÃO</span>
+                        <span class="text-muted extra-small font-monospace">ZONAS & PROTOCOLO</span>
                     </div>
-                    <div class="card-body p-4">
-                        <div class="row g-4">
+                    <div class="card-body p-3 p-md-4">
+                        <div class="row g-3 g-md-4 align-items-center">
                             <div class="col-lg-6">
-                                <h3 class="h4 text-success fw-bold">4. A Arquitetura do Protocolo Vértice</h3>
-                                <p class="text-light-sub mt-3">
-                                    As Salas 402 e 403 foram reformadas e unificadas para refletir o fluxo de trabalho:
+                                <h3 class="h5 h4-md text-success fw-bold">4. A Arquitetura do Protocolo Vértice</h3>
+                                <p class="text-light-sub mt-2 small">
+                                    As Salas 402 e 403 foram reformadas e unificadas para refletir o fluxo sequencial de
+                                    trabalho:
                                 </p>
-                                <p class="font-monospace small text-info">
-                                    [ RECEPÇÃO ] ➔ [ ÁREA ADMINISTRATIVA ] ➔ [ NÚCLEO PRODUÇÃO ] ➔ [ DATACENTER ]
+                                <p
+                                    class="font-monospace extra-small text-info p-2 bg-black rounded border border-dark mb-3">
+                                    [ RECEPÇÃO ] ➔ [ PRODUÇÃO ] ➔ [ NÚCLEO 3D ] ➔ [ DATACENTER ]
                                 </p>
-                                <ul class="text-light-sub small ps-3">
-                                    <li><strong>Zoneamento Estrito:</strong> Clientes e fornecedores não têm acesso à
-                                        área de computação.</li>
-                                    <li><strong>Primeiro Data Center:</strong> Dispensa sem janelas na 402 convertida em
-                                        sala climatizada e isolada acusticamente para servidores e storage SAN.</li>
+                                <ul class="text-light-sub extra-small ps-3 mb-0">
+                                    <li class="mb-1"><strong>Zoneamento Estrito:</strong> Clientes e fornecedores não
+                                        têm acesso à área de computação.</li>
+                                    <li class="mb-1"><strong>Primeiro Data Center:</strong> Dispensa sem janelas na 402
+                                        convertida em sala climatizada para servidores SAN.</li>
                                     <li><strong>Identificação das Máquinas:</strong> Etiquetas metálicas com IP fixo,
                                         nome de nó e operador.</li>
                                 </ul>
                             </div>
-                            <div class="col-lg-3 col-md-6">
+                            <div class="col-sm-6 col-lg-3">
                                 <div class="evidence-frame p-2 bg-black border border-secondary rounded shadow">
                                     <img src="imagens/ARQUITETURA DO PROTOCOLO.jpg" alt="Arquitetura do Protocolo"
                                         class="img-fluid rounded">
                                     <div class="evidence-tag">ARQUITETURA DO PROTOCOLO</div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-6">
+                            <div class="col-sm-6 col-lg-3">
                                 <div class="evidence-frame p-2 bg-black border border-secondary rounded shadow">
                                     <img src="imagens/ZONAS DE ACESSO.jpg" alt="Zonas de Acesso Físico"
                                         class="img-fluid rounded">
@@ -236,22 +274,24 @@
             </article>
 
             <!-- 5. 2017-2019 — PRIMEIRO ANDAR CORPORATIVO -->
-            <article class="timeline-item mb-5">
+            <article class="timeline-item mb-4 mb-md-5">
                 <div class="card bg-panel border-secondary shadow">
-                    <div class="card-header bg-dark d-flex justify-content-between align-items-center">
-                        <span class="badge bg-info text-dark fw-bold font-monospace">2017–2019 — SAVASSI</span>
-                        <span class="text-muted small font-monospace">EXPANSÃO INDUSTRIAL DE 300M²</span>
+                    <div
+                        class="card-header bg-dark d-flex justify-content-between align-items-center flex-wrap gap-2 py-2 py-md-3">
+                        <span class="badge bg-info text-dark fw-bold font-monospace extra-small">2017–2019 —
+                            SAVASSI</span>
+                        <span class="text-muted extra-small font-monospace">EXPANSÃO INDUSTRIAL DE 300M²</span>
                     </div>
-                    <div class="card-body p-4">
-                        <div class="row g-4">
+                    <div class="card-body p-3 p-md-4">
+                        <div class="row g-3 g-md-4 align-items-center">
                             <div class="col-lg-7">
-                                <h3 class="h4 text-light fw-bold">5. O Andar Corporativo e a Especialização</h3>
-                                <p class="text-light-sub mt-3">
+                                <h3 class="h5 h4-md text-light fw-bold">5. O Andar Corporativo e a Especialização</h3>
+                                <p class="text-light-sub mt-2 small">
                                     Mudança para a Savassi com departamentos formalmente separados: Rigging (Rafael
                                     Torres), Composição N5 5000K (Beatriz Nogueira), Edição acústica (Henrique Moura) e
                                     Sala Técnica 10GbE com fitas LTO (Gustavo "Guga" Lima).
                                 </p>
-                                <p class="text-light-sub small">
+                                <p class="text-light-sub extra-small mb-0">
                                     <em>O Paradoxo da Eficiência:</em> O isolamento eliminou contaminações, mas reduziu
                                     a comunicação direta, transferindo erros para o final da cadeia técnica.
                                 </p>
@@ -269,37 +309,39 @@
             </article>
 
             <!-- 6. 2022 ATÉ O PRESENTE — SEDE FUNCIONÁRIOS -->
-            <article class="timeline-item mb-5">
+            <article class="timeline-item mb-4 mb-md-5">
                 <div class="card bg-panel border-primary shadow-lg">
-                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                        <span class="badge bg-black text-light fw-bold font-monospace">SEDE ATUAL</span>
-                        <span class="font-monospace small">BAIRRO FUNCIONÁRIOS • BELO HORIZONTE</span>
+                    <div
+                        class="card-header bg-primary text-white d-flex justify-content-between align-items-center flex-wrap gap-2 py-2 py-md-3">
+                        <span class="badge bg-black text-light fw-bold font-monospace extra-small">SEDE ATUAL</span>
+                        <span class="font-monospace extra-small">BAIRRO FUNCIONÁRIOS • BELO HORIZONTE</span>
                     </div>
-                    <div class="card-body p-4">
-                        <h3 class="h4 text-light fw-bold mb-3">6. Planta Baixa e Ambientes Detalhados</h3>
-                        <p class="text-light-sub">
+                    <div class="card-body p-3 p-md-4">
+                        <h3 class="h5 h4-md text-light fw-bold mb-2">6. Planta Baixa e Ambientes Detalhados</h3>
+                        <p class="text-light-sub small mb-3">
                             Abaixo estão catalogados os 9 ambientes operacionais da sede atual da Vértice Produções
                             Digitais:
                         </p>
 
                         <!-- Planta Baixa Master -->
-                        <div class="my-4 text-center">
-                            <div class="evidence-frame p-3 bg-black border border-primary rounded shadow">
-                                <img src="imagens/PLANTA BAIXA.jpg" alt="Planta Baixa Oficial"
-                                    class="img-fluid rounded">
-                                <div class="evidence-tag text-info">PLANTA BAIXA PERICIAL // MATRIZ ARQUITETÔNICA</div>
+                        <div class="my-3 text-center">
+                            <div class="evidence-frame p-2 p-sm-3 bg-black border border-primary rounded shadow">
+                                <img src="imagens/PLANTA BAIXA.jpg" alt="Planta Baixa Oficial" class="img-fluid rounded"
+                                    style="max-height: 480px;">
+                                <div class="evidence-tag text-info mt-2">PLANTA BAIXA PERICIAL // MATRIZ ARQUITETÔNICA
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Galeria dos 8 Ambientes -->
-                        <div class="row g-4 mt-2">
+                        <!-- Galeria dos Ambientes em Grid Responsivo -->
+                        <div class="row g-3 mt-1">
 
                             <!-- Recepção -->
-                            <div class="col-md-6 col-lg-4">
+                            <div class="col-12 col-sm-6 col-lg-4">
                                 <div class="evidence-frame p-2 bg-black border border-secondary rounded h-100">
                                     <img src="imagens/RECEPÇÃO E CONTROLE DE ACESSO.jpg" alt="Recepção"
                                         class="img-fluid rounded mb-2">
-                                    <span class="text-warning fw-bold d-block small font-monospace">A. RECEPÇÃO &
+                                    <span class="text-warning fw-bold d-block extra-small font-monospace">A. RECEPÇÃO &
                                         CONTROLE</span>
                                     <p class="text-muted extra-small mb-0">Portaria com biometria facial, tela de 85" e
                                         fechadura eletromagnética blindada.</p>
@@ -307,96 +349,96 @@
                             </div>
 
                             <!-- Sala de Reuniões -->
-                            <div class="col-md-6 col-lg-4">
+                            <div class="col-12 col-sm-6 col-lg-4">
                                 <div class="evidence-frame p-2 bg-black border border-secondary rounded h-100">
                                     <img src="imagens/SALA DE REUNIÕES.jpg" alt="Sala de Reuniões"
                                         class="img-fluid rounded mb-2">
-                                    <span class="text-warning fw-bold d-block small font-monospace">B. SALA DE
+                                    <span class="text-warning fw-bold d-block extra-small font-monospace">B. SALA DE
                                         REUNIÕES</span>
                                     <p class="text-muted extra-small mb-0">Mesa executiva para alinhamento de briefing,
-                                        revisão de contratos e aprovações com clientes.</p>
+                                        revisão de contratos e aprovações.</p>
                                 </div>
                             </div>
 
                             <!-- Corredor Principal -->
-                            <div class="col-md-6 col-lg-4">
+                            <div class="col-12 col-sm-6 col-lg-4">
                                 <div class="evidence-frame p-2 bg-black border border-secondary rounded h-100">
                                     <img src="imagens/CORREDOR PRINCIPAL DA VÉRTICE.jpg" alt="Corredor Principal"
                                         class="img-fluid rounded mb-2">
-                                    <span class="text-warning fw-bold d-block small font-monospace">C. CORREDOR DE
+                                    <span class="text-warning fw-bold d-block extra-small font-monospace">C. CORREDOR DE
                                         CIRCULAÇÃO</span>
-                                    <p class="text-muted extra-small mb-0">Eixo central de ligação entre os núcleos com
-                                        monitoramento ininterrupto de CFTV.</p>
+                                    <p class="text-muted extra-small mb-0">Eixo central de ligação com monitoramento
+                                        ininterrupto de CFTV.</p>
                                 </div>
                             </div>
 
                             <!-- Produção 3D -->
-                            <div class="col-md-6 col-lg-4">
+                            <div class="col-12 col-sm-6 col-lg-4">
                                 <div class="evidence-frame p-2 bg-black border border-secondary rounded h-100">
                                     <img src="imagens/PRODUÇÃO 3D.jpg" alt="Produção 3D" class="img-fluid rounded mb-2">
-                                    <span class="text-warning fw-bold d-block small font-monospace">D. ILHA 3D &
+                                    <span class="text-warning fw-bold d-block extra-small font-monospace">D. ILHA 3D &
                                         ANIMAÇÃO</span>
                                     <p class="text-muted extra-small mb-0">12 estações de alto rendimento, mesas Cintiq
-                                        e bancadas de Daniel Azevedo e Rafael Torres.</p>
+                                        e bancadas de Daniel e Rafael.</p>
                                 </div>
                             </div>
 
                             <!-- Composição e Pós -->
-                            <div class="col-md-6 col-lg-4">
+                            <div class="col-12 col-sm-6 col-lg-4">
                                 <div class="evidence-frame p-2 bg-black border border-secondary rounded h-100">
                                     <img src="imagens/COMPOSIÇÃO E PÓS.jpg" alt="Composição e Pós"
                                         class="img-fluid rounded mb-2">
-                                    <span class="text-warning fw-bold d-block small font-monospace">E. SUÍTE DE VFX
-                                        (BEATRIZ)</span>
+                                    <span class="text-warning fw-bold d-block extra-small font-monospace">E. SUÍTE DE
+                                        VFX (BEATRIZ)</span>
                                     <p class="text-muted extra-small mb-0">Iluminação neutra dimerizável (5000K, IRC >
-                                        98), paredes N5 e aceleração pesada de GPU.</p>
+                                        98), paredes N5 e aceleração GPU.</p>
                                 </div>
                             </div>
 
                             <!-- Ilha de Edição -->
-                            <div class="col-md-6 col-lg-4">
+                            <div class="col-12 col-sm-6 col-lg-4">
                                 <div class="evidence-frame p-2 bg-black border border-secondary rounded h-100">
                                     <img src="imagens/ILHA DE EDIÇÃO.jpg" alt="Ilha de Edição"
                                         class="img-fluid rounded mb-2">
-                                    <span class="text-warning fw-bold d-block small font-monospace">F. MASTERING
+                                    <span class="text-warning fw-bold d-block extra-small font-monospace">F. MASTERING
                                         (HENRIQUE)</span>
                                     <p class="text-muted extra-small mb-0">Isolamento acústico com painéis ranhurados,
-                                        monitores de áudio balanceados e DaVinci Resolve.</p>
+                                        monitores balanceados e DaVinci.</p>
                                 </div>
                             </div>
 
                             <!-- Datacenter -->
-                            <div class="col-md-6 col-lg-4">
+                            <div class="col-12 col-sm-6 col-lg-4">
                                 <div class="evidence-frame p-2 bg-black border border-secondary rounded h-100">
                                     <img src="imagens/DATACENTER.jpg" alt="Datacenter" class="img-fluid rounded mb-2">
-                                    <span class="text-warning fw-bold d-block small font-monospace">G. DATACENTER (GUGA
-                                        LIMA)</span>
+                                    <span class="text-warning fw-bold d-block extra-small font-monospace">G. DATACENTER
+                                        (GUGA LIMA)</span>
                                     <p class="text-muted extra-small mb-0">Racks de 42Us, Render Farm, Storage NAS em
-                                        RAID 60, fitas LTO e refrigeração a 18°C.</p>
+                                        RAID 60, fitas LTO e clima a 18°C.</p>
                                 </div>
                             </div>
 
                             <!-- Arquivo Físico -->
-                            <div class="col-md-6 col-lg-4">
+                            <div class="col-12 col-sm-6 col-lg-4">
                                 <div class="evidence-frame p-2 bg-black border border-secondary rounded h-100">
                                     <img src="imagens/ARQUIVO FÍSICO.jpg" alt="Arquivo Físico"
                                         class="img-fluid rounded mb-2">
-                                    <span class="text-warning fw-bold d-block small font-monospace">H. ARQUIVO
+                                    <span class="text-warning fw-bold d-block extra-small font-monospace">H. ARQUIVO
                                         CONFIDENCIAL</span>
-                                    <p class="text-muted extra-small mb-0">Armários ignífugos de Clara Mendes contendo
-                                        relatórios, contratos e discos rígidos lacrados.</p>
+                                    <p class="text-muted extra-small mb-0">Armários ignífugos de Clara Mendes com
+                                        contratos originais e HDs lacrados.</p>
                                 </div>
                             </div>
 
                             <!-- Copa -->
-                            <div class="col-md-6 col-lg-4">
+                            <div class="col-12 col-sm-6 col-lg-4">
                                 <div class="evidence-frame p-2 bg-black border border-secondary rounded h-100">
                                     <img src="imagens/COPA DA VÉRTICE.jpg" alt="Copa da Vértice"
                                         class="img-fluid rounded mb-2">
-                                    <span class="text-warning fw-bold d-block small font-monospace">I. A COPA (ZONA
-                                        CEGA)</span>
-                                    <p class="text-muted extra-small mb-0">Único espaço sem câmeras de segurança. Local
-                                        crítico de conversas informais e vazamentos.</p>
+                                    <span class="text-warning fw-bold d-block extra-small font-monospace">I. A COPA
+                                        (ZONA CEGA)</span>
+                                    <p class="text-muted extra-small mb-0">Único espaço sem câmeras. Local crítico de
+                                        conversas informais e vazamentos.</p>
                                 </div>
                             </div>
 
@@ -406,29 +448,30 @@
             </article>
 
             <!-- 7. CENÁRIO DE INVESTIGAÇÃO FORENSE -->
-            <article class="timeline-item mb-5">
+            <article class="timeline-item mb-4 mb-md-5">
                 <div class="card bg-panel border-warning shadow-lg">
-                    <div class="card-header bg-dark d-flex justify-content-between align-items-center">
-                        <span class="badge bg-warning text-dark fw-bold font-monospace">CRUZAMENTO DE DADOS</span>
-                        <span class="font-monospace small text-light">METODOLOGIA PERICIAL</span>
+                    <div
+                        class="card-header bg-dark d-flex justify-content-between align-items-center flex-wrap gap-2 py-2 py-md-3">
+                        <span class="badge bg-warning text-dark fw-bold font-monospace extra-small">CRUZAMENTO DE
+                            DADOS</span>
+                        <span class="font-monospace extra-small text-light">METODOLOGIA PERICIAL</span>
                     </div>
-                    <div class="card-body p-4">
-                        <div class="row g-4 align-items-center">
+                    <div class="card-body p-3 p-md-4">
+                        <div class="row g-3 g-md-4 align-items-center">
                             <div class="col-lg-7">
-                                <h3 class="h4 text-warning fw-bold">7. O Espaço Físico como Cenário Forense</h3>
-                                <p class="text-light-sub mt-3">
+                                <h3 class="h5 h4-md text-warning fw-bold">7. O Espaço Físico como Cenário Forense</h3>
+                                <p class="text-light-sub mt-2 small">
                                     Nenhuma ação digital ocorre na Vértice sem deixar rastro físico, e nenhuma
                                     movimentação no escritório ocorre sem reflexo no servidor. O trabalho do
                                     investigador fundamenta-se na <strong>Matriz Forense Integrada</strong>:
                                 </p>
                                 <div class="table-responsive my-3">
-                                    <!-- Sem a classe text-dark para não gerar letra preta -->
                                     <table
-                                        class="table table-dark table-bordered table-sm font-monospace extra-small mb-0">
+                                        class="table table-dark table-bordered table-sm font-monospace extra-small mb-0 align-middle">
                                         <thead>
                                             <tr class="table-secondary">
-                                                <th>AÇÃO FÍSICA NO ESTÚDIO</th>
-                                                <th>RASTRO DIGITAL CORRESPONDENTE</th>
+                                                <th style="min-width: 170px;">AÇÃO FÍSICA NO ESTÚDIO</th>
+                                                <th style="min-width: 200px;">RASTRO DIGITAL CORRESPONDENTE</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -471,8 +514,8 @@
         </div>
 
         <!-- Botão Final de Ação -->
-        <div class="text-center my-5">
-            <a href="index.html" class="btn btn-primary btn-lg px-5 py-3 font-monospace shadow">
+        <div class="text-center my-4 my-md-5">
+            <a href="index.html" class="btn btn-primary btn-lg w-100 w-sm-auto px-sm-5 py-3 font-monospace shadow">
                 🕵️ ACESSAR TERMINAL & INICIAR INVESTIGAÇÃO ➔
             </a>
         </div>
@@ -480,9 +523,12 @@
     </main>
 
     <!-- Rodapé -->
-    <footer class="text-center py-4 border-top border-secondary text-muted font-monospace small">
+    <footer class="text-center py-4 border-top border-secondary text-muted font-monospace small px-3">
         Vértice Produções Digitais Ltda. • Dossiê Confidencial de Engenharia & Pipeline
     </footer>
+
+    <!-- Bootstrap 5 JS Bundle (Essencial para o Menu Mobile no Celular) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

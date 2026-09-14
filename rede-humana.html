@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Rede Humana & Organogramas — Vértice Produções Digitais</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,45 +16,68 @@
 
 <body>
 
-    <!-- Header Fixo Unificado -->
-    <header class="navbar navbar-dark bg-dark border-bottom border-secondary px-4 py-3 sticky-top">
-        <div class="d-flex align-items-center flex-wrap gap-3">
-            <span class="badge bg-danger text-light px-3 py-2 fw-bold font-monospace">DOCUMENTO MESTRE // FASE-06</span>
-            <div>
-                <h1 class="h5 m-0 text-light fw-bold">Vértice Produções Digitais Ltda.</h1>
-                <small class="text-muted font-monospace">ARQUITETURA VISUAL DO GRAFO VIVO & ÁRVORE DE COMANDO</small>
+    <!-- Header Fixo Unificado com Navbar Toggler para Mobile -->
+    <header
+        class="navbar navbar-expand-xl navbar-dark bg-dark border-bottom border-secondary sticky-top px-3 py-2 py-md-3">
+        <div class="container-fluid px-0">
+
+            <!-- Identificação / Logo -->
+            <div class="d-flex align-items-center gap-2 me-auto">
+                <span class="badge bg-danger text-light px-2 py-1 fw-bold font-monospace extra-small">#FASE-06</span>
+                <div>
+                    <h1 class="h6 m-0 text-light fw-bold text-nowrap mobile-brand-title">Rede Humana</h1>
+                    <small class="text-muted font-monospace d-none d-sm-block extra-small">GRAFO VIVO & ÁRVORE DE
+                        COMANDO</small>
+                </div>
             </div>
+
+            <!-- Botão Hamburguer para Celulares e Tablets -->
+            <button class="navbar-toggler border-secondary p-2 ms-2" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navMenuRede" aria-controls="navMenuRede" aria-expanded="false"
+                aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links de Navegação Unificados (7 Módulos) -->
+            <div class="collapse navbar-collapse mt-3 mt-xl-0" id="navMenuRede">
+                <nav
+                    class="d-flex flex-column flex-xl-row align-items-stretch align-items-xl-center gap-2 ms-xl-auto font-monospace small">
+                    <a href="index.html" class="btn btn-outline-info btn-sm text-start text-xl-center">
+                        📟 Terminal do Jogo
+                    </a>
+                    <a href="historia.html" class="btn btn-outline-warning btn-sm text-start text-xl-center">
+                        📜 História & Espaço
+                    </a>
+                    <a href="setores.html" class="btn btn-outline-light btn-sm text-start text-xl-center">
+                        ⚙️ Setores & Pipeline
+                    </a>
+                    <a href="equipe.html" class="btn btn-outline-info btn-sm text-start text-xl-center">
+                        👥 Equipe (24)
+                    </a>
+                    <a href="rede-humana.html"
+                        class="btn btn-danger btn-sm text-start text-xl-center text-light fw-bold">
+                        🕸️ Rede Humana
+                    </a>
+                    <a href="protocolo.html" class="btn btn-outline-success btn-sm text-start text-xl-center">
+                        🛡️ Protocolo Vértice
+                    </a>
+                </nav>
+            </div>
+
         </div>
-        <!-- Menu de Navegação Global -->
-        <nav class="d-flex align-items-center flex-wrap gap-2 mt-2 mt-md-0">
-            <a href="index.html" class="btn btn-outline-info btn-sm font-monospace">
-                📟 Terminal do Jogo
-            </a>
-            <a href="historia.html" class="btn btn-outline-warning btn-sm font-monospace">
-                📜 História & Espaço
-            </a>
-            <a href="setores.html" class="btn btn-outline-light btn-sm font-monospace">
-                ⚙️ Setores & Pipeline
-            </a>
-            <a href="equipe.html" class="btn btn-outline-info btn-sm font-monospace">
-                👥 Equipe (24)
-            </a>
-            <a href="rede-humana.html" class="btn btn-danger btn-sm font-monospace text-light fw-bold">
-                🕸️ Rede Humana & Organogramas
-            </a>
-        </nav>
     </header>
 
-    <main class="container my-5">
+    <main class="container my-3 my-md-5 px-3 px-sm-4">
 
         <!-- Banner de Abertura -->
-        <section class="card bg-panel border-secondary shadow-lg mb-5 p-4 p-md-5">
-            <div class="row align-items-center g-4">
+        <section class="card bg-panel border-secondary shadow-lg mb-4 mb-md-5 p-3 p-sm-4 p-md-5">
+            <div class="row align-items-center g-3 g-md-4">
                 <div class="col-lg-8">
-                    <span class="badge bg-danger text-uppercase px-3 py-2 mb-3 fw-bold font-monospace">Dossiê Exaustivo
-                        de Relações</span>
-                    <h2 class="display-6 fw-bold text-light">A Dupla Estrutura: O Organograma vs. O Grafo Vivo</h2>
-                    <p class="text-light-sub lead fs-6 mt-3">
+                    <span
+                        class="badge bg-danger text-uppercase px-2 py-1 mb-2 mb-md-3 fw-bold font-monospace extra-small">Dossiê
+                        Exaustivo de Relações</span>
+                    <h2 class="h3 h2-md fw-bold text-light">A Dupla Estrutura: O Organograma vs. O Grafo Vivo</h2>
+                    <p class="text-light-sub lead fs-6 mt-2 mt-md-3 mb-0">
                         A Vértice possui duas arquiteturas sobrepostas: o <strong>Organograma Formal</strong> (a
                         hierarquia desenhada por Clara Mendes no papel) e o <strong>Grafo Vivo</strong> (uma teia
                         orgânica forjada ao longo de 15 anos entre os galpões de Contagem, o Edifício Guimarães, os
@@ -73,17 +96,17 @@
         </section>
 
         <!-- 1. TABELA COMPARATIVA -->
-        <section class="card bg-panel border-secondary shadow mb-5">
-            <div class="card-header bg-dark py-3">
-                <h3 class="h5 text-warning fw-bold m-0 font-monospace">⚖️ 1. O CONFLITO DAS DUAS ESTRUTURAS</h3>
+        <section class="card bg-panel border-secondary shadow mb-4 mb-md-5">
+            <div class="card-header bg-dark py-3 px-3 px-md-4">
+                <h3 class="h6 h5-md text-warning fw-bold m-0 font-monospace">⚖️ 1. O CONFLITO DAS DUAS ESTRUTURAS</h3>
             </div>
             <div class="card-body p-0">
                 <div class="table-responsive">
-                    <table class="table table-dark table-striped table-bordered m-0 font-monospace small">
+                    <table class="table table-dark table-striped table-bordered m-0 font-monospace small align-middle">
                         <thead>
                             <tr class="table-secondary">
-                                <th style="width: 50%;">ORGANOGRAMA FORMAL (Maneira Teórica)</th>
-                                <th style="width: 50%;">GRAFO VIVO INFORMAL (Maneira Prática)</th>
+                                <th style="min-width: 250px;">ORGANOGRAMA FORMAL (Maneira Teórica)</th>
+                                <th style="min-width: 250px;">GRAFO VIVO INFORMAL (Maneira Prática)</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -114,313 +137,325 @@
         </section>
 
         <!-- 2. ORGANOGRAMA HIERÁRQUICO COM CONECTORES GRÁFICOS REAIS -->
-        <section class="card bg-panel border-secondary shadow mb-5 p-4">
-            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+        <section class="card bg-panel border-secondary shadow mb-4 mb-md-5 p-3 p-sm-4">
+            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
                 <div>
-                    <span class="badge bg-primary font-monospace mb-1">CIRCUIT-TREE ARCHITECTURE</span>
-                    <h3 class="h4 text-light fw-bold m-0 font-monospace">🏢 2. ORGANOGRAMA HIERÁRQUICO COMPLETO (24
-                        INTEGRANTES)</h3>
+                    <span class="badge bg-primary font-monospace mb-1 extra-small">CIRCUIT-TREE ARCHITECTURE</span>
+                    <h3 class="h5 h4-md text-light fw-bold m-0 font-monospace">🏢 2. ORGANOGRAMA HIERÁRQUICO COMPLETO
+                        (24 INTEGRANTES)</h3>
                 </div>
-                <small class="text-muted font-monospace">FLUXO DE AUTORIDADE E COMANDO FORMAL</small>
+                <small class="text-info font-monospace extra-small">↔ Role horizontalmente para navegar no mapa
+                    completo</small>
             </div>
 
-            <!-- CONTAINER GRÁFICO DA ÁRVORE -->
+            <!-- CONTAINER GRÁFICO DA ÁRVORE (Com scroll tátil protegido) -->
             <div class="org-circuit-container">
+                <div class="org-circuit-inner">
 
-                <!-- NÍVEL 1: DIREÇÃO EXECUTIVA -->
-                <div class="text-center">
-                    <div class="tree-node-hub">
-                        <span class="badge bg-primary font-monospace extra-small px-3 py-1 mb-2 d-inline-block">NÍVEL 01
-                            // DIREÇÃO EXECUTIVA</span>
-                        <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <!-- NÍVEL 1: DIREÇÃO EXECUTIVA -->
+                    <div class="text-center">
+                        <div class="tree-node-hub">
+                            <span
+                                class="badge bg-primary font-monospace extra-small px-3 py-1 mb-2 d-inline-block">NÍVEL
+                                01 // DIREÇÃO EXECUTIVA</span>
+                            <div class="d-flex gap-3 justify-content-center flex-wrap">
 
-                            <div class="tree-person-card lead-card" style="border-left: 4px solid #2B2B2B !important;">
-                                <span class="color-swatch-sm" style="background-color: #2B2B2B;"></span>
-                                <div>
-                                    <strong class="d-block text-light small">Daniel Azevedo</strong>
-                                    <span class="extra-small text-info">Diretor Técnico / Sócio</span>
+                                <div class="tree-person-card lead-card"
+                                    style="border-left: 4px solid #2B2B2B !important;">
+                                    <span class="color-swatch-sm" style="background-color: #2B2B2B;"></span>
+                                    <div>
+                                        <strong class="d-block text-light small">Daniel Azevedo</strong>
+                                        <span class="extra-small text-info">Diretor Técnico / Sócio</span>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="tree-person-card lead-card" style="border-left: 4px solid #CC8800 !important;">
-                                <span class="color-swatch-sm" style="background-color: #CC8800;"></span>
-                                <div>
-                                    <strong class="d-block text-light small">Marina Valente</strong>
-                                    <span class="extra-small text-warning">Diretora de Arte / Sócia</span>
+                                <div class="tree-person-card lead-card"
+                                    style="border-left: 4px solid #CC8800 !important;">
+                                    <span class="color-swatch-sm" style="background-color: #CC8800;"></span>
+                                    <div>
+                                        <strong class="d-block text-light small">Marina Valente</strong>
+                                        <span class="extra-small text-warning">Diretora de Arte / Sócia</span>
+                                    </div>
                                 </div>
-                            </div>
 
+                            </div>
                         </div>
                     </div>
+
+                    <!-- HASTE VERTICAL NEON -->
+                    <div class="tree-stem-down"></div>
+
+                    <!-- NÍVEL 2: PRODUÇÃO EXECUTIVA -->
+                    <div class="text-center">
+                        <div class="tree-node-hub">
+                            <span
+                                class="badge bg-info text-dark font-monospace extra-small px-3 py-1 mb-2 d-inline-block">NÍVEL
+                                02 // COORDENAÇÃO GERAL & OPERAÇÕES</span>
+                            <div>
+                                <div class="tree-person-card lead-card mx-auto"
+                                    style="max-width: 280px; border-left: 4px solid #002244 !important;">
+                                    <span class="color-swatch-sm"
+                                        style="background-color: #002244; border:1px solid #0055aa;"></span>
+                                    <div>
+                                        <strong class="d-block text-light small">Clara Mendes</strong>
+                                        <span class="extra-small text-info">Produtora Executiva</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HASTE VERTICAL NEON -->
+                    <div class="tree-stem-down"></div>
+
+                    <!-- BARRAMENTO HORIZONTAL E RAMIFICAÇÃO DOS 6 DEPARTAMENTOS -->
+                    <div class="tree-distribution-row">
+
+                        <!-- RAMIFICAÇÃO 1: ATENDIMENTO -->
+                        <div class="tree-dept-col">
+                            <div class="tree-dept-box">
+                                <div class="dept-lead-header">
+                                    <span class="badge bg-secondary font-monospace extra-small d-block mb-1">PRODUÇÃO /
+                                        VENDAS</span>
+                                    <small class="text-muted extra-small">2 Integrantes</small>
+                                </div>
+                                <div class="tree-person-card" style="border-left: 3px solid #FF007F !important;">
+                                    <span class="color-swatch-sm" style="background-color: #FF007F;"></span>
+                                    <div>
+                                        <strong class="d-block text-light extra-small">Camila Rocha</strong>
+                                        <span class="extra-small text-muted">Assist. Produção</span>
+                                    </div>
+                                </div>
+                                <div class="tree-person-card" style="border-left: 3px solid #008055 !important;">
+                                    <span class="color-swatch-sm" style="background-color: #008055;"></span>
+                                    <div>
+                                        <strong class="d-block text-light extra-small">Tchelo Ribeiro</strong>
+                                        <span class="extra-small text-muted">Atendimento</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RAMIFICAÇÃO 2: MODELAGEM -->
+                        <div class="tree-dept-col">
+                            <div class="tree-dept-box">
+                                <div class="dept-lead-header">
+                                    <span class="badge bg-secondary font-monospace extra-small d-block mb-1">MODELAGEM &
+                                        ASSETS</span>
+                                    <small class="text-warning extra-small">Lead: Bruno Prado</small>
+                                </div>
+                                <div class="tree-person-card lead-card"
+                                    style="border-left: 3px solid #7F7F7F !important;">
+                                    <span class="color-swatch-sm" style="background-color: #7F7F7F;"></span>
+                                    <div>
+                                        <strong class="d-block text-light extra-small">Bruno Prado</strong>
+                                        <span class="extra-small text-warning">Lead Modelador</span>
+                                    </div>
+                                </div>
+                                <div class="tree-person-card" style="border-left: 3px solid #FFBF00 !important;">
+                                    <span class="color-swatch-sm" style="background-color: #FFBF00;"></span>
+                                    <div>
+                                        <strong class="d-block text-light extra-small">Thiago Neves</strong>
+                                        <span class="extra-small text-muted">Shading & Texturas</span>
+                                    </div>
+                                </div>
+                                <div class="tree-person-card" style="border-left: 3px solid #00FFFF !important;">
+                                    <span class="color-swatch-sm" style="background-color: #00FFFF;"></span>
+                                    <div>
+                                        <strong class="d-block text-light extra-small">Gabriel Lima</strong>
+                                        <span class="extra-small text-muted">Junior 3D</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RAMIFICAÇÃO 3: RIGGING & ANIMAÇÃO -->
+                        <div class="tree-dept-col">
+                            <div class="tree-dept-box">
+                                <div class="dept-lead-header">
+                                    <span class="badge bg-secondary font-monospace extra-small d-block mb-1">RIGGING &
+                                        ANIM</span>
+                                    <small class="text-warning extra-small">Lead: Rafael Torres</small>
+                                </div>
+                                <div class="tree-person-card lead-card"
+                                    style="border-left: 3px solid #0047AB !important;">
+                                    <span class="color-swatch-sm" style="background-color: #0047AB;"></span>
+                                    <div>
+                                        <strong class="d-block text-light extra-small">Rafael Torres</strong>
+                                        <span class="extra-small text-warning">Lead Rig / Anim</span>
+                                    </div>
+                                </div>
+                                <div class="tree-person-card" style="border-left: 3px solid #FF2400 !important;">
+                                    <span class="color-swatch-sm" style="background-color: #FF2400;"></span>
+                                    <div>
+                                        <strong class="d-block text-light extra-small">Lipe Santos</strong>
+                                        <span class="extra-small text-muted">Animador Senior</span>
+                                    </div>
+                                </div>
+                                <div class="tree-person-card" style="border-left: 3px solid #301934 !important;">
+                                    <span class="color-swatch-sm" style="background-color: #301934;"></span>
+                                    <div>
+                                        <strong class="d-block text-light extra-small">Juliana Costa</strong>
+                                        <span class="extra-small text-muted">TD Rig / Física</span>
+                                    </div>
+                                </div>
+                                <div class="tree-person-card" style="border-left: 3px solid #556B2F !important;">
+                                    <span class="color-swatch-sm" style="background-color: #556B2F;"></span>
+                                    <div>
+                                        <strong class="d-block text-light extra-small">Victor Hugo</strong>
+                                        <span class="extra-small text-muted">Animador Junior</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RAMIFICAÇÃO 4: COMPOSIÇÃO & VFX -->
+                        <div class="tree-dept-col">
+                            <div class="tree-dept-box">
+                                <div class="dept-lead-header">
+                                    <span class="badge bg-secondary font-monospace extra-small d-block mb-1">COMPOSIÇÃO
+                                        & VFX</span>
+                                    <small class="text-warning extra-small">Lead: Beatriz Nogueira</small>
+                                </div>
+                                <div class="tree-person-card lead-card"
+                                    style="border-left: 3px solid #000000 !important;">
+                                    <span class="color-swatch-sm"
+                                        style="background-color: #000000; border: 1px solid #777;"></span>
+                                    <div>
+                                        <strong class="d-block text-light extra-small">Beatriz Nogueira</strong>
+                                        <span class="extra-small text-warning">Lead VFX / Comp</span>
+                                    </div>
+                                </div>
+                                <div class="tree-person-card" style="border-left: 3px solid #E3FF00 !important;">
+                                    <span class="color-swatch-sm" style="background-color: #E3FF00;"></span>
+                                    <div>
+                                        <strong class="d-block text-light extra-small">Lari Mendonça</strong>
+                                        <span class="extra-small text-muted">Compositora Senior</span>
+                                    </div>
+                                </div>
+                                <div class="tree-person-card" style="border-left: 3px solid #414A4C !important;">
+                                    <span class="color-swatch-sm" style="background-color: #414A4C;"></span>
+                                    <div>
+                                        <strong class="d-block text-light extra-small">Rodrigo Maia</strong>
+                                        <span class="extra-small text-muted">Rotoscopia & Clean</span>
+                                    </div>
+                                </div>
+                                <div class="tree-person-card" style="border-left: 3px solid #960018 !important;">
+                                    <span class="color-swatch-sm" style="background-color: #960018;"></span>
+                                    <div>
+                                        <strong class="d-block text-light extra-small">Sofia Chen</strong>
+                                        <span class="extra-small text-muted">Matte Painter</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RAMIFICAÇÃO 5: EDIÇÃO & COR -->
+                        <div class="tree-dept-col">
+                            <div class="tree-dept-box">
+                                <div class="dept-lead-header">
+                                    <span class="badge bg-secondary font-monospace extra-small d-block mb-1">EDIÇÃO &
+                                        COR</span>
+                                    <small class="text-warning extra-small">Lead: Henrique Moura</small>
+                                </div>
+                                <div class="tree-person-card lead-card"
+                                    style="border-left: 3px solid #800020 !important;">
+                                    <span class="color-swatch-sm" style="background-color: #800020;"></span>
+                                    <div>
+                                        <strong class="d-block text-light extra-small">Henrique Moura</strong>
+                                        <span class="extra-small text-warning">Editor-Chefe / Cor</span>
+                                    </div>
+                                </div>
+                                <div class="tree-person-card" style="border-left: 3px solid #C8A2C8 !important;">
+                                    <span class="color-swatch-sm" style="background-color: #C8A2C8;"></span>
+                                    <div>
+                                        <strong class="d-block text-light extra-small">Vanessa Freitas</strong>
+                                        <span class="extra-small text-muted">Assistente Ilha</span>
+                                    </div>
+                                </div>
+                                <div class="tree-person-card" style="border-left: 3px solid #40E0D0 !important;">
+                                    <span class="color-swatch-sm" style="background-color: #40E0D0;"></span>
+                                    <div>
+                                        <strong class="d-block text-light extra-small">Digão Martins</strong>
+                                        <span class="extra-small text-muted">Motion Designer</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RAMIFICAÇÃO 6: TI & DATACENTER -->
+                        <div class="tree-dept-col">
+                            <div class="tree-dept-box">
+                                <div class="dept-lead-header">
+                                    <span class="badge bg-secondary font-monospace extra-small d-block mb-1">TI &
+                                        DATACENTER</span>
+                                    <small class="text-warning extra-small">Lead: Guga Lima</small>
+                                </div>
+                                <div class="tree-person-card lead-card"
+                                    style="border-left: 3px solid #00FF00 !important;">
+                                    <span class="color-swatch-sm" style="background-color: #00FF00;"></span>
+                                    <div>
+                                        <strong class="d-block text-light extra-small">Guga Lima</strong>
+                                        <span class="extra-small text-warning">SysAdmin / TI</span>
+                                    </div>
+                                </div>
+                                <div class="tree-person-card" style="border-left: 3px solid #555555 !important;">
+                                    <span class="color-swatch-sm" style="background-color: #555555;"></span>
+                                    <div>
+                                        <strong class="d-block text-light extra-small">Sombra Silveira</strong>
+                                        <span class="extra-small text-muted">Suporte Redes</span>
+                                    </div>
+                                </div>
+                                <div class="tree-person-card" style="border-left: 3px solid #7DF9FF !important;">
+                                    <span class="color-swatch-sm" style="background-color: #7DF9FF;"></span>
+                                    <div>
+                                        <strong class="d-block text-light extra-small">Mateus Xavier</strong>
+                                        <span class="extra-small text-muted">Op. Render Farm</span>
+                                    </div>
+                                </div>
+                                <div class="tree-person-card" style="border-left: 3px solid #CC5500 !important;">
+                                    <span class="color-swatch-sm" style="background-color: #CC5500;"></span>
+                                    <div>
+                                        <strong class="d-block text-light extra-small">Kiko Siqueira</strong>
+                                        <span class="extra-small text-muted">Generalista / Apoio</span>
+                                    </div>
+                                </div>
+                                <div class="tree-person-card" style="border-left: 3px solid #000080 !important;">
+                                    <span class="color-swatch-sm" style="background-color: #000080;"></span>
+                                    <div>
+                                        <strong class="d-block text-light extra-small">Helena Castro</strong>
+                                        <span class="extra-small text-muted">Arquivo / LGPD</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
-
-                <!-- HASTE VERTICAL NEON -->
-                <div class="tree-stem-down"></div>
-
-                <!-- NÍVEL 2: PRODUÇÃO EXECUTIVA -->
-                <div class="text-center">
-                    <div class="tree-node-hub">
-                        <span
-                            class="badge bg-info text-dark font-monospace extra-small px-3 py-1 mb-2 d-inline-block">NÍVEL
-                            02 // COORDENAÇÃO GERAL & OPERAÇÕES</span>
-                        <div>
-                            <div class="tree-person-card lead-card mx-auto"
-                                style="max-width: 280px; border-left: 4px solid #002244 !important;">
-                                <span class="color-swatch-sm"
-                                    style="background-color: #002244; border:1px solid #0055aa;"></span>
-                                <div>
-                                    <strong class="d-block text-light small">Clara Mendes</strong>
-                                    <span class="extra-small text-info">Produtora Executiva</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- HASTE VERTICAL NEON -->
-                <div class="tree-stem-down"></div>
-
-                <!-- BARRAMENTO HORIZONTAL E RAMIFICAÇÃO DOS 6 DEPARTAMENTOS -->
-                <div class="tree-distribution-row">
-
-                    <!-- RAMIFICAÇÃO 1: ATENDIMENTO -->
-                    <div class="tree-dept-col">
-                        <div class="tree-dept-box">
-                            <div class="dept-lead-header">
-                                <span class="badge bg-secondary font-monospace extra-small d-block mb-1">PRODUÇÃO /
-                                    VENDAS</span>
-                                <small class="text-muted extra-small">2 Integrantes</small>
-                            </div>
-                            <div class="tree-person-card" style="border-left: 3px solid #FF007F !important;">
-                                <span class="color-swatch-sm" style="background-color: #FF007F;"></span>
-                                <div>
-                                    <strong class="d-block text-light extra-small">Camila Rocha</strong>
-                                    <span class="extra-small text-muted">Assist. Produção</span>
-                                </div>
-                            </div>
-                            <div class="tree-person-card" style="border-left: 3px solid #008055 !important;">
-                                <span class="color-swatch-sm" style="background-color: #008055;"></span>
-                                <div>
-                                    <strong class="d-block text-light extra-small">Tchelo Ribeiro</strong>
-                                    <span class="extra-small text-muted">Atendimento</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- RAMIFICAÇÃO 2: MODELAGEM -->
-                    <div class="tree-dept-col">
-                        <div class="tree-dept-box">
-                            <div class="dept-lead-header">
-                                <span class="badge bg-secondary font-monospace extra-small d-block mb-1">MODELAGEM &
-                                    ASSETS</span>
-                                <small class="text-warning extra-small">Lead: Bruno Prado</small>
-                            </div>
-                            <div class="tree-person-card lead-card" style="border-left: 3px solid #7F7F7F !important;">
-                                <span class="color-swatch-sm" style="background-color: #7F7F7F;"></span>
-                                <div>
-                                    <strong class="d-block text-light extra-small">Bruno Prado</strong>
-                                    <span class="extra-small text-warning">Lead Modelador</span>
-                                </div>
-                            </div>
-                            <div class="tree-person-card" style="border-left: 3px solid #FFBF00 !important;">
-                                <span class="color-swatch-sm" style="background-color: #FFBF00;"></span>
-                                <div>
-                                    <strong class="d-block text-light extra-small">Thiago Neves</strong>
-                                    <span class="extra-small text-muted">Shading & Texturas</span>
-                                </div>
-                            </div>
-                            <div class="tree-person-card" style="border-left: 3px solid #00FFFF !important;">
-                                <span class="color-swatch-sm" style="background-color: #00FFFF;"></span>
-                                <div>
-                                    <strong class="d-block text-light extra-small">Gabriel Lima</strong>
-                                    <span class="extra-small text-muted">Junior 3D</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- RAMIFICAÇÃO 3: RIGGING & ANIMAÇÃO -->
-                    <div class="tree-dept-col">
-                        <div class="tree-dept-box">
-                            <div class="dept-lead-header">
-                                <span class="badge bg-secondary font-monospace extra-small d-block mb-1">RIGGING &
-                                    ANIM</span>
-                                <small class="text-warning extra-small">Lead: Rafael Torres</small>
-                            </div>
-                            <div class="tree-person-card lead-card" style="border-left: 3px solid #0047AB !important;">
-                                <span class="color-swatch-sm" style="background-color: #0047AB;"></span>
-                                <div>
-                                    <strong class="d-block text-light extra-small">Rafael Torres</strong>
-                                    <span class="extra-small text-warning">Lead Rig / Anim</span>
-                                </div>
-                            </div>
-                            <div class="tree-person-card" style="border-left: 3px solid #FF2400 !important;">
-                                <span class="color-swatch-sm" style="background-color: #FF2400;"></span>
-                                <div>
-                                    <strong class="d-block text-light extra-small">Lipe Santos</strong>
-                                    <span class="extra-small text-muted">Animador Senior</span>
-                                </div>
-                            </div>
-                            <div class="tree-person-card" style="border-left: 3px solid #301934 !important;">
-                                <span class="color-swatch-sm" style="background-color: #301934;"></span>
-                                <div>
-                                    <strong class="d-block text-light extra-small">Juliana Costa</strong>
-                                    <span class="extra-small text-muted">TD Rig / Física</span>
-                                </div>
-                            </div>
-                            <div class="tree-person-card" style="border-left: 3px solid #556B2F !important;">
-                                <span class="color-swatch-sm" style="background-color: #556B2F;"></span>
-                                <div>
-                                    <strong class="d-block text-light extra-small">Victor Hugo</strong>
-                                    <span class="extra-small text-muted">Animador Junior</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- RAMIFICAÇÃO 4: COMPOSIÇÃO & VFX -->
-                    <div class="tree-dept-col">
-                        <div class="tree-dept-box">
-                            <div class="dept-lead-header">
-                                <span class="badge bg-secondary font-monospace extra-small d-block mb-1">COMPOSIÇÃO &
-                                    VFX</span>
-                                <small class="text-warning extra-small">Lead: Beatriz Nogueira</small>
-                            </div>
-                            <div class="tree-person-card lead-card" style="border-left: 3px solid #000000 !important;">
-                                <span class="color-swatch-sm"
-                                    style="background-color: #000000; border: 1px solid #777;"></span>
-                                <div>
-                                    <strong class="d-block text-light extra-small">Beatriz Nogueira</strong>
-                                    <span class="extra-small text-warning">Lead VFX / Comp</span>
-                                </div>
-                            </div>
-                            <div class="tree-person-card" style="border-left: 3px solid #E3FF00 !important;">
-                                <span class="color-swatch-sm" style="background-color: #E3FF00;"></span>
-                                <div>
-                                    <strong class="d-block text-light extra-small">Lari Mendonça</strong>
-                                    <span class="extra-small text-muted">Compositora Senior</span>
-                                </div>
-                            </div>
-                            <div class="tree-person-card" style="border-left: 3px solid #414A4C !important;">
-                                <span class="color-swatch-sm" style="background-color: #414A4C;"></span>
-                                <div>
-                                    <strong class="d-block text-light extra-small">Rodrigo Maia</strong>
-                                    <span class="extra-small text-muted">Rotoscopia & Clean</span>
-                                </div>
-                            </div>
-                            <div class="tree-person-card" style="border-left: 3px solid #960018 !important;">
-                                <span class="color-swatch-sm" style="background-color: #960018;"></span>
-                                <div>
-                                    <strong class="d-block text-light extra-small">Sofia Chen</strong>
-                                    <span class="extra-small text-muted">Matte Painter</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- RAMIFICAÇÃO 5: EDIÇÃO & COR -->
-                    <div class="tree-dept-col">
-                        <div class="tree-dept-box">
-                            <div class="dept-lead-header">
-                                <span class="badge bg-secondary font-monospace extra-small d-block mb-1">EDIÇÃO &
-                                    COR</span>
-                                <small class="text-warning extra-small">Lead: Henrique Moura</small>
-                            </div>
-                            <div class="tree-person-card lead-card" style="border-left: 3px solid #800020 !important;">
-                                <span class="color-swatch-sm" style="background-color: #800020;"></span>
-                                <div>
-                                    <strong class="d-block text-light extra-small">Henrique Moura</strong>
-                                    <span class="extra-small text-warning">Editor-Chefe / Cor</span>
-                                </div>
-                            </div>
-                            <div class="tree-person-card" style="border-left: 3px solid #C8A2C8 !important;">
-                                <span class="color-swatch-sm" style="background-color: #C8A2C8;"></span>
-                                <div>
-                                    <strong class="d-block text-light extra-small">Vanessa Freitas</strong>
-                                    <span class="extra-small text-muted">Assistente Ilha</span>
-                                </div>
-                            </div>
-                            <div class="tree-person-card" style="border-left: 3px solid #40E0D0 !important;">
-                                <span class="color-swatch-sm" style="background-color: #40E0D0;"></span>
-                                <div>
-                                    <strong class="d-block text-light extra-small">Digão Martins</strong>
-                                    <span class="extra-small text-muted">Motion Designer</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- RAMIFICAÇÃO 6: TI & DATACENTER -->
-                    <div class="tree-dept-col">
-                        <div class="tree-dept-box">
-                            <div class="dept-lead-header">
-                                <span class="badge bg-secondary font-monospace extra-small d-block mb-1">TI &
-                                    DATACENTER</span>
-                                <small class="text-warning extra-small">Lead: Guga Lima</small>
-                            </div>
-                            <div class="tree-person-card lead-card" style="border-left: 3px solid #00FF00 !important;">
-                                <span class="color-swatch-sm" style="background-color: #00FF00;"></span>
-                                <div>
-                                    <strong class="d-block text-light extra-small">Guga Lima</strong>
-                                    <span class="extra-small text-warning">SysAdmin / TI</span>
-                                </div>
-                            </div>
-                            <div class="tree-person-card" style="border-left: 3px solid #555555 !important;">
-                                <span class="color-swatch-sm" style="background-color: #555555;"></span>
-                                <div>
-                                    <strong class="d-block text-light extra-small">Sombra Silveira</strong>
-                                    <span class="extra-small text-muted">Suporte Redes</span>
-                                </div>
-                            </div>
-                            <div class="tree-person-card" style="border-left: 3px solid #7DF9FF !important;">
-                                <span class="color-swatch-sm" style="background-color: #7DF9FF;"></span>
-                                <div>
-                                    <strong class="d-block text-light extra-small">Mateus Xavier</strong>
-                                    <span class="extra-small text-muted">Op. Render Farm</span>
-                                </div>
-                            </div>
-                            <div class="tree-person-card" style="border-left: 3px solid #CC5500 !important;">
-                                <span class="color-swatch-sm" style="background-color: #CC5500;"></span>
-                                <div>
-                                    <strong class="d-block text-light extra-small">Kiko Siqueira</strong>
-                                    <span class="extra-small text-muted">Generalista / Apoio</span>
-                                </div>
-                            </div>
-                            <div class="tree-person-card" style="border-left: 3px solid #000080 !important;">
-                                <span class="color-swatch-sm" style="background-color: #000080;"></span>
-                                <div>
-                                    <strong class="d-block text-light extra-small">Helena Castro</strong>
-                                    <span class="extra-small text-muted">Arquivo / LGPD</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
             </div>
         </section>
 
         <!-- 3. MATRIZ INTEGRAL DOS 24 PERSONAGENS -->
-        <section class="card bg-panel border-secondary shadow mb-5">
-            <div class="card-header bg-dark d-flex justify-content-between align-items-center py-3">
-                <h3 class="h5 text-warning fw-bold m-0 font-monospace">📑 3. MATRIZ INTEGRAL DOS 24 PERSONAGENS DA
+        <section class="card bg-panel border-secondary shadow mb-4 mb-md-5">
+            <div
+                class="card-header bg-dark d-flex justify-content-between align-items-center flex-wrap gap-2 py-3 px-3 px-md-4">
+                <h3 class="h6 h5-md text-warning fw-bold m-0 font-monospace">📑 3. MATRIZ INTEGRAL DOS 24 PERSONAGENS DA
                     VÉRTICE</h3>
-                <span class="badge bg-danger font-monospace">EVIDÊNCIA FORENSE</span>
+                <span class="badge bg-danger font-monospace extra-small">EVIDÊNCIA FORENSE</span>
             </div>
             <div class="card-body p-0">
                 <div class="table-responsive">
                     <table class="table table-dark table-striped table-hover m-0 font-monospace small align-middle">
                         <thead>
                             <tr class="table-secondary">
-                                <th>NOME E CARGO</th>
-                                <th>NASC. / SIGNO</th>
-                                <th>COR / MÚSICA</th>
-                                <th>CRIATIVIDADE</th>
-                                <th>ALIADOS INFORMAIS</th>
-                                <th>PONTOS DE ATRITO</th>
-                                <th>VULNERABILIDADE FORENSE / HOOK</th>
+                                <th style="min-width: 170px;">NOME E CARGO</th>
+                                <th style="min-width: 130px;">NASC. / SIGNO</th>
+                                <th style="min-width: 150px;">COR / MÚSICA</th>
+                                <th style="min-width: 170px;">CRIATIVIDADE</th>
+                                <th style="min-width: 160px;">ALIADOS INFORMAIS</th>
+                                <th style="min-width: 150px;">PONTOS DE ATRITO</th>
+                                <th style="min-width: 280px;">VULNERABILIDADE FORENSE / HOOK</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -720,21 +755,21 @@
         </section>
 
         <!-- 4. AS 4 MICROTRIADAS DE PODER (DESIGN VETORIAL RELACIONAL) -->
-        <section class="card bg-panel border-secondary shadow mb-5 p-4">
-            <h3 class="h4 text-warning fw-bold mb-3 font-monospace">⚡ 4. AS 4 MICROTRIADAS DE PODER E TENSÃO</h3>
+        <section class="card bg-panel border-secondary shadow mb-4 mb-md-5 p-3 p-sm-4">
+            <h3 class="h5 text-warning fw-bold mb-3 font-monospace">⚡ 4. AS 4 MICROTRIADAS DE PODER E TENSÃO</h3>
             <p class="text-light-sub small mb-4">
                 A dinâmica social da empresa é polarizada por blocos de tomada de decisão informais que frequentemente
                 contornam o ERP:
             </p>
 
-            <div class="row g-4 font-monospace">
+            <div class="row g-3 g-md-4 font-monospace">
 
                 <!-- Triada 1 -->
-                <div class="col-lg-6">
+                <div class="col-12 col-lg-6">
                     <div class="triad-box-modern triad-primary shadow">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h5 class="text-primary fw-bold m-0">A TRÍADA FUNDACIONAL (2011)</h5>
-                            <span class="badge bg-primary text-light">DNA DO ESTÚDIO</span>
+                        <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                            <h5 class="text-primary fw-bold m-0 small">A TRÍADA FUNDACIONAL (2011)</h5>
+                            <span class="badge bg-primary text-light extra-small">DNA DO ESTÚDIO</span>
                         </div>
                         <div class="triad-link-vector">
                             <div class="text-center">
@@ -766,11 +801,11 @@
                 </div>
 
                 <!-- Triada 2 -->
-                <div class="col-lg-6">
+                <div class="col-12 col-lg-6">
                     <div class="triad-box-modern triad-danger shadow">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h5 class="text-danger fw-bold m-0">O BLOQUEIO MASTER</h5>
-                            <span class="badge bg-danger text-light">GUARDIÕES DA SAÍDA</span>
+                        <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                            <h5 class="text-danger fw-bold m-0 small">O BLOQUEIO MASTER</h5>
+                            <span class="badge bg-danger text-light extra-small">GUARDIÕES DA SAÍDA</span>
                         </div>
                         <div class="triad-link-vector">
                             <div class="text-center">
@@ -801,11 +836,11 @@
                 </div>
 
                 <!-- Triada 3 -->
-                <div class="col-lg-6">
+                <div class="col-12 col-lg-6">
                     <div class="triad-box-modern triad-warning shadow">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h5 class="text-warning fw-bold m-0">O EIXO DA GAMBIARRA TÉCNICA</h5>
-                            <span class="badge bg-warning text-dark">RESOLUÇÃO NOTURNA</span>
+                        <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                            <h5 class="text-warning fw-bold m-0 small">O EIXO DA GAMBIARRA TÉCNICA</h5>
+                            <span class="badge bg-warning text-dark extra-small">RESOLUÇÃO NOTURNA</span>
                         </div>
                         <div class="triad-link-vector">
                             <div class="text-center">
@@ -834,11 +869,11 @@
                 </div>
 
                 <!-- Triada 4 -->
-                <div class="col-lg-6">
+                <div class="col-12 col-lg-6">
                     <div class="triad-box-modern triad-info shadow">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h5 class="text-success fw-bold m-0">O RADAR DE INFORMALIDADE</h5>
-                            <span class="badge bg-success text-dark">CIRCULAÇÃO OCULTA</span>
+                        <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                            <h5 class="text-success fw-bold m-0 small">O RADAR DE INFORMALIDADE</h5>
+                            <span class="badge bg-success text-dark extra-small">CIRCULAÇÃO OCULTA</span>
                         </div>
                         <div class="triad-link-vector">
                             <div class="text-center">
@@ -871,11 +906,12 @@
         </section>
 
         <!-- 5. O MAPA SOCIAL DA COPA (BLUEPRINT ARQUITETÔNICO FORENSE) -->
-        <section class="card bg-panel border-secondary shadow mb-5 p-4">
+        <section class="card bg-panel border-secondary shadow mb-4 mb-md-5 p-3 p-sm-4">
             <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
                 <div>
-                    <span class="badge bg-warning text-dark font-monospace mb-1 fw-bold">BLUEPRINT TÁTICO</span>
-                    <h3 class="h4 text-light fw-bold m-0 font-monospace">☕ 5. A GEOGRAFIA SOCIAL DA COPA (ZONA CEGA SEM
+                    <span class="badge bg-warning text-dark font-monospace mb-1 fw-bold extra-small">BLUEPRINT
+                        TÁTICO</span>
+                    <h3 class="h5 text-light fw-bold m-0 font-monospace">☕ 5. A GEOGRAFIA SOCIAL DA COPA (ZONA CEGA SEM
                         CFTV)</h3>
                 </div>
                 <div class="tactical-stamp-danger">⚠️ ZERO GRAVAÇÃO DE ÁUDIO/VÍDEO</div>
@@ -889,7 +925,7 @@
             <div class="blueprint-tactical-grid font-monospace">
 
                 <!-- Posto Norte: Máquina de Café -->
-                <div class="text-center mb-4">
+                <div class="text-center mb-3 mb-md-4">
                     <div class="tactical-station-box d-inline-block border-warning">
                         <span class="text-warning d-block small fw-bold">☕ MÁQUINA DE CAFÉ ESPRESSO // POSTO
                             NORTE</span>
@@ -899,12 +935,13 @@
                 </div>
 
                 <!-- Setores de Tensão Leste / Oeste -->
-                <div class="row g-4 my-2">
+                <div class="row g-3 g-md-4 my-1 my-md-2">
 
                     <!-- Bancada Oeste -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="tactical-station-box h-100 border-info">
-                            <span class="badge bg-info text-dark mb-2">BANCADA DE GRANITO [ALA SOCIAL]</span>
+                            <span class="badge bg-info text-dark mb-2 extra-small">BANCADA DE GRANITO [ALA
+                                SOCIAL]</span>
                             <h6 class="text-light fw-bold mb-2">Ponto de Encontro: Digão, Lari & Camila</h6>
                             <p class="text-light-sub extra-small mb-2">
                                 Circulação contínua de notícias de bastidores, vazamentos sobre novos clientes
@@ -916,9 +953,9 @@
                     </div>
 
                     <!-- Mesa Leste -->
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <div class="tactical-station-box h-100 border-secondary">
-                            <span class="badge bg-secondary mb-2">MESA DE CANTO [ALA TÉCNICA]</span>
+                            <span class="badge bg-secondary mb-2 extra-small">MESA DE CANTO [ALA TÉCNICA]</span>
                             <h6 class="text-light fw-bold mb-2">Ponto de Encontro: Bruno, Rafael & Guga</h6>
                             <p class="text-light-sub extra-small mb-2">
                                 Onde o núcleo duro técnico discute em silêncio gargalos de largura de banda na rede SAN,
@@ -932,7 +969,7 @@
                 </div>
 
                 <!-- Posto Sul: Geladeira -->
-                <div class="text-center mt-4">
+                <div class="text-center mt-3 mt-md-4">
                     <div class="tactical-station-box d-inline-block border-danger">
                         <span class="text-danger d-block small fw-bold">🧊 GELADEIRA // MURAL PASSIVO-AGRESSIVO</span>
                         <small class="text-muted extra-small">Post-its revelam as tensões silenciosas e atritos de
@@ -943,53 +980,54 @@
             </div>
 
             <!-- Os 5 Nós de Conexão Humana -->
-            <div class="row g-3 mt-3 font-monospace extra-small">
-                <div class="col-md">
-                    <div class="p-2 bg-black border border-secondary rounded">
-                        <strong class="text-warning d-block">1. Digão Martins</strong>
-                        <span class="text-muted">Hub Social Geral</span>
+            <div class="row g-2 g-md-3 mt-3 font-monospace extra-small">
+                <div class="col-6 col-md">
+                    <div class="p-2 bg-black border border-secondary rounded text-center">
+                        <strong class="text-warning d-block">1. Digão</strong>
+                        <span class="text-muted">Hub Social</span>
                     </div>
                 </div>
-                <div class="col-md">
-                    <div class="p-2 bg-black border border-secondary rounded">
-                        <strong class="text-warning d-block">2. Kiko Siqueira</strong>
-                        <span class="text-muted">Hub de Gambiarras</span>
+                <div class="col-6 col-md">
+                    <div class="p-2 bg-black border border-secondary rounded text-center">
+                        <strong class="text-warning d-block">2. Kiko</strong>
+                        <span class="text-muted">Gambiarras</span>
                     </div>
                 </div>
-                <div class="col-md">
-                    <div class="p-2 bg-black border border-secondary rounded">
-                        <strong class="text-warning d-block">3. Camila Rocha</strong>
-                        <span class="text-muted">Hub Emocional</span>
+                <div class="col-6 col-md">
+                    <div class="p-2 bg-black border border-secondary rounded text-center">
+                        <strong class="text-warning d-block">3. Camila</strong>
+                        <span class="text-muted">Emocional</span>
                     </div>
                 </div>
-                <div class="col-md">
-                    <div class="p-2 bg-black border border-secondary rounded">
-                        <strong class="text-warning d-block">4. Sombra Silveira</strong>
-                        <span class="text-muted">Hub Físico Silencioso</span>
+                <div class="col-6 col-md">
+                    <div class="p-2 bg-black border border-secondary rounded text-center">
+                        <strong class="text-warning d-block">4. Sombra</strong>
+                        <span class="text-muted">Físico / Silêncio</span>
                     </div>
                 </div>
-                <div class="col-md">
-                    <div class="p-2 bg-black border border-secondary rounded">
-                        <strong class="text-warning d-block">5. Helena Castro</strong>
-                        <span class="text-muted">Hub da Memória Legal</span>
+                <div class="col-12 col-md">
+                    <div class="p-2 bg-black border border-secondary rounded text-center">
+                        <strong class="text-warning d-block">5. Helena</strong>
+                        <span class="text-muted">Memória Legal</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 6. TÁTICAS DE EVASÃO DO PROTOCOLO VÉRTICE -->
-        <section class="card bg-panel border-secondary shadow mb-5">
-            <div class="card-header bg-dark py-3">
-                <h3 class="h5 text-warning fw-bold m-0 font-monospace">🚨 6. TÁTICAS HUMANAS DE EVASÃO DO PROTOCOLO</h3>
+        <section class="card bg-panel border-secondary shadow mb-4 mb-md-5">
+            <div class="card-header bg-dark py-3 px-3 px-md-4">
+                <h3 class="h6 h5-md text-warning fw-bold m-0 font-monospace">🚨 6. TÁTICAS HUMANAS DE EVASÃO DO
+                    PROTOCOLO</h3>
             </div>
             <div class="card-body p-0">
                 <div class="table-responsive">
-                    <table class="table table-dark table-striped table-bordered m-0 font-monospace small">
+                    <table class="table table-dark table-striped table-bordered m-0 font-monospace small align-middle">
                         <thead>
                             <tr class="table-secondary">
-                                <th>TÁTICA UTILIZADA</th>
-                                <th>AUTOR / EXECUTOR</th>
-                                <th>IMPACTO NO SISTEMA DIGITAL DA PIPELINE</th>
+                                <th style="min-width: 180px;">TÁTICA UTILIZADA</th>
+                                <th style="min-width: 160px;">AUTOR / EXECUTOR</th>
+                                <th style="min-width: 280px;">IMPACTO NO SISTEMA DIGITAL DA PIPELINE</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1026,18 +1064,18 @@
         </section>
 
         <!-- 7. MATRIZ DE TRIANGULAÇÃO FORENSE HUMANO-DIGITAL -->
-        <section class="card bg-panel border-warning shadow mb-5">
-            <div class="card-header bg-dark py-3">
-                <h3 class="h5 text-warning fw-bold m-0 font-monospace">🔍 7. MATRIZ DE TRIANGULAÇÃO FORENSE (EVIDÊNCIA
-                    DIGITAL VS. LEITURA HUMANA)</h3>
+        <section class="card bg-panel border-warning shadow mb-4 mb-md-5">
+            <div class="card-header bg-dark py-3 px-3 px-md-4">
+                <h3 class="h6 h5-md text-warning fw-bold m-0 font-monospace">🔍 7. MATRIZ DE TRIANGULAÇÃO FORENSE
+                    (EVIDÊNCIA DIGITAL VS. LEITURA HUMANA)</h3>
             </div>
             <div class="card-body p-0">
                 <div class="table-responsive">
-                    <table class="table table-dark table-striped table-bordered m-0 font-monospace small">
+                    <table class="table table-dark table-striped table-bordered m-0 font-monospace small align-middle">
                         <thead>
                             <tr class="table-secondary">
-                                <th style="width: 45%;">DADO TÉCNICO REGISTRADO NOS LOGS</th>
-                                <th style="width: 55%;">RECONSTRUÇÃO REAL ATRAVÉS DA REDE HUMANA</th>
+                                <th style="min-width: 250px;">DADO TÉCNICO REGISTRADO NOS LOGS</th>
+                                <th style="min-width: 280px;">RECONSTRUÇÃO REAL ATRAVÉS DA REDE HUMANA</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1074,11 +1112,11 @@
         </section>
 
         <!-- 8. AS 4 REGRAS DE OURO DA INVESTIGAÇÃO -->
-        <section class="card bg-panel border-primary shadow mb-5 p-4">
+        <section class="card bg-panel border-primary shadow mb-4 mb-md-5 p-3 p-sm-4">
             <h3 class="h5 text-primary fw-bold mb-3 font-monospace">⚖️ 8. AS REGRAS DE OURO DA INVESTIGAÇÃO NA VÉRTICE
             </h3>
             <div class="row g-3 font-monospace small">
-                <div class="col-md-6">
+                <div class="col-12 col-md-6">
                     <div class="p-3 bg-black border border-secondary rounded h-100">
                         <strong class="text-warning d-block mb-1">1. A Evidência é o Espelho; a Rede Humana é a
                             Mão:</strong>
@@ -1086,14 +1124,14 @@
                             mandatório cruzar com o estado emocional, a pressão do prazo e a lealdade do operador.</p>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-12 col-md-6">
                     <div class="p-3 bg-black border border-secondary rounded h-100">
                         <strong class="text-warning d-block mb-1">2. Ninguém Possui o Mapa Completo:</strong>
                         <p class="text-muted extra-small mb-0">Daniel sabe o 3D, Clara sabe os contratos, Guga os logs,
                             Helena os papéis físicos e Digão as conversas. A verdade é a junção das cinco visões.</p>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-12 col-md-6">
                     <div class="p-3 bg-black border border-secondary rounded h-100">
                         <strong class="text-warning d-block mb-1">3. Inocência não Significa Ausência de Erro:</strong>
                         <p class="text-muted extra-small mb-0">O artista pode ter quebrado o pipeline sem intenção de
@@ -1101,7 +1139,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-12 col-md-6">
                     <div class="p-3 bg-black border border-secondary rounded h-100">
                         <strong class="text-warning d-block mb-1">4. O Princípio Fundamental:</strong>
                         <p class="text-info extra-small mb-0 fw-bold">"NÃO VALE 'EU ACHO'. VALE EVIDÊNCIA. MAS A
@@ -1112,17 +1150,20 @@
         </section>
 
         <!-- CTA para o Jogo -->
-        <div class="text-center my-5">
-            <a href="index.html" class="btn btn-primary btn-lg px-5 py-3 font-monospace shadow">
+        <div class="text-center my-4 my-md-5">
+            <a href="index.html" class="btn btn-primary btn-lg w-100 w-sm-auto px-sm-5 py-3 font-monospace shadow">
                 🕵️ ABRIR TERMINAL & APLICAR A MATRIZ FORENSE ➔
             </a>
         </div>
 
     </main>
 
-    <footer class="text-center py-4 border-top border-secondary text-muted font-monospace small">
+    <footer class="text-center py-4 border-top border-secondary text-muted font-monospace small px-3">
         Vértice Produções Digitais Ltda. • Documento Mestre de Análise Forense & Teias Comportamentais
     </footer>
+
+    <!-- Bootstrap 5 JS Bundle (Essencial para funcionamento do menu em celulares) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

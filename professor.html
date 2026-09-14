@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Painel do Mestre // Caso 01: Operação Último Frame — Vertex Studios</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Montserrat:wght@400;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .bg-panel {
+            background-color: #11141c;
+            border-color: #232a3b !important;
+        }
+
+        .extra-small {
+            font-size: 0.76rem;
+        }
+
+        .text-light-sub {
+            color: #94a3b8 !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar navbar-dark bg-dark border-bottom border-danger px-3 py-3 sticky-top">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center gap-2">
+                <span class="badge bg-danger text-light font-monospace px-3 py-2">CENTRAL DO MESTRE</span>
+                <div>
+                    <h1 class="h5 m-0 text-light fw-bold">Caso 01: Operação Último Frame</h1>
+                    <small class="text-muted font-monospace">GABARITO MASTER, GERADOR DE CÓDIGOS (62 × 13), ESCADA DE
+                        DICAS & ROTEIRO TEATRAL</small>
+                </div>
+            </div>
+            <div class="d-flex gap-2">
+                <a href="caso01-historia.html" class="btn btn-outline-warning btn-sm font-monospace" target="_blank">📜
+                    Dossiê do Aluno</a>
+                <a href="index.html" class="btn btn-outline-info btn-sm font-monospace">📟 Terminal do Aluno</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container-fluid my-4 px-3 px-sm-4 px-lg-5">
+
+        <!-- ========================================================================= -->
+        <!-- GABARITO CENTRAL DO PROFESSOR (SOLUÇÃO INTEGRAL DAS 13 ETAPAS) -->
+        <!-- ========================================================================= -->
+        <section class="card bg-panel border-danger shadow mb-4 p-3 p-md-4">
+            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                <h3 class="h5 text-danger fw-bold m-0 font-monospace">🎯 GABARITO CENTRAL DO PROFESSOR (AS 13 ETAPAS
+                    RESOLVIDAS)</h3>
+                <span class="badge bg-black text-danger border border-danger font-monospace">USO EXCLUSIVO DO
+                    DOCENTE</span>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-dark table-bordered font-monospace extra-small align-middle mb-0">
+                    <thead>
+                        <tr class="table-secondary">
+                            <th style="width: 5%;">#</th>
+                            <th style="width: 20%;">ETAPA & TÍTULO</th>
+                            <th style="width: 35%;">RESPOSTA EXATA ESPERADA DO ALUNO</th>
+                            <th>EVIDÊNCIA DOCUMENTAL / JUSTIFICATIVA FORENSE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-danger fw-bold">01</td>
+                            <td class="text-light">O Ponto de Partida</td>
+                            <td class="text-success fw-bold">robot_model_v07.blend e aprovacao_asset_robot.pdf</td>
+                            <td class="text-light-sub">Homologação assinada por Rafael Torres às 17h40 registrada em
+                                <code>01_DOCUMENTACAO/aprovacao_asset_robot.pdf</code>.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-danger fw-bold">02</td>
+                            <td class="text-light">A Criação Posterior</td>
+                            <td class="text-warning fw-bold">Gabi Lima (gabi.lima) — robot_model_v08.blend</td>
+                            <td class="text-light-sub">Log de criação de arquivo às 18h47 na estação WS-3D-04 por
+                                <code>gabi.lima</code> em <code>03_ASSETS/ROBOT/</code>.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-danger fw-bold">03</td>
+                            <td class="text-light">A Validade do Arquivo</td>
+                            <td class="text-light fw-bold">Não. A v08 não possui termo formal; apenas a v07 está
+                                aprovada.</td>
+                            <td class="text-light-sub">Formulário <code>solicitacao_alteracao_robot.pdf</code> com campo
+                                SDA (Asset Lock Override) em branco.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-danger fw-bold">04</td>
+                            <td class="text-light">O Vínculo com a Cena</td>
+                            <td class="text-warning fw-bold">scene_04_v04.blend às 18h53</td>
+                            <td class="text-light-sub">Metadados de <code>04_CENAS/ANIMATION/scene_04_v04.blend</code>
+                                mostram substituição do linked asset às 18h53.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-danger fw-bold">05</td>
+                            <td class="text-light">O Produto da Farm</td>
+                            <td class="text-info fw-bold">render_scene04_v03.exr</td>
+                            <td class="text-light-sub">Job ID 88492 gerou a sequência 32-bit float em
+                                <code>06_RENDERS/BEAUTY/</code> às 19h08 a partir da cena adulterada.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-danger fw-bold">06</td>
+                            <td class="text-light">O Avanço p/ Composição</td>
+                            <td class="text-info fw-bold">scene04_comp_v02.nk às 19h18</td>
+                            <td class="text-light-sub">Script Nuke salvo por Henrique Moura na WS-COMP-01 conectando o
+                                Read Node diretamente no render corrompido.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-danger fw-bold">07</td>
+                            <td class="text-light">O Arquivo de Entrega</td>
+                            <td class="text-warning fw-bold">projeto_final_2.mp4</td>
+                            <td class="text-light-sub">Exportação concluída às 19h31 em
+                                <code>08_EXPORTACAO/MASTERS/</code> após descarte da primeira versão das 19h24.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-danger fw-bold">08</td>
+                            <td class="text-light">O Minuto Crítico</td>
+                            <td class="text-danger fw-bold">18h53 — Inserção da v08 na cena scene_04_v04.blend</td>
+                            <td class="text-light-sub">Criar a v08 às 18h47 não alterou o filme; a esteira foi quebrada
+                                quando o link foi trocado às 18h53.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-danger fw-bold">09</td>
+                            <td class="text-light">O Conhecimento Coletivo</td>
+                            <td class="text-light fw-bold">Marina Valente, Bruno Prado, Rafael Torres, Thiago Neves e
+                                Gabi Lima</td>
+                            <td class="text-light-sub">Os 5 presentes na reunião da Copa registrados em
+                                <code>ata_reuniao_copa_18h35.pdf</code> e no syslog interno.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-danger fw-bold">10</td>
+                            <td class="text-light">O Pedido vs A Ordem</td>
+                            <td class="text-warning fw-bold">Marina Valente — "Eu pedi uma alteração no robô. Eu pedi
+                                uma correção para avaliação."</td>
+                            <td class="text-light-sub">Depoimento formal de Marina às 19h44: ela solicitou teste visual
+                                de viewport, nunca substituição no master.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-danger fw-bold">11</td>
+                            <td class="text-light">A Prova da Má-Fé</td>
+                            <td class="text-danger fw-bold">18h49 — Consulta ao arquivo aprovacao_asset_robot.pdf</td>
+                            <td class="text-light-sub">Log de auditoria da estação WS-3D-04: <code>gabi.lima</code>
+                                abriu o PDF da v07 por 42s dois minutos após criar a v08.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-danger fw-bold">12</td>
+                            <td class="text-light">A Conexão Irrefutável</td>
+                            <td class="text-danger fw-bold">17h40 (v07 aprovada) ➔ 18h47 (cria v08) ➔ 18h49 (consulta
+                                aprovação) ➔ 18h51 (abre v08) ➔ 18h53 (insere v08 na cena)</td>
+                            <td class="text-light-sub">Sequência cronológica ininterrupta do mesmo usuário provando
+                                tomada de decisão deliberada e consciente.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-danger fw-bold">13</td>
+                            <td class="text-light">O Veredito Final</td>
+                            <td class="text-danger fw-bold">CULPADO: Gabi Lima. MOTIVO: Queria impressionar a diretoria
+                                adiantando a variação estética, sabia que a v07 era a única aprovada (consultou o PDF às
+                                18h49) e forçou a v08 na cena às 18h53 achando que "ninguém perceberia".</td>
+                            <td class="text-light-sub">Confissão perante Clara Mendes após confronto com o log das
+                                18h49. Quebra dos Freezes 1 e 2 do Protocolo Vértice.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- GERADOR E BUSCADOR INSTANTÂNEO DE CÓDIGO POR ALUNO E POR ETAPA -->
+        <!-- ========================================================================= -->
+        <section class="card bg-panel border-success shadow mb-4 p-3 p-md-4">
+            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                <div>
+                    <span class="badge bg-success text-dark font-monospace extra-small mb-1">CONSULTA RÁPIDA DE
+                        CÓDIGO</span>
+                    <h4 class="h5 text-light fw-bold m-0 font-monospace">🔑 GERADOR DE CÓDIGO POR ALUNO & ETAPA</h4>
+                </div>
+                <small class="text-muted font-monospace">806 Combinações Únicas (62 Alunos × 13 Etapas)</small>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label font-monospace small text-info mb-1">1. SELECIONE O ALUNO:</label>
+                    <select class="form-select font-monospace small bg-black text-light border-secondary"
+                        id="prof-student-select" onchange="updateProfessorCodeDisplay()">
+                        <!-- Preenchido via JS -->
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label font-monospace small text-info mb-1">2. SELECIONE A ETAPA ATUAL DO
+                        ALUNO:</label>
+                    <select class="form-select font-monospace small bg-black text-light border-secondary"
+                        id="prof-stage-select" onchange="updateProfessorCodeDisplay()">
+                        <!-- Preenchido via JS -->
+                    </select>
+                </div>
+            </div>
+
+            <div class="row g-3 mt-2" id="codes-display-box">
+                <div class="col-md-6">
+                    <div class="p-3 bg-black rounded border border-success h-100">
+                        <span class="badge bg-success text-dark font-monospace extra-small mb-2">CÓDIGO VERDADEIRO
+                            (LIBERA O ALUNO)</span>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <code class="fs-5 text-success font-monospace" id="display-true-code">---</code>
+                            <button class="btn btn-sm btn-outline-success font-monospace extra-small"
+                                onclick="copyTrueCode()">Copiar 📋</button>
+                        </div>
+                        <small class="text-muted d-block mt-2 font-monospace extra-small">Forneça este código quando o
+                            aluno apresentar o laudo técnico correto.</small>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-3 bg-black rounded border border-danger h-100">
+                        <span class="badge bg-danger text-light font-monospace extra-small mb-2">CÓDIGO FALSO / ISCA
+                            (SABOTAGEM)</span>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <code class="fs-5 text-danger font-monospace" id="display-fake-code">---</code>
+                            <button class="btn btn-sm btn-outline-danger font-monospace extra-small"
+                                onclick="copyFakeCode()">Copiar Isca 💣</button>
+                        </div>
+                        <small class="text-muted d-block mt-2 font-monospace extra-small">Forneça este código para
+                            simular uma pista sabotada ou penalizar chutes sem embasamento.</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- DICAS DE EMERGÊNCIA (QUANDO A SALA TRAVA) -->
+        <!-- ========================================================================= -->
+        <section class="card bg-black border-warning mb-4 p-3">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="text-warning fw-bold font-monospace small">🚨 DICAS DE EMERGÊNCIA (QUANDO A TURMA TRAVA
+                    COMPLETAMENTE)</span>
+            </div>
+            <div class="row g-2">
+                <div class="col-md-6">
+                    <div class="p-2 bg-dark rounded border border-secondary font-monospace extra-small">
+                        <strong class="text-info d-block mb-1">Dica 1 (Cronologia):</strong>
+                        "Pare de procurar novos arquivos por um momento. Escolha três acontecimentos que você já conhece
+                        e coloque-os em ordem cronológica. Depois pergunte: quem aparece em mais de um deles?"
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-2 bg-dark rounded border border-secondary font-monospace extra-small">
+                        <strong class="text-info d-block mb-1">Dica 2 (Evidência vs Confissão):</strong>
+                        "Não procure uma confissão. Procure uma sequência de ações que torne a explicação de 'foi um
+                        erro' cada vez menos plausível."
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- ACCORDION: AS 13 ETAPAS & ESCADA DE 10 DICAS CADA -->
+        <!-- ========================================================================= -->
+        <h4 class="text-light fw-bold font-monospace mb-3">📋 AS 13 ETAPAS & ESCADA PEDAGÓGICA DE 10 DICAS CADA</h4>
+        <div class="accordion font-monospace" id="accordionProfessor">
+            <!-- Gerado via JS a partir de ETAPAS_CASO_01 -->
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- ROTEIRO DO TEATRO FINAL — CONFRONTO E CONDENAÇÃO DE GABI -->
+        <!-- ========================================================================= -->
+        <section class="card bg-panel border-danger mt-5 p-4 shadow">
+            <h4 class="text-danger fw-bold font-monospace mb-3">🎭 ROTEIRO DO TEATRO FINAL — CONFRONTO E CONDENAÇÃO DE
+                GABI LIMA</h4>
+            <div class="p-3 bg-black rounded border border-dark small text-light font-monospace">
+                <p class="text-muted italic mb-2">// Instruções para o Professor conduzir o clímax da aula:</p>
+                <p class="text-light-sub mb-2">Quando a turma chegar à Etapa 13 e apresentar o log das 18h49, o
+                    professor encena a postura de Gabi Lima:</p>
+
+                <p class="text-warning mb-2 ps-3 border-start border-warning">
+                    <strong>Gabi (Professor encenando, defensivo):</strong><br>
+                    — "Eu achei que aquela alteração que a Marina comentou na copa já pudesse ser colocada na
+                    timeline..."
+                </p>
+
+                <p class="text-muted italic mb-2">(O professor silencia e exige: <em>"— Vocês encontraram os registros
+                        de auditoria. O que o log do sistema mostra?"</em>)</p>
+
+                <p class="text-light-sub mb-2">(Quando os alunos apresentarem o registro de que Gabi abriu o PDF da v07
+                    às 18h49 por 42 segundos):</p>
+
+                <p class="text-warning mb-2 ps-3 border-start border-warning">
+                    <strong>Gabi (Baixando a cabeça, sem saída):</strong><br>
+                    — "Eu vi o termo de aprovação...<br>
+                    <span class="text-muted fst-italic">(Pausa de 3 segundos).</span><br>
+                    — Eu li que a v07 era a única versão aprovada no ERP.<br>
+                    <span class="text-muted fst-italic">(Pausa maior).</span><br>
+                    — E mesmo assim, às 18h53, eu abri a cena quatro e engatei a v08."
+                </p>
+
+                <p class="text-danger mb-2 ps-3 border-start border-danger">
+                    <strong>Clara Mendes (Professor com voz firme):</strong><br>
+                    — "Por que você fez isso, sabendo que violava o Freeze 1 do Protocolo Vértice?"
+                </p>
+
+                <p class="text-warning mb-2 ps-3 border-start border-warning">
+                    <strong>Gabi (Confissão final):</strong><br>
+                    — "Eu queria adiantar o processo... Achei que o braço pareado duplo ia ficar esteticamente muito
+                    superior na tela, a Marina ia adorar e, na correria do prazo das oito da noite, ninguém na revisão
+                    iria abrir a árvore da SAN para conferir número de versão... Eu achei que ninguém perceberia."
+                </p>
+
+                <div class="alert alert-dark border-success p-3 text-center mt-3 mb-0">
+                    <strong class="text-success fs-6 d-block font-monospace">
+                        “A INVESTIGAÇÃO NÃO DESCOBRIU O CULPADO PORQUE ALGUÉM CONFESSOU.<br>
+                        A CONFISSÃO APENAS CONFIRMOU AQUILO QUE OS ARQUIVOS JÁ HAVIAM CONTADO.”
+                    </strong>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bootstrap 5 JS e Dados -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/caso01_data.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const studentSelect = document.getElementById("prof-student-select");
+            LISTA_ALUNOS.forEach((nome, idx) => {
+                const opt = document.createElement("option");
+                opt.value = idx + 1;
+                opt.innerText = `${idx + 1}. ${nome}`;
+                studentSelect.appendChild(opt);
+            });
+
+            const stageSelect = document.getElementById("prof-stage-select");
+            ETAPAS_CASO_01.forEach((stage) => {
+                const opt = document.createElement("option");
+                opt.value = stage.id;
+                opt.innerText = `Etapa ${stage.id}: ${stage.titulo.split('—')[1] || stage.titulo}`;
+                stageSelect.appendChild(opt);
+            });
+
+            updateProfessorCodeDisplay();
+            renderAccordion();
+        });
+
+        function updateProfessorCodeDisplay() {
+            const studentId = parseInt(document.getElementById("prof-student-select").value) || 1;
+            const stageId = parseInt(document.getElementById("prof-stage-select").value) || 1;
+
+            const codes = getStudentCodes(studentId, stageId);
+            document.getElementById("display-true-code").innerText = codes.trueCode;
+            document.getElementById("display-fake-code").innerText = codes.fakeCode;
+        }
+
+        function copyTrueCode() {
+            const code = document.getElementById("display-true-code").innerText;
+            navigator.clipboard.writeText(code);
+            alert(`Código Verdadeiro copiado: ${code}`);
+        }
+
+        function copyFakeCode() {
+            const code = document.getElementById("display-fake-code").innerText;
+            navigator.clipboard.writeText(code);
+            alert(`Código Isca copiado: ${code}`);
+        }
+
+        function renderAccordion() {
+            const accordion = document.getElementById("accordionProfessor");
+            accordion.innerHTML = "";
+
+            ETAPAS_CASO_01.forEach((stage) => {
+                const item = document.createElement("div");
+                item.className = "accordion-item bg-panel border-secondary mb-2";
+
+                const tipsHtml = stage.dicas.map((d, idx) => `
+                    <li class="mb-1 text-light-sub"><span class="text-warning fw-bold">Nível ${idx + 1}:</span> "${d}"</li>
+                `).join("");
+
+                item.innerHTML = `
+                    <h2 class="accordion-header" id="heading${stage.id}">
+                        <button class="accordion-button collapsed bg-dark text-light font-monospace small py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${stage.id}">
+                            <span class="badge bg-primary me-2">Q${stage.id}</span> ${stage.titulo}
+                        </button>
+                    </h2>
+                    <div id="collapse${stage.id}" class="accordion-collapse collapse" data-bs-parent="#accordionProfessor">
+                        <div class="accordion-body p-3 bg-black">
+                            
+                            <div class="p-2 bg-dark rounded border border-secondary mb-3 extra-small">
+                                <strong class="text-warning d-block">FORMATO TÉCNICO EXIGIDO:</strong> ${stage.formatoEsperado}<br>
+                                <strong class="text-light d-block mt-1">RESPOSTA ESPERADA:</strong> ${stage.respostaEsperada}<br>
+                                <strong class="text-info d-block mt-1">EVIDÊNCIA DOCUMENTAL:</strong> ${stage.evidencia}<br>
+                                <strong class="text-success d-block mt-1">FALA DO PROFESSOR:</strong> "${stage.falaProfessor}"
+                            </div>
+
+                            <h6 class="text-info font-monospace extra-small mb-2">🪜 ESCADA DE 10 DICAS (LIBERE UMA A UMA CONFORME A SALA PRECISAR):</h6>
+                            <ol class="extra-small ps-3 mb-0">
+                                ${tipsHtml}
+                            </ol>
+
+                        </div>
+                    </div>
+                `;
+                accordion.appendChild(item);
+            });
+        }
+    </script>
+
+</body>
+
+</html>
