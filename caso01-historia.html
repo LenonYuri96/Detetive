@@ -9,58 +9,63 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
     <style>
         :root {
-            --bg-body: #080a0f;
-            --bg-panel: #0f131c;
-            --bg-panel-alt: #151a27;
-            --bg-terminal: #05070b;
-            --border-dim: #1e2638;
-            --border-highlight: #2f3b54;
-            --border-active: #475569;
-            --text-main: #e2e8f0;
-            --text-sub: #94a3b8;
-            --text-muted: #64748b;
-            --accent-red: #ef4444;
-            --accent-red-dim: rgba(239, 68, 68, 0.12);
-            --accent-yellow: #f59e0b;
-            --accent-yellow-dim: rgba(245, 158, 11, 0.12);
-            --accent-cyan: #06b6d4;
-            --accent-cyan-dim: rgba(6, 182, 212, 0.12);
-            --accent-green: #10b981;
-            --accent-green-dim: rgba(16, 185, 129, 0.12);
+            --bg-body: #0d1117;
+            --bg-panel: #161b22;
+            --bg-panel-alt: #1f242d;
+            --bg-terminal: #11151c;
+            --border-dim: #30363d;
+            --border-highlight: #484f58;
+            --border-active: #6e7681;
+            --text-main: #f0f6fc;
+            --text-sub: #9ca3af;
+            --text-muted: #6b7280;
+        }
+
+        html {
+            font-size: 18px;
         }
 
         body {
             background-color: var(--bg-body);
             color: var(--text-main);
-            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.7;
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
             letter-spacing: -0.01em;
             -webkit-font-smoothing: antialiased;
         }
 
-        code,
-        pre,
-        .font-monospace,
-        .terminal-text,
-        .log-line {
-            font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
-        }
-
-        .extra-small {
-            font-size: 0.76rem;
+        main.container {
+            max-width: 1040px;
         }
 
         .text-light-sub {
             color: var(--text-sub) !important;
         }
 
+        .lead-text {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-main);
+        }
+
+        .body-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        small,
+        .small {
+            font-size: 0.92rem;
+        }
+
         .bg-panel {
             background-color: var(--bg-panel);
             border: 1px solid var(--border-dim);
+            border-radius: 10px;
         }
 
         .bg-panel-alt {
@@ -70,6 +75,7 @@
         .bg-terminal {
             background-color: var(--bg-terminal);
             border: 1px solid var(--border-dim);
+            border-radius: 8px;
         }
 
         .timeline-connector {
@@ -88,103 +94,49 @@
         }
 
         .badge-freeze {
-            font-family: 'Fira Code', monospace;
             letter-spacing: 0.5px;
-            font-size: 0.72rem;
-            padding: 0.35rem 0.65rem;
-        }
-
-        .file-tree {
-            line-height: 1.55;
-            color: #93c5fd;
-        }
-
-        .file-tree .dir-title {
-            color: #fbbf24;
-            font-weight: 700;
-        }
-
-        .file-tree .file-ok {
-            color: #34d399;
-        }
-
-        .file-tree .file-warn {
-            color: #f87171;
+            font-size: 0.85rem;
             font-weight: 600;
+            padding: 0.4rem 0.75rem;
         }
 
-        .file-tree .file-meta {
-            color: #64748b;
-        }
-
-        .log-box {
-            max-height: 420px;
-            overflow-y: auto;
-            border: 1px solid var(--border-dim);
-        }
-
-        .quadrant-box {
-            background-color: #03060a;
-            border: 1px solid var(--border-dim);
-            border-radius: 6px;
-            padding: 1.25rem;
-            height: 100%;
+        .table-custom th,
+        .table-custom td {
+            padding: 0.9rem 1.1rem;
+            font-size: 1rem;
         }
 
         .dialogo-bloco {
-            background: #090d15;
+            background: var(--bg-terminal);
             border: 1px solid var(--border-dim);
-            border-radius: 6px;
-            padding: 1.25rem;
-            margin: 1.25rem 0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
         }
 
         .dialogo-fala {
-            margin-bottom: 1rem;
-            padding-left: 1rem;
+            margin-bottom: 1.35rem;
+            padding-left: 1.25rem;
             border-left: 3px solid var(--border-highlight);
         }
 
-        .dialogo-fala.fala-henrique {
-            border-left-color: var(--accent-red);
-        }
-
-        .dialogo-fala.fala-rafael {
-            border-left-color: #3b82f6;
-        }
-
-        .dialogo-fala.fala-clara {
-            border-left-color: var(--accent-cyan);
-        }
-
-        .dialogo-fala.fala-marina {
-            border-left-color: var(--accent-yellow);
-        }
-
-        .dialogo-fala.fala-gabi {
-            border-left-color: #ec4899;
-        }
-
-        .dialogo-fala.fala-bruno {
-            border-left-color: #94a3b8;
-        }
-
-        .dialogo-fala.fala-guga {
-            border-left-color: var(--accent-green);
+        .dialogo-fala:last-child {
+            margin-bottom: 0;
         }
 
         .dialogo-nome {
-            font-family: 'Fira Code', monospace;
-            font-size: 0.8rem;
+            font-size: 1.15rem;
             font-weight: 700;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.35rem;
             display: block;
+            color: var(--text-main);
         }
 
         .dialogo-texto {
-            font-size: 0.92rem;
-            color: #f1f5f9;
-            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            font-style: normal;
+            line-height: 1.8;
             margin: 0;
         }
 
@@ -210,17 +162,16 @@
 
 <body>
 
-    <!-- Header Fixo com Navegação Global -->
-    <header
-        class="navbar navbar-expand-xl navbar-dark bg-dark border-bottom border-danger px-3 py-2 py-md-3 sticky-top">
+    <!-- Header com Navegação Global -->
+    <header class="navbar navbar-expand-xl navbar-dark bg-dark border-bottom border-secondary px-3 py-3 sticky-top">
         <div class="container-fluid px-0">
             <div class="d-flex align-items-center gap-2 me-auto">
-                <span class="badge bg-danger text-light px-2 py-1 font-monospace extra-small">CUSTÓDIA FORENSE</span>
+                <span class="badge bg-secondary text-light px-3 py-2">CUSTÓDIA FORENSE</span>
                 <div>
-                    <h1 class="h6 m-0 text-light fw-bold mobile-brand-title">Dossiê Pericial: Operação Último Frame</h1>
-                    <small class="text-muted font-monospace d-none d-sm-block extra-small">
+                    <h1 class="h5 m-0 text-light fw-bold">Dossiê Pericial: Operação Último Frame</h1>
+                    <div class="text-sub small d-none d-sm-block">
                         VÉRTICE PRODUÇÕES DIGITAIS // PROTOCOLO DE AUDITORIA FORENSE VRT-MAQ-2026-017
-                    </small>
+                    </div>
                 </div>
             </div>
 
@@ -234,24 +185,29 @@
             <!-- Links Rápidos -->
             <div class="collapse navbar-collapse mt-3 mt-xl-0" id="navMenuDossie">
                 <nav
-                    class="d-flex flex-column flex-xl-row align-items-stretch align-items-xl-center gap-2 ms-xl-auto font-monospace small">
-                    <a href="#secao-origem-crise" class="btn btn-outline-secondary btn-sm text-start text-xl-center">
-                        🚨 1. A Crise (19h42)
+                    class="d-flex flex-column flex-xl-row align-items-stretch align-items-xl-center gap-2 ms-xl-auto small">
+                    <a href="#secao-origem-crise"
+                        class="btn btn-outline-secondary btn-sm px-3 py-2 text-start text-xl-center">
+                        1. A Crise (19h42)
                     </a>
-                    <a href="#secao-memoria-espaco" class="btn btn-outline-warning btn-sm text-start text-xl-center">
-                        🏛️ 2. Espaço & Zonas
+                    <a href="#secao-memoria-espaco"
+                        class="btn btn-outline-secondary btn-sm px-3 py-2 text-start text-xl-center">
+                        2. Espaço & Zonas
                     </a>
-                    <a href="#secao-protocolo-leis" class="btn btn-outline-success btn-sm text-start text-xl-center">
-                        🛡️ 3. O Protocolo
+                    <a href="#secao-protocolo-leis"
+                        class="btn btn-outline-secondary btn-sm px-3 py-2 text-start text-xl-center">
+                        3. O Protocolo
                     </a>
-                    <a href="#secao-storage-san" class="btn btn-outline-info btn-sm text-start text-xl-center">
-                        📁 4. Repositório SAN
+                    <a href="#secao-storage-san"
+                        class="btn btn-outline-secondary btn-sm px-3 py-2 text-start text-xl-center">
+                        4. Repositório SAN
                     </a>
-                    <a href="#secao-atos-periciais" class="btn btn-outline-danger btn-sm text-start text-xl-center">
-                        🎬 5. O Inquérito Completo
+                    <a href="#secao-atos-periciais"
+                        class="btn btn-outline-secondary btn-sm px-3 py-2 text-start text-xl-center">
+                        5. O Inquérito Completo
                     </a>
-                    <a href="index.html" class="btn btn-primary btn-sm text-start text-xl-center fw-bold">
-                        📟 Terminal de Respostas ➔
+                    <a href="index.html" class="btn btn-secondary btn-sm px-3 py-2 text-start text-xl-center fw-bold">
+                        Terminal de Respostas ➔
                     </a>
                 </nav>
             </div>
@@ -263,42 +219,39 @@
         <!-- ========================================================================= -->
         <!-- 1. IDENTIFICAÇÃO DA ORDEM DE SERVIÇO & ALERTA DE RISCO -->
         <!-- ========================================================================= -->
-        <section id="secao-origem-crise" class="card bg-panel border-danger shadow-lg mb-4 mb-md-5 p-3 p-md-4">
-            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+        <section id="secao-origem-crise" class="card bg-panel border-secondary shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
                 <div>
-                    <span class="badge bg-danger text-light font-monospace extra-small mb-1">AUDITORIA DE ANOMALIA
-                        OPERACIONAL</span>
-                    <h2 class="h4 text-danger fw-bold m-0 font-monospace">ORDEM DE AUDITORIA FORENSE // RELATÓRIO DO
-                        INCIDENTE</h2>
+                    <span class="badge bg-secondary text-light mb-2">AUDITORIA DE ANOMALIA OPERACIONAL</span>
+                    <h2 class="h3 text-light fw-bold m-0">ORDEM DE AUDITORIA FORENSE // RELATÓRIO DO INCIDENTE</h2>
                 </div>
-                <div class="text-end font-monospace">
-                    <span class="badge bg-black border border-danger text-danger px-3 py-2 fs-6">HORÁRIO DE DETECÇÃO:
+                <div class="text-end">
+                    <span class="badge bg-dark border border-secondary text-light px-3 py-2 fs-6">HORÁRIO DE DETECÇÃO:
                         19h42</span>
                 </div>
             </div>
 
-            <div class="row g-3 font-monospace extra-small text-light-sub">
-                <div class="col-sm-6 col-lg-3 p-2 bg-terminal rounded">
-                    <span class="text-muted d-block">PROJETO (IUP):</span>
-                    <strong class="text-info fs-6">VRT-MAQ-2026-017</strong>
+            <div class="row g-3 text-light-sub">
+                <div class="col-sm-6 col-lg-3 p-3 bg-terminal rounded border border-secondary">
+                    <span class="text-sub d-block small">PROJETO (IUP):</span>
+                    <strong class="text-light fs-5">VRT-MAQ-2026-017</strong>
                 </div>
-                <div class="col-sm-6 col-lg-3 p-2 bg-terminal rounded">
-                    <span class="text-muted d-block">CLIENTE / CONTRATANTE:</span>
-                    <strong class="text-warning fs-6">MaqTec Industrial S.A.</strong>
+                <div class="col-sm-6 col-lg-3 p-3 bg-terminal rounded border border-secondary">
+                    <span class="text-sub d-block small">CLIENTE / CONTRATANTE:</span>
+                    <strong class="text-light fs-5">MaqTec Industrial S.A.</strong>
                 </div>
-                <div class="col-sm-6 col-lg-3 p-2 bg-terminal rounded">
-                    <span class="text-muted d-block">PRODUÇÃO TÉCNICA:</span>
-                    <strong class="text-light">Animação 3D de Escavadeira Pesada (Corte Hidráulico)</strong>
+                <div class="col-sm-6 col-lg-3 p-3 bg-terminal rounded border border-secondary">
+                    <span class="text-sub d-block small">PRODUÇÃO TÉCNICA:</span>
+                    <strong class="text-light fs-6">Animação 3D de Escavadeira Pesada (Corte Hidráulico)</strong>
                 </div>
-                <div class="col-sm-6 col-lg-3 p-2 bg-terminal rounded">
-                    <span class="text-muted d-block">PRAZO CONTRATUAL FATAL:</span>
-                    <strong class="text-danger fs-6">20h00 (Hoje)</strong>
+                <div class="col-sm-6 col-lg-3 p-3 bg-terminal rounded border border-secondary">
+                    <span class="text-sub d-block small">PRAZO CONTRATUAL FATAL:</span>
+                    <strong class="text-light fs-5">20h00 (Hoje)</strong>
                 </div>
             </div>
 
-            <div
-                class="p-3 bg-black border-start border-danger border-4 rounded font-monospace extra-small text-light-sub mt-3">
-                <strong class="text-danger">DESPACHO DA COORDENAÇÃO DE RISCO (CLARA MENDES):</strong>
+            <div class="p-3 bg-terminal border-start border-secondary border-4 rounded text-light-sub mt-4 body-text">
+                <strong class="text-light">DESPACHO DA COORDENAÇÃO DE RISCO (CLARA MENDES):</strong>
                 A MaqTec Industrial protagonizou o colapso do <em>Projeto Cronos em 2014</em>. Qualquer divergência
                 entre o modelo entregue e o ativo homologado em Ordem de Serviço deflagra multas de rescisão contratual
                 e auditoria externa independente. A perícia exige a elucidação do encadeamento técnico antes de qualquer
@@ -309,51 +262,49 @@
         <!-- ========================================================================= -->
         <!-- 2. MEMÓRIA HISTÓRICA & A ARQUITETURA FORENSE DA SEDE -->
         <!-- ========================================================================= -->
-        <section id="secao-memoria-espaco" class="card bg-panel border-warning shadow mb-4 mb-md-5 p-3 p-md-4">
-            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
-                <h3 class="h5 text-warning fw-bold m-0 font-monospace">🏛️ ARQUITETURA PERICIAL: O ESPAÇO FÍSICO ESPELHA
-                    OS DADOS</h3>
-                <span class="badge bg-warning text-dark font-monospace fw-bold extra-small">CULTURA &
-                    ANTECEDENTES</span>
+        <section id="secao-memoria-espaco" class="card bg-panel border-secondary shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+                <h3 class="h4 text-light fw-bold m-0">ARQUITETURA PERICIAL: O ESPAÇO FÍSICO ESPELHA OS DADOS</h3>
+                <span class="badge bg-secondary text-light fw-bold">CULTURA & ANTECEDENTES</span>
             </div>
 
-            <p class="text-light-sub small">
+            <p class="body-text text-light-sub mb-4">
                 Na computação gráfica profissional, o espaço físico nunca é neutro: ele reflete e condiciona a esteira
                 de arquivos. Na Vértice Produções Digitais, cada parede, câmera ou fechadura biométrica implementada
                 desde 2011 respondeu a um trauma de produção:
             </p>
 
-            <div class="row g-3">
+            <div class="row g-4">
                 <div class="col-lg-6">
-                    <div class="timeline-connector font-monospace extra-small">
-                        <div class="mb-3">
-                            <strong class="text-info d-block">2011 — SALA 402 (EDIFÍCIO GUIMARÃES, CENTRO):</strong>
+                    <div class="timeline-connector body-text">
+                        <div class="mb-4">
+                            <strong class="text-light d-block">2011 — SALA 402 (EDIFÍCIO GUIMARÃES, CENTRO):</strong>
                             <span class="text-light-sub">Fundada por Daniel Azevedo e Marina Valente em 35m² sem
                                 divisórias. A proximidade física resolvia tudo no grito, mas gerava perda crônica de
                                 anotações e ausência total de registros.</span>
                         </div>
-                        <div class="mb-3">
-                            <strong class="text-info d-block">2012–2013 — A CISÃO NAS SALAS 402 & 403:</strong>
+                        <div class="mb-4">
+                            <strong class="text-light d-block">2012–2013 — A CISÃO NAS SALAS 402 & 403:</strong>
                             <span class="text-light-sub">A criação da Sala 403 (Atendimento/Produção com Clara Mendes)
                                 separou fisicamente a gestão do núcleo técnico (Sala 402). A barreira das portas
                                 fechadas gerou ruídos de comunicação e atrasos de alinhamento.</span>
                         </div>
-                        <div class="mb-3 p-2 bg-terminal border-start border-danger border-3 rounded">
-                            <strong class="text-danger d-block">2014 — O TRAUMA CRONOS (MAQTEC INDUSTRIAL):</strong>
+                        <div class="mb-4 p-3 bg-terminal border-start border-secondary border-3 rounded">
+                            <strong class="text-light d-block">2014 — O TRAUMA CRONOS (MAQTEC INDUSTRIAL):</strong>
                             <span class="text-light-sub">Durante o vídeo de 6 minutos da escavadeira da MaqTec, oito
                                 máquinas de freelancers foram amontoadas na Sala 403. Sem travas de rede, 3 versões do
                                 motor foram modeladas em paralelo. Na entrega, o render combinou o bloco antigo com a
                                 tubulação nova. O estúdio quase encerrou as atividades. Nasceu ali o <strong>Protocolo
                                     Vértice</strong>.</span>
                         </div>
-                        <div class="mb-3">
-                            <strong class="text-info d-block">2017–2019 — A SEDE CORPORATIVA SAVASSI:</strong>
+                        <div class="mb-4">
+                            <strong class="text-light d-block">2017–2019 — A SEDE CORPORATIVA SAVASSI:</strong>
                             <span class="text-light-sub">Espaço de 300m² com isolamento acústico e ilhas segregadas.
                                 Eliminou contaminações cruzadas, mas criou silos funcionais onde cada ilha presumia que
                                 a anterior estava correta.</span>
                         </div>
                         <div>
-                            <strong class="text-success d-block">2022 ATÉ O PRESENTE — SEDE FUNCIONÁRIOS:</strong>
+                            <strong class="text-light d-block">2022 ATÉ O PRESENTE — SEDE FUNCIONÁRIOS:</strong>
                             <span class="text-light-sub">Planta pericial integrada. Todas as estações possuem IPs fixos
                                 e cada login no Active Directory é auditado, embora rotinas de sincronização em segundo
                                 plano tenham sido introduzidas para acelerar o tráfego de assets pesados.</span>
@@ -362,35 +313,35 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <div class="p-3 bg-terminal rounded border border-secondary font-monospace extra-small">
-                        <strong class="text-warning d-block mb-2">CATÁLOGO DOS 9 AMBIENTES OPERACIONAIS (SEDE
+                    <div class="p-3 bg-terminal rounded border border-secondary body-text">
+                        <strong class="text-light d-block mb-3 fs-5">CATÁLOGO DOS 9 AMBIENTES OPERACIONAIS (SEDE
                             FUNCIONÁRIOS):</strong>
                         <ul class="list-unstyled mb-0 text-light-sub">
-                            <li class="mb-1">• <strong class="text-light">A. Recepção & Portaria:</strong> Acesso por
+                            <li class="mb-2">• <strong class="text-light">A. Recepção & Portaria:</strong> Acesso por
                                 biometria facial, controle de crachás RFID e bloqueio de mídias USB externas.</li>
-                            <li class="mb-1">• <strong class="text-light">B. Sala de Reuniões:</strong> Mesa executiva
+                            <li class="mb-2">• <strong class="text-light">B. Sala de Reuniões:</strong> Mesa executiva
                                 para briefings com clientes, atas de escopo e revisões formais de contrato.</li>
-                            <li class="mb-1">• <strong class="text-light">C. Corredor de Circulação:</strong> Eixo
+                            <li class="mb-2">• <strong class="text-light">C. Corredor de Circulação:</strong> Eixo
                                 central monitorado por CFTV ininterrupto de alta definição.</li>
-                            <li class="mb-1">• <strong class="text-info">D. Ilha 3D & Animação:</strong> 12 estações
-                                homologadas (WS-3D-01 a WS-3D-12). A estação <code>WS-3D-04</code> é utilizada
+                            <li class="mb-2">• <strong class="text-light">D. Ilha 3D & Animação:</strong> 12 estações
+                                homologadas (WS-3D-01 a WS-3D-12). A estação WS-3D-04 é utilizada
                                 primariamente por Gabriel Lima, mas possui compartilhamento de perfil habilitado para
                                 supervisão de arte.</li>
-                            <li class="mb-1">• <strong class="text-info">E. Suíte de Composição VFX:</strong> Sala
+                            <li class="mb-2">• <strong class="text-light">E. Suíte de Composição VFX:</strong> Sala
                                 dimerizada N5 (5000K) de Beatriz Nogueira, calibrada para ACEScg.</li>
-                            <li class="mb-1">• <strong class="text-info">F. Ilha de Edição & Master:</strong> Estação
+                            <li class="mb-2">• <strong class="text-light">F. Ilha de Edição & Master:</strong> Estação
                                 WS-COMP-01 operada por Henrique Moura. Monitores balanceados e DaVinci Resolve.</li>
-                            <li class="mb-1">• <strong class="text-success">G. Datacenter & Farm:</strong> 42 nós de
+                            <li class="mb-2">• <strong class="text-light">G. Datacenter & Farm:</strong> 42 nós de
                                 cálculo gerenciados por Guga Lima, servidores SAN em RAID 60, fitas LTO e daemons de
                                 automação a 18°C.</li>
-                            <li class="mb-1">• <strong class="text-light">H. Arquivo Físico de Clara:</strong>
+                            <li class="mb-2">• <strong class="text-light">H. Arquivo Físico de Clara:</strong>
                                 Gaveteiros ignífugos com Ordens de Serviço impressas e termos de responsabilidade
                                 assinados.</li>
-                            <li class="p-2 bg-dark rounded border border-danger mt-2">
-                                <strong class="text-danger d-block">⚠️ I. A COPA (ZONA CEGA DO ESTÚDIO):</strong>
+                            <li class="p-3 bg-dark rounded border border-secondary mt-3">
+                                <strong class="text-light d-block mb-1">I. A COPA (ZONA SEM CFTV):</strong>
                                 <span class="text-light-sub">Único espaço da sede sem cobertura de câmeras de CFTV por
-                                    acordo interno de convivência. É o ambiente tradicional de descompressão, café e
-                                    conversas informais de corredor — o ponto mais vulnerável a alinhamentos verbais e
+                                    acordo interno de convivência. É o ambiente de descompressão, café e
+                                    conversas de corredor — ponto vulnerável a alinhamentos verbais e
                                     interpretações desencontradas de briefing.</span>
                             </li>
                         </ul>
@@ -402,106 +353,104 @@
         <!-- ========================================================================= -->
         <!-- 3. O PROTOCOLO VÉRTICE: AS NORMAS DA PIPELINE E OS 4 FREEZES -->
         <!-- ========================================================================= -->
-        <section id="secao-protocolo-leis" class="card bg-panel border-success shadow mb-4 mb-md-5 p-3 p-md-4">
-            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
-                <h3 class="h5 text-success fw-bold m-0 font-monospace">🛡️ O PROTOCOLO VÉRTICE: NORMAS E OS 4 FREEZE
-                    POINTS</h3>
-                <span class="badge bg-success text-dark font-monospace fw-bold extra-small">NORMA OPERACIONAL
-                    v5.4</span>
+        <section id="secao-protocolo-leis" class="card bg-panel border-secondary shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+                <h3 class="h4 text-light fw-bold m-0">O PROTOCOLO VÉRTICE: NORMAS E OS 4 FREEZE POINTS</h3>
+                <span class="badge bg-secondary text-light fw-bold">NORMA OPERACIONAL v5.4</span>
             </div>
 
-            <p class="text-light-sub small">
-                O Protocolo Vértice foi formulado após o colapso de 2014 para assegurar o princípio <em>"O Arquivo é o
+            <p class="body-text text-light-sub mb-4">
+                O Protocolo Vértice foi formulado após a auditoria de 2014 para assegurar o princípio <em>"O Arquivo é o
                     Projeto"</em>. Ele busca impedir que alterações tardias contaminem etapas subsequentes,
                 estruturando-se em quatro congelamentos compulsórios:
             </p>
 
-            <div class="row g-3 mb-3 font-monospace">
+            <div class="row g-3 mb-4">
                 <div class="col-sm-6 col-xl-3">
-                    <div class="p-3 bg-terminal rounded border border-info h-100">
-                        <span class="badge bg-info text-dark mb-2 badge-freeze">FREEZE 1 // ASSET LOCK</span>
-                        <h6 class="text-light fw-bold mb-1">Modelagem & UVs</h6>
-                        <p class="extra-small text-light-sub mb-2">Trava a topologia poligonal e os mapas de
+                    <div class="p-3 bg-terminal rounded border border-secondary h-100">
+                        <span class="badge bg-secondary text-light mb-2 badge-freeze">FREEZE 1 // ASSET LOCK</span>
+                        <h6 class="text-light fw-bold mb-2 fs-5">Modelagem & UVs</h6>
+                        <p class="body-text text-light-sub mb-2">Trava a topologia poligonal e os mapas de
                             coordenadas. Arquivo torna-se Read-Only no servidor.</p>
-                        <small class="text-warning extra-small d-block border-top border-dark pt-1">Descongelamento
+                        <small class="text-sub d-block border-top border-secondary pt-2">Descongelamento
                             formal exige Solicitação de Descongelamento de Ativo (SDA) assinada pela Direção.</small>
                     </div>
                 </div>
                 <div class="col-sm-6 col-xl-3">
-                    <div class="p-3 bg-terminal rounded border border-primary h-100">
-                        <span class="badge bg-primary text-light mb-2 badge-freeze">FREEZE 2 // MOTION LOCK</span>
-                        <h6 class="text-light fw-bold mb-1">Rigging & Câmera</h6>
-                        <p class="extra-small text-light-sub mb-2">Trava trajetórias e ossos de deformação. Nenhuma
+                    <div class="p-3 bg-terminal rounded border border-secondary h-100">
+                        <span class="badge bg-secondary text-light mb-2 badge-freeze">FREEZE 2 // MOTION LOCK</span>
+                        <h6 class="text-light fw-bold mb-2 fs-5">Rigging & Câmera</h6>
+                        <p class="body-text text-light-sub mb-2">Trava trajetórias e ossos de deformação. Nenhuma
                             referência externa pode ser substituída sem visto do lead.</p>
-                        <small class="text-info extra-small d-block border-top border-dark pt-1">Rafael Torres é o
+                        <small class="text-sub d-block border-top border-secondary pt-2">Rafael Torres é o
                             responsável pela validação antes do envio para a Render Farm.</small>
                     </div>
                 </div>
                 <div class="col-sm-6 col-xl-3">
-                    <div class="p-3 bg-terminal rounded border border-warning h-100">
-                        <span class="badge bg-warning text-dark mb-2 badge-freeze">FREEZE 3 // COMP LOCK</span>
-                        <h6 class="text-light fw-bold mb-1">Composição VFX</h6>
-                        <p class="extra-small text-light-sub mb-2">Conferência obrigatória do hash de render OpenEXR e
+                    <div class="p-3 bg-terminal rounded border border-secondary h-100">
+                        <span class="badge bg-secondary text-light mb-2 badge-freeze">FREEZE 3 // COMP LOCK</span>
+                        <h6 class="text-light fw-bold mb-2 fs-5">Composição VFX</h6>
+                        <p class="body-text text-light-sub mb-2">Conferência obrigatória do hash de render OpenEXR e
                             do Job ID no log do Deadline antes de carregar o Read Node.</p>
-                        <small class="text-warning extra-small d-block border-top border-dark pt-1">Proibido assumir
+                        <small class="text-sub d-block border-top border-secondary pt-2">Proibido assumir
                             passes de render sem verificar a procedência dos nós de cálculo.</small>
                     </div>
                 </div>
                 <div class="col-sm-6 col-xl-3">
-                    <div class="p-3 bg-terminal rounded border border-danger h-100">
-                        <span class="badge bg-danger text-light mb-2 badge-freeze">FREEZE 4 // CUT LOCK</span>
-                        <h6 class="text-light fw-bold mb-1">Edição Master</h6>
-                        <p class="extra-small text-light-sub mb-2">Cortes, sincronia de áudio e conformação de cores
+                    <div class="p-3 bg-terminal rounded border border-secondary h-100">
+                        <span class="badge bg-secondary text-light mb-2 badge-freeze">FREEZE 4 // CUT LOCK</span>
+                        <h6 class="text-light fw-bold mb-2 fs-5">Edição Master</h6>
+                        <p class="body-text text-light-sub mb-2">Cortes, sincronia de áudio e conformação de cores
                             Rec.709 travados. Geração de hash MD5.</p>
-                        <small class="text-danger extra-small d-block border-top border-dark pt-1">Henrique Moura
+                        <small class="text-sub d-block border-top border-secondary pt-2">Henrique Moura
                             comanda a ilha. É proibido usar a palavra "FINAL" nos nomes.</small>
                     </div>
                 </div>
             </div>
 
-            <div class="table-responsive my-3">
-                <table class="table table-dark table-bordered table-sm font-monospace extra-small align-middle mb-0">
+            <div class="table-responsive my-4">
+                <table class="table table-dark table-bordered align-middle mb-0 table-custom">
                     <thead>
                         <tr class="table-secondary">
-                            <th style="width: 15%;">CÓDIGO OFICIAL</th>
+                            <th style="width: 20%;">CÓDIGO OFICIAL</th>
                             <th style="width: 25%;">CATEGORIA DO DESVIO</th>
                             <th>ENQUADRAMENTO NORMATIVO</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="text-warning fw-bold">DESVIO 01 (D01)</td>
+                            <td class="text-light fw-bold">DESVIO 01 (D01)</td>
                             <td class="text-light">Improviso Técnico</td>
                             <td class="text-light-sub">Adoção de alterações estéticas ou técnicas verbais sem emissão
                                 formal de Ordem de Serviço.</td>
                         </tr>
                         <tr>
-                            <td class="text-warning fw-bold">DESVIO 02 (D02)</td>
+                            <td class="text-light fw-bold">DESVIO 02 (D02)</td>
                             <td class="text-light">Omissão de Registro</td>
                             <td class="text-light-sub">Alterar arquivos, versões ou parâmetros sem registrar a
                                 respectiva entrada no log de versão.</td>
                         </tr>
                         <tr>
-                            <td class="text-warning fw-bold">DESVIO 03 (D03)</td>
+                            <td class="text-light fw-bold">DESVIO 03 (D03)</td>
                             <td class="text-light">Bypass de Checagem</td>
                             <td class="text-light-sub">Pular uma das travas dos 4 Freezes ou receber passes de render
                                 sem validação de dependência.</td>
                         </tr>
                         <tr>
-                            <td class="text-danger fw-bold">DESVIO 04 (D04)</td>
-                            <td class="text-danger">Substituição Não Autorizada</td>
+                            <td class="text-light fw-bold">DESVIO 04 (D04)</td>
+                            <td class="text-light">Substituição Não Autorizada</td>
                             <td class="text-light-sub">Substituir um ativo homologado por versões alternativas ou
                                 paralelas sem liberação em Ordem de Serviço.</td>
                         </tr>
                         <tr>
-                            <td class="text-warning fw-bold">DESVIO 05 (D05)</td>
+                            <td class="text-light fw-bold">DESVIO 05 (D05)</td>
                             <td class="text-light">Atraso Documental</td>
                             <td class="text-light-sub">Executar modificações sob pressão de horário e deixar de
                                 atualizar a pasta de documentação.</td>
                         </tr>
                         <tr>
-                            <td class="text-danger fw-bold">DESVIO 06 (D06)</td>
-                            <td class="text-danger">Ruptura de Rastreabilidade</td>
+                            <td class="text-light fw-bold">DESVIO 06 (D06)</td>
+                            <td class="text-light">Ruptura de Rastreabilidade</td>
                             <td class="text-light-sub">Quebrar os vínculos de pastas da SAN, corromper referências
                                 relativas ou criar versões órfãs.</td>
                         </tr>
@@ -509,9 +458,9 @@
                 </table>
             </div>
 
-            <div class="p-3 bg-black rounded border border-success text-center font-monospace extra-small">
-                <span class="text-success fw-bold d-block mb-1">A REGRA DE OURO DA VÉRTICE:</span>
-                <span class="text-light">
+            <div class="p-3 bg-terminal rounded border border-secondary text-center body-text">
+                <strong class="text-light d-block mb-1">A REGRA DA VÉRTICE:</strong>
+                <span class="text-light-sub">
                     "Nada deve depender da memória de uma única pessoa. Os arquivos registram o que aconteceu; a rede
                     humana explica por que aconteceu; a investigação conecta os dois para reconstruir a verdade."
                 </span>
@@ -521,149 +470,181 @@
         <!-- ========================================================================= -->
         <!-- 4. ESTRUTURA DO SERVIDOR SAN (ÁRVORE DE ARQUIVOS) -->
         <!-- ========================================================================= -->
-        <section id="secao-storage-san" class="card bg-panel border-info shadow mb-4 mb-md-5 p-3 p-md-4">
-            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
-                <h3 class="h5 text-info fw-bold m-0 font-monospace">📁 VOLUME DE ARQUIVOS:
-                    //SAN_VERTICE/PROJETOS/2026/VRT-MAQ-2026-017/</h3>
-                <span class="badge bg-info text-dark font-monospace extra-small">SNAPSHOT FORENSE DISK-IMAGE</span>
+        <section id="secao-storage-san" class="card bg-panel border-secondary shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+                <h3 class="h4 text-light fw-bold m-0">VOLUME DE ARQUIVOS: //SAN_VERTICE/PROJETOS/2026/VRT-MAQ-2026-017/
+                </h3>
+                <span class="badge bg-secondary text-light">SNAPSHOT FORENSE DISK-IMAGE</span>
             </div>
 
-            <p class="text-light-sub small mb-3">
+            <p class="body-text text-light-sub mb-4">
                 Estrutura de pastas indexada pelo storage central. Todos os caminhos utilizam sintaxe UNC com logs de
-                acesso e scripts auxiliares de automação de esteira:
+                acesso e scripts de automação de esteira:
             </p>
 
-            <div class="p-3 bg-terminal rounded border border-info file-tree font-monospace extra-small">
-                <span class="dir-title">//SAN_VERTICE/PROJETOS/2026/VRT-MAQ-2026-017/</span><br>
-                ├── <span class="dir-title">01_DOCUMENTACAO/</span> <span class="file-meta">[Acesso: Read-Only Geral |
-                    Gravado por Produção/Clara]</span><br>
-                │ ├── <span class="file-ok">aprovacao_asset_robot.pdf</span> <span class="file-meta">[340 KB |
-                    Modificado: 11/09/2026 17:40:02 | Assinatura: Rafael Torres]</span><br>
-                │ ├── <span class="file-warn">solicitacao_alteracao_robot.pdf</span> <span class="file-meta">[285 KB |
-                    Modificado: 11/09/2026 18:20:15 | Solicitante: Marina Valente]</span><br>
-                │ └── <span class="file-meta">ata_reuniao_copa_18h35.pdf</span> <span class="file-meta">[190 KB |
-                    Modificado: 11/09/2026 18:35:44 | Notas de alinhamento]</span><br>
-                ├── <span class="dir-title">02_BRIEFING/</span> <span class="file-meta">[Acesso: Read-Only]</span><br>
-                │ ├── <span class="file-meta">especificacao_tecnica_maqtec_v01.pdf</span> <span class="file-meta">[14.2
-                    MB | Caderno industrial de engenharia mecânica]</span><br>
-                │ └── <span class="file-meta">moodboard_texturas_metal_industrial.pdf</span> <span
-                    class="file-meta">[42.8 MB | Prancheta cromática e de acabamento]</span><br>
-                ├── <span class="dir-title">03_ASSETS/</span><br>
-                │ └── <span class="dir-title">ROBOT/</span> <span class="file-meta">[Acesso: Modelagem &
-                    Rigging]</span><br>
-                │ ├── <span class="file-ok">robot_model_v07.blend</span> <span class="file-meta">[1.15 GB | Modificado:
-                    11/09/2026 17:40:12 | SHA-256: 4e8a... | </span><span class="text-success">Registro Oficial
-                    ERP</span><span class="file-meta">]</span><br>
-                │ ├── <span class="file-warn">robot_model_v08.blend</span> <span class="file-meta">[1.48 GB |
-                    Modificado: 11/09/2026 18:47:05 | SHA-256: d91c... | </span><span class="text-warning">Ativo no
-                    Repositório</span><span class="file-meta">]</span><br>
-                │ └── <span class="file-meta">.sync_cache/</span> <span class="file-meta">[Diretório temporário do
-                    daemon asset_sync_daemon.py]</span><br>
-                ├── <span class="dir-title">04_CENAS/</span><br>
-                │ └── <span class="dir-title">ANIMATION/</span> <span class="file-meta">[Acesso: Animadores &
-                    Workstations 3D]</span><br>
-                │ ├── <span class="file-ok">scene_04_v03.blend</span> <span class="file-meta">[890 MB | Modificado:
-                    11/09/2026 17:50:30 | </span><span class="text-success">Referência:
-                    robot_model_v07.blend</span><span class="file-meta">]</span><br>
-                │ ├── <span class="file-warn">scene_04_v04.blend</span> <span class="file-meta">[945 MB | Modificado:
-                    11/09/2026 18:53:22 | </span><span class="text-danger">Referência: robot_model_v08.blend</span><span
-                    class="file-meta">]</span><br>
-                │ └── <span class="file-meta">auto_relinker.py</span> <span class="file-meta">[Script auxiliar de
-                    resolução de referências externas da Farm]</span><br>
-                ├── <span class="dir-title">05_LOGS_SISTEMA/</span> <span class="file-meta">[Acesso: TI / Gustavo
-                    Lima]</span><br>
-                │ ├── <span class="file-meta">audit_ws_3d_04.log</span> <span class="file-meta">[Trilha de eventos,
-                    processos e conexões de rede da estação WS-3D-04]</span><br>
-                │ ├── <span class="file-meta">syslog_copa_chat.log</span> <span class="file-meta">[Logs de canais
-                    corporativos e registros de chamadas]</span><br>
-                │ └── <span class="file-meta">deadline_farm_job88492.log</span> <span class="file-meta">[Extrato de
-                    renderização em lote do cluster de 42 nós]</span><br>
-                ├── <span class="dir-title">06_RENDERS/</span><br>
-                │ └── <span class="dir-title">BEAUTY/</span> <span class="file-meta">[Acesso: Render Farm / Nuke
-                    Suites]</span><br>
-                │ └── <span class="file-warn">render_scene04_v03.[0101-0360].exr</span> <span class="file-meta">[OpenEXR
-                    32-bit Float ACEScg | Concluído: 11/09/2026 19:08:44]</span><br>
-                ├── <span class="dir-title">07_COMPOSICAO/</span><br>
-                │ └── <span class="dir-title">NUKE_SCRIPTS/</span> <span class="file-meta">[Acesso: WS-COMP-01 /
-                    Henrique Moura]</span><br>
-                │ └── <span class="file-warn">scene04_comp_v02.nk</span> <span class="file-meta">[240 KB | Modificado:
-                    11/09/2026 19:18:10 | Read Node aponta p/ renders da cena 04]</span><br>
-                └── <span class="dir-title">08_EXPORTACAO/</span><br>
-                └── <span class="dir-title">MASTERS/</span> <span class="file-meta">[Acesso: Mastering &
-                    Review]</span><br>
-                ├── <span class="file-meta">projeto_final.mp4</span> <span class="file-meta">[640 MB | Exportado:
-                    19:24:12 | Codec: H.264 | Dessincronia de áudio]</span><br>
-                └── <span class="file-warn">projeto_final_2.mp4</span> <span class="file-meta">[642 MB | Exportado:
-                    19:31:02 | Codec: H.264 | Master submetido à revisão]</span>
+            <div class="p-4 bg-terminal rounded border border-secondary">
+                <h4 class="h5 text-light fw-bold mb-4 pb-2 border-bottom border-secondary">
+                    Estrutura de Pastas: //SAN_VERTICE/PROJETOS/2026/VRT-MAQ-2026-017/
+                </h4>
+
+                <div class="mb-4">
+                    <div class="fw-bold text-light mb-2">01_DOCUMENTACAO/ <span class="text-sub fw-normal">(Acesso:
+                            Leitura Geral | Gravado por Produção/Clara)</span></div>
+                    <ul class="list-unstyled ps-3 text-light-sub mb-0">
+                        <li class="py-1">• <strong>aprovacao_asset_robot.pdf</strong> — 340 KB | Modificado: 11/09/2026
+                            às 17:40:02 | Assinatura: Rafael Torres</li>
+                        <li class="py-1">• <strong>solicitacao_alteracao_robot.pdf</strong> — 285 KB | Modificado:
+                            11/09/2026 às 18:20:15 | Solicitante: Marina Valente</li>
+                        <li class="py-1">• <strong>ata_reuniao_copa_18h35.pdf</strong> — 190 KB | Modificado: 11/09/2026
+                            às 18:35:44 | Notas de alinhamento</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <div class="fw-bold text-light mb-2">02_BRIEFING/ <span class="text-sub fw-normal">(Acesso: Leitura
+                            Geral)</span></div>
+                    <ul class="list-unstyled ps-3 text-light-sub mb-0">
+                        <li class="py-1">• <strong>especificacao_tecnica_maqtec_v01.pdf</strong> — 14.2 MB | Caderno
+                            industrial de engenharia mecânica</li>
+                        <li class="py-1">• <strong>moodboard_texturas_metal_industrial.pdf</strong> — 42.8 MB |
+                            Prancheta cromática e de acabamento</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <div class="fw-bold text-light mb-2">03_ASSETS/ROBOT/ <span class="text-sub fw-normal">(Acesso:
+                            Modelagem & Rigging)</span></div>
+                    <ul class="list-unstyled ps-3 text-light-sub mb-0">
+                        <li class="py-1">• <strong>robot_model_v07.blend</strong> — 1.15 GB | Modificado: 11/09/2026 às
+                            17:40:12 | Registro Oficial no ERP</li>
+                        <li class="py-1">• <strong>robot_model_v08.blend</strong> — 1.48 GB | Modificado: 11/09/2026 às
+                            18:47:05 | Ativo no Repositório</li>
+                        <li class="py-1">• <strong>.sync_cache/</strong> — Diretório temporário do serviço de
+                            sincronização em segundo plano</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <div class="fw-bold text-light mb-2">04_CENAS/ANIMATION/ <span class="text-sub fw-normal">(Acesso:
+                            Animadores & Estações 3D)</span></div>
+                    <ul class="list-unstyled ps-3 text-light-sub mb-0">
+                        <li class="py-1">• <strong>scene_04_v03.blend</strong> — 890 MB | Modificado: 11/09/2026 às
+                            17:50:30 | Referência: robot_model_v07.blend</li>
+                        <li class="py-1">• <strong>scene_04_v04.blend</strong> — 945 MB | Modificado: 11/09/2026 às
+                            18:53:22 | Referência: robot_model_v08.blend</li>
+                        <li class="py-1">• <strong>auto_relinker.py</strong> — Script auxiliar de resolução de
+                            referências externas da Farm</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <div class="fw-bold text-light mb-2">05_LOGS_SISTEMA/ <span class="text-sub fw-normal">(Acesso: TI /
+                            Gustavo Lima)</span></div>
+                    <ul class="list-unstyled ps-3 text-light-sub mb-0">
+                        <li class="py-1">• <strong>audit_ws_3d_04.log</strong> — Trilha de eventos, processos e conexões
+                            de rede da estação WS-3D-04</li>
+                        <li class="py-1">• <strong>syslog_copa_chat.log</strong> — Registros de canais corporativos e
+                            chamadas internas</li>
+                        <li class="py-1">• <strong>deadline_farm_job88492.log</strong> — Extrato de renderização em lote
+                            do cluster de 42 nós</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <div class="fw-bold text-light mb-2">06_RENDERS/BEAUTY/ <span class="text-sub fw-normal">(Acesso:
+                            Render Farm & Suítes Nuke)</span></div>
+                    <ul class="list-unstyled ps-3 text-light-sub mb-0">
+                        <li class="py-1">• <strong>render_scene04_v03.[0101-0360].exr</strong> — OpenEXR 32-bit Float
+                            ACEScg | Concluído: 11/09/2026 às 19:08:44</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <div class="fw-bold text-light mb-2">07_COMPOSICAO/NUKE_SCRIPTS/ <span
+                            class="text-sub fw-normal">(Acesso: Estação WS-COMP-01 / Henrique Moura)</span></div>
+                    <ul class="list-unstyled ps-3 text-light-sub mb-0">
+                        <li class="py-1">• <strong>scene04_comp_v02.nk</strong> — 240 KB | Modificado: 11/09/2026 às
+                            19:18:10 | Nó de leitura configurado para os renders da cena 04</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="fw-bold text-light mb-2">08_EXPORTACAO/MASTERS/ <span
+                            class="text-sub fw-normal">(Acesso: Finalização & Revisão)</span></div>
+                    <ul class="list-unstyled ps-3 text-light-sub mb-0">
+                        <li class="py-1">• <strong>projeto_final.mp4</strong> — 640 MB | Exportado às 19:24:12 | Codec:
+                            H.264 | Dessincronia de áudio detectada</li>
+                        <li class="py-1">• <strong>projeto_final_2.mp4</strong> — 642 MB | Exportado às 19:31:02 |
+                            Codec: H.264 | Master submetido à revisão final</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
         <!-- ========================================================================= -->
         <!-- 5. O INQUÉRITO FORENSE COMPLETO: OS 14 ATOS PERICIAIS COM TODOS OS DIÁLOGOS -->
         <!-- ========================================================================= -->
-        <section id="secao-atos-periciais" class="card bg-panel border-danger shadow mb-4 mb-md-5 p-3 p-md-4">
-            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
-                <h3 class="h5 text-danger fw-bold m-0 font-monospace">🎬 O INQUÉRITO COMPLETO: TRANSCRIÇÕES & CONFRONTO
-                    DE FATOS</h3>
-                <span class="badge bg-danger text-light font-monospace extra-small">DEPOIMENTOS INTEGRAIS</span>
+        <section id="secao-atos-periciais" class="card bg-panel border-secondary shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+                <h3 class="h4 text-light fw-bold m-0">O INQUÉRITO: TRANSCRIÇÕES & CONFRONTO DE FATOS</h3>
+                <span class="badge bg-secondary text-light">DEPOIMENTOS INTEGRAIS</span>
             </div>
 
             <!-- ATO 01 -->
-            <div class="mb-4 pb-3 border-bottom border-secondary">
-                <h4 class="h6 text-warning font-monospace fw-bold">ATO 01 — 19H42: A DESCOBERTA DA GEOMETRIA INCONFORME
-                </h4>
-                <p class="text-light-sub small">
-                    A sala de finalização mantinha a iluminação D65. O ar gélido a 18°C alimentava as ilhas Nuke e as
-                    GPUs em operação contínua. Faltavam exatamente dezoito minutos para o prazo final de entrega da
-                    MaqTec Industrial. Henrique pausou bruscamente a timeline:
+            <div class="mb-5 pb-4 border-bottom border-secondary">
+                <h4 class="h5 text-light fw-bold mb-3">ATO 01 — 19H42: A DESCOBERTA DA GEOMETRIA INCONFORME</h4>
+                <p class="body-text text-light-sub mb-3">
+                    A sala de finalização mantinha a iluminação D65. O ar a 18°C alimentava as ilhas Nuke e as
+                    GPUs em operação contínua. Faltavam dezoito minutos para o prazo final de entrega da
+                    MaqTec Industrial. Henrique pausou a timeline:
                 </p>
 
                 <div class="dialogo-bloco">
-                    <div class="dialogo-fala fala-henrique">
-                        <span class="dialogo-nome text-danger">Henrique Moura:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Henrique Moura:</span>
                         <p class="dialogo-texto">— Volta cinco segundos na barra de tempo, Henrique... Bem na transição
                             do plano geral para a articulação central. Olhem para essa geometria.</p>
                     </div>
-                    <div class="dialogo-fala fala-rafael">
-                        <span class="dialogo-nome text-primary">Rafael Torres:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Rafael Torres:</span>
                         <p class="dialogo-texto">— O que tem aí, Henrique? Parece que o sombreamento do metal refletiu a
                             iluminação de estúdio perfeitamente.</p>
                     </div>
-                    <div class="dialogo-fala fala-henrique">
-                        <span class="dialogo-nome text-danger">Henrique Moura:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Henrique Moura:</span>
                         <p class="dialogo-texto">— Não é a luz, Rafael. É a articulação. Olha a tubulação do pistão
                             secundário e a placa de reforço estrutural. Essa configuração não é a versão oficial.</p>
                     </div>
-                    <div class="dialogo-fala fala-rafael">
-                        <span class="dialogo-nome text-primary">Rafael Torres:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Rafael Torres:</span>
                         <p class="dialogo-texto">— Não... essa não é a malha que eu fiz o <em>skinning</em> e validei na
                             esteira de rigor técnico de terça-feira. Os cilindros aqui estão dispostos em pareamento
                             duplo, mas o modelo aprovado tinha o conjunto em bloco estriado simples.</p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— Abre o diretório dos passes brutos de renderização que vieram da
                             Render Farm. Quero ver a sequência de matrizes EXR antes de qualquer nó de composição ou
                             gradação de cor.</p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— O problema não foi gerado durante a composição no Nuke, nem por
                             qualquer erro na codificação final em H.264 do arquivo MP4. A imagem que veio da ilha 3D já
                             continha essa geometria.</p>
                     </div>
-                    <div class="dialogo-fala fala-rafael">
-                        <span class="dialogo-nome text-primary">Rafael Torres:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Rafael Torres:</span>
                         <p class="dialogo-texto">— A exportação master apenas refletiu o que a cena 3D entregou. O erro
                             é anterior ao render.</p>
                     </div>
-                    <div class="dialogo-fala fala-henrique">
-                        <span class="dialogo-nome text-danger">Henrique Moura:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Henrique Moura:</span>
                         <p class="dialogo-texto">— O problema chegou pronto na minha bancada. Eu processei as mídias que
                             me entregaram.</p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— Então não vamos perder tempo tentando corrigir a cor ou reenquadrar a
                             imagem no Premiere. Vamos abrir a árvore completa do projeto no storage e rastrear cada
                             salvamento, cada modificação e cada log de dependência até descobrir onde e quando essa
@@ -673,114 +654,114 @@
             </div>
 
             <!-- ATO 02 -->
-            <div class="mb-4 pb-3 border-bottom border-secondary">
-                <h4 class="h6 text-warning font-monospace fw-bold">ATO 02 — O QUE FOI APROVADO?</h4>
-                <p class="text-light-sub small">
+            <div class="mb-5 pb-4 border-bottom border-secondary">
+                <h4 class="h5 text-light fw-bold mb-3">ATO 02 — O QUE FOI APROVADO?</h4>
+                <p class="body-text text-light-sub mb-3">
                     A equipe reuniu-se ao redor da mesa de análise de Clara Mendes. Clara acessou a pasta oficial de
-                    documentação formal: <code>01_DOCUMENTACAO/aprovacao_asset_robot.pdf</code>, registrado às 17h40 com
-                    o ativo matriz <code>robot_model_v07.blend</code> sob o status Freeze 1 — Asset Lock.
+                    documentação formal: 01_DOCUMENTACAO/aprovacao_asset_robot.pdf, registrado às 17h40 com
+                    o ativo matriz robot_model_v07.blend sob o status Freeze 1 — Asset Lock.
                 </p>
 
                 <div class="dialogo-bloco">
-                    <div class="dialogo-fala fala-rafael">
-                        <span class="dialogo-nome text-primary">Rafael Torres:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Rafael Torres:</span>
                         <p class="dialogo-texto">— Essa foi exatamente a versão que eu revisei topologicamente, validei
-                            os UVs e travei a malha para a equipe de rig. A <code>v07</code> tinha a geometria do pistão
+                            os UVs e travei a malha para a equipe de rig. A v07 tinha a geometria do pistão
                             estriado simples solicitada nas especificações industriais da MaqTec.</p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— Depois desse registro registrado às 17h40, houve algum outro termo
                             oficial de aprovação emitido pela gestão ou pela equipe técnica?</p>
                     </div>
-                    <div class="dialogo-fala fala-rafael">
-                        <span class="dialogo-nome text-primary">Rafael Torres:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Rafael Torres:</span>
                         <p class="dialogo-texto">— Não. Para haver um novo congelamento de asset após o Freeze 1, seria
                             necessária a emissão de uma Solicitação de Descongelamento assinada por você e pelo Daniel
                             Azevedo. E isso nunca aconteceu.</p>
                     </div>
-                    <div class="dialogo-fala fala-marina">
-                        <span class="dialogo-nome text-warning">Marina Valente:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Marina Valente:</span>
                         <p class="dialogo-texto">— Clara, precisamos lembrar que durante o final da tarde houve uma
                             solicitação verbal de alteração trazida pelas observações preliminares do cliente. Nós
                             estávamos discutindo a possibilidade de tornar a articulação visualmente mais leve no
                             enquadramento da câmera.</p>
                     </div>
-                    <div class="dialogo-fala fala-rafael">
-                        <span class="dialogo-nome text-primary">Rafael Torres:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Rafael Torres:</span>
                         <p class="dialogo-texto">— Houve uma discussão na mesa de reuniões sobre a estética do braço,
                             Marina. Mas discussão de corredor não é ordem de alteração técnica de pipeline. Uma coisa é
                             avaliar se o modelo fica mais bonito; outra coisa completamente diferente é homologar a
                             substituição do ativo travado no servidor.</p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
-                        <p class="dialogo-texto">— O arquivo <code>robot_model_v08.blend</code> existe no servidor, mas
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
+                        <p class="dialogo-texto">— O arquivo robot_model_v08.blend existe no servidor, mas
                             ele não consta em nenhum registro do ERP, em nenhum e-mail assinado e em nenhuma ata de
                             reunião.</p>
                     </div>
-                    <div class="dialogo-fala fala-rafael">
-                        <span class="dialogo-nome text-primary">Rafael Torres:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Rafael Torres:</span>
                         <p class="dialogo-texto">— Porque ele nunca passou por mim para receber o visto de aprovação. Do
-                            ponto de vista do pipeline oficial da Vértice, a <code>v08</code> simplesmente não deveria
+                            ponto de vista do pipeline oficial da Vértice, a v08 simplesmente não deveria
                             existir como ativo de produção.</p>
                     </div>
                 </div>
             </div>
 
             <!-- ATO 03 -->
-            <div class="mb-4 pb-3 border-bottom border-secondary">
-                <h4 class="h6 text-warning font-monospace fw-bold">ATO 03 — UMA NOVA VERSÃO</h4>
-                <p class="text-light-sub small">
-                    Clara exibiu o extrato de criação de arquivos:
-                    <code>[18:47:05] CREATE_FILE // WS-3D-04 (IP: 192.168.1.104) USER: gabi.lima FILE: .../robot_model_v08.blend</code>.
+            <div class="mb-5 pb-4 border-bottom border-secondary">
+                <h4 class="h5 text-light fw-bold mb-3">ATO 03 — UMA NOVA VERSÃO</h4>
+                <p class="body-text text-light-sub mb-3">
+                    Clara exibiu o extrato de auditoria: às 18h47min05s, criação do arquivo robot_model_v08.blend na
+                    estação WS-3D-04 (IP: 192.168.1.104) pelo usuário gabi.lima.
                 </p>
 
                 <div class="dialogo-bloco">
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
-                        <p class="dialogo-texto">— Gabi, o log do servidor indica que a <code>v08</code> foi criada na
-                            sua bancada de trabalho, a estação <code>WS-3D-04</code>, exatamente às 18h47. Você estava
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
+                        <p class="dialogo-texto">— Gabi, o log do servidor indica que a v08 foi criada na
+                            sua bancada de trabalho, a estação WS-3D-04, exatamente às 18h47. Você estava
                             trabalhando na modelagem do robô nesse horário?</p>
                     </div>
-                    <div class="dialogo-fala fala-gabi">
-                        <span class="dialogo-nome" style="color: #ec4899;">Gabi Lima:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Gabi Lima:</span>
                         <p class="dialogo-texto">— Sim, Clara. Eu estava ajustando os componentes do motor e a blindagem
                             lateral.</p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— Por que você gerou um novo arquivo e gravou uma versão
-                            <code>v08</code> no diretório master?
+                            v08 no diretório master?
                         </p>
                     </div>
-                    <div class="dialogo-fala fala-gabi">
-                        <span class="dialogo-nome" style="color: #ec4899;">Gabi Lima:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Gabi Lima:</span>
                         <p class="dialogo-texto">— Porque eu estava dando andamento à alteração visual que tinha sido
-                            comentada na copa e na mesa de arte. A Marina comentou que o braço da <code>v07</code>
+                            comentada na copa e na mesa de arte. A Marina comentou que o braço da v07
                             estava poluindo o enquadramento do plano quatro.</p>
                     </div>
-                    <div class="dialogo-fala fala-marina">
-                        <span class="dialogo-nome text-warning">Marina Valente:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Marina Valente:</span>
                         <p class="dialogo-texto">— Gabi, sejamos precisos na comunicação. Eu passei pela sua mesa por
                             volta das 18h20 e comentei que gostaria de ver um teste visual de enquadramento com o braço
                             mais aliviado. Eu pedi um rascunho rápido de viewport na sua tela, não a modificação da
                             malha master da produção!</p>
                     </div>
-                    <div class="dialogo-fala fala-bruno">
-                        <span class="dialogo-nome text-light-sub">Bruno Prado:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Bruno Prado:</span>
                         <p class="dialogo-texto">— Clara, a gente estava conversando sobre como resolver o pedido de
                             enquadramento da Marina. Eu sabia que havia uma solicitação de variação sendo testada na
                             estação da Gabi, mas o procedimento padrão seria manter essa variação em um diretório
                             temporário local, sem salvar como versão oficial no projeto da SAN.</p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— Essa variação que você salvou às 18h47 tinha autorização para
-                            substituir o arquivo <code>v07</code> aprovado no pipeline?</p>
+                            substituir o arquivo v07 aprovado no pipeline?</p>
                     </div>
-                    <div class="dialogo-fala fala-rafael">
-                        <span class="dialogo-nome text-primary">Rafael Torres:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Rafael Torres:</span>
                         <p class="dialogo-texto">— De forma alguma! Nenhum artista tem autonomia para criar um
                             <em>branch</em> de malha e tratá-lo como ativo final sem a aprovação do <em>lead</em> de
                             rigging. Se a geometria muda, os ossos do rig perdem a referência de pivô.
@@ -790,45 +771,45 @@
             </div>
 
             <!-- ATO 04 -->
-            <div class="mb-4 pb-3 border-bottom border-secondary">
-                <h4 class="h6 text-warning font-monospace fw-bold">ATO 04 — O PEDIDO</h4>
-                <p class="text-light-sub small">
-                    Clara projetou o arquivo <code>01_DOCUMENTACAO/solicitacao_alteracao_robot.pdf</code>. O formulário
+            <div class="mb-5 pb-4 border-bottom border-secondary">
+                <h4 class="h5 text-light fw-bold mb-3">ATO 04 — O PEDIDO</h4>
+                <p class="body-text text-light-sub mb-3">
+                    Clara projetou o arquivo 01_DOCUMENTACAO/solicitacao_alteracao_robot.pdf. O formulário
                     continha a solicitação de Marina Valente, mas o campo <em>Autorização de Substituição de Asset
                         Oficial (Asset Lock Override)</em> estava em branco.
                 </p>
 
                 <div class="dialogo-bloco">
-                    <div class="dialogo-fala fala-marina">
-                        <span class="dialogo-nome text-warning">Marina Valente:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Marina Valente:</span>
                         <p class="dialogo-texto">— Está registrado aqui no formulário do ERP. O campo de substituição
                             oficial está em branco. Eu preenchi esse documento exatamente para deixar claro que qualquer
                             modificação feita no modelo seria exclusiva para avaliação interna da equipe de arte.</p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— Marina, você chegou a solicitar verbalmente ou por e-mail que essa
                             versão alterada fosse colocada na cena principal de animação que iria para a Render Farm?
                         </p>
                     </div>
-                    <div class="dialogo-fala fala-marina">
-                        <span class="dialogo-nome text-warning">Marina Valente:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Marina Valente:</span>
                         <p class="dialogo-texto">— Absolutamente não. Eu disse ao Gabi que queria ver o resultado na
                             tela dele antes de qualquer decisão. Eu presumi que tinha ficado claro para todos que era
                             apenas uma avaliação conceitual.</p>
                     </div>
-                    <div class="dialogo-fala fala-bruno">
-                        <span class="dialogo-nome text-light-sub">Bruno Prado:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Bruno Prado:</span>
                         <p class="dialogo-texto">— Eu ouvi a Marina comentar sobre a avaliação. Para mim, ficou
                             entendido que era apenas um teste preliminar que não sairia da máquina local.</p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— E você, Gabi? Como você interpretou o pedido registrado nesse
                             documento e a conversa na bancada?</p>
                     </div>
-                    <div class="dialogo-fala fala-gabi">
-                        <span class="dialogo-nome" style="color: #ec4899;">Gabi Lima:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Gabi Lima:</span>
                         <p class="dialogo-texto">— Eu entendi que o prazo das vinte horas estava extremamente apertado e
                             que, se eu deixasse a alteração pronta direto na cena final, nós economizaríamos tempo de
                             aprovação quando a Marina validasse a imagem.</p>
@@ -837,47 +818,48 @@
             </div>
 
             <!-- ATO 05 -->
-            <div class="mb-4 pb-3 border-bottom border-secondary">
-                <h4 class="h6 text-warning font-monospace fw-bold">ATO 05 — DUAS CENAS</h4>
-                <p class="text-light-sub small">
-                    A listagem da pasta <code>04_CENAS/ANIMATION/</code> revelava: <code>scene_04_v03.blend</code>
-                    (17h50, vinculada à v07) e <code>scene_04_v04.blend</code> (18h53, vinculada à v08). O log marcava:
-                    <code>[18:53:22] FILE_MODIFY // WS-3D-04 USER: gabi.lima ACTION: OVERWRITE_LINKED_ASSETS -> robot_model_v08.blend</code>.
+            <div class="mb-5 pb-4 border-bottom border-secondary">
+                <h4 class="h5 text-light fw-bold mb-3">ATO 05 — DUAS CENAS</h4>
+                <p class="body-text text-light-sub mb-3">
+                    A listagem da pasta 04_CENAS/ANIMATION/ revelava: scene_04_v03.blend
+                    (17h50, vinculada à v07) e scene_04_v04.blend (18h53, vinculada à v08). O log marcava:
+                    às 18h53min22s, na estação WS-3D-04 pelo usuário gabi.lima: substituição da referência de ativo
+                    vinculado para robot_model_v08.blend.
                 </p>
 
                 <div class="dialogo-bloco">
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— A substituição da referência externa da cena ocorreu às 18h53. E foi
-                            executada a partir da estação <code>WS-3D-04</code>. Gabi, o log registra que você modificou
-                            a cena quatro às 18h53, alterando o link do ativo 3D da versão <code>v07</code> para a
-                            versão <code>v08</code>. Por que você trocou o vínculo do arquivo aprovado na cena oficial
+                            executada a partir da estação WS-3D-04. Gabi, o log registra que você modificou
+                            a cena quatro às 18h53, alterando o link do ativo 3D da versão v07 para a
+                            versão v08. Por que você trocou o vínculo do arquivo aprovado na cena oficial
                             da produção?</p>
                     </div>
-                    <div class="dialogo-fala fala-gabi">
-                        <span class="dialogo-nome" style="color: #ec4899;">Gabi Lima:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Gabi Lima:</span>
                         <p class="dialogo-texto">— Eu estava ajustando os marcadores de câmera e os limites de movimento
                             da cena quatro... mas eu juro que não troquei o link manualmente! Eu dei save nas posições
-                            de câmera. Ou o script <code>auto_relinker.py</code> rodou em segundo plano, ou o template
+                            de câmera. Ou o script auto_relinker.py rodou em segundo plano, ou o template
                             do Deadline puxou o arquivo com número mais alto sozinho!</p>
                     </div>
-                    <div class="dialogo-fala fala-rafael">
-                        <span class="dialogo-nome text-primary">Rafael Torres:</span>
-                        <p class="dialogo-texto">— Gabi, você sabia perfeitamente que a <code>v07</code> era o ativo
-                            aprovado no ERP e que a <code>v08</code> não tinha recebido o visto de validação de rig!
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Rafael Torres:</span>
+                        <p class="dialogo-texto">— Gabi, você sabia perfeitamente que a v07 era o ativo
+                            aprovado no ERP e que a v08 não tinha recebido o visto de validação de rig!
                             Como você dá um save na tomada oficial sabendo que havia um arquivo clandestino na mesma
                             pasta?</p>
                     </div>
-                    <div class="dialogo-fala fala-gabi">
-                        <span class="dialogo-nome" style="color: #ec4899;">Gabi Lima:</span>
-                        <p class="dialogo-texto">— Eu achei que a <code>v08</code> era a versão que a direção de arte
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Gabi Lima:</span>
+                        <p class="dialogo-texto">— Eu achei que a v08 era a versão que a direção de arte
                             queria ver no render final! E a minha tela bloqueou por inatividade entre 18h48 e 18h52
                             enquanto eu fui pegar água. Quando voltei, a cena já estava aberta!</p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— Vamos manter o foco nos registros temporais. Às 18h53, o vínculo da
-                            <code>scene_04_v04.blend</code> foi alterado na estação <code>WS-3D-04</code>. Mas ainda
+                            scene_04_v04.blend foi alterado na estação WS-3D-04. Mas ainda
                             precisamos esclarecer um ponto crítico: qual era o estado de conhecimento do operador no
                             momento exato dessa alteração?
                         </p>
@@ -886,62 +868,72 @@
             </div>
 
             <!-- ATO 06 -->
-            <div class="mb-4 pb-3 border-bottom border-secondary">
-                <h4 class="h6 text-warning font-monospace fw-bold">ATO 06 — O ARQUIVO ENTRE OS DOIS</h4>
-                <p class="text-light-sub small">
+            <div class="mb-5 pb-4 border-bottom border-secondary">
+                <h4 class="h5 text-light fw-bold mb-3">ATO 06 — O ARQUIVO ENTRE OS DOIS</h4>
+                <p class="body-text text-light-sub mb-3">
                     Clara solicitou a Gustavo Lima a varredura aprofundada nos registros da bancada
-                    <code>WS-3D-04</code> entre 18h40 e 18h55:
+                    WS-3D-04 entre 18h40 e 18h55:
                 </p>
 
-                <div class="p-2 bg-black rounded font-monospace extra-small text-light-sub mb-3">
-                    [18:47:05] CREATE -> //SAN/.../03_ASSETS/robot_model_v08.blend (User: gabi.lima)<br>
-                    [18:48:02] LOCK -> Workstation ScreenSaver Lock (Idle: 60s)<br>
-                    [18:49:12] OPEN -> //SAN/.../01_DOCUMENTACAO/aprovacao_asset_robot.pdf (Triggered on WS-3D-04)<br>
-                    [18:50:15] REMOTE -> User marina.valente connected via SMB Share to WS-3D-04<br>
-                    [18:51:04] OPEN -> //SAN/.../03_ASSETS/robot_model_v08.blend (Target restored)<br>
-                    [18:53:22] MODIFY -> //SAN/.../04_CENAS/ANIMATION/scene_04_v04.blend (Dependency update)
+                <div class="p-3 bg-panel-alt rounded border border-secondary mb-4 body-text">
+                    <div class="fw-bold text-light mb-2">Trilha Cronológica de Auditoria — Estação WS-3D-04 (18h47 às
+                        18h53):</div>
+                    <ul class="list-unstyled mb-0 text-light-sub ps-2">
+                        <li class="py-1">• <strong>18h47min05s:</strong> Criação do arquivo robot_model_v08.blend pelo
+                            usuário gabi.lima no storage SAN.</li>
+                        <li class="py-1">• <strong>18h48min02s:</strong> Bloqueio automático de tela da estação por
+                            ociosidade (tempo ocioso: 60 segundos).</li>
+                        <li class="py-1">• <strong>18h49min12s:</strong> Abertura e exibição do documento
+                            aprovacao_asset_robot.pdf na estação WS-3D-04.</li>
+                        <li class="py-1">• <strong>18h50min15s:</strong> Conexão remota SMB estabelecida pela usuária
+                            marina.valente à estação WS-3D-04.</li>
+                        <li class="py-1">• <strong>18h51min04s:</strong> Reabertura do arquivo robot_model_v08.blend na
+                            estação.</li>
+                        <li class="py-1">• <strong>18h53min22s:</strong> Modificação e salvamento da cena
+                            scene_04_v04.blend com alteração da referência de ativo.</li>
+                    </ul>
                 </div>
 
                 <div class="dialogo-bloco">
-                    <div class="dialogo-fala fala-bruno">
-                        <span class="dialogo-nome text-light-sub">Bruno Prado:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Bruno Prado:</span>
                         <p class="dialogo-texto">— Espera aí... às 18h49, dois minutos depois de criar a
-                            <code>v08</code> e quatro minutos antes de modificar a cena quatro, o arquivo PDF de
-                            aprovação da <code>v07</code> foi aberto e visualizado naquela mesma estação?
+                            v08 e quatro minutos antes de modificar a cena quatro, o arquivo PDF de
+                            aprovação da v07 foi aberto e visualizado naquela mesma estação?
                         </p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— Exatamente. O registro do sistema operacional indica que o documento
-                            formal de aprovação do asset foi acessado na estação <code>WS-3D-04</code> às 18h49. Gabi,
+                            formal de aprovação do asset foi acessado na estação WS-3D-04 às 18h49. Gabi,
                             às 18h49 você abriu o PDF de aprovação oficial do projeto. Você leu o conteúdo desse
                             documento?</p>
                     </div>
-                    <div class="dialogo-fala fala-gabi">
-                        <span class="dialogo-nome" style="color: #ec4899;">Gabi Lima:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Gabi Lima:</span>
                         <p class="dialogo-texto">— O PDF abriu na minha tela por causa de um alerta de erro do ERP!
                             Quando salvei a v08, o plugin do Blender acusou violação de Asset Lock e chamou o leitor de
                             PDF automaticamente com o termo de aprovação.</p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— E o que você encontrou no documento?</p>
                     </div>
-                    <div class="dialogo-fala fala-gabi">
-                        <span class="dialogo-nome" style="color: #ec4899;">Gabi Lima:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Gabi Lima:</span>
                         <p class="dialogo-texto">— Que a versão registrada e aprovada era a
-                            <code>robot_model_v07.blend</code>.
+                            robot_model_v07.blend.
                         </p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— Ou seja: às 18h49 a documentação oficial foi consultada na sua
-                            estação, confirmando que a <code>v07</code> era a única versão aprovada para produção. E
-                            apenas quatro minutos depois, às 18h53, a <code>scene_04_v04.blend</code> foi gravada com o
-                            link apontando para a <code>v08</code>.</p>
+                            estação, confirmando que a v07 era a única versão aprovada para produção. E
+                            apenas quatro minutos depois, às 18h53, a scene_04_v04.blend foi gravada com o
+                            link apontando para a v08.</p>
                     </div>
-                    <div class="dialogo-fala fala-gabi">
-                        <span class="dialogo-nome" style="color: #ec4899;">Gabi Lima:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Gabi Lima:</span>
                         <p class="dialogo-texto">— Mas olhem o log das 18h50! A Marina conectou remotamente na minha
                             máquina enquanto minha sessão estava bloqueada! Por que ninguém pergunta o que ela acessou
                             via rede?</p>
@@ -950,51 +942,51 @@
             </div>
 
             <!-- ATO 07 -->
-            <div class="mb-4 pb-3 border-bottom border-secondary">
-                <h4 class="h6 text-warning font-monospace fw-bold">ATO 07 — O RASTRO NÃO TERMINA NA CENA</h4>
-                <p class="text-light-sub small">
+            <div class="mb-5 pb-4 border-bottom border-secondary">
+                <h4 class="h5 text-light fw-bold mb-3">ATO 07 — O RASTRO NÃO TERMINA NA CENA</h4>
+                <p class="body-text text-light-sub mb-3">
                     Clara abriu a pasta de renders da farm:
-                    <code>06_RENDERS/BEAUTY/render_scene04_v03.[0101-0360].exr</code>, concluído às 19h08:44 a partir do
+                    06_RENDERS/BEAUTY/render_scene04_v03.[0101-0360].exr, concluído às 19h08:44 a partir do
                     Job ID 88492 submetido às 18h55:10.
                 </p>
 
                 <div class="dialogo-bloco">
-                    <div class="dialogo-fala fala-henrique">
-                        <span class="dialogo-nome text-danger">Henrique Moura:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Henrique Moura:</span>
                         <p class="dialogo-texto">— Aí está a sequência de quadros brutos. Foi essa pasta que a farm
-                            cuspiu às 19h08. O erro visual já estava completamente solidificado nos arquivos de 32 bits.
+                            concluiu às 19h08. O erro visual já estava completamente gerado nos arquivos de 32 bits.
                         </p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— Henrique, quando essa sequência de render foi gerada, alguém da
                             equipe de composição alterou a geometria do arquivo ou abriu a cena 3D dentro do Blender
                             para modificar o modelo?</p>
                     </div>
-                    <div class="dialogo-fala fala-henrique">
-                        <span class="dialogo-nome text-danger">Henrique Moura:</span>
-                        <p class="dialogo-texto">— Não. O setor de composição não abre arquivos <code>.blend</code> nem
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Henrique Moura:</span>
+                        <p class="dialogo-texto">— Não. O setor de composição não abre arquivos .blend nem
                             altera malhas poligonais. Nós trabalhamos exclusivamente com as sequências de imagens EXR
                             exportadas pelos servidores da farm.</p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— Portanto, o erro que aparece na imagem final não nasceu na composição
-                            nem no renderizador. Ele foi gerado na cena <code>scene_04_v04.blend</code> às 18h53 e
+                            nem no renderizador. Ele foi gerado na cena scene_04_v04.blend às 18h53 e
                             simplesmente calculado pelos nós de processamento durante os treze minutos em que o projeto
                             esteve na fila do Deadline.</p>
                     </div>
-                    <div class="dialogo-fala fala-henrique">
-                        <span class="dialogo-nome text-danger">Henrique Moura:</span>
-                        <p class="dialogo-texto">— A Render Farm é cega, Clara. Ela apenas renderiza exatamente o que
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Henrique Moura:</span>
+                        <p class="dialogo-texto">— A Render Farm apenas renderiza exatamente o que
                             está vinculado no arquivo de cena que o artista submete. Se a cena aponta para a
-                            <code>v08</code>, a farm calcula a <code>v08</code>.
+                            v08, a farm calcula a v08.
                         </p>
                     </div>
-                    <div class="dialogo-fala fala-guga">
-                        <span class="dialogo-nome text-success">Gustavo Lima:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Gustavo Lima:</span>
                         <p class="dialogo-texto">— Clara, tem um detalhe no log da Farm: o script
-                            <code>DeadlinePreRenderHook.py</code> rodou às 18h55:12. Ele tem a opção 'Force Latest
+                            DeadlinePreRenderHook.py rodou às 18h55:12. Ele tem a opção 'Force Latest
                             Numeric Asset' ligada por padrão no template da ilha 3D. Se a cena tinha referências soltas,
                             o hook pode ter forçado o link da v08 automaticamente.
                         </p>
@@ -1003,51 +995,51 @@
             </div>
 
             <!-- ATO 08 -->
-            <div class="mb-4 pb-3 border-bottom border-secondary">
-                <h4 class="h6 text-warning font-monospace fw-bold">ATO 08 — QUEM RECEBEU O RENDER?</h4>
-                <p class="text-light-sub small">
-                    Clara abriu a pasta de scripts do Nuke: <code>07_COMPOSICAO/NUKE_SCRIPTS/scene04_comp_v02.nk</code>,
+            <div class="mb-5 pb-4 border-bottom border-secondary">
+                <h4 class="h5 text-light fw-bold mb-3">ATO 08 — QUEM RECEBEU O RENDER?</h4>
+                <p class="body-text text-light-sub mb-3">
+                    Clara abriu a pasta de scripts do Nuke: 07_COMPOSICAO/NUKE_SCRIPTS/scene04_comp_v02.nk,
                     gravado às 19h18:10 por Henrique Moura na estação WS-COMP-01.
                 </p>
 
                 <div class="dialogo-bloco">
-                    <div class="dialogo-fala fala-henrique">
-                        <span class="dialogo-nome text-danger">Henrique Moura:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Henrique Moura:</span>
                         <p class="dialogo-texto">— Às 19h10, quando a farm concluiu o job 88492, recebi o aviso
-                            automático no terminal. Abri o script do Nuke <code>scene04_comp_v02.nk</code>, conectei o
-                            nó de leitura (<em>Read Node</em>) apontando para a pasta <code>06_RENDERS/BEAUTY/</code>,
+                            automático no terminal. Abri o script do Nuke scene04_comp_v02.nk, conectei o
+                            nó de leitura (<em>Read Node</em>) apontando para a pasta 06_RENDERS/BEAUTY/,
                             fiz a integração cromática, apliquei o desfoque de movimento e mandei o resultado para a
                             timeline do Premiere.</p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— Henrique, você sabia exatamente qual versão da geometria 3D do robô
                             tinha sido utilizada para gerar aquela sequência de imagens EXR?</p>
                     </div>
-                    <div class="dialogo-fala fala-henrique">
-                        <span class="dialogo-nome text-danger">Henrique Moura:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Henrique Moura:</span>
                         <p class="dialogo-texto">— Eu sabia que a pasta trazia o render da cena quatro... que era a cena
                             prevista no cronograma de finalização das sete da noite.</p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— Mas você verificou no log da farm ou no termo do ERP se o render veio
-                            da versão <code>v07</code> aprovada ou da versão <code>v08</code> não aprovada?</p>
+                            da versão v07 aprovada ou da versão v08 não aprovada?</p>
                     </div>
-                    <div class="dialogo-fala fala-henrique">
-                        <span class="dialogo-nome text-danger">Henrique Moura:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Henrique Moura:</span>
                         <p class="dialogo-texto">— Não. Eu não abri o log do ERP para checar a versão da malha. O prazo
                             estava no limite, a pasta de renders estava alimentada e eu presumi que o material vindo do
                             3D já tinha passado pela aprovação do Rafael.</p>
                     </div>
-                    <div class="dialogo-fala fala-rafael">
-                        <span class="dialogo-nome text-primary">Rafael Torres:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Rafael Torres:</span>
                         <p class="dialogo-texto">— Henrique, o Protocolo Vértice estabelece no Freeze 3 que a ilha de
                             composição deve conferir a hash do asset no log do Deadline antes de disparar o script
                             final. Você pulou a etapa de verificação de dependência.</p>
                     </div>
-                    <div class="dialogo-fala fala-henrique">
-                        <span class="dialogo-nome text-danger">Henrique Moura:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Henrique Moura:</span>
                         <p class="dialogo-texto">— É verdade. Houve uma falha de checagem da minha parte pela pressa de
                             fechar o arquivo antes das vinte horas.</p>
                     </div>
@@ -1055,24 +1047,24 @@
             </div>
 
             <!-- ATO 09 -->
-            <div class="mb-4 pb-3 border-bottom border-secondary">
-                <h4 class="h6 text-warning font-monospace fw-bold">ATO 09 — A EXPORTAÇÃO MASTER</h4>
-                <p class="text-light-sub small">
-                    A pasta <code>08_EXPORTACAO/MASTERS/</code> continha dois arquivos: <code>projeto_final.mp4</code>
-                    (19h24) e <code>projeto_final_2.mp4</code> (19h31:02).
+            <div class="mb-5 pb-4 border-bottom border-secondary">
+                <h4 class="h5 text-light fw-bold mb-3">ATO 09 — A EXPORTAÇÃO MASTER</h4>
+                <p class="body-text text-light-sub mb-3">
+                    A pasta 08_EXPORTACAO/MASTERS/ continha dois arquivos: projeto_final.mp4
+                    (19h24) e projeto_final_2.mp4 (19h31:02).
                 </p>
 
                 <div class="dialogo-bloco">
-                    <div class="dialogo-fala fala-henrique">
-                        <span class="dialogo-nome text-danger">Henrique Moura:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Henrique Moura:</span>
                         <p class="dialogo-texto">— A primeira exportação das 19h24 apresentou um pequeno desalinhamento
                             na trilha de áudio com a locução. Eu corrigi o ponto de entrada do som na timeline e mandei
-                            renderizar a segunda versão, o <code>projeto_final_2.mp4</code>, que foi concluído às 19h31.
+                            renderizar a segunda versão, o projeto_final_2.mp4, que foi concluído às 19h31.
                             Foi esse segundo arquivo que seguiu para a pasta de revisão final.</p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
-                        <p class="dialogo-texto">— O rastro técnico dos arquivos está perfeitamente documentado. Nós
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
+                        <p class="dialogo-texto">— O rastro técnico dos arquivos está documentado. Nós
                             sabemos por onde a alteração passou, em qual minuto cada arquivo foi salvo e qual estação
                             executou cada comando. Agora precisamos fechar a auditoria compreendendo a cadeia de
                             decisões humanas e de automação que sustentou esse caminho.</p>
@@ -1081,69 +1073,69 @@
             </div>
 
             <!-- ATO 10 -->
-            <div class="mb-4 pb-3 border-bottom border-secondary">
-                <h4 class="h6 text-warning font-monospace fw-bold">ATO 10 — A PRIMEIRA CONTRADIÇÃO</h4>
-                <p class="text-light-sub small">
-                    O relógio indicava 19h49. Faltavam apenas onze minutos para o prazo final. Clara reuniu Marina,
+            <div class="mb-5 pb-4 border-bottom border-secondary">
+                <h4 class="h5 text-light fw-bold mb-3">ATO 10 — A PRIMEIRA CONTRADIÇÃO</h4>
+                <p class="body-text text-light-sub mb-3">
+                    O relógio indicava 19h49. Faltavam onze minutos para o prazo final. Clara reuniu Marina,
                     Rafael e Gabi:
                 </p>
 
                 <div class="dialogo-bloco">
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— Vamos revisar as declarações de cada um em confronto com os registros
                             do servidor. Marina, você emitiu uma solicitação de alteração visual. O seu objetivo era
                             alterar o arquivo oficial da produção?</p>
                     </div>
-                    <div class="dialogo-fala fala-marina">
-                        <span class="dialogo-nome text-warning">Marina Valente:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Marina Valente:</span>
                         <p class="dialogo-texto">— Não. Minha solicitação foi registrada como um teste estético para
                             avaliação interna na tela do artista. Eu não assinei nenhum termo de liberação para a
                             substituição do ativo congelado no ERP.</p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— Gabi, você tinha ciência de que existia um arquivo oficial
                             formalmente aprovado para a produção?</p>
                     </div>
-                    <div class="dialogo-fala fala-gabi">
-                        <span class="dialogo-nome" style="color: #ec4899;">Gabi Lima:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Gabi Lima:</span>
                         <p class="dialogo-texto">— Sim, eu sabia.</p>
                     </div>
-                    <div class="dialogo-fala fala-rafael">
-                        <span class="dialogo-nome text-primary">Rafael Torres:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Rafael Torres:</span>
                         <p class="dialogo-texto">— Qual era a versão aprovada, Gabi? Fala para todos nós.</p>
                     </div>
-                    <div class="dialogo-fala fala-gabi">
-                        <span class="dialogo-nome" style="color: #ec4899;">Gabi Lima:</span>
-                        <p class="dialogo-texto">— A <code>robot_model_v07.blend</code>.</p>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Gabi Lima:</span>
+                        <p class="dialogo-texto">— A robot_model_v07.blend.</p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
-                        <p class="dialogo-texto">— E você sabia que o arquivo <code>robot_model_v08.blend</code> que
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
+                        <p class="dialogo-texto">— E você sabia que o arquivo robot_model_v08.blend que
                             você modelou às 18h47 não possuía visto de aprovação do Rafael e nem autorização no ERP?</p>
                     </div>
-                    <div class="dialogo-fala fala-gabi">
-                        <span class="dialogo-nome" style="color: #ec4899;">Gabi Lima:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Gabi Lima:</span>
                         <p class="dialogo-texto">— Sim... eu sabia que ele não tinha sido aprovado formalmente no
                             sistema.</p>
                     </div>
-                    <div class="dialogo-fala fala-marina">
-                        <span class="dialogo-nome text-warning">Marina Valente:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Marina Valente:</span>
                         <p class="dialogo-texto">— Se você sabia que o pedido era apenas para avaliação e que a
-                            <code>v08</code> não estava aprovada pelo pipeline, por que você pegou essa malha e
-                            substituiu o link da <code>scene_04_v04.blend</code> que iria para a farm?
+                            v08 não estava aprovada pelo pipeline, por que você pegou essa malha e
+                            substituiu o link da scene_04_v04.blend que iria para a farm?
                         </p>
                     </div>
-                    <div class="dialogo-fala fala-gabi">
-                        <span class="dialogo-nome" style="color: #ec4899;">Gabi Lima:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Gabi Lima:</span>
                         <p class="dialogo-texto">— Mas eu já disse que não fiz isso de propósito! Eu entendi que, como a
                             alteração deixava o braço com um visual mais moderno, ela seria útil caso você aprovasse. Se
                             a cena linkou a v08, foi o relink da Farm ou alguém que mexeu na máquina quando você logou
                             remotamente às 18h50!</p>
                     </div>
-                    <div class="dialogo-fala fala-rafael">
-                        <span class="dialogo-nome text-primary">Rafael Torres:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Rafael Torres:</span>
                         <p class="dialogo-texto">— Não culpe os daemons, Gabi! O arquivo da cena foi salvo localmente às
                             18h53 pela sua credencial!</p>
                     </div>
@@ -1151,74 +1143,74 @@
             </div>
 
             <!-- ATO 11 -->
-            <div class="mb-4 pb-3 border-bottom border-secondary">
-                <h4 class="h6 text-warning font-monospace fw-bold">ATO 11 — O DOCUMENTO ABERTO</h4>
-                <p class="text-light-sub small">
-                    Clara projetou o log da estação <code>WS-3D-04</code>: visualização de
-                    <code>aprovacao_asset_robot.pdf</code> por 42 segundos às 18h49:12.
+            <div class="mb-5 pb-4 border-bottom border-secondary">
+                <h4 class="h5 text-light fw-bold mb-3">ATO 11 — O DOCUMENTO ABERTO</h4>
+                <p class="body-text text-light-sub mb-3">
+                    Clara projetou o log da estação WS-3D-04: visualização de
+                    aprovacao_asset_robot.pdf por 42 segundos às 18h49:12.
                 </p>
 
                 <div class="dialogo-bloco">
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— Gabi, às 18h49 este documento PDF permaneceu aberto na sua estação
                             por 42 segundos. O que estava escrito em destaque nessa página?</p>
                     </div>
-                    <div class="dialogo-fala fala-gabi">
-                        <span class="dialogo-nome" style="color: #ec4899;">Gabi Lima:</span>
-                        <p class="dialogo-texto">— Que a versão <code>v07</code> era a versão aprovada e travada para a
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Gabi Lima:</span>
+                        <p class="dialogo-texto">— Que a versão v07 era a versão aprovada e travada para a
                             produção.</p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— Você leu essa frase antes de salvar a cena 3D com a nova versão?</p>
                     </div>
-                    <div class="dialogo-fala fala-gabi">
-                        <span class="dialogo-nome" style="color: #ec4899;">Gabi Lima:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Gabi Lima:</span>
                         <p class="dialogo-texto">— Li... mas o documento abriu sozinho pelo pop-up de alerta de trava do
                             ERP! Eu li, vi que a v07 estava travada e por isso mesmo não forcei nenhuma substituição
                             manual no rig. Eu só ajustei o enquadramento de câmera que a Marina pediu.</p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
-                        <p class="dialogo-texto">— E no entanto, às 18h51 a <code>v08</code> foi reaberta, e às 18h53 a
-                            <code>scene_04_v04.blend</code> foi gravada com a malha não autorizada vinculada.
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
+                        <p class="dialogo-texto">— E no entanto, às 18h51 a v08 foi reaberta, e às 18h53 a
+                            scene_04_v04.blend foi gravada com a malha não autorizada vinculada.
                         </p>
                     </div>
                 </div>
             </div>
 
             <!-- ATO 12 -->
-            <div class="mb-4 pb-3 border-bottom border-secondary">
-                <h4 class="h6 text-warning font-monospace fw-bold">ATO 12 — AS VERSÕES FALAM</h4>
-                <p class="text-light-sub small">
-                    Clara dividiu o monitor em quatro quadrantes comparativos (v07 aprovada, v08 modificada, cena v03
-                    íntegra, cena v04 adulterada):
+            <div class="mb-5 pb-4 border-bottom border-secondary">
+                <h4 class="h5 text-light fw-bold mb-3">ATO 12 — AS VERSÕES FALAM</h4>
+                <p class="body-text text-light-sub mb-3">
+                    Clara dividiu o monitor em quatro quadrantes comparativos (v07 aprovada, v08 modificada, cena v03,
+                    cena v04):
                 </p>
 
                 <div class="dialogo-bloco">
-                    <div class="dialogo-fala fala-bruno">
-                        <span class="dialogo-nome text-light-sub">Bruno Prado:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Bruno Prado:</span>
                         <p class="dialogo-texto">— A diferença visual das malhas é inegável, e a troca do link na árvore
-                            da cena quatro é cristalina. Alguém intencionalmente alterou o apontamento de arquivo entre
+                            da cena quatro é confirmada. Alguém intencionalmente alterou o apontamento de arquivo entre
                             uma versão de cena e outra, ou a rotina automática de relink executou a troca silenciosa.
                         </p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— Quem tinha acesso físico e credenciais de logon para operar a estação
-                            <code>WS-3D-04</code> entre as 18h45 e as 18h55 da tarde de hoje?
+                            WS-3D-04 entre as 18h45 e as 18h55 da tarde de hoje?
                         </p>
                     </div>
-                    <div class="dialogo-fala fala-guga">
-                        <span class="dialogo-nome text-success">Gustavo Lima:</span>
-                        <p class="dialogo-texto">— Fisicamente, apenas a credencial <code>gabi.lima</code> esteve
-                            autenticada localmente na estação <code>WS-3D-04</code>. Mas temos o registro de conexão
-                            remota SMB da credencial <code>marina.valente</code> às 18h50:15, durante o bloqueio de
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Gustavo Lima:</span>
+                        <p class="dialogo-texto">— Fisicamente, apenas a credencial gabi.lima esteve
+                            autenticada localmente na estação WS-3D-04. Mas temos o registro de conexão
+                            remota SMB da credencial marina.valente às 18h50:15, durante o bloqueio de
                             tela.</p>
                     </div>
-                    <div class="dialogo-fala fala-marina">
-                        <span class="dialogo-nome text-warning">Marina Valente:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Marina Valente:</span>
                         <p class="dialogo-texto">— Eu já expliquei: puxei apenas o screenshot da pasta de renders
                             locais! Eu não abri o Blender nem salvei cena nenhuma!</p>
                     </div>
@@ -1226,28 +1218,28 @@
             </div>
 
             <!-- ATO 13 -->
-            <div class="mb-4 pb-3 border-bottom border-secondary">
-                <h4 class="h6 text-warning font-monospace fw-bold">ATO 13 — O ÚLTIMO CRUZAMENTO</h4>
-                <p class="text-light-sub small">
-                    Clara destacou a cadeia dos três marcos técnicos no quadro de vidro:
+            <div class="mb-5 pb-4 border-bottom border-secondary">
+                <h4 class="h5 text-light fw-bold mb-3">ATO 13 — O ÚLTIMO CRUZAMENTO</h4>
+                <p class="body-text text-light-sub mb-3">
+                    Clara destacou a cadeia dos três marcos técnicos no quadro:
                 </p>
 
                 <div class="dialogo-bloco">
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— Observem a relação causal entre esses três eventos. Às 17h40, a
-                            versão <code>v07</code> foi homologada oficialmente. Às 18h49, a documentação oficial foi
-                            exibida na estação de trabalho. Às 18h53, a versão não aprovada <code>v08</code> apareceu
+                            versão v07 foi homologada oficialmente. Às 18h49, a documentação oficial foi
+                            exibida na estação de trabalho. Às 18h53, a versão não aprovada v08 apareceu
                             vinculada na cena master de produção.</p>
                     </div>
-                    <div class="dialogo-fala fala-bruno">
-                        <span class="dialogo-nome text-light-sub">Bruno Prado:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Bruno Prado:</span>
                         <p class="dialogo-texto">— A linha do tempo é precisa. Mas a dúvida é se a ação das 18h53 foi um
                             comando intencional do operador, uma interferência remota da Direção de Arte ou um relink
                             acidental do plugin da Farm.</p>
                     </div>
-                    <div class="dialogo-fala fala-henrique">
-                        <span class="dialogo-nome text-danger">Henrique Moura:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Henrique Moura:</span>
                         <p class="dialogo-texto">— 19h55. Faltam cinco minutos para as vinte horas.</p>
                     </div>
                 </div>
@@ -1255,23 +1247,23 @@
 
             <!-- ATO 14 -->
             <div>
-                <h4 class="h6 text-warning font-monospace fw-bold">ATO 14 — A PERGUNTA PERICIAL</h4>
-                <p class="text-light-sub small">
+                <h4 class="h5 text-light fw-bold mb-3">ATO 14 — A PERGUNTA PERICIAL</h4>
+                <p class="body-text text-light-sub mb-3">
                     Clara organizou sobre a mesa os cinco relatórios forenses (ERP-01, SAN-02, DOC-03, SYS-04 e
                     SCENE-05):
                 </p>
 
                 <div class="dialogo-bloco">
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— A reconstituição técnica da cadeia de arquivos está finalizada. Nós
                             sabemos que a alteração não foi gerada por uma falha de exportação no Premiere, não foi
                             criada por um bug de nós no Nuke e não nasceu de um erro de cálculo dos computadores da
                             Render Farm. O erro foi inserido na cena 3D às 18h53, após o operador consultar o documento
                             oficial que proibia a alteração do ativo congelado.</p>
                     </div>
-                    <div class="dialogo-fala fala-clara">
-                        <span class="dialogo-nome text-info">Clara Mendes:</span>
+                    <div class="dialogo-fala">
+                        <span class="dialogo-nome">Clara Mendes:</span>
                         <p class="dialogo-texto">— A investigação técnica sobre o fluxo de dados do Projeto
                             VRT-MAQ-2026-017 está nas mãos de vocês. Reconstruam a sequência de eventos, avaliem as
                             brechas de automação e as falhas humanas, apresentem a sustentação baseada nos logs de
@@ -1280,16 +1272,16 @@
                 </div>
             </div>
 
-            <div class="p-3 bg-black rounded border border-warning text-center font-monospace extra-small mt-4">
-                <strong class="text-warning d-block fs-6 mb-1">CASO 01 — OPERAÇÃO ÚLTIMO FRAME</strong>
-                <span class="text-success fw-bold d-block mb-1">STATUS: INVESTIGAÇÃO ABERTA</span>
-                <span class="text-muted d-block">PROJETO: VRT-MAQ-2026-017 / MaqTec Industrial S.A.</span>
-                <span class="text-info d-block">VÉRTICE PRODUÇÕES DIGITAIS</span>
+            <div class="p-4 bg-terminal rounded border border-secondary text-center body-text mt-5">
+                <strong class="text-light d-block fs-5 mb-1">CASO 01 — OPERAÇÃO ÚLTIMO FRAME</strong>
+                <span class="text-light-sub fw-bold d-block mb-1">STATUS: INVESTIGAÇÃO EM ANDAMENTO</span>
+                <span class="text-sub d-block">PROJETO: VRT-MAQ-2026-017 / MaqTec Industrial S.A.</span>
+                <span class="text-sub d-block">VÉRTICE PRODUÇÕES DIGITAIS</span>
             </div>
 
             <div class="text-center mt-4">
-                <a href="index.html" class="btn btn-primary btn-lg font-monospace px-5 py-3 shadow">
-                    🕵️ ACESSAR TERMINAL DE AUDITORIA & SUBMETER O LAUDO ➔
+                <a href="index.html" class="btn btn-secondary btn-lg px-5 py-3 shadow-sm fs-5 fw-semibold">
+                    ACESSAR TERMINAL DE AUDITORIA & SUBMETER O LAUDO ➔
                 </a>
             </div>
         </section>
@@ -1297,7 +1289,7 @@
     </main>
 
     <!-- Rodapé Oficial -->
-    <footer class="text-center py-4 text-secondary font-monospace extra-small border-top border-dark px-3">
+    <footer class="text-center py-4 text-secondary body-text border-top border-secondary px-3">
         Vértice Produções Digitais Ltda. • Dossiê Pericial Unificado // Caso 01: Operação Último Frame • Belo
         Horizonte/MG
     </footer>
