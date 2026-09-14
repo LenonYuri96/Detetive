@@ -1,47 +1,80 @@
 /* ==========================================================================
-   VÉRTICE MOTION STUDIOS — STYLE.CSS PERICIAL RESPONSIVO UNIVERSAL
-   Compatibilidade: Mobile (320px) -> Fablets -> Tablets -> Desktop -> 4K
+   VÉRTICE DIGITAL FORENSICS — SYSTEM STYLE ENGINE v6.0 PRO
+   Design System Tático, Investigativo & Pericial Universal
+   Compatibilidade: Smartphones (320px) -> Fablets -> Tablets -> Desktop -> 4K
    ========================================================================== */
 
-/* =========================================================
-   1. TOKENS, PALETA CYBER FORENSE & RESET DINÂMICO
-   ========================================================= */
+/* ==========================================================================
+   1. DESIGN TOKENS, PALETA CYBER FORENSE EXPANDIDA & VARIÁVEIS DO SISTEMA
+   ========================================================================== */
 :root {
-  /* Cores de Fundo e Painéis */
-  --bg-dark: #070a0f;
-  --panel-bg: #0f1622;
-  --panel-card: #131c2b;
-  --terminal-bg: #04060a;
-  --card-border: #1e2c40;
-  --card-border-hover: #2d4260;
+  /* Camadas de Profundidade & Superfícies */
+  --bg-deep: #05080d;
+  --bg-dark: #090e15;
+  --panel-bg: #0f1724;
+  --panel-card: #141e2e;
+  --panel-card-hover: #19263a;
+  --terminal-bg: #04070b;
+  --overlay-glass: rgba(15, 23, 36, 0.82);
 
-  /* Cores Neon e Indicadores Periciais */
-  --neon-blue: #00d2ff;
-  --neon-violet: #9d4edd;
+  /* Malhas de Borda e Divisores Táticos */
+  --border-dim: #1e2c40;
+  --border-medium: #2a3c56;
+  --border-bright: #3f587d;
+  --border-glow: rgba(0, 210, 255, 0.28);
+
+  /* Espectro Cromático Pericial */
+  --neon-cyan: #00e5ff;
+  --neon-blue: #00a8ff;
+  --neon-violet: #a855f7;
   --neon-green: #00f59b;
-  --neon-amber: #ffb703;
-  --neon-red: #ff5252;
-  --neon-cyan: #06b6d4;
+  --neon-amber: #f59e0b;
+  --neon-red: #ef4444;
+  --neon-rose: #f43f5e;
+  --neon-slate: #94a3b8;
 
-  /* Tipografia e Contraste Alto */
-  --text-main: #f8fafc;
+  /* Respiros de Cor & Variações Translúcidas */
+  --tint-cyan: rgba(0, 229, 255, 0.08);
+  --tint-green: rgba(0, 245, 155, 0.08);
+  --tint-amber: rgba(245, 158, 11, 0.08);
+  --tint-red: rgba(239, 68, 68, 0.08);
+
+  /* Tipografia & Hierarquia de Contraste */
+  --text-pure: #ffffff;
+  --text-main: #f1f5f9;
   --text-sub: #cbd5e1;
-  --text-muted: #94a3b8;
+  --text-muted: #8899ac;
+  --text-dim: #556980;
 
-  /* Sobrescrita de Variáveis do Bootstrap 5 Dark */
-  --bs-body-color: #f8fafc;
-  --bs-body-bg: #070a0f;
-  --bs-card-color: #f8fafc;
-  --bs-border-color: #1e2c40;
+  /* Sombreamentos e Brilhos Volumétricos */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.65);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.85);
+  --glow-cyan: 0 0 20px rgba(0, 229, 255, 0.25);
+  --glow-red: 0 0 20px rgba(239, 68, 68, 0.35);
 
-  /* Áreas Seguras (Safe Area Insets para iPhone/Android) */
+  /* Curvaturas / Raio de Borda Tático */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+
+  /* Safe Area Insets para Monitores com Notch e Dispositivos Móveis */
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-right: env(safe-area-inset-right, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-left: env(safe-area-inset-left, 0px);
+
+  /* Sobrescrita de Tokens Nativos do Bootstrap 5 Dark */
+  --bs-body-color: #f1f5f9;
+  --bs-body-bg: #05080d;
+  --bs-border-color: #1e2c40;
 }
 
-/* Reset Universal e Proteção Contra Quebra */
+/* ==========================================================================
+   2. RESET UNIVERSAL, NORMALIZAÇÃO & BLINDAGEM DE LARGURA
+   ========================================================================== */
 *,
 *::before,
 *::after {
@@ -51,9 +84,10 @@
 }
 
 html {
+  font-size: 17.5px; /* Tamanho base ampliado para conforto imediato */
   width: 100%;
   max-width: 100vw;
-  overflow-x: clip; /* Previne rolagem horizontal na raiz sem quebrar elementos sticky */
+  overflow-x: clip;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -63,9 +97,13 @@ body {
   width: 100%;
   max-width: 100vw;
   min-height: 100vh;
-  min-height: 100dvh; /* Altura de viewport móvel dinâmica */
+  min-height: 100dvh;
   overflow-x: clip;
-  background-color: var(--bg-dark);
+  background-color: var(--bg-deep);
+  background-image:
+    radial-gradient(circle at 50% 0%, #101c2e 0%, transparent 75%),
+    linear-gradient(180deg, rgba(7, 12, 19, 0.8) 0%, #05080d 100%);
+  background-attachment: fixed;
   font-family:
     "Montserrat",
     -apple-system,
@@ -74,7 +112,7 @@ body {
     Roboto,
     sans-serif;
   color: var(--text-main) !important;
-  line-height: 1.6;
+  line-height: 1.75;
   padding-top: var(--safe-top);
   padding-bottom: var(--safe-bottom);
   padding-left: var(--safe-left);
@@ -83,7 +121,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Imagens, SVGs e Vídeos 100% Fluidos */
+/* Elementos de Mídia 100% Fluidos */
 img,
 svg,
 video,
@@ -93,7 +131,7 @@ canvas {
   vertical-align: middle;
 }
 
-/* Blindagem contra estouro de largura em Flexbox e CSS Grid */
+/* Eliminação de Colapso e Quebras em Layout Flex e Grid */
 .container,
 .container-fluid,
 .row,
@@ -106,86 +144,153 @@ canvas {
   min-width: 0 !important;
 }
 
-/* =========================================================
-   2. TIPOGRAFIA FLUIDA (SCALERS DINÂMICOS COM CLAMP)
-   ========================================================= */
+main.container,
+main.container-fluid {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   3. TIPOGRAFIA EXPANDIDA (FONTES AMPLAS, NÍTIDAS E FLUIDAS)
+   ========================================================================== */
 h1,
 .h1 {
-  font-size: clamp(1.35rem, 2.8vw + 0.75rem, 2.25rem);
-  color: #ffffff !important;
+  font-size: clamp(1.6rem, 3.2vw + 0.85rem, 2.75rem);
+  color: var(--text-pure) !important;
   font-weight: 800;
-  letter-spacing: -0.02em;
-  overflow-wrap: break-word;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.85rem;
 }
 
 h2,
 .h2 {
-  font-size: clamp(1.2rem, 2.2vw + 0.6rem, 1.85rem);
-  color: #ffffff !important;
+  font-size: clamp(1.35rem, 2.4vw + 0.7rem, 2.15rem);
+  color: var(--text-pure) !important;
   font-weight: 700;
-  overflow-wrap: break-word;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.75rem;
 }
 
 h3,
 .h3 {
-  font-size: clamp(1.05rem, 1.6vw + 0.5rem, 1.45rem);
-  color: #ffffff !important;
+  font-size: clamp(1.18rem, 1.8vw + 0.6rem, 1.65rem);
+  color: var(--text-pure) !important;
   font-weight: 700;
-  overflow-wrap: break-word;
+  line-height: 1.35;
+  margin-bottom: 0.65rem;
 }
 
 h4,
 .h4 {
-  font-size: clamp(0.95rem, 1.2vw + 0.45rem, 1.25rem);
-  color: #ffffff !important;
+  font-size: clamp(1.05rem, 1.4vw + 0.5rem, 1.38rem);
+  color: var(--text-main) !important;
   font-weight: 600;
-  overflow-wrap: break-word;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
 }
 
 h5,
-.h5,
+.h5 {
+  font-size: clamp(0.98rem, 1.1vw + 0.45rem, 1.2rem);
+  color: var(--text-main) !important;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
 h6,
 .h6 {
-  font-size: clamp(0.85rem, 1vw + 0.4rem, 1.05rem);
-  color: #ffffff !important;
+  font-size: clamp(0.9rem, 0.9vw + 0.4rem, 1.05rem);
+  color: var(--text-sub) !important;
   font-weight: 600;
-  overflow-wrap: break-word;
 }
 
 p,
 li,
-span,
-label,
-small {
+label {
+  font-size: 1.05rem;
   color: var(--text-sub);
-  overflow-wrap: break-word;
-  word-wrap: break-word;
+  line-height: 1.8;
+  margin-bottom: 1rem;
 }
 
-.terminal-font {
+p:last-child {
+  margin-bottom: 0;
+}
+
+.lead-text {
+  font-size: 1.18rem !important;
+  line-height: 1.85 !important;
+  color: var(--text-pure) !important;
+  font-weight: 400;
+}
+
+.body-text {
+  font-size: 1.05rem !important;
+  line-height: 1.8 !important;
+}
+
+small,
+.small {
+  font-size: 0.92rem !important;
+  color: var(--text-muted);
+}
+
+.extra-small {
+  font-size: 0.82rem !important;
+  color: var(--text-dim);
+}
+
+.text-light-sub {
+  color: var(--text-sub) !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.text-cyan {
+  color: var(--neon-cyan) !important;
+}
+
+.text-green {
+  color: var(--neon-green) !important;
+}
+
+.text-amber {
+  color: var(--neon-amber) !important;
+}
+
+.text-red {
+  color: var(--neon-red) !important;
+}
+
+/* Tipografia Monoespaçada Técnica */
+.terminal-font,
+.font-monospace {
   font-family:
     "Fira Code", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
 }
 
-/* Código em linha seguro */
+/* Código em linha sofisticado */
 code {
-  color: var(--neon-blue) !important;
-  background-color: #04070c;
-  padding: 0.15em 0.45em;
-  border-radius: 4px;
-  border: 1px solid #1e2c40;
+  color: var(--neon-cyan) !important;
+  background-color: #060b12;
+  padding: 0.18em 0.5em;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-dim);
   font-family: "Fira Code", monospace !important;
-  font-size: 0.86em;
+  font-size: 0.88em;
   word-break: break-word;
-  overflow-wrap: anywhere;
 }
 
-/* Blocos Pré-formatados com rolagem autônoma */
+/* Blocos Pré-Formatados */
 pre {
-  background-color: #03060a !important;
-  border: 1px solid var(--card-border);
-  border-radius: 6px;
-  padding: 0.85rem 1.1rem;
+  background-color: var(--terminal-bg) !important;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
   max-width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -196,273 +301,147 @@ pre code {
   background: transparent;
   padding: 0;
   white-space: pre;
-  word-break: normal;
-}
-
-/* Textos e Utilitários de Contraste */
-.text-light-sub {
   color: var(--text-sub) !important;
 }
 
-.text-muted {
-  color: var(--text-muted) !important;
-}
-
-.extra-small {
-  font-size: 0.74rem !important;
-  line-height: 1.45;
-}
-
-.text-danger-emphasis {
-  color: #ff7b72 !important;
-}
-
-/* =========================================================
-   3. ARQUITETURA DE TABELAS 100% RESPONSIVAS (CORREÇÃO TOTAL)
-   ========================================================= */
-
-/* Container de Rolagem Segura com Máscara e Sombra */
-.table-responsive {
-  display: block;
-  width: 100% !important;
-  max-width: 100% !important;
-  overflow-x: auto !important;
-  -webkit-overflow-scrolling: touch;
-  border-radius: 8px;
-  border: 1px solid var(--card-border);
-  background: var(--terminal-bg);
-  margin-bottom: 1.25rem;
+/* ==========================================================================
+   4. DETALHES TÁTICOS, BORDAS CIBERNÉTICAS & GLASSMORPHISM
+   ========================================================================= */
+.tactical-border {
   position: relative;
-  min-width: 0 !important;
+  border: 1px solid var(--border-dim);
 }
 
-/* Indicador automático de Swipe no Celular/Tablet */
-@media (max-width: 991.98px) {
-  .table-responsive::before {
-    content: "↔ Arraste para os lados para visualizar os dados completos";
-    display: block;
-    background: #090e16;
-    color: var(--neon-blue);
-    font-family: "Fira Code", monospace;
-    font-size: 0.68rem;
-    padding: 6px 12px;
-    border-bottom: 1px solid var(--card-border);
-    text-align: right;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
+/* Cantoneiras Táticas Decorativas Periciais */
+.corner-bracket {
+  position: relative;
 }
 
-/* Estrutura da Tabela */
-.table-dark {
-  --bs-table-bg: #06090e;
-  --bs-table-border-color: #172233;
-  color: var(--text-main) !important;
-  margin-bottom: 0;
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: auto;
+.corner-bracket::before,
+.corner-bracket::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+  border-color: var(--neon-cyan);
+  border-style: solid;
+  z-index: 2;
 }
 
-/* Células: Quebra de Linha Obrigatória e Fluidos */
-.table-dark th,
-.table-dark td {
-  color: var(--text-main) !important;
-  border-color: #172233 !important;
-  vertical-align: middle;
-  padding: 0.75rem 0.95rem;
-  /* FIM DO TEXTO CORTADO: Permite quebra inteligente */
-  white-space: normal !important;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  hyphens: auto;
+.corner-bracket::before {
+  top: -1px;
+  left: -1px;
+  border-width: 2px 0 0 2px;
 }
 
-/* Cabeçalhos Fixos e Nítidos */
-.table-secondary,
-.table-secondary th,
-.table-secondary td {
-  background-color: #101824 !important;
-  color: var(--neon-blue) !important;
-  font-weight: 700;
-  border-bottom: 2px solid #22334a !important;
-  letter-spacing: 0.5px;
+.corner-bracket::after {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 2px 2px 0;
+}
+
+/* Efeito de Vidro Fosco de Alta Fidelidade */
+.glass-panel {
+  background: var(--overlay-glass) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Carimbos e Selos Periciais Oficiais */
+.tactical-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
   font-size: 0.78rem;
+  font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-radius: var(--radius-xs);
+  border: 1px solid transparent;
+  font-family: "Fira Code", monospace;
 }
 
-/* Coluna de Índices Numéricos (#) */
-.table-dark th:first-child,
-.table-dark td:first-child {
-  width: 48px;
-  min-width: 44px;
-  text-align: center;
+.tactical-stamp-danger {
+  border-color: var(--neon-red);
+  background: var(--tint-red);
+  color: #ff8585;
 }
 
-/* Proteção de Larguras Mínimas por Conteúdo */
-.table-dark th {
-  min-width: 130px;
+.tactical-stamp-warning {
+  border-color: var(--neon-amber);
+  background: var(--tint-amber);
+  color: #fcd34d;
 }
 
-.table-dark td {
-  min-width: 140px;
+.tactical-stamp-success {
+  border-color: var(--neon-green);
+  background: var(--tint-green);
+  color: #6ee7b7;
 }
 
-/* Células de Laudo, Evidência ou Resposta Longa */
-.table-dark td.text-wrap,
-.table-dark td:nth-child(3),
-.table-dark td:nth-child(4),
-.table-dark td:last-child {
-  min-width: 220px;
-  max-width: 480px;
-  line-height: 1.5;
+.tactical-stamp-info {
+  border-color: var(--neon-cyan);
+  background: var(--tint-cyan);
+  color: #67e8f9;
 }
 
-/* Anulação de Larguras Inline Rígidas (ex: style="width: 35%") no Mobile */
-@media (max-width: 767.98px) {
-  .table-responsive table {
-    min-width: 640px; /* Garante que a tabela mantenha legibilidade e acione o scroll */
-  }
-
-  .table-responsive table [style*="width"] {
-    width: auto !important;
-  }
-
-  .table-dark th,
-  .table-dark td {
-    padding: 0.6rem 0.75rem !important;
-    font-size: 0.75rem !important;
-  }
-}
-
-/* Modo Cartão para Smartphone Extremo (< 576px) em Tabelas com Classe .table-stack */
-@media (max-width: 575.98px) {
-  .table-stack {
-    min-width: 100% !important;
-  }
-
-  .table-stack thead {
-    display: none;
-  }
-
-  .table-stack,
-  .table-stack tbody,
-  .table-stack tr,
-  .table-stack td {
-    display: block;
-    width: 100% !important;
-  }
-
-  .table-stack tr {
-    margin-bottom: 0.85rem;
-    border: 1px solid var(--card-border);
-    border-radius: 8px;
-    background-color: #0b111a;
-    padding: 0.5rem;
-  }
-
-  .table-stack td {
-    border: none;
-    border-bottom: 1px solid #142030;
-    padding: 0.5rem 0.65rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 0.75rem;
-    min-width: 100% !important;
-    text-align: right;
-  }
-
-  .table-stack td:last-child {
-    border-bottom: none;
-  }
-
-  .table-stack td::before {
-    content: attr(data-label);
-    font-weight: 700;
-    color: var(--neon-blue);
-    font-family: "Fira Code", monospace;
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    text-align: left;
-    flex-shrink: 0;
-    max-width: 40%;
-  }
-}
-
-/* =========================================================
-   4. SCROLLBAR DARK MODERNA
-   ========================================================= */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: #04060a;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #1e2c40;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--neon-blue);
-}
-
-/* =========================================================
-   5. HEADER, NAVBAR & GAVETA MÓVEL
-   ========================================================= */
+/* ==========================================================================
+   5. HEADER FIXO, BARRA DE NAVEGAÇÃO & PAINEL COLAPSÁVEL
+   ========================================================================== */
 header.navbar {
-  z-index: 1040;
-  background-color: rgba(11, 16, 24, 0.96) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(239, 68, 68, 0.3) !important;
-}
-
-.navbar-toggler {
-  border-color: #2b3d57 !important;
-  background-color: #111a26;
-  padding: 8px 12px;
-  min-height: 44px;
-  min-width: 44px;
-}
-
-.navbar-toggler:focus {
-  box-shadow: 0 0 0 2px var(--neon-blue) !important;
-  outline: none;
+  z-index: 1050;
+  background: rgba(9, 14, 21, 0.94) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-dim) !important;
+  padding: 0.85rem 1.25rem;
+  transition: all 0.3s ease;
 }
 
 .mobile-brand-title {
-  font-size: clamp(0.85rem, 2vw + 0.4rem, 1.15rem);
+  font-size: clamp(0.95rem, 1.8vw + 0.45rem, 1.25rem);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 55vw;
+  max-width: 60vw;
+  font-weight: 700;
+}
+
+.navbar-toggler {
+  border: 1px solid var(--border-medium) !important;
+  background-color: var(--panel-bg);
+  padding: 9px 14px;
+  min-height: 46px;
+  min-width: 46px;
+  border-radius: var(--radius-sm);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 3px var(--border-glow) !important;
+  outline: none;
 }
 
 @media (max-width: 1199.98px) {
   .navbar-collapse {
-    background: #0b1119;
-    padding: 14px;
-    border-radius: 8px;
-    border: 1px solid var(--card-border);
-    margin-top: 10px;
-    max-height: calc(85vh - 65px);
+    background: #0a0f18;
+    padding: 18px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-medium);
+    margin-top: 14px;
+    max-height: calc(85vh - 70px);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.75);
+    box-shadow: var(--shadow-lg);
   }
 
   .navbar-collapse nav .btn {
-    padding: 0.75rem 1rem;
-    font-size: 0.88rem;
+    padding: 0.85rem 1.15rem;
+    font-size: 0.95rem;
     width: 100%;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     text-align: left;
     display: flex;
     align-items: center;
@@ -470,181 +449,343 @@ header.navbar {
   }
 }
 
-@media (min-width: 1200px) {
-  .navbar-collapse {
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-  }
+/* ==========================================================================
+   6. BOTÕES PERICIAIS, CONTROLES & ÁREAS DE TOQUE OTIMIZADAS
+   ========================================================================== */
+.btn {
+  font-family: inherit;
+  font-weight: 600;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.96rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
-/* =========================================================
-   6. CARDS, PAINÉIS, BADGES E ALERTAS
-   ========================================================= */
-.bg-panel {
-  background-color: var(--panel-bg) !important;
+.btn-lg {
+  min-height: 54px;
+  padding: 0.9rem 1.85rem;
+  font-size: 1.08rem;
+  border-radius: var(--radius-md);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #0084ff 0%, #005bb5 100%) !important;
+  border-color: #0084ff !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(0, 132, 255, 0.35);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: linear-gradient(135deg, #0099ff 0%, #006fd4 100%) !important;
+  border-color: #0099ff !important;
+  box-shadow: 0 6px 22px rgba(0, 132, 255, 0.55);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: var(--panel-card) !important;
+  border-color: var(--border-medium) !important;
   color: var(--text-main) !important;
 }
 
-.bg-terminal {
-  background-color: var(--terminal-bg) !important;
-  color: var(--text-main) !important;
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: var(--panel-card-hover) !important;
+  border-color: var(--border-bright) !important;
+  color: var(--text-pure) !important;
+  transform: translateY(-1px);
 }
 
-.bg-black {
-  background-color: #04060a !important;
-  color: var(--text-main) !important;
+.btn-outline-secondary {
+  background-color: transparent !important;
+  border-color: var(--border-medium) !important;
+  color: var(--text-sub) !important;
 }
 
-.card {
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus {
+  background-color: var(--panel-card) !important;
+  border-color: var(--border-bright) !important;
+  color: var(--text-pure) !important;
+}
+
+/* Opções Interativas em Formulários e Quizzes Forenses */
+.option-btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  padding: 1rem 1.35rem;
   background-color: var(--panel-bg);
-  color: var(--text-main) !important;
-  border: 1px solid var(--card-border) !important;
-  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.45);
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 1.25rem;
+  border: 1px solid var(--border-dim);
+  color: var(--text-main);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease-in-out;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  min-height: 52px;
+  cursor: pointer;
+  touch-action: manipulation;
+  margin-bottom: 0.75rem;
 }
 
-.card-header {
-  background-color: #0b111a !important;
-  border-bottom: 1px solid var(--card-border) !important;
-  color: #ffffff !important;
-  padding: 0.85rem 1.15rem;
+.option-btn:hover,
+.option-btn:focus-visible {
+  background-color: var(--panel-card-hover);
+  border-color: var(--neon-cyan);
+  color: var(--text-pure);
+  box-shadow: 0 4px 18px rgba(0, 229, 255, 0.15);
+  outline: none;
+  transform: translateY(-2px);
 }
 
-/* Alertas com Contraste Elevado */
-.alert {
-  color: #ffffff !important;
-  border-width: 1px;
-  border-radius: 6px;
-  padding: 0.85rem 1.15rem;
+.option-btn:active {
+  transform: translateY(0);
 }
 
-.alert-success {
-  background-color: #092616 !important;
-  border-color: var(--neon-green) !important;
-  color: #d1fae5 !important;
-}
-
-.alert-danger {
-  background-color: #380b10 !important;
-  border-color: var(--neon-red) !important;
-  color: #ffe4e6 !important;
-}
-
-.alert-dark {
-  background-color: #0b111a !important;
-  border-color: var(--neon-blue) !important;
-  color: #f8fafc !important;
-}
-
-/* Badges com Padding Proporcional */
-.badge-freeze {
-  font-family: "Fira Code", monospace;
-  letter-spacing: 0.5px;
-  font-size: 0.72rem;
-  padding: 0.35rem 0.65rem;
-}
-
-/* =========================================================
-   7. FORMULÁRIOS & PREVENÇÃO DE ZOOM NO SAFARI/IOS
-   ========================================================= */
+/* ==========================================================================
+   7. FORMULÁRIOS BLINDADOS CONTRA ZOOM NO SAFARI/MOBILE
+   ========================================================================== */
 .form-control,
 .form-select {
-  background-color: #06090e !important;
-  color: #f8fafc !important;
-  border: 1px solid var(--card-border) !important;
-  border-radius: 6px;
-  min-height: 44px;
-  padding: 0.55rem 0.85rem;
+  background-color: var(--terminal-bg) !important;
+  color: var(--text-pure) !important;
+  border: 1px solid var(--border-medium) !important;
+  border-radius: var(--radius-sm);
+  min-height: 48px;
+  padding: 0.65rem 1rem;
+  font-size: 1.02rem !important;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .form-control:focus,
 .form-select:focus {
-  border-color: var(--neon-blue) !important;
-  box-shadow: 0 0 0 2px rgba(0, 210, 255, 0.25) !important;
+  border-color: var(--neon-cyan) !important;
+  box-shadow: 0 0 0 3px var(--border-glow) !important;
   outline: none;
 }
 
-/* REGRA DE OURO MOBILE: Font-size >= 16px impede o zoom forçado no iOS Safari */
 @media (max-width: 767.98px) {
   .form-control,
   .form-select,
   input,
   select,
   textarea {
-    font-size: 16px !important;
+    font-size: 16px !important; /* Impede zoom automático do iOS Safari */
   }
 }
 
-/* =========================================================
-   8. COMPONENTES DO JOGO, HUD & INTERATIVIDADE
-   ========================================================= */
-.hud-stat small {
-  font-size: 0.68rem;
-  letter-spacing: 0.8px;
-  color: var(--text-muted);
+/* ==========================================================================
+   8. ARQUITETURA DE TABELAS RESPONSIVAS DE ALTA DENSIDADE FORENSE
+   ========================================================================== */
+.table-responsive {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-dim);
+  background: var(--terminal-bg);
+  margin-bottom: 1.75rem;
+}
+
+@media (max-width: 991.98px) {
+  .table-responsive::before {
+    content: "↔ Deslize horizontalmente para visualizar o registro pericial completo";
+    display: block;
+    background: #0c121c;
+    color: var(--neon-cyan);
+    font-size: 0.76rem;
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--border-dim);
+    text-align: right;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}
+
+.table-dark {
+  --bs-table-bg: transparent;
+  --bs-table-border-color: var(--border-dim);
+  color: var(--text-main) !important;
+  margin-bottom: 0;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-dark th,
+.table-dark td {
+  color: var(--text-main) !important;
+  border-color: var(--border-dim) !important;
+  vertical-align: middle;
+  padding: 0.95rem 1.15rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  white-space: normal !important;
+  overflow-wrap: break-word;
+}
+
+.table-secondary,
+.table-secondary th,
+.table-secondary td {
+  background-color: #0c1421 !important;
+  color: var(--text-pure) !important;
+  font-weight: 700;
+  border-bottom: 2px solid var(--border-bright) !important;
+  letter-spacing: 0.6px;
+  font-size: 0.82rem;
   text-transform: uppercase;
 }
 
-.avatar-box {
-  width: 44px;
-  height: 44px;
-  background: #182230;
-  border-radius: 8px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-  border: 1px solid #28374d;
-  color: #ffffff;
-  flex-shrink: 0;
+.table-custom th,
+.table-custom td {
+  padding: 1rem 1.25rem;
+  font-size: 1.02rem;
 }
 
-.suspect-box {
-  background: linear-gradient(145deg, #090e15, #111824);
-  border: 1px solid var(--card-border) !important;
-  border-radius: 8px;
-  padding: 1rem;
+/* ==========================================================================
+   9. CARDS, PAINÉIS, QUADRANTES & BADGES PERICIAIS
+   ========================================================================== */
+.card {
+  background-color: var(--panel-bg);
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-dim) !important;
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 1.65rem;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.evidence-box {
-  background-color: #05080c;
-  border-left: 4px solid var(--neon-blue);
-  border-radius: 0 6px 6px 0;
-  padding: 0.9rem;
+.card:hover {
+  border-color: var(--border-medium) !important;
 }
 
-/* Botões de Opção com Alvo Touch Amplo */
-.option-btn {
+.card-header {
+  background-color: #0c131e !important;
+  border-bottom: 1px solid var(--border-dim) !important;
+  color: var(--text-pure) !important;
+  padding: 1.1rem 1.45rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.bg-panel {
+  background-color: var(--panel-bg) !important;
+}
+
+.bg-panel-alt {
+  background-color: var(--panel-card) !important;
+}
+
+.bg-terminal {
+  background-color: var(--terminal-bg) !important;
+}
+
+/* Quadrante Forense com Efeito de Foco */
+.quadrant-box {
+  background-color: var(--terminal-bg);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-md);
+  padding: 1.35rem;
+  height: 100%;
+  transition: all 0.22s ease;
+}
+
+.quadrant-box:hover {
+  border-color: var(--border-bright);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Badges de Congelamento (Freezes) com Visual Técnico Sóbrio */
+.badge-freeze {
+  font-size: 0.82rem;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-xs);
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ==========================================================================
+   10. DIÁLOGOS FORENSES (O INQUÉRITO EXPANDIDO E IMERSIVO)
+   ========================================================================== */
+.dialogo-bloco {
+  background: var(--terminal-bg);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-md);
+  padding: 1.65rem;
+  margin: 1.65rem 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.dialogo-fala {
+  margin-bottom: 1.45rem;
+  padding-left: 1.35rem;
+  border-left: 3.5px solid var(--border-bright);
+  position: relative;
+}
+
+.dialogo-fala:last-child {
+  margin-bottom: 0;
+}
+
+/* Linhas Sutis por Personagem (Discretas e Elegantes) */
+.dialogo-fala.fala-henrique {
+  border-left-color: #e63946;
+}
+.dialogo-fala.fala-rafael {
+  border-left-color: #3a86ff;
+}
+.dialogo-fala.fala-clara {
+  border-left-color: #00b4d8;
+}
+.dialogo-fala.fala-marina {
+  border-left-color: #fb8500;
+}
+.dialogo-fala.fala-gabi {
+  border-left-color: #d946ef;
+}
+.dialogo-fala.fala-bruno {
+  border-left-color: #94a3b8;
+}
+.dialogo-fala.fala-guga {
+  border-left-color: #10b981;
+}
+
+.dialogo-nome {
+  font-size: 1.16rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
   display: block;
-  width: 100%;
-  text-align: left;
-  padding: 0.85rem 1.15rem;
-  background-color: #131b26;
-  border: 1px solid #212e40;
-  color: #f8fafc;
-  border-radius: 6px;
-  transition: all 0.2s ease-in-out;
-  font-size: 0.92rem;
-  word-break: break-word;
-  min-height: 48px;
-  cursor: pointer;
-  touch-action: manipulation;
+  color: var(--text-pure);
+  letter-spacing: -0.01em;
 }
 
-.option-btn:hover,
-.option-btn:active,
-.option-btn:focus-visible {
-  background-color: #1a2636;
-  border-color: var(--neon-blue);
-  color: #ffffff;
-  outline: none;
-  transform: translateY(-1px);
+.dialogo-texto {
+  font-size: 1.1rem;
+  color: var(--text-sub);
+  font-style: normal;
+  line-height: 1.85;
+  margin: 0;
 }
 
-/* Árvore de Arquivos SAN */
+/* ==========================================================================
+   11. EXPLORADOR SAN, REPOSITÓRIO & AUDITORIA DE ARQUIVOS
+   ========================================================================== */
 .file-tree {
   max-width: 100%;
   overflow-x: auto;
@@ -653,80 +794,62 @@ header.navbar {
 
 .file-tree ul {
   list-style: none;
-  padding-left: 1.1rem;
+  padding-left: 1.25rem;
   margin-bottom: 0;
 }
 
 .file-tree li {
-  margin-bottom: 5px;
-  font-size: 0.86rem;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-.file-tree .folder {
-  color: var(--neon-amber);
-  font-weight: 700;
-}
-
-.file-tree .file {
-  color: #cbd5e1;
-}
-
-.file-tree .danger-file {
-  color: var(--neon-red);
-  font-weight: 700;
-}
-
-.pulse-dot {
+.file-link {
+  color: var(--text-sub);
+  padding: 6px 10px;
+  border-radius: var(--radius-xs);
+  transition: all 0.2s ease;
   display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--neon-red);
-  animation: pulse 1.5s infinite;
 }
 
-@keyframes pulse {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.35;
-    transform: scale(0.85);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+.file-link:hover,
+.file-link:focus {
+  background-color: var(--panel-card);
+  color: var(--neon-cyan) !important;
+  transform: translateX(4px);
 }
 
-/* =========================================================
-   9. LINHA DO TEMPO HISTÓRICA (HISTORIA.HTML)
-   ========================================================= */
+.file-explorer-box {
+  max-height: 560px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+/* ==========================================================================
+   12. LINHA DO TEMPO FORENSE EXPANDIDA
+   ========================================================================== */
 .timeline {
   position: relative;
-  padding-left: 26px;
-  margin: 1rem 0;
+  padding-left: 32px;
+  margin: 1.5rem 0;
 }
 
 .timeline::before {
   content: "";
   position: absolute;
-  top: 12px;
-  bottom: 12px;
-  left: 7px;
+  top: 14px;
+  bottom: 14px;
+  left: 9px;
   width: 2px;
-  background: linear-gradient(
-    180deg,
-    var(--neon-blue),
-    var(--neon-violet),
-    var(--neon-green)
-  );
+  background: var(--border-medium);
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: 2.25rem;
 }
 
 .timeline-item:last-child {
@@ -736,40 +859,50 @@ header.navbar {
 .timeline-item::before {
   content: "";
   position: absolute;
-  left: -26px;
-  top: 14px;
-  width: 14px;
-  height: 14px;
+  left: -32px;
+  top: 12px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
-  background-color: var(--bg-dark);
-  border: 3px solid var(--neon-blue);
-  box-shadow: 0 0 10px var(--neon-blue);
+  background-color: var(--bg-deep);
+  border: 3px solid var(--border-bright);
   z-index: 1;
 }
 
-.timeline-item:nth-child(3)::before {
-  border-color: var(--neon-violet);
-  box-shadow: 0 0 10px var(--neon-violet);
+.timeline-item:hover::before {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 12px var(--neon-cyan);
 }
 
-.timeline-item:nth-child(4)::before {
-  border-color: var(--neon-red);
-  box-shadow: 0 0 10px var(--neon-red);
+/* ==========================================================================
+   13. BLUEPRINT TÁTICO, QUADRO DE EVIDÊNCIAS & SCANLINE
+   ========================================================================== */
+.blueprint-tactical-grid {
+  position: relative;
+  background-color: #04070c;
+  background-image:
+    linear-gradient(rgba(0, 210, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 210, 255, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-lg);
+  padding: clamp(16px, 2.5vw, 30px);
 }
 
-.timeline-item:nth-child(5)::before {
-  border-color: var(--neon-green);
-  box-shadow: 0 0 10px var(--neon-green);
+.evidence-box {
+  background-color: var(--terminal-bg);
+  border-left: 4px solid var(--border-bright);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.15rem;
+  margin-bottom: 1rem;
 }
 
-/* =========================================================
-   10. EVIDÊNCIAS, QUADRANTES & DIÁLOGOS FORENSES
-   ========================================================= */
 .evidence-frame {
-  background-color: #030508;
-  border: 1px solid var(--card-border);
-  border-radius: 6px;
+  background-color: #020305;
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-md);
   overflow: hidden;
+  position: relative;
 }
 
 .evidence-frame img {
@@ -778,499 +911,143 @@ header.navbar {
   aspect-ratio: 16 / 10;
   object-fit: cover;
   display: block;
+  filter: contrast(105%) brightness(95%);
 }
 
 .evidence-tag {
-  font-family: "Fira Code", monospace;
-  font-size: clamp(0.65rem, 1vw + 0.35rem, 0.76rem);
+  font-size: 0.82rem;
   letter-spacing: 0.8px;
-  color: var(--neon-blue);
-  padding: 8px 10px;
+  color: var(--text-sub);
+  padding: 10px 14px;
   text-transform: uppercase;
-  font-weight: 600;
-  background: rgba(4, 7, 12, 0.95);
-  border-top: 1px solid var(--card-border);
-}
-
-.quadrant-box {
-  background-color: #03060a;
-  border: 1px solid var(--card-border);
-  border-radius: 6px;
-  padding: 1.25rem;
-  height: 100%;
-}
-
-.dialogo-bloco {
-  background: #090d15;
-  border: 1px solid var(--card-border);
-  border-radius: 6px;
-  padding: 1.25rem;
-  margin: 1.25rem 0;
-}
-
-.dialogo-fala {
-  margin-bottom: 1rem;
-  padding-left: 1rem;
-  border-left: 3px solid var(--card-border);
-}
-
-.dialogo-fala.fala-henrique {
-  border-left-color: var(--neon-red);
-}
-.dialogo-fala.fala-rafael {
-  border-left-color: #3b82f6;
-}
-.dialogo-fala.fala-clara {
-  border-left-color: var(--neon-cyan);
-}
-.dialogo-fala.fala-marina {
-  border-left-color: var(--neon-amber);
-}
-.dialogo-fala.fala-gabi {
-  border-left-color: #ec4899;
-}
-.dialogo-fala.fala-bruno {
-  border-left-color: #94a3b8;
-}
-.dialogo-fala.fala-guga {
-  border-left-color: var(--neon-green);
-}
-
-.dialogo-nome {
-  font-family: "Fira Code", monospace;
-  font-size: 0.8rem;
   font-weight: 700;
-  margin-bottom: 0.25rem;
-  display: block;
+  background: rgba(4, 7, 12, 0.96);
+  border-top: 1px solid var(--border-dim);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.dialogo-texto {
-  font-size: 0.92rem;
-  color: #f1f5f9;
-  font-style: italic;
-  margin: 0;
-}
-
-/* =========================================================
-   11. ORGANOGRAMA & CIRCUITO HUMANO (REDE-HUMANA.HTML)
-   ========================================================= */
+/* ==========================================================================
+   14. REDE HUMANA, ORGANOGRAMA & MICROTRIADAS
+   ========================================================================== */
 .org-circuit-container {
   position: relative;
   background: radial-gradient(circle at 50% 10%, #111a28 0%, #06090e 100%);
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  padding: 24px 14px;
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-xl);
+  padding: 28px 18px;
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
 
-@media (max-width: 1199.98px) {
-  .org-circuit-container::after {
-    content: "↔ Deslize lateralmente para explorar toda a rede humana";
-    display: block;
-    font-family: "Fira Code", monospace;
-    font-size: 0.72rem;
-    color: var(--neon-blue);
-    text-align: center;
-    margin-top: 14px;
-    font-weight: 600;
-  }
-}
-
-.org-circuit-inner {
-  min-width: 1050px;
-  padding-bottom: 10px;
-}
-
-.tree-distribution-row {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 25px;
-  padding-top: 25px;
-}
-
-.tree-distribution-row::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 6%;
-  right: 6%;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--neon-blue) 15%,
-    var(--neon-blue) 85%,
-    transparent 100%
-  );
-  box-shadow: 0 0 8px var(--neon-blue);
-}
-
-.tree-dept-col {
-  position: relative;
-  flex: 1;
-  min-width: 160px;
-}
-
-.tree-dept-col::before {
-  content: "";
-  position: absolute;
-  top: -25px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 25px;
-  background-color: var(--neon-blue);
-}
-
-.tree-dept-box {
-  background-color: #0b1119;
-  border: 1px solid #1c2a3d;
-  border-radius: 8px;
-  padding: 10px;
-}
-
-.tree-person-card {
-  background: #0f1724;
-  border: 1px solid #1f2d42;
-  border-radius: 6px;
-  padding: 7px 9px;
-  margin-bottom: 6px;
-  display: flex;
+.avatar-box {
+  width: 48px;
+  height: 48px;
+  background: #15202e;
+  border-radius: var(--radius-md);
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  text-align: left;
+  justify-content: center;
+  font-size: 1.4rem;
+  border: 1px solid var(--border-medium);
+  color: #ffffff;
+  flex-shrink: 0;
 }
 
-.tree-person-card:last-child {
-  margin-bottom: 0;
-}
-
-.tree-person-card.lead-card {
-  background: linear-gradient(135deg, #131e30, #0c1421);
-  border: 1px solid #2b3e5c;
-}
-
-/* =========================================================
-   12. MICROTRIADAS, BLUEPRINT TÁTICO & SAN EXPLORER
-   ========================================================= */
 .triad-box-modern {
-  background: #0a0f16;
-  border: 1px solid #1f2d40;
-  border-radius: 10px;
-  padding: 1rem;
-  position: relative;
-  overflow: hidden;
+  background: #090f17;
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-lg);
+  padding: 1.35rem;
   height: 100%;
-}
-
-.triad-box-modern::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-}
-
-.triad-box-modern.triad-primary::after {
-  background-color: var(--neon-blue);
-}
-.triad-box-modern.triad-danger::after {
-  background-color: var(--neon-red);
-}
-.triad-box-modern.triad-warning::after {
-  background-color: var(--neon-amber);
-}
-.triad-box-modern.triad-info::after {
-  background-color: var(--neon-green);
-}
-
-.triad-link-vector {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 14px 0;
   position: relative;
 }
 
-.vector-connector {
-  flex-grow: 1;
-  height: 1px;
-  border-top: 1px dashed #263852;
-  margin: 0 6px;
-  position: relative;
-}
-
-.vector-connector::after {
-  content: "⟷";
-  position: absolute;
-  top: -11px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-
-.blueprint-tactical-grid {
-  position: relative;
-  background-color: #04070c;
-  background-image:
-    linear-gradient(rgba(0, 210, 255, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 210, 255, 0.07) 1px, transparent 1px);
-  background-size: 20px 20px;
-  border: 1px solid #1a2b40;
-  border-radius: 10px;
-  padding: clamp(12px, 2vw, 22px);
-}
-
-.tactical-station-box {
-  background-color: #0a111a;
-  border: 1px solid #23354d;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
-  height: 100%;
-}
-
-.tactical-stamp-danger {
-  border: 1px dashed var(--neon-red);
-  background: rgba(255, 82, 82, 0.08);
-  color: #ff7b72;
-  padding: 4px 8px;
-  font-family: "Fira Code", monospace;
-  font-size: 0.7rem;
-  border-radius: 4px;
+/* ==========================================================================
+   15. PULSOS DE STATUS, ANIMAÇÃO & ACESSIBILIDADE
+   ========================================================================== */
+.pulse-dot {
   display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--neon-cyan);
+  animation: radarPulse 1.8s infinite ease-out;
+  vertical-align: middle;
 }
 
-.file-explorer-box {
-  max-height: 520px;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  border: 1px solid var(--card-border);
-}
-
-.file-link {
-  color: #cbd5e1;
-  padding: 4px 8px;
-  border-radius: 4px;
-  transition: all 0.2s ease;
-  display: inline-block;
-  min-height: 36px;
-  line-height: 28px;
-}
-
-.file-link:hover,
-.file-link:focus {
-  background-color: #172336;
-  color: var(--neon-blue) !important;
-  transform: translateX(4px);
-}
-
-/* =========================================================
-   13. ADAPTAÇÃO RESPONSIVA PRECISA (BREAKPOINTS)
-   ========================================================= */
-
-/* ---------------------------------------------------------
-   A. Telas Ultracompactas / Dobráveis Fechados (<= 359px)
-   --------------------------------------------------------- */
-@media (max-width: 359.98px) {
-  body {
-    font-size: 0.82rem;
-  }
-
-  .container,
-  .container-fluid {
-    padding-left: 6px !important;
-    padding-right: 6px !important;
-  }
-
-  .card {
-    padding: 0.75rem !important;
-    margin-bottom: 0.85rem;
-  }
-
-  .btn {
-    padding: 0.55rem 0.75rem !important;
-    font-size: 0.78rem !important;
-  }
-
-  .avatar-box {
-    width: 36px;
-    height: 36px;
-    font-size: 1rem;
-  }
-
-  .mobile-brand-title {
-    font-size: 0.78rem !important;
-    max-width: 46vw;
-  }
-
-  .timeline {
-    padding-left: 16px;
-  }
-
-  .timeline::before {
-    left: 4px;
-  }
-
-  .timeline-item::before {
-    left: -20px;
-    width: 10px;
-    height: 10px;
-    top: 10px;
-  }
-}
-
-/* ---------------------------------------------------------
-   B. Smartphones Padrão (360px até 575.98px)
-   --------------------------------------------------------- */
-@media (max-width: 575.98px) {
-  body {
-    font-size: 0.88rem;
-  }
-
-  .container,
-  .container-fluid {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .btn-lg {
-    font-size: 0.92rem;
-    padding: 0.85rem 1rem;
-    width: 100%;
-  }
-
-  .triad-link-vector {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px 0;
-  }
-
-  .vector-connector {
-    width: 1px;
-    height: 18px;
-    margin: 4px auto;
-    border-top: none;
-    border-left: 1px dashed #263852;
-  }
-
-  .vector-connector::after {
-    content: "⬇";
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-/* ---------------------------------------------------------
-   C. Tablets & Fablets (576px até 991.98px)
-   --------------------------------------------------------- */
-@media (min-width: 576px) and (max-width: 991.98px) {
-  .container,
-  .container-fluid {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-
-  .mobile-brand-title {
-    font-size: 1.05rem;
-    max-width: 65vw;
-  }
-}
-
-/* ---------------------------------------------------------
-   D. Monitores Grandes, Ultrawide & 4K (>= 1600px)
-   --------------------------------------------------------- */
-@media (min-width: 1600px) {
-  .container {
-    max-width: 1440px; /* Mantém legibilidade de linha de leitura */
-  }
-
-  body {
-    font-size: 1.02rem;
-  }
-}
-
-/* =========================================================
-   14. EFEITOS GLITCH, ANIMAÇÃO & ACESSIBILIDADE
-   ========================================================= */
-.screen-glitch {
-  animation:
-    terminalShake 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) both,
-    redFlicker 0.6s ease;
-  border-color: #ff0055 !important;
-  box-shadow: 0 0 35px rgba(255, 0, 85, 0.7) !important;
-}
-
-@keyframes terminalShake {
-  10%,
-  90% {
-    transform: translate3d(-2px, 0, 0);
-  }
-  20%,
-  80% {
-    transform: translate3d(4px, 0, 0);
-  }
-  30%,
-  50%,
-  70% {
-    transform: translate3d(-5px, 0, 0);
-  }
-  40%,
-  60% {
-    transform: translate3d(5px, 0, 0);
-  }
-}
-
-@keyframes redFlicker {
+@keyframes radarPulse {
   0% {
-    background-color: rgba(255, 0, 85, 0.25);
+    box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.6);
   }
-  50% {
-    background-color: rgba(255, 0, 0, 0.06);
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 229, 255, 0);
   }
   100% {
-    background-color: transparent;
+    box-shadow: 0 0 0 0 rgba(0, 229, 255, 0);
   }
 }
 
+/* Modo Sem Animação para Acessibilidade */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
+    animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
 }
 
-/* Impressão Limpa */
+/* ==========================================================================
+   16. SCROLLBAR MODERNA DISCRETA
+   ========================================================================== */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #04070b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1c2b3d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a3f59;
+}
+
+/* ==========================================================================
+   17. IMPRESSÃO LIMPA & LAUDO PERICIAL EM PAPEL
+   ========================================================================== */
 @media print {
   body {
     background: #ffffff !important;
     color: #000000 !important;
+    font-size: 12pt;
+    line-height: 1.5;
   }
 
   header,
   .navbar,
   .btn,
-  #codes-display-box,
-  .screen-glitch {
+  .table-responsive::before,
+  .pulse-dot {
     display: none !important;
   }
 
   .card {
-    border: 1px solid #cccccc !important;
+    border: 1px solid #777777 !important;
     background: #ffffff !important;
     color: #000000 !important;
     box-shadow: none !important;
+    page-break-inside: avoid;
   }
 
   .table-dark {
@@ -1280,6 +1057,6 @@ header.navbar {
   .table-dark th,
   .table-dark td {
     color: #000000 !important;
-    border-color: #cccccc !important;
+    border-color: #888888 !important;
   }
 }
