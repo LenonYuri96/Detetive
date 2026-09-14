@@ -1,0 +1,141 @@
+{
+  "id": 2,
+  "tituloCurto": "Caso 02: Projeto Asa Oculta",
+  "empresa": "Vértice Produções Digitais",
+  "cliente": "AeroTech Systems",
+  "projeto": "FALCON-X — ATX-026",
+  "culpado": "Bruno Prado",
+  "motivoCurto": "Substituiu a turbina homologada v04 pela clandestina v05 às 18h53 para inflar seu portfólio com geometria militar secreta, mesmo após ler o PDF de proibição às 18h49.",
+  "etapas": [
+    {
+      "id": 1,
+      "fase": "FASE 01 — ESTABELECER A VERDADE",
+      "titulo": "INVESTIGAÇÃO 01 — O MARCO OFICIAL DE CONFORMIDADE",
+      "historia": "Antes de investigar o erro, é necessário estabelecer o estado oficial do projeto. Daniel Azevedo e Clara Mendes alinharam com a equipe que a AeroTech homologou a turbina v04 às 17h40 no documento oficial, proibindo expressamente a divulgação da configuração experimental stealth.",
+      "pergunta": "Qual é o nome exato do arquivo .blend da turbina homologada e qual documento em 01_DOCUMENTACAO comprova sua aprovação jurídica?",
+      "formatoEsperado": "Exigido: Arquivo [nome].blend + Documento [nome].pdf",
+      "respostaEsperada": "drone_turbine_v04.blend e homologacao_turbina_aerotech.pdf",
+      "evidencia": "17h40:00 — Clara Mendes & Lucas Vasconcelos assinam homologacao_turbina_aerotech.pdf travando a drone_turbine_v04.blend."
+    },
+    {
+      "id": 2,
+      "fase": "FASE 02 — DESCOBRIR A ALTERAÇÃO",
+      "titulo": "INVESTIGAÇÃO 02 — A CRIAÇÃO CLANDESTINA",
+      "historia": "Na estação WS-3D-07, Bruno Prado abriu a drone_turbine_v04.blend, duplicou a geometria, construiu o perfil serrilhado stealth dente-de-tubarão e gravou a nova versão no storage central.",
+      "pergunta": "Quem criou a nova versão e qual foi o nome exato do arquivo gerado?",
+      "formatoEsperado": "Exigido: Login/Nome do usuário + Arquivo [nome].blend",
+      "respostaEsperada": "bruno.prado (Bruno Prado) — drone_turbine_v05.blend",
+      "evidencia": "18h46:25 — Syslog SMB: gravação de drone_turbine_v05.blend por bruno.prado no host WS-3D-07."
+    },
+    {
+      "id": 3,
+      "fase": "FASE 02 — DESCOBRIR A ALTERAÇÃO",
+      "titulo": "INVESTIGAÇÃO 03 — A VALIDADE CONTRATUAL DA V05",
+      "historia": "Às 18h48, o sistema de auditoria detectou o novo arquivo. Clara Mendes questionou Daniel sobre a existência de autorização ou de formulário de Override formal assinado para substituir a turbina na entrega.",
+      "pergunta": "Existe formulário de Override assinado autorizando a substituição da v04 pela v05?",
+      "formatoEsperado": "Exigido: Sim/Não + Justificativa com base em 01_DOCUMENTACAO",
+      "respostaEsperada": "Não. A v05 não possui termo de Override assinado; o documento solicitacao_estudo_stealth.pdf em 01_DOCUMENTACAO é apenas um estudo interno sem assinaturas de liberação.",
+      "evidencia": "01_DOCUMENTACAO/solicitacao_estudo_stealth.pdf: campos de aprovação técnica e visto de produção sem preenchimento e sem carimbo digital."
+    },
+    {
+      "id": 4,
+      "fase": "FASE 03 — A ENTRADA NA ESTEIRA",
+      "titulo": "INVESTIGAÇÃO 04 — A INFECÇÃO DA CENA OFICIAL",
+      "historia": "Bruno Prado abriu o arquivo de cena oficial em 04_CENAS/TAKEOFF/ e alterou o gerenciador de referências externas (External Links), trocando a turbina homologada v04 pelo modelo não autorizado v05.",
+      "pergunta": "Qual arquivo .blend em 04_CENAS/TAKEOFF/ recebeu a referência da v05 e em qual horário ocorreu o salvamento?",
+      "formatoEsperado": "Exigido: Arquivo [nome].blend + Horário [hh:mm]",
+      "respostaEsperada": "shot_03_v04.blend às 18h53",
+      "evidencia": "18h53:14 — WS-3D-07: save de shot_03_v04.blend com dependência interna trocada para drone_turbine_v05.blend."
+    },
+    {
+      "id": 5,
+      "fase": "FASE 04 — O RASTRO NO PIPELINE",
+      "titulo": "INVESTIGAÇÃO 05 — O PROCESSAMENTO NA RENDER FARM",
+      "historia": "O gerenciador Deadline recebeu a cena adulterada e o cluster de GPUs executou o cálculo de iluminação e geometria sem interpretar contratos, gerando a sequência de frames OpenEXR de 32 bits.",
+      "pergunta": "Qual arquivo .exr foi gerado e qual foi o horário de conclusão do Job na Render Farm?",
+      "formatoEsperado": "Exigido: Arquivo [nome].exr + Horário [hh:mm]",
+      "respostaEsperada": "render_shot03_v03.exr às 19h08",
+      "evidencia": "19h08:15 — Cluster Deadline finaliza Job #99140 gravando render_shot03_v03.[0001-0240].exr em 06_RENDERS/ACEScg/shot_03_v03/."
+    },
+    {
+      "id": 6,
+      "fase": "FASE 04 — O RASTRO NO PIPELINE",
+      "titulo": "INVESTIGAÇÃO 06 — O AVANÇO PELA COMPOSIÇÃO",
+      "historia": "Na suíte de VFX, Beatriz Nogueira abriu o script de composição do Nuke e atualizou o Read Node para carregar a nova sequência EXR entregue pela Farm, ajustando passes de cor e brilho sem abrir a malha 3D.",
+      "pergunta": "Qual o nome do script .nk, o horário de salvamento e o compositor responsável?",
+      "formatoEsperado": "Exigido: Arquivo [nome].nk + Horário [hh:mm] + Compositor(a)",
+      "respostaEsperada": "shot03_comp_v02.nk às 19h18 por Beatriz Nogueira",
+      "evidencia": "19h18:22 — WS-COMP-01: salvamento de shot03_comp_v02.nk com Read Node conectado em render_shot03_v03 por Beatriz Nogueira."
+    },
+    {
+      "id": 7,
+      "fase": "FASE 04 — O RASTRO NO PIPELINE",
+      "titulo": "INVESTIGAÇÃO 07 — O MASTER DE ENTREGA",
+      "historia": "A suíte de pós concluiu a renderização do vídeo e exportou o arquivo master para o diretório de entregas, disponibilizando-o para a revisão executiva que antecedia o envio final.",
+      "pergunta": "Qual arquivo .mp4 foi apresentado na reunião de revisão?",
+      "formatoEsperado": "Exigido: Arquivo [nome].mp4",
+      "respostaEsperada": "drone_master_v02.mp4",
+      "evidencia": "19h31:05 — Exportação de drone_master_v02.mp4 contendo a turbina adulterada."
+    },
+    {
+      "id": 8,
+      "fase": "FASE 05 — O MOMENTO DA RUPTURA",
+      "titulo": "INVESTIGAÇÃO 08 — O MINUTO DA RUPTURA OPERACIONAL",
+      "historia": "Criar uma malha isolada no disco às 18h46 não contaminou o vídeo. O colapso operacional da Vértice aconteceu no instante exato em que a tomada oficial teve sua dependência externa alterada.",
+      "pergunta": "Qual ação técnica e horário representam o momento exato em que o ativo clandestino infectou o pipeline?",
+      "formatoEsperado": "Exigido: Ação realizada + Horário exato [hh:mm]",
+      "respostaEsperada": "18h53 — Substituição do link da turbina v04 pela v05 no arquivo de cena shot_03_v04.blend",
+      "evidencia": "18h53:14 — Substituição manual da referência externa de v04 para v05 na tomada 03."
+    },
+    {
+      "id": 9,
+      "fase": "FASE 06 — O CERCO HUMANO",
+      "titulo": "INVESTIGAÇÃO 09 — O CÍRCULO DO CONHECIMENTO INFORMAL",
+      "historia": "Na copa (zona cega sem câmeras de CFTV), às 18h30, um grupo de colaboradores viu referências visuais de aletas stealth serrilhadas e conversou informalmente sobre o impacto estético na tomada traseira.",
+      "pergunta": "Quais cinco colaboradores sabiam que um estudo stealth havia sido comentado informalmente?",
+      "formatoEsperado": "Exigido: Lista com os 5 nomes de colaboradores da Vértice",
+      "respostaEsperada": "Marina Valente, Daniel Azevedo, Thiago Neves, Juliana Costa e Bruno Prado",
+      "evidencia": "Depoimentos cruzados tomados por Clara Mendes às 19h45 e ata de circulação da copa."
+    },
+    {
+      "id": 10,
+      "fase": "FASE 06 — O CERCO HUMANO",
+      "titulo": "INVESTIGAÇÃO 10 — PEDIDO OU AUTORIZAÇÃO?",
+      "historia": "Uma diretora de arte pode pedir estudos visuais, mas no Protocolo Vértice uma conversa informal jamais anula uma homologação técnica oficial de cliente.",
+      "pergunta": "Quem sugeriu avaliar a silhueta e qual a frase exata do seu depoimento que comprova a finalidade do teste?",
+      "formatoEsperado": "Exigido: Nome do solicitante + Frase exata dita no depoimento",
+      "respostaEsperada": "Marina Valente — 'Eu pedi um teste de silhueta. Eu pedi uma prova de conceito para avaliação interna.'",
+      "evidencia": "Termo de Declaração Gravada de Marina Valente às 19h45 no livro de ocorrências periciais."
+    },
+    {
+      "id": 11,
+      "fase": "FASE 06 — O CERCO HUMANO",
+      "titulo": "INVESTIGAÇÃO 11 — A PROVA DA INTENÇÃO",
+      "historia": "A tese de esquecimento ou engano acidental foi descartada quando os logs de auditoria do storage revelaram o que o operador consultou em sua estação instantes antes de adulterar a cena.",
+      "pergunta": "Qual registro demonstra que o operador consultou a proibição jurídica antes de alterar a cena?",
+      "formatoEsperado": "Exigido: Horário [hh:mm] + Nome do documento consultado",
+      "respostaEsperada": "18h49 — Consulta ao arquivo homologacao_turbina_aerotech.pdf",
+      "evidencia": "Log SMB //VERTICE_STORAGE/: leitura de homologacao_turbina_aerotech.pdf pelo usuário bruno.prado às 18:49:10 por 38s na WS-3D-07."
+    },
+    {
+      "id": 12,
+      "fase": "FASE 07 — PROVAR A DECISÃO",
+      "titulo": "INVESTIGAÇÃO 12 — A CADEIA CRONOLÓGICA",
+      "historia": "A perícia reuniu os registros cronológicos da estação de modelagem que comprovam a sequência deliberada de atos que violaram as diretrizes de produção.",
+      "pergunta": "Apresente os 5 horários e ações do responsável.",
+      "formatoEsperado": "Exigido: Sequência com os 5 horários [hh:mm] e respectivas ações",
+      "respostaEsperada": "17h40 (Homologação v04) ➔ 18h46 (Criação v05) ➔ 18h49 (Leitura PDF homologação) ➔ 18h51 (Reabertura v05) ➔ 18h53 (Substituição link na cena oficial)",
+      "evidencia": "Trilha temporal consolidada da credencial bruno.prado na estação física WS-3D-07."
+    },
+    {
+      "id": 13,
+      "fase": "FASE FINAL — O VEREDITO DA PIPELINE",
+      "titulo": "ACUSAÇÃO FORMAL — O CULPADO IDENTIFICADO",
+      "historia": "Faltam minutos para as 20h00. Clara Mendes exige o relatório conclusivo identificando o culpado e o motivo da adulteração para formalizar as medidas cabíveis.",
+      "pergunta": "Quem foi o responsável pela contaminação do pipeline e qual foi o motivo real da infração?",
+      "formatoEsperado": "Exigido: Nome do Culpado + Motivo real comprovado pela perícia",
+      "respostaEsperada": "CULPADO: Bruno Prado. MOTIVO: Colocou a versão experimental stealth na tomada oficial para inflar seu portfólio pessoal de modelagem Hard-Surface; sabia da proibição jurídica (lida às 18h49) e alterou o link da cena às 18h53 apostando que a modificação passaria despercebida na alta velocidade do voo.",
+      "evidencia": "Confissão de Bruno Prado gravada às 19h56 na presença de Clara Mendes e Daniel Azevedo."
+    }
+  ]
+}

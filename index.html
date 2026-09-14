@@ -4,29 +4,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Operação Robô — Terminal do Investigador</title>
-    <!-- Bootstrap 5 CSS -->
+    <title>Terminal Forense de Pipeline</title>
+    <!-- Bootstrap 5 CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
+    <!-- Google Fonts CDN -->
     <link
         href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Montserrat:wght@400;600;700;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS com Fallback de Caminho Relativo e Raiz -->
+    <link rel="stylesheet" href="css/style.css" onerror="this.onerror=null;this.href='./css/style.css';">
+
+    <style>
+        :root {
+            --bg-body: #05080d;
+            --panel-bg: #0f1724;
+            --terminal-bg: #04070b;
+            --border-dim: #1e2c40;
+            --neon-cyan: #00e5ff;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            font-family: 'Montserrat', sans-serif;
+            color: #f1f5f9;
+        }
+
+        .bg-panel {
+            background-color: var(--panel-bg) !important;
+            border-color: var(--border-dim) !important;
+        }
+
+        .bg-terminal {
+            background-color: var(--terminal-bg) !important;
+            border-color: var(--border-dim) !important;
+        }
+
+        .font-monospace,
+        .terminal-font {
+            font-family: 'Fira Code', monospace !important;
+        }
+
+        .extra-small {
+            font-size: 0.76rem;
+        }
+
+        .text-light-sub {
+            color: #94a3b8 !important;
+        }
+
+        .screen-glitch {
+            animation: glitch 0.3s ease-in-out infinite;
+            filter: hue-rotate(90deg) contrast(150%);
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+            }
+
+            20% {
+                transform: translate(-3px, 3px);
+            }
+
+            40% {
+                transform: translate(-3px, -3px);
+            }
+
+            60% {
+                transform: translate(3px, 3px);
+            }
+
+            80% {
+                transform: translate(3px, -3px);
+            }
+
+            100% {
+                transform: translate(0);
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- Header Fixo com HUD Compacto -->
+    <!-- Header Fixo com HUD Compacto & Menu de Apoio Completo -->
     <header
         class="navbar navbar-expand-xl navbar-dark bg-dark border-bottom border-primary px-3 py-2 py-md-3 sticky-top">
         <div class="container-fluid px-0">
 
             <div class="d-flex align-items-center gap-2 me-auto">
-                <span class="badge bg-primary font-monospace extra-small">CASO 01</span>
+                <span id="header-case-badge" class="badge bg-primary font-monospace extra-small">CASO 01</span>
                 <div>
-                    <h1 class="h6 m-0 text-light fw-bold mobile-brand-title">Operação Último Frame</h1>
-                    <small class="text-muted font-monospace d-none d-sm-block extra-small">TERMINAL FORENSE DE
-                        PIPELINE</small>
+                    <h1 class="h6 m-0 text-light fw-bold mobile-brand-title" id="header-case-name">Operação Último Frame
+                    </h1>
+                    <small class="text-muted font-monospace d-none d-sm-block extra-small" id="header-case-org">TERMINAL
+                        FORENSE DE PIPELINE</small>
                 </div>
             </div>
 
@@ -50,11 +122,11 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Links para Dossiês de Apoio -->
+            <!-- Links para Dossiês de Apoio Completos -->
             <div class="collapse navbar-collapse mt-3 mt-xl-0" id="navMenuIndex">
                 <nav
                     class="d-flex flex-column flex-xl-row align-items-stretch align-items-xl-center gap-2 ms-xl-auto font-monospace small">
-                    <a href="caso01-historia.html" target="_blank"
+                    <a id="btn-student-dossier" href="caso01-historia.html" target="_blank"
                         class="btn btn-warning btn-sm text-start text-xl-center text-dark fw-bold">📖 Dossiê do Caso</a>
                     <a href="historia.html" target="_blank"
                         class="btn btn-outline-warning btn-sm text-start text-xl-center">📜 História</a>
@@ -66,7 +138,6 @@
                         class="btn btn-outline-danger btn-sm text-start text-xl-center">🕸️ Rede Humana</a>
                     <a href="protocolo.html" target="_blank"
                         class="btn btn-outline-success btn-sm text-start text-xl-center">🛡️ Protocolo</a>
-
                 </nav>
             </div>
 
@@ -75,39 +146,52 @@
 
     <main class="container-fluid my-3 my-md-4 px-2 px-sm-3 px-lg-5">
 
-        <!-- CARD DE IDENTIFICAÇÃO DO ALUNO (62 ALUNOS) -->
+        <!-- CARD DE IDENTIFICAÇÃO E ESCOLHA DO CASO PELO ALUNO -->
         <section class="card bg-panel border-info mb-4 shadow" id="login-card">
             <div class="card-body p-3 p-md-4">
                 <div class="row align-items-center g-3">
-                    <div class="col-md-7">
-                        <span class="badge bg-info text-dark font-monospace extra-small mb-1">CREDENCIAMENTO
-                            OBRIGATÓRIO</span>
-                        <h4 class="h5 text-light fw-bold mb-1">Identifique-se para Assumir a Investigação</h4>
-                        <p class="text-light-sub extra-small mb-0">Cada aluno possui uma chave pericial única por etapa
-                            e um arsenal de contraespionagem.</p>
-                    </div>
                     <div class="col-md-5">
+                        <span class="badge bg-info text-dark font-monospace extra-small mb-1">CREDENCIAMENTO
+                            PERICIAL</span>
+                        <h4 class="h5 text-light fw-bold mb-1">Selecione o Caso e Identifique-se</h4>
+                        <p class="text-light-sub extra-small mb-0">Cada aluno possui uma chave individual e missões de
+                            contrainteligência.</p>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label font-monospace extra-small text-warning mb-1">📂 CASO
+                            ATRIBUÍDO:</label>
+                        <select class="form-select font-monospace small bg-black text-warning border-warning"
+                            id="student-case-select" onchange="onStudentCaseSwitch()">
+                            <option value="1">Caso 01: Operação Último Frame (MaqTec)</option>
+                            <option value="2">Caso 02: Projeto Asa Oculta (AeroTech)</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label font-monospace extra-small text-info mb-1">👤 SEU NOME NA LISTA
+                            (62):</label>
                         <div class="input-group">
                             <select class="form-select font-monospace small bg-black text-light border-secondary"
                                 id="select-student">
-                                <option value="">-- Selecione seu nome na lista (62) --</option>
+                                <option value="">-- Selecione seu nome --</option>
                             </select>
                             <button class="btn btn-info font-monospace fw-bold"
-                                onclick="loginStudent()">Autenticar</button>
+                                onclick="loginStudent()">Acessar</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- BANNER DE ACESSO AO DOSSIÊ NARRATIVO -->
+        <!-- BANNER DE ALERTA DO CASO ATUAL -->
         <div
             class="alert alert-dark border-danger p-2 p-sm-3 mb-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
             <div class="font-monospace small">
-                <strong class="text-danger">🚨 ALERTA 19H42:</strong> Equipamento adulterado detectado no render. Faltam
-                18 minutos para a entrega.
+                <strong class="text-danger">🚨 ALERTA 19H42:</strong> <span id="banner-incident-text">Geometria não
+                    homologada detectada no render. Faltam 18 minutos para a entrega final!</span>
             </div>
-            <a href="caso01-historia.html" target="_blank"
+            <a id="btn-banner-dossier" href="caso01-historia.html" target="_blank"
                 class="btn btn-sm btn-outline-warning font-monospace extra-small">
                 📖 Consultar Dossiê do Caso & Depoimentos ↗
             </a>
@@ -120,7 +204,6 @@
             <div class="col-lg-8">
                 <div class="card bg-panel border-secondary shadow p-3 p-sm-4">
 
-                    <!-- Cabeçalho da Etapa Atual -->
                     <div class="border-bottom border-secondary pb-3 mb-3">
                         <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
                             <div>
@@ -137,9 +220,7 @@
                     <div class="p-3 bg-black rounded border border-secondary mb-3">
                         <h6 class="text-info font-monospace extra-small mb-2">🔍 CONTEXTO TÉCNICO:</h6>
                         <div id="case-story-content" class="text-light-sub small"
-                            style="white-space: pre-line; line-height: 1.6;">
-                            <!-- Inserido dinamicamente via JS -->
-                        </div>
+                            style="white-space: pre-line; line-height: 1.6;"></div>
                     </div>
 
                     <!-- Pergunta Direta da Investigação -->
@@ -170,10 +251,10 @@
                         </div>
                     </div>
 
-                    <!-- Alertas de Validação (Verdadeiro ou Falso/Isca) -->
+                    <!-- Alertas de Validação -->
                     <div id="validation-alert" class="alert d-none font-monospace small" role="alert"></div>
 
-                    <!-- NOVO: MÓDULO DE AÇÕES TÁTICAS (AJUDAR OU ATRAPALHAR RIVAIS) -->
+                    <!-- MÓDULO DE GUERRA PSICOLÓGICA / CONTRAESPIONAGEM -->
                     <div class="card bg-black border-danger p-3 mt-3">
                         <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap gap-2">
                             <span class="text-danger fw-bold font-monospace extra-small">⚔️ CENTRAL DE OPERAÇÕES //
@@ -182,27 +263,23 @@
                         </div>
 
                         <div class="row g-2 mt-1">
-                            <!-- Opção 1: Sabotagem -->
                             <div class="col-md-6">
                                 <div class="p-2 bg-dark rounded border border-danger h-100">
-                                    <strong class="text-danger extra-small d-block mb-1">💣 MISSAO: ATRAPALHAR RIVAIS
+                                    <strong class="text-danger extra-small d-block mb-1">💣 MISSÃO: ATRAPALHAR RIVAIS
                                         (SABOTAGEM)</strong>
-                                    <p class="extra-small text-muted mb-2" id="tactical-sabotage-text">Vaze a isca
-                                        abaixo para confundir os concorrentes.</p>
+                                    <p class="extra-small text-muted mb-2">Vaze a isca abaixo para confundir os
+                                        concorrentes.</p>
                                     <div class="p-1 bg-black rounded border border-secondary text-warning extra-small font-monospace"
-                                        id="decoy-box">
-                                        <!-- Código Isca do Aluno nesta Etapa -->
-                                    </div>
+                                        id="decoy-box"></div>
                                 </div>
                             </div>
 
-                            <!-- Opção 2: Aliança -->
                             <div class="col-md-6">
                                 <div class="p-2 bg-dark rounded border border-success h-100">
-                                    <strong class="text-success extra-small d-block mb-1">🤝 MISSAO: AJUDAR ALIADOS
+                                    <strong class="text-success extra-small d-block mb-1">🤝 MISSÃO: AJUDAR ALIADOS
                                         (REFORÇO)</strong>
-                                    <p class="extra-small text-light-sub mb-2" id="tactical-alliance-text">Compartilhe
-                                        este protocolo de segurança com sua equipe parceira.</p>
+                                    <p class="extra-small text-light-sub mb-2">Compartilhe este protocolo de segurança
+                                        com sua equipe parceira.</p>
                                     <div class="p-1 bg-black rounded border border-secondary text-info extra-small font-monospace"
                                         id="alliance-box">
                                         "Filtre os horários do Active Directory apenas após o Freeze 1 das 17h40."
@@ -218,35 +295,32 @@
             <!-- Painel Lateral: Aluno Conectado, Terminal SAN e Histórico Desbloqueado -->
             <div class="col-lg-4">
 
-                <!-- Ficha do Aluno Conectado -->
                 <div class="card bg-panel border-secondary p-3 mb-3">
-                    <span class="text-muted extra-small font-monospace">INVESTIGADOR AUTENTICADO:</span>
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span class="text-muted extra-small font-monospace">INVESTIGADOR ATIVO:</span>
+                        <span class="badge bg-warning text-dark font-monospace extra-small" id="badge-current-case">CASO
+                            01</span>
+                    </div>
                     <strong class="text-info fs-6" id="logged-student-name">Aguardando login...</strong>
                     <div class="extra-small text-muted font-monospace mt-1" id="logged-student-sub">Credencial não
                         autenticada</div>
                     <button class="btn btn-outline-secondary btn-sm font-monospace extra-small mt-2"
-                        onclick="logoutStudent()">Trocar de Investigador</button>
+                        onclick="logoutStudent()">Trocar de Investigador / Caso</button>
                 </div>
 
-                <!-- Terminal de Logs Limpo (Sem Spoilers) -->
+                <!-- Terminal de Logs Dinâmico -->
                 <div class="card bg-terminal border-secondary shadow mb-3">
                     <div
                         class="card-header bg-black text-light py-2 px-3 border-bottom border-dark d-flex justify-content-between align-items-center">
                         <span class="terminal-title font-monospace extra-small">📟 auditoria_servidor.log</span>
                         <span class="badge bg-success extra-small">ONLINE</span>
                     </div>
-                    <div class="card-body p-3 terminal-font extra-small text-light-sub"
+                    <div class="card-body p-3 terminal-font extra-small text-light-sub" id="terminal-logs-box"
                         style="max-height: 200px; overflow-y: auto;">
-                        <p class="text-muted mb-1">> 19h42: Entrega suspensa por inconsistência no asset do robô.</p>
-                        <p class="text-muted mb-1">> 19h42: Clara Mendes acionou o protocolo pericial.</p>
-                        <p class="text-warning mb-1">> 19h43: Servidor SAN montado em modo somente-leitura.</p>
-                        <p class="text-muted mb-1">> 19h44: Histórico do Deadline e logs do Active Directory congelados.
-                        </p>
-                        <p class="text-info mb-0">> 19h45: Aguardando homologação dos laudos periciais...</p>
                     </div>
                 </div>
 
-                <!-- Cadeia de Custódia Reconstruída -->
+                <!-- Cadeia de Custódia -->
                 <div class="card bg-panel border-secondary p-3">
                     <h6 class="text-warning font-monospace extra-small mb-2">⛓️ CADEIA DE CUSTÓDIA HOMOLOGADA:</h6>
                     <ul class="list-unstyled font-monospace extra-small mb-0" id="chain-list">
@@ -259,36 +333,347 @@
         </div>
     </main>
 
-    <footer class="text-center py-3 text-secondary font-monospace extra-small border-top border-dark px-3">
-        Vertex Motion Studios • Sistema Oficial de Investigação Individual
+    <footer class="text-center py-3 text-secondary font-monospace extra-small border-top border-dark px-3"
+        id="footer-copy">
+        Sistema Oficial de Investigação Individual
     </footer>
 
-    <!-- Bootstrap 5 JS e Banco de Dados -->
+    <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/caso01_data.js"></script>
 
+    <!-- ========================================================================= -->
+    <!-- BASE DE DADOS COMPLETA EMBUTIDA -->
+    <!-- ========================================================================= -->
     <script>
+        const LISTA_ALUNOS = [
+            "Alyce Tavares Silva", "Arthur Santana Rezende De Macedo", "Breno Rodrigues Da Silva",
+            "Bruno Henrique Ferreira De Carvalho", "Davi Manoel Borges Carlos Oliveira", "Deyvid Barbosa Pontes Estevao",
+            "Dyenane Cristina Cassiano De Assis", "Erick Wilker Flausino Lemos", "Estevao Borches Ramos",
+            "Evellyn Regina Lois Teixeira Araujo", "Flavio Noronha De Souza Santos", "Gabriel Maia Carvalho",
+            "Heloisa Helena Da Silva Mattos", "Isaltina Flora Silva Larquer", "Jose Brigagao Neto",
+            "Joao Pedro Ferreira Garcia", "Kaike Araujo Honorato", "Kawan Lima Das Neves",
+            "Lyvia Rodrigues Silva", "Manuela Arantes Cardoso", "Mateus Abrao",
+            "Matheus Rodrigues Dos Santos", "Pablo Guilherme Almeida Silva", "Rafaela Ferreira Da Silva Felix",
+            "Ryan Souza Silva Oliveira", "Samuel Jaime Estrela", "Sergio Maciel Calado Filho",
+            "Victor Hugo De Almeida Perim", "Wallyson Nemoel Do Nascimento Ribeiro", "Adrian Victor Sousa Baltazar",
+            "Ana Luiza Alves Dos Santos", "Andreia Motoki Rocha", "Arthur Agostinho Borges Dos Santos",
+            "Brenda Luiza De Oliveira Pereira", "Chiara Nicolle Jacinto Da Silva", "Davi Rodrigues Ribeiro Queiroz",
+            "Diogo Eliziario De Souza", "Elisa Fernandes Ramos", "Elloa Imaculada Cheles Borges",
+            "Enzo Henrique Soares Lima", "Erick Gabriel De Souza Oliveira", "Estefany Lara Fiuza Palhares",
+            "Gabriel Costa Nunes De Oliveira", "Gabriela Da Conceicao Silva", "Gabrielle Cristina Tiago Da Silva Almeida",
+            "Gabryelle Rodrigues Santos", "Guilherme De Moura Rodrigues", "Guilherme Reis Silva Garcia",
+            "Igor Gabriel Venancio Teodoro", "Inacio Pereira De Sousa", "Isabela Teixeira Carvalho",
+            "Isabelly Teandra Andrade De Souza", "Joao Eduardo Da Silva Ribeiro", "Juan Silva Vieira Lima",
+            "Laura Sthefany Ferreira De Oliveira", "Lavinia Estefaneli Da Silva Souza", "Miguel Duarte Bernardes",
+            "Milena Souza Campos", "Otavio Marciel Goncalves Silva", "Thauany Cristina Benedito De Florentino",
+            "Thays Nascimento Silva Oliveira", "Vitor Faria De Oliveira Matos"
+        ];
+
+        function getStudentCodes(studentId, stageId, caseId = 1) {
+            const student = LISTA_ALUNOS[studentId - 1] || "ALUNO";
+            const inits = student.split(" ").filter(n => n.length > 2).map(n => n[0].toUpperCase()).join("").slice(0, 3);
+            const sPad = String(studentId).padStart(2, "0");
+            const ePad = String(stageId).padStart(2, "0");
+            const prefixTrue = caseId === 1 ? "VRT" : "NXS";
+            const prefixFake = caseId === 1 ? "TRP" : "SAB";
+            const caseSeedOffset = caseId === 1 ? 1740 : 2890;
+            const seedTrue = ((studentId * 73 + stageId * 37 + caseSeedOffset) % 9000) + 1000;
+            const seedFake = ((studentId * 89 + stageId * 53 + caseSeedOffset + 3100) % 9000) + 1000;
+            return {
+                trueCode: `${prefixTrue}-${inits}${sPad}-E${ePad}-${seedTrue}`,
+                fakeCode: `${prefixFake}-${inits}${sPad}-E${ePad}-${seedFake}`
+            };
+        }
+
+        function isTrapCode(code) {
+            if (!code || typeof code !== "string") return false;
+            const clean = code.trim().toUpperCase();
+            return clean.startsWith("TRP-") || clean.startsWith("SAB-");
+        }
+
+        const DADOS_CASOS = {
+            1: {
+                id: 1,
+                tituloCurto: "Caso 01: Operação Último Frame",
+                empresa: "Vértice Produções Digitais",
+                cliente: "MaqTec Industrial S.A.",
+                projeto: "VRT-MAQ-2026-017",
+                dossieUrl: "caso01-historia.html",
+                culpado: "Gabi Lima",
+                motivoCurto: "Injetou robot_model_v08.blend às 18h53 após checar aprovação da v07 às 18h49 para impressionar a diretoria.",
+                logsTerminal: [
+                    "> 19h42: Entrega suspensa por inconsistência no asset do robô.",
+                    "> 19h42: Clara Mendes acionou o protocolo pericial.",
+                    "> 19h43: Servidor SAN montado em modo somente-leitura.",
+                    "> 19h44: Histórico do Deadline e logs do Active Directory congelados.",
+                    "> 19h45: Aguardando homologação dos laudos periciais..."
+                ],
+                etapas: [
+                    { id: 1, fase: "FASE 01 — ESTABELECER A VERDADE", titulo: "INVESTIGAÇÃO 01 — O PONTO DE PARTIDA", historia: "O vídeo final de entrega apresentou um robô divergente do aprovado. Toda perícia técnica séria não começa caçando culpados, mas estabelecendo qual era o marco oficial de conformidade antes de qualquer alteração.", pergunta: "Informe o nome exato do arquivo .blend do robô que possuía homologação formal e o documento da pasta 01_DOCUMENTACAO que comprova essa aprovação.", formatoEsperado: "Exigido: Arquivo [nome].blend + Documento [nome].pdf", respostaEsperada: "robot_model_v07.blend e aprovacao_asset_robot.pdf", evidencia: "17h40 — Rafael Torres — Homologação registrada no aprovacao_asset_robot.pdf.", falaProfessor: "Resposta confirmada. Encontramos nosso primeiro ponto seguro: robot_model_v07.blend era a única matriz homologada.", dicaIsca: "Vaze este código falso: induz a equipe rival a crer que a versão oficial era a v06 de Bruno Prado." },
+                    { id: 2, fase: "FASE 02 — DESCOBRIR A ALTERAÇÃO", titulo: "INVESTIGAÇÃO 02 — A CRIAÇÃO POSTERIOR", historia: "A versão oficial foi homologada às 17h40. Contudo, ao inspecionar o repositório 03_ASSETS/ROBOT/, localizamos um arquivo criado posteriormente que alterou a topologia da malha.", pergunta: "Indique o nome do usuário do Active Directory que gerou essa nova versão e o nome exato do arquivo .blend criado.", formatoEsperado: "Exigido: Nome do usuário + Arquivo [nome].blend", respostaEsperada: "Gabi Lima (gabi.lima) — robot_model_v08.blend", evidencia: "18h47 — Gabi Lima — Criação de robot_model_v08.blend.", falaProfessor: "Resposta confirmada. Sabemos quem criou a nova versão: Gabi Lima gerou o robot_model_v08.blend às 18h47.", dicaIsca: "Vaze este código falso: diz que Kiko Siqueira criou a v08 no 3ds Max." },
+                    { id: 3, fase: "FASE 02 — DESCOBRIR A ALTERAÇÃO", titulo: "INVESTIGAÇÃO 03 — A VALIDADE DO NOVO ARQUIVO", historia: "Na computação gráfica profissional, qualquer artista pode criar versões de teste. No entanto, existir no disco rígido não confere autorização para entrar na esteira oficial.", pergunta: "O arquivo robot_model_v08.blend possuía Ordem de Serviço ou termo de aprovação formal para substituir a v07? Responda Sim ou Não e indique a evidência documental.", formatoEsperado: "Exigido: Sim/Não + Justificativa com base na pasta 01_DOCUMENTACAO", respostaEsperada: "Não. A v08 não possui nenhum termo de aprovação formal; apenas a v07 está homologada.", evidencia: "01_DOCUMENTACAO/aprovacao_asset_robot.pdf aponta unicamente para a v07.", falaProfessor: "Resposta confirmada. Criar uma versão é diferente de aprovar uma versão. A v08 era um arquivo não autorizado.", dicaIsca: "Vaze este código falso: faz crer que houve aprovação verbal de diretoria." },
+                    { id: 4, fase: "FASE 03 — A ENTRADA NA ESTEIRA", titulo: "INVESTIGAÇÃO 04 — O VÍNCULO COM A CENA", historia: "Um modelo tridimensional pode ficar esquecido em uma pasta sem nunca ir para a tela. O problema se torna real quando esse modelo é referenciado dentro de um arquivo de tomada.", pergunta: "Qual é o nome exato do arquivo .blend da pasta 04_CENAS onde a versão não autorizada (v08) foi inserida e qual horário marca esse salvamento?", formatoEsperado: "Exigido: Arquivo [nome].blend + Horário [hh:mm]", respostaEsperada: "scene_04_v04.blend às 18h53", evidencia: "18h53 — Gabi Lima — Criação de scene_04_v04.blend utilizando a v08.", falaProfessor: "Resposta confirmada. Encontramos onde a v08 entrou na esteira: na scene_04_v04.blend às 18h53.", dicaIsca: "Vaze este código falso: aponta para a scene_04_v03.blend como adulterada." },
+                    { id: 5, fase: "FASE 04 — O RASTRO NO PIPELINE", titulo: "INVESTIGAÇÃO 05 — O PRODUTO DA RENDER FARM", historia: "Ao enviar uma cena para a Render Farm, ela deixa de ser uma geometria editável e é calculada pixel a pixel como uma sequência de imagens multipass em ponto flutuante.", pergunta: "Qual é o nome exato do arquivo de imagem com extensão .exr na pasta 06_RENDERS que nasceu diretamente da cena adulterada?", formatoEsperado: "Exigido: Arquivo [nome].exr", respostaEsperada: "render_scene04_v03.exr", evidencia: "19h08 — Render Farm — Geração de render_scene04_v03.exr a partir da scene_04_v04.blend.", falaProfessor: "Resposta confirmada. A cena errada gerou o render_scene04_v03.exr às 19h08.", dicaIsca: "Vaze este código falso: induz a procurar o render_scene04_v02.exr." },
+                    { id: 6, fase: "FASE 04 — O RASTRO NO PIPELINE", titulo: "INVESTIGAÇÃO 06 — O AVANÇO PARA A COMPOSIÇÃO", historia: "Um render com erro pode ser barrado no setor de VFX se o compositor checar os passes. Porém, se o arquivo for importado e integrado sem verificação, o erro avança.", pergunta: "Identifique o nome exato do arquivo de script com extensão .nk (Nuke) que utilizou o render questionado e o horário registrado dessa ação.", formatoEsperado: "Exigido: Arquivo [nome].nk + Horário [hh:mm]", respostaEsperada: "scene04_comp_v02.nk às 19h18", evidencia: "19h18 — Henrique Moura — Utilização do render no script Nuke.", falaProfessor: "Resposta confirmada. O render corrompido foi carregado no script scene04_comp_v02.nk às 19h18.", dicaIsca: "Vaze este código falso: diz que a montagem foi feita no After Effects." },
+                    { id: 7, fase: "FASE 04 — O RASTRO NO PIPELINE", titulo: "INVESTIGAÇÃO 07 — O ARQUIVO DE ENTREGA", historia: "Na pasta 08_EXPORTACAO existem dois arquivos de vídeo com nomes similares. Nomes como 'final' não servem de prova jurídica: precisamos da evidência temporal.", pergunta: "Qual é o nome exato do arquivo de vídeo .mp4 que foi exportado às 19h31 e que chegou à mesa da revisão técnica?", formatoEsperado: "Exigido: Arquivo [nome].mp4", respostaEsperada: "projeto_final_2.mp4", evidencia: "19h31 — Exportação de projeto_final_2.mp4.", falaProfessor: "Resposta confirmada. O arquivo que chegou à revisão das 19h42 foi projeto_final_2.mp4.", dicaIsca: "Vaze este código falso: faz crer que o primeiro vídeo projeto_final.mp4 é o investigado." },
+                    { id: 8, fase: "FASE 05 — O MOMENTO DA RUPTURA", titulo: "INVESTIGAÇÃO 08 — O MINUTO CRÍTICO", historia: "Modelar uma peça diferente às 18h47 foi uma infração, mas não contaminou o filme imediatamente. O momento exato em que o projeto foi quebrado ocorreu quando a esteira foi infectada.", pergunta: "Indique a ação e o horário exato [hh:mm] em que a versão não aprovada deixou de ser um arquivo isolado e entrou efetivamente na esteira de produção.", formatoEsperado: "Exigido: Ação realizada + Horário exato [hh:mm]", respostaEsperada: "18h53 — Inserção da v08 na cena scene_04_v04.blend", evidencia: "18h53 — Ação crítica que desencadeou o render e a composição com erro.", falaProfessor: "Resposta confirmada. Criar às 18h47 foi teste; o erro fatal foi inserir a v08 na cena às 18h53.", dicaIsca: "Vaze este código falso: sustenta que o crime foi o disparo do render às 19h08." },
+                    { id: 9, fase: "FASE 06 — O CERCO HUMANO", titulo: "INVESTIGAÇÃO 09 — O CONHECIMENTO COLETIVO", historia: "Saber que algo está sendo discutido não é o mesmo que autorizar ou executar. Para não cometer injustiças, precisamos delimitar quem participou das conversas preliminares.", pergunta: "Cite o nome dos 5 integrantes da equipe que sabiam que uma alteração estética no robô estava sendo cogitada.", formatoEsperado: "Exigido: Lista com os 5 nomes de colaboradores da Vértice", respostaEsperada: "Marina Valente, Bruno Prado, Rafael Torres, Thiago Neves e Gabi Lima", evidencia: "Depoimentos cruzados dos 5 membros do núcleo 3D e Direção de Arte.", falaProfessor: "Resposta confirmada. Cinco pessoas sabiam da conversa: Marina, Bruno, Rafael, Thiago e Gabi. Mas saber não é autorizar.", dicaIsca: "Vaze este código falso: afirma que Henrique Moura e Clara Mendes participaram da conversa." },
+                    { id: 10, fase: "FASE 06 — O CERCO HUMANO", titulo: "INVESTIGAÇÃO 10 — O PEDIDO VS A ORDEM", historia: "Uma diretora de arte pode pedir variações para avaliação. Na cultura da Vértice, um pedido de estudo jamais autoriza a substituição de um asset já homologado por OS.", pergunta: "Quem pediu o teste no robô e qual foi a frase exata do depoimento que prova que a solicitação era apenas para avaliação e não para substituição?", formatoEsperado: "Exigido: Nome do solicitante + Frase exata dita no depoimento", respostaEsperada: "Marina Valente — 'Eu pedi uma alteração no robô. Eu pedi uma correção para avaliação.'", evidencia: "Depoimento formal de Marina Valente gravado às 19h44.", falaProfessor: "Resposta confirmada. Marina pediu um teste para avaliação estética. Ela jamais autorizou a troca no master.", dicaIsca: "Vaze este código falso: acusa Marina de ter ordenado verbalmente a troca na timeline." },
+                    { id: 11, fase: "FASE 06 — O CERCO HUMANO", titulo: "INVESTIGAÇÃO 11 — A PROVA DA MÁ-FÉ", historia: "A defesa padrão em falhas de pipeline é alegar distração: 'eu me confundi com as pastas'. Para derrubar essa tese, a perícia precisa provar o que o operador consultou antes de agir.", pergunta: "Qual registro de auditoria do Active Directory comprova que o responsável verificou o PDF da aprovação oficial antes de abrir a v08? Indique o horário exato [hh:mm] e o arquivo consultado.", formatoEsperado: "Exigido: Horário [hh:mm] + Nome do documento consultado", respostaEsperada: "18h49 — Consulta ao arquivo aprovacao_asset_robot.pdf", evidencia: "Log do Syslog: gabi.lima abriu aprovacao_asset_robot.pdf às 18h49 (2 minutos após salvar a v08).", falaProfessor: "Resposta confirmada. O log das 18h49 destrói a desculpa de acidente: ela leu a aprovação da v07 minutos antes.", dicaIsca: "Vaze este código falso: diz que a consulta ao PDF ocorreu apenas no dia seguinte." },
+                    { id: 12, fase: "FASE 07 — PROVAR A DECISÃO", titulo: "INVESTIGAÇÃO 12 — A CONEXÃO IRREFUTÁVEL", historia: "Temos agora a versão aprovada (v07), a versão adulterada (v08), a cena (v04), o render (v03), a comp (v02), o vídeo (final 2) e o rastro de leitura de aprovação.", pergunta: "Apresente a sequência de 5 passos cronológicos com horários comprovando que o mesmo usuário sabia qual versão era a oficial e decidiu deliberadamente inserir a não aprovada.", formatoEsperado: "Exigido: Sequência com 5 horários [hh:mm] e as ações do autor", respostaEsperada: "17h40 (v07 aprovada) ➔ 18h47 (cria v08) ➔ 18h49 (consulta aprovação) ➔ 18h51 (abre v08) ➔ 18h53 (insere v08 na cena)", evidencia: "Sequência matemática e temporal completa atrelada à credencial 'gabi.lima'.", falaProfessor: "Resposta confirmada. A sequência de 17h40 a 18h53 prova a tomada de decisão consciente.", dicaIsca: "Vaze este código falso: alega que houve falha automática de sincronização de cache." },
+                    { id: 13, fase: "FASE FINAL — O VEREDITO DA PIPELINE", titulo: "ACUSAÇÃO FORMAL — O CULPADO IDENTIFICADO", historia: "O relógio marca 19h56. Faltam 4 minutos para o prazo da MaqTec. Clara Mendes bate a mão na mesa e exige o nome da pessoa responsável com a prova dos fatos.", pergunta: "Quem é o CULPADO formal pela contaminação do projeto e qual foi o motivo comprovado que o levou a violar o Protocolo Vértice?", formatoEsperado: "Exigido: Nome do Culpado + Motivo real comprovado pela perícia", respostaEsperada: "CULPADO: Gabi Lima. MOTIVO: Queria impressionar a diretoria com a variação visual solicitada por Marina, sabia que a v07 era a única aprovada (consultou às 18h49) e colocou a v08 na cena às 18h53 achando que 'ninguém perceberia'.", evidencia: "Confissão formal de Gabi Lima perante Clara Mendes e a equipe às 19h57.", falaProfessor: "CASO ENCERRADO! Gabi Lima confessou tudo ao ser confrontada com o log das 18h49.", dicaIsca: "Vaze este código falso: a última tentativa de culpar Henrique Moura pela montagem final." }
+                ]
+            },
+            2: {
+                id: 2,
+                tituloCurto: "Caso 02: Projeto Asa Oculta",
+                empresa: "Vértice Produções Digitais",
+                cliente: "AeroTech Systems",
+                projeto: "FALCON-X — ATX-026",
+                dossieUrl: "caso02-historia.html",
+                culpado: "Bruno Prado",
+                motivoCurto: "Substituiu a turbina homologada v04 pela clandestina v05 às 18h53 para inflar seu portfólio com geometria militar secreta, mesmo após ler o PDF de proibição às 18h49.",
+                logsTerminal: [
+                    "> 19h42: Anomalia de patente militar detectada no bocal de exaustão do Drone Falcon-X.",
+                    "> 19h42: Clara Mendes acionou o Freeze Geral Pericial sob o Protocolo Vértice.",
+                    "> 19h43: Servidor //VERTICE_STORAGE/ montado em modo somente-leitura por Guga Lima.",
+                    "> 19h44: Histórico de jobs do Deadline, sessões SMB e logs do Active Directory congelados.",
+                    "> 19h45: Aguardando homologação dos laudos periciais de engenharia reversa..."
+                ],
+                etapas: [
+                    {
+                        id: 1,
+                        fase: "FASE 01 — ESTABELECER A VERDADE",
+                        titulo: "INVESTIGAÇÃO 01 — O MARCO OFICIAL DE CONFORMIDADE",
+                        historia: "Antes de investigar o erro, é necessário estabelecer o estado oficial do projeto. Daniel Azevedo e Clara Mendes alinharam com a equipe que a AeroTech homologou a turbina v04 às 17h40 no documento oficial, proibindo expressamente a divulgação da configuração experimental stealth.",
+                        pergunta: "Qual é o nome exato do arquivo .blend da turbina homologada e qual documento em 01_DOCUMENTACAO comprova sua aprovação jurídica?",
+                        formatoEsperado: "Exigido: Arquivo [nome].blend + Documento [nome].pdf",
+                        respostaEsperada: "drone_turbine_v04.blend e homologacao_turbina_aerotech.pdf",
+                        evidencia: "17h40:00 — Clara Mendes & Lucas Vasconcelos assinam homologacao_turbina_aerotech.pdf travando a drone_turbine_v04.blend.",
+                        falaProfessor: "Laudo confirmado. Estabelecemos a âncora de conformidade: drone_turbine_v04.blend era o único componente de propulsão homologado sob o Freeze 1.",
+                        dicaIsca: "Vaze este código falso: faz a equipe adversária crer que o modelo aprovado era a turbina v03 de Rodrigo Faro."
+                    },
+                    {
+                        id: 2,
+                        fase: "FASE 02 — DESCOBRIR A ALTERAÇÃO",
+                        titulo: "INVESTIGAÇÃO 02 — A CRIAÇÃO CLANDESTINA",
+                        historia: "Na estação WS-3D-07, Bruno Prado abriu a drone_turbine_v04.blend, duplicou a geometria, construiu o perfil serrilhado stealth dente-de-tubarão e gravou a nova versão no storage central.",
+                        pergunta: "Quem criou a nova versão e qual foi o nome exato do arquivo gerado?",
+                        formatoEsperado: "Exigido: Login/Nome do usuário + Arquivo [nome].blend",
+                        respostaEsperada: "bruno.prado (Bruno Prado) — drone_turbine_v05.blend",
+                        evidencia: "18h46:25 — Syslog SMB: gravação de drone_turbine_v05.blend por bruno.prado no host WS-3D-07.",
+                        falaProfessor: "Origem do arquivo isolada: Bruno Prado gravou a drone_turbine_v05.blend às 18h46 em sua estação física WS-3D-07.",
+                        dicaIsca: "Vaze este código falso: diz que Gabriel Lima (gabi.lima) salvou a v05 a pedido de Daniel."
+                    },
+                    {
+                        id: 3,
+                        fase: "FASE 02 — DESCOBRIR A ALTERAÇÃO",
+                        titulo: "INVESTIGAÇÃO 03 — A VALIDADE CONTRATUAL DA V05",
+                        historia: "Às 18h48, o sistema de auditoria detectou o novo arquivo. Clara Mendes questionou Daniel sobre a existência de autorização ou de formulário de Override formal assinado para substituir a turbina na entrega.",
+                        pergunta: "Existe formulário de Override assinado autorizando a substituição da v04 pela v05?",
+                        formatoEsperado: "Exigido: Sim/Não + Justificativa com base em 01_DOCUMENTACAO",
+                        respostaEsperada: "Não. A v05 não possui termo de Override assinado; o documento solicitacao_estudo_stealth.pdf em 01_DOCUMENTACAO é apenas um estudo interno sem assinaturas de liberação.",
+                        evidencia: "01_DOCUMENTACAO/solicitacao_estudo_stealth.pdf: campos de aprovação técnica e visto de produção sem preenchimento e sem carimbo digital.",
+                        falaProfessor: "Laudo confirmado. Salvar em disco não confere autorização. A v05 era um ativo juridicamente clandestino.",
+                        dicaIsca: "Vaze este código falso: faz os adversários crerem que houve um 'OK' digital assinado por Marina no portal ERP."
+                    },
+                    {
+                        id: 4,
+                        fase: "FASE 03 — A ENTRADA NA ESTEIRA",
+                        titulo: "INVESTIGAÇÃO 04 — A INFECÇÃO DA CENA OFICIAL",
+                        historia: "Bruno Prado abriu o arquivo de cena oficial em 04_CENAS/TAKEOFF/ e alterou o gerenciador de referências externas (External Links), trocando a turbina homologada v04 pelo modelo não autorizado v05.",
+                        pergunta: "Qual arquivo .blend em 04_CENAS/TAKEOFF/ recebeu a referência da v05 e em qual horário ocorreu o salvamento?",
+                        formatoEsperado: "Exigido: Arquivo [nome].blend + Horário [hh:mm]",
+                        respostaEsperada: "shot_03_v04.blend às 18h53",
+                        evidencia: "18h53:14 — WS-3D-07: save de shot_03_v04.blend com dependência interna trocada para drone_turbine_v05.blend.",
+                        falaProfessor: "A infecção material ocorreu às 18h53:14! Foi neste exato segundo que a tomada 03 foi envenenada.",
+                        dicaIsca: "Vaze este código falso: desvia a auditoria para investigar a tomada shot_01_v02.blend."
+                    },
+                    {
+                        id: 5,
+                        fase: "FASE 04 — O RASTRO NO PIPELINE",
+                        titulo: "INVESTIGAÇÃO 05 — O PROCESSAMENTO NA RENDER FARM",
+                        historia: "O gerenciador Deadline recebeu a cena adulterada e o cluster de GPUs executou o cálculo de iluminação e geometria sem interpretar contratos, gerando a sequência de frames OpenEXR de 32 bits.",
+                        pergunta: "Qual arquivo .exr foi gerado e qual foi o horário de conclusão do Job na Render Farm?",
+                        formatoEsperado: "Exigido: Arquivo [nome].exr + Horário [hh:mm]",
+                        respostaEsperada: "render_shot03_v03.exr às 19h08",
+                        evidencia: "19h08:15 — Cluster Deadline finaliza Job #99140 gravando render_shot03_v03.[0001-0240].exr em 06_RENDERS/ACEScg/shot_03_v03/.",
+                        falaProfessor: "A render farm não julga legalidade: ela calculou os 240 frames com a turbina stealth às 19h08:15 sob o Job #99140.",
+                        dicaIsca: "Vaze este código falso: diz que os passes foram processados em GPU local fora do cluster."
+                    },
+                    {
+                        id: 6,
+                        fase: "FASE 04 — O RASTRO NO PIPELINE",
+                        titulo: "INVESTIGAÇÃO 06 — O AVANÇO PELA COMPOSIÇÃO",
+                        historia: "Na suíte de VFX, Beatriz Nogueira abriu o script de composição do Nuke e atualizou o Read Node para carregar a nova sequência EXR entregue pela Farm, ajustando passes de cor e brilho sem abrir a malha 3D.",
+                        pergunta: "Qual o nome do script .nk, o horário de salvamento e o compositor responsável?",
+                        formatoEsperado: "Exigido: Arquivo [nome].nk + Horário [hh:mm] + Compositor(a)",
+                        respostaEsperada: "shot03_comp_v02.nk às 19h18 por Beatriz Nogueira",
+                        evidencia: "19h18:22 — WS-COMP-01: salvamento de shot03_comp_v02.nk com Read Node conectado em render_shot03_v03 por Beatriz Nogueira.",
+                        falaProfessor: "Confirmado. O setor de VFX manipula pixels e luz. Beatriz confiou que a pasta de renders continha uma cena auditada e avançou com shot03_comp_v02.nk.",
+                        dicaIsca: "Vaze este código falso: acusa Larissa Mendonça de ter feito um retoque 2D deliberado para mascarar o erro."
+                    },
+                    {
+                        id: 7,
+                        fase: "FASE 04 — O RASTRO NO PIPELINE",
+                        titulo: "INVESTIGAÇÃO 07 — O MASTER DE ENTREGA",
+                        historia: "A suíte de pós concluiu a renderização do vídeo e exportou o arquivo master para o diretório de entregas, disponibilizando-o para a revisão executiva que antecedia o envio final.",
+                        pergunta: "Qual arquivo .mp4 foi apresentado na reunião de revisão?",
+                        formatoEsperado: "Exigido: Arquivo [nome].mp4",
+                        respostaEsperada: "drone_master_v02.mp4",
+                        evidencia: "19h31:05 — Exportação de drone_master_v02.mp4 contendo a turbina adulterada.",
+                        falaProfessor: "Materialidade do flagrante estabelecida: o drone_master_v02.mp4 gerado às 19:31:05 continha a infração travada no frame 6.312.",
+                        dicaIsca: "Vaze este código falso: diz que a inspeção detectou a falha no primeiro vídeo drone_master_v01.mp4."
+                    },
+                    {
+                        id: 8,
+                        fase: "FASE 05 — O MOMENTO DA RUPTURA",
+                        titulo: "INVESTIGAÇÃO 08 — O MINUTO DA RUPTURA OPERACIONAL",
+                        historia: "Criar uma malha isolada no disco às 18h46 não contaminou o vídeo. O colapso operacional da Vértice aconteceu no instante exato em que a tomada oficial teve sua dependência externa alterada.",
+                        pergunta: "Qual ação técnica e horário representam o momento exato em que o ativo clandestino infectou o pipeline?",
+                        formatoEsperado: "Exigido: Ação realizada + Horário exato [hh:mm]",
+                        respostaEsperada: "18h53 — Substituição do link da turbina v04 pela v05 no arquivo de cena shot_03_v04.blend",
+                        evidencia: "18h53:14 — Substituição manual da referência externa de v04 para v05 na tomada 03.",
+                        falaProfessor: "O dano fatal ocorreu ao engatar a v05 na cena às 18h53:14, contaminando toda a esteira subsequente.",
+                        dicaIsca: "Vaze este código falso: sustenta que o crime foi o disparo do render na Farm às 19h08."
+                    },
+                    {
+                        id: 9,
+                        fase: "FASE 06 — O CERCO HUMANO",
+                        titulo: "INVESTIGAÇÃO 09 — O CÍRCULO DO CONHECIMENTO INFORMAL",
+                        historia: "Na copa (zona cega sem câmeras de CFTV), às 18h30, um grupo de colaboradores viu referências visuais de aletas stealth serrilhadas e conversou informalmente sobre o impacto estético na tomada traseira.",
+                        pergunta: "Quais cinco colaboradores sabiam que um estudo stealth havia sido comentado informalmente?",
+                        formatoEsperado: "Exigido: Lista com os 5 nomes de colaboradores da Vértice",
+                        respostaEsperada: "Marina Valente, Daniel Azevedo, Thiago Neves, Juliana Costa e Bruno Prado",
+                        evidencia: "Depoimentos cruzados tomados por Clara Mendes às 19h45 e ata de circulação da copa.",
+                        falaProfessor: "Mapeamento humano exato. Cinco pessoas sabiam da conversa: Marina, Daniel, Thiago, Juliana e Bruno. Mas conversar na copa não confere autorização executiva.",
+                        dicaIsca: "Vaze este código falso: inclui os nomes de Tchelo Ribeiro e Camila Rocha entre os participantes."
+                    },
+                    {
+                        id: 10,
+                        fase: "FASE 06 — O CERCO HUMANO",
+                        titulo: "INVESTIGAÇÃO 10 — PEDIDO OU AUTORIZAÇÃO?",
+                        historia: "Uma diretora de arte pode pedir estudos visuais, mas no Protocolo Vértice uma conversa informal jamais anula uma homologação técnica oficial de cliente.",
+                        pergunta: "Quem sugeriu avaliar a silhueta e qual a frase exata do seu depoimento que comprova a finalidade do teste?",
+                        formatoEsperado: "Exigido: Nome do solicitante + Frase exata dita no depoimento",
+                        respostaEsperada: "Marina Valente — 'Eu pedi um teste de silhueta. Eu pedi uma prova de conceito para avaliação interna.'",
+                        evidencia: "Termo de Declaração Gravada de Marina Valente às 19h45 no livro de ocorrências periciais.",
+                        falaProfessor: "A fronteira está nítida: Marina pediu um teste de silhueta para avaliação interna. Jamais autorizou a troca no master da AeroTech.",
+                        dicaIsca: "Vaze este código falso: atribui a Marina uma fala dizendo que autorizou a inclusão se ficasse bonito."
+                    },
+                    {
+                        id: 11,
+                        fase: "FASE 06 — O CERCO HUMANO",
+                        titulo: "INVESTIGAÇÃO 11 — A PROVA DA INTENÇÃO",
+                        historia: "A tese de esquecimento ou engano acidental foi descartada quando os logs de auditoria do storage revelaram o que o operador consultou em sua estação instantes antes de adulterar a cena.",
+                        pergunta: "Qual registro demonstra que o operador consultou a proibição jurídica antes de alterar a cena?",
+                        formatoEsperado: "Exigido: Horário [hh:mm] + Nome do documento consultado",
+                        respostaEsperada: "18h49 — Consulta ao arquivo homologacao_turbina_aerotech.pdf",
+                        evidencia: "Log SMB //VERTICE_STORAGE/: leitura de homologacao_turbina_aerotech.pdf pelo usuário bruno.prado às 18:49:10 por 38s na WS-3D-07.",
+                        falaProfessor: "A tese de acidente foi destruída! Bruno leu a restrição da patente às 18h49 por 38 segundos. Ele agiu com 100% de consciência da infração!",
+                        dicaIsca: "Vaze este código falso: diz que o PDF foi aberto por varredura automática de antivírus."
+                    },
+                    {
+                        id: 12,
+                        fase: "FASE 07 — PROVAR A DECISÃO",
+                        titulo: "INVESTIGAÇÃO 12 — A CADEIA CRONOLÓGICA",
+                        historia: "A perícia reuniu os registros cronológicos da estação de modelagem que comprovam a sequência deliberada de atos que violaram as diretrizes de produção.",
+                        pergunta: "Apresente os 5 horários e ações do responsável.",
+                        formatoEsperado: "Exigido: Sequência com os 5 horários [hh:mm] e respectivas ações",
+                        respostaEsperada: "17h40 (Homologação v04) ➔ 18h46 (Criação v05) ➔ 18h49 (Leitura PDF homologação) ➔ 18h51 (Reabertura v05) ➔ 18h53 (Substituição link na cena oficial)",
+                        evidencia: "Trilha temporal consolidada da credencial bruno.prado na estação física WS-3D-07.",
+                        falaProfessor: "Laudo confirmado. A cadeia de 17h40 a 18h53 demonstra dolo operacional e ação premeditada.",
+                        dicaIsca: "Vaze este código falso: espalha que houve colisão de branch no Git LFS do servidor."
+                    },
+                    {
+                        id: 13,
+                        fase: "FASE FINAL — O VEREDITO DA PIPELINE",
+                        titulo: "ACUSAÇÃO FORMAL — O CULPADO IDENTIFICADO",
+                        historia: "Faltam minutos para as 20h00. Clara Mendes exige o relatório conclusivo identificando o culpado e o motivo da adulteração para formalizar as medidas cabíveis.",
+                        pergunta: "Quem foi o responsável pela contaminação do pipeline e qual foi o motivo real da infração?",
+                        formatoEsperado: "Exigido: Nome do Culpado + Motivo real comprovado pela perícia",
+                        respostaEsperada: "CULPADO: Bruno Prado. MOTIVO: Colocou a versão experimental stealth na tomada oficial para inflar seu portfólio pessoal de modelagem Hard-Surface; sabia da proibição jurídica (lida às 18h49) e alterou o link da cena às 18h53 apostando que a modificação passaria despercebida na alta velocidade do voo.",
+                        evidencia: "Confissão de Bruno Prado gravada às 19h56 na presença de Clara Mendes e Daniel Azevedo.",
+                        falaProfessor: "CASO 02 ENCERRADO COM HONRA! A evidência técnica falou mais alto que a soberba artística. O rigor do pipeline salvou a Vértice!",
+                        dicaIsca: "Vaze este código falso: a última tentativa de culpar o setor de composição pelo erro no master."
+                    }
+                ]
+            }
+        };
+
+        function getCaseData(caseId = 1) {
+            return DADOS_CASOS[caseId] || DADOS_CASOS[1];
+        }
+
+        // =========================================================================
+        // CONTROLADOR DE ESTADO E EXECUÇÃO DO TERMINAL
+        // =========================================================================
         let currentStudentId = null;
+        let currentCaseId = 1;
         let currentStageIndex = 0;
 
         document.addEventListener("DOMContentLoaded", () => {
+            popularSelectAlunos();
+
+            const savedCase = localStorage.getItem("aluno_caso_ativo");
+            if (savedCase && (savedCase === "1" || savedCase === "2")) {
+                currentCaseId = parseInt(savedCase);
+                const selectCase = document.getElementById("student-case-select");
+                if (selectCase) selectCase.value = currentCaseId;
+            }
+
+            const savedStudentId = localStorage.getItem(`aluno_id_caso_${currentCaseId}`);
+            const savedStage = localStorage.getItem(`aluno_stage_caso_${currentCaseId}`);
+
+            applyCaseInterface(currentCaseId);
+
+            if (savedStudentId) {
+                currentStudentId = parseInt(savedStudentId);
+                currentStageIndex = savedStage ? parseInt(savedStage) : 0;
+                loadStudentSession();
+            }
+        });
+
+        function popularSelectAlunos() {
             const select = document.getElementById("select-student");
+            select.innerHTML = '<option value="">-- Selecione seu nome --</option>';
             LISTA_ALUNOS.forEach((nome, idx) => {
                 const opt = document.createElement("option");
                 opt.value = idx + 1;
                 opt.innerText = `${idx + 1}. ${nome}`;
                 select.appendChild(opt);
             });
+        }
 
-            const savedId = localStorage.getItem("aluno_ativo_caso01");
-            const savedStage = localStorage.getItem("aluno_stage_caso01");
+        function onStudentCaseSwitch() {
+            currentCaseId = parseInt(document.getElementById("student-case-select").value) || 1;
+            localStorage.setItem("aluno_caso_ativo", currentCaseId);
 
-            if (savedId) {
-                currentStudentId = parseInt(savedId);
-                if (savedStage) currentStageIndex = parseInt(savedStage);
+            currentStageIndex = parseInt(localStorage.getItem(`aluno_stage_caso_${currentCaseId}`) || "0");
+            applyCaseInterface(currentCaseId);
+
+            const savedStudent = localStorage.getItem(`aluno_id_caso_${currentCaseId}`);
+            if (savedStudent) {
+                currentStudentId = parseInt(savedStudent);
                 loadStudentSession();
+            } else {
+                logoutStudent();
             }
-        });
+        }
+
+        function applyCaseInterface(caseId) {
+            const caso = getCaseData(caseId);
+            document.getElementById("header-case-badge").innerText = `CASO 0${caseId}`;
+            document.getElementById("header-case-name").innerText = caso.tituloCurto.split(':')[1] || caso.tituloCurto;
+            document.getElementById("header-case-org").innerText = `${caso.empresa.toUpperCase()} // ${caso.projeto}`;
+            document.getElementById("badge-current-case").innerText = `CASO 0${caseId}`;
+            document.getElementById("btn-student-dossier").href = caso.dossieUrl;
+            document.getElementById("btn-banner-dossier").href = caso.dossieUrl;
+            document.getElementById("footer-copy").innerText = `${caso.empresa} • Sistema Oficial de Investigação Individual`;
+
+            const termBox = document.getElementById("terminal-logs-box");
+            termBox.innerHTML = caso.logsTerminal.map(l => `<p class="text-muted mb-1">${l}</p>`).join("");
+        }
 
         function loginStudent() {
             const select = document.getElementById("select-student");
@@ -296,49 +681,79 @@
                 alert("Por favor, selecione seu nome!");
                 return;
             }
+            currentCaseId = parseInt(document.getElementById("student-case-select").value) || 1;
             currentStudentId = parseInt(select.value);
-            currentStageIndex = 0;
-            localStorage.setItem("aluno_ativo_caso01", currentStudentId);
-            localStorage.setItem("aluno_stage_caso01", currentStageIndex);
+            currentStageIndex = parseInt(localStorage.getItem(`aluno_stage_caso_${currentCaseId}`) || "0");
+
+            localStorage.setItem("aluno_caso_ativo", currentCaseId);
+            localStorage.setItem(`aluno_id_caso_${currentCaseId}`, currentStudentId);
             loadStudentSession();
         }
 
         function loadStudentSession() {
+            const caso = getCaseData(currentCaseId);
             const nome = LISTA_ALUNOS[currentStudentId - 1];
             document.getElementById("logged-student-name").innerText = nome;
-            document.getElementById("logged-student-sub").innerText = `ID #${currentStudentId} • Auditor Técnico`;
+            document.getElementById("logged-student-sub").innerText = `ID #${currentStudentId} • Auditor Técnico (${caso.empresa})`;
             document.getElementById("login-card").classList.add("d-none");
+
+            reconstruirCadeiaDeCustodia();
             renderCurrentStage();
         }
 
         function logoutStudent() {
-            localStorage.removeItem("aluno_ativo_caso01");
-            localStorage.removeItem("aluno_stage_caso01");
+            localStorage.removeItem(`aluno_id_caso_${currentCaseId}`);
             document.getElementById("login-card").classList.remove("d-none");
             document.getElementById("logged-student-name").innerText = "Aguardando login...";
             document.getElementById("logged-student-sub").innerText = "Credencial não autenticada";
             currentStudentId = null;
+
+            document.getElementById("chain-list").innerHTML = `
+                <li class="text-muted mb-1">⏳ Etapa 01: [Aguardando homologação do primeiro arquivo]</li>
+            `;
+        }
+
+        function reconstruirCadeiaDeCustodia() {
+            const caso = getCaseData(currentCaseId);
+            const chainList = document.getElementById("chain-list");
+            chainList.innerHTML = "";
+
+            if (currentStageIndex === 0) {
+                chainList.innerHTML = `<li class="text-muted mb-1">⏳ Etapa 01: [Aguardando homologação do primeiro arquivo]</li>`;
+                return;
+            }
+
+            for (let i = 0; i < currentStageIndex; i++) {
+                const st = caso.etapas[i];
+                const li = document.createElement("li");
+                li.className = "text-success mb-1";
+                li.innerHTML = `✔ ${st.titulo.split('—')[1] || st.titulo}: <strong>${st.respostaEsperada}</strong>`;
+                chainList.appendChild(li);
+            }
         }
 
         function renderCurrentStage() {
-            const stage = ETAPAS_CASO_01[currentStageIndex];
+            const caso = getCaseData(currentCaseId);
+            if (!caso.etapas[currentStageIndex]) return;
+
+            const stage = caso.etapas[currentStageIndex];
+
             document.getElementById("case-phase-tag").innerText = stage.fase;
             document.getElementById("case-title").innerText = stage.titulo;
             document.getElementById("case-story-content").innerText = stage.historia;
             document.getElementById("case-question").innerText = stage.pergunta;
             document.getElementById("case-format-tag").innerText = stage.formatoEsperado;
-            document.getElementById("phase-counter").innerText = `${stage.id} / ${ETAPAS_CASO_01.length}`;
+            document.getElementById("phase-counter").innerText = `${stage.id} / ${caso.etapas.length}`;
 
-            const progressPct = Math.round(((stage.id) / ETAPAS_CASO_01.length) * 100);
+            const progressPct = Math.round(((stage.id) / caso.etapas.length) * 100);
             document.getElementById("investigation-progress").style.width = `${progressPct}%`;
 
-            // Exibe a isca que este aluno pode vazar para os adversários
             if (currentStudentId) {
-                const codes = getStudentCodes(currentStudentId, stage.id);
+                const codes = getStudentCodes(currentStudentId, stage.id, currentCaseId);
                 document.getElementById("decoy-box").innerHTML = `
-                    <div class="mb-1"><span class="text-danger fw-bold">ISCA UNIVERSAL DE SABOTAGEM:</span> <code>${codes.fakeCode}</code></div>
+                    <div class="mb-1"><span class="text-danger fw-bold">ISCA DE CONTRAESPIONAGEM:</span> <code>${codes.fakeCode}</code></div>
                     <div class="text-muted extra-small">"${stage.dicaIsca}"</div>
-                    <small class="text-warning d-block mt-1 font-monospace extra-small">⚡ Se um rival digitar este código em QUALQUER etapa, o terminal dele será embaralhado para uma fase aleatória!</small>
+                    <small class="text-warning d-block mt-1 font-monospace extra-small">⚡ Se um adversário digitar esta chave, o terminal dele sofrerá glitch e será deslocado de fase!</small>
                 `;
             }
 
@@ -353,21 +768,20 @@
             }
 
             const input = document.getElementById("input-code").value.trim().toUpperCase();
-            const stage = ETAPAS_CASO_01[currentStageIndex];
-            const codes = getStudentCodes(currentStudentId, stage.id);
+            const caso = getCaseData(currentCaseId);
+            const stage = caso.etapas[currentStageIndex];
+            const codes = getStudentCodes(currentStudentId, stage.id, currentCaseId);
             const alertBox = document.getElementById("validation-alert");
             const mainCard = document.querySelector(".col-lg-8 .card");
 
             if (!input) {
-                alert("Insira o código fornecido pelo professor para a sua etapa!");
+                alert("Insira o código fornecido pelo professor!");
                 return;
             }
 
             alertBox.classList.remove("d-none");
 
-            // =========================================================
-            // 1. CÓDIGO VERDADEIRO (Valida a etapa atual do aluno)
-            // =========================================================
+            // 1. CÓDIGO VERDADEIRO
             if (input === codes.trueCode) {
                 alertBox.className = "alert alert-success border-success font-monospace small mt-3";
                 alertBox.innerHTML = `<strong>✅ LAUDO HOMOLOGADO PELO PROFESSOR!</strong><br>${stage.falaProfessor}<br><small class="text-muted">Evidência registrada: ${stage.evidencia}</small>`;
@@ -380,56 +794,48 @@
                 chainList.appendChild(li);
 
                 setTimeout(() => {
-                    if (currentStageIndex < ETAPAS_CASO_01.length - 1) {
+                    if (currentStageIndex < caso.etapas.length - 1) {
                         currentStageIndex++;
-                        localStorage.setItem("aluno_stage_caso01", currentStageIndex);
+                        localStorage.setItem(`aluno_stage_caso_${currentCaseId}`, currentStageIndex);
                         renderCurrentStage();
                     } else {
                         alertBox.className = "alert alert-success border-2 border-success font-monospace p-3 text-center";
-                        alertBox.innerHTML = `<h4>🏆 CASO ENCERRADO COM SUCESSO!</h4><p>Gabi Lima foi formalmente declarada culpada com base na sequência irrefutável de evidências!</p>`;
+                        alertBox.innerHTML = `<h4>🏆 CASO 0${currentCaseId} ENCERRADO COM SUCESSO!</h4><p>${caso.culpado} foi formalmente responsabilizado(a) com base na cadeia irrefutável de provas!</p>`;
                     }
                 }, 2000);
-
             }
-            // =========================================================
-            // 2. CÓDIGO FALSO UNIVERSAL (SABOTAGEM & EMBARALHAMENTO)
-            // =========================================================
+            // 2. CÓDIGO SABOTAGEM / ISCA
             else if (isTrapCode(input)) {
-                // Efeito sonoro/visual de glitch
                 mainCard.classList.add("screen-glitch");
                 setTimeout(() => mainCard.classList.remove("screen-glitch"), 700);
 
-                // Sorteia uma fase aleatória DIFERENTE da atual (entre as 12 investigações)
-                const totalEtapasDisponiveis = ETAPAS_CASO_01.length - 1;
+                const totalEtapasDisponiveis = caso.etapas.length - 1;
                 let etapaAleatoria;
                 do {
                     etapaAleatoria = Math.floor(Math.random() * totalEtapasDisponiveis);
                 } while (etapaAleatoria === currentStageIndex && totalEtapasDisponiveis > 1);
 
-                // Aplica a sabotagem no estado do adversário
                 currentStageIndex = etapaAleatoria;
-                localStorage.setItem("aluno_stage_caso01", currentStageIndex);
+                localStorage.setItem(`aluno_stage_caso_${currentCaseId}`, currentStageIndex);
 
                 alertBox.className = "alert alert-danger border-2 border-danger font-monospace small mt-3";
                 alertBox.innerHTML = `
                     <div class="text-center py-2">
-                        <h5 class="text-danger fw-bold m-0">🚨 SABOTAGEM DE CONTRAINTELIGÊNCIA EXECUTADA! 🚨</h5>
-                        <p class="my-2">Você inseriu uma chave hostil vazada por uma equipe rival! Os logs do seu terminal foram corrompidos e seus arquivos foram desordenados.</p>
+                        <h5 class="text-danger fw-bold m-0">🚨 SABOTAGEM EXECUTADA COM SUCESSO PELO RIVAL! 🚨</h5>
+                        <p class="my-2">Você inseriu uma chave clandestina vazada. Os índices do seu pipeline foram corrompidos.</p>
                         <strong class="text-warning d-block">DESLOCAMENTO FORÇADO: VOCÊ FOI ARREMESSADO PARA A ETAPA ${currentStageIndex + 1}!</strong>
                     </div>
                 `;
 
-                // Recarrega o jogo na fase embaralhada após 3 segundos
                 setTimeout(() => {
+                    reconstruirCadeiaDeCustodia();
                     renderCurrentStage();
                 }, 3000);
             }
-            // =========================================================
             // 3. CÓDIGO INVÁLIDO
-            // =========================================================
             else {
                 alertBox.className = "alert alert-danger border-danger font-monospace small mt-3";
-                alertBox.innerHTML = `<strong>❌ CÓDIGO INVÁLIDO!</strong><br>Este código não possui assinatura digital válida na rede SAN.`;
+                alertBox.innerHTML = `<strong>❌ CÓDIGO INVÁLIDO!</strong><br>A chave pericial digitada não possui assinatura criptográfica válida na rede ${caso.empresa}.`;
             }
         }
     </script>

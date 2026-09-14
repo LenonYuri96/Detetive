@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Dossiê Pericial // Caso 02: Projeto Asa Oculta — Vértice Produções Digitais</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --bg-body: #0a0d14;
+            --bg-panel: #11141c;
+            --bg-terminal: #070a10;
+            --border-dim: #232a3b;
+            --border-highlight: #3b506d;
+            --text-main: #f1f5f9;
+            --text-sub: #94a3b8;
+            --accent-gold: #eab308;
+            --accent-cyan: #38bdf8;
+            --accent-danger: #ef4444;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.75;
+        }
+
+        .font-mono {
+            font-family: 'Fira Code', monospace;
+        }
+
+        main.container {
+            max-width: 1100px;
+        }
+
+        .card-custom {
+            background-color: var(--bg-panel);
+            border: 1px solid var(--border-dim);
+            border-radius: 8px;
+        }
+
+        .dialogo-bloco {
+            background: var(--bg-terminal);
+            border: 1px solid var(--border-dim);
+            border-radius: 6px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.25rem 0;
+        }
+
+        .dialogo-fala {
+            margin-bottom: 1.15rem;
+            padding-left: 1.15rem;
+            border-left: 3px solid var(--border-highlight);
+        }
+
+        .dialogo-fala:last-child {
+            margin-bottom: 0;
+        }
+
+        .dialogo-nome {
+            font-size: 0.98rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            display: block;
+            color: var(--accent-cyan);
+        }
+
+        .dialogo-texto {
+            font-size: 0.98rem;
+            color: var(--text-main);
+            margin: 0;
+        }
+
+        .file-tree-box {
+            background-color: var(--bg-terminal);
+            border: 1px solid var(--border-dim);
+            border-radius: 6px;
+            font-size: 0.84rem;
+            line-height: 1.6;
+        }
+
+        .etapa-card {
+            border-left: 4px solid var(--accent-gold);
+            background: var(--bg-terminal);
+            border-top: 1px solid var(--border-dim);
+            border-right: 1px solid var(--border-dim);
+            border-bottom: 1px solid var(--border-dim);
+            border-radius: 4px;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+        }
+
+        .etapa-badge {
+            background-color: var(--accent-gold);
+            color: #000;
+            font-weight: 700;
+            font-size: 0.76rem;
+            padding: 0.35rem 0.65rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-bottom: 0.65rem;
+        }
+
+        .terminal-callout {
+            background-color: #030509;
+            border: 1px solid var(--border-dim);
+            border-radius: 6px;
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Fixo Padronizado -->
+    <header class="navbar navbar-expand-xl navbar-dark bg-dark border-bottom border-warning px-3 py-3 sticky-top">
+        <div class="container-fluid px-0">
+            <div class="d-flex align-items-center gap-2 me-auto">
+                <span class="badge bg-warning text-dark fw-bold px-3 py-2 font-mono">AUDITORIA AERONÁUTICA</span>
+                <div>
+                    <h1 class="h5 m-0 text-light fw-bold">Dossiê Pericial: Operação Asa Oculta</h1>
+                    <div class="text-sub small font-mono d-none d-sm-block">VÉRTICE PRODUÇÕES // AUDITORIA FORENSE
+                        VRT-ATX-2026-026</div>
+                </div>
+            </div>
+
+            <div class="ms-auto d-flex gap-2">
+                <a href="index.html" class="btn btn-warning btn-sm px-3 py-2 text-dark fw-bold font-mono">📟 Terminal do
+                    Aluno ➔</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-4 my-md-5 px-3 px-sm-4">
+
+        <!-- CABEÇALHO DO DOSSIÊ -->
+        <section class="card-custom shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <div class="border-bottom border-secondary pb-3 mb-4">
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                    <div>
+                        <span class="badge bg-danger text-light font-mono px-2 py-1 mb-2">CLASSIFICAÇÃO: CONFIDENCIAL //
+                            24</span>
+                        <h2 class="h3 text-light fw-bold m-0">VÉRTICE PRODUÇÕES DIGITAIS &amp; AEROTECH SYSTEMS</h2>
+                        <h3 class="h5 text-warning font-mono mt-1 mb-0">DOSSIÊ PERICIAL — CASO 02: ASA OCULTA</h3>
+                    </div>
+                    <div class="text-end font-mono small text-sub">
+                        <div>NÍVEL DE ACESSO: <strong class="text-light">PERITO AUDITOR INDEPENDENTE</strong></div>
+                        <div>STATUS DO PROJETO: <span class="badge bg-danger text-light">ENTREGA SUSPENSA PARA
+                                INVESTIGAÇÃO</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-3 text-light-sub font-mono">
+                <div class="col-sm-6 col-lg-3 p-3 bg-dark rounded border border-secondary">
+                    <span class="text-sub d-block small">PROJETO:</span>
+                    <strong class="text-light fs-6">FALCON-X — ATX-026</strong>
+                </div>
+                <div class="col-sm-6 col-lg-3 p-3 bg-dark rounded border border-secondary">
+                    <span class="text-sub d-block small">CLIENTE:</span>
+                    <strong class="text-light fs-6">AEROTECH SYSTEMS</strong>
+                </div>
+                <div class="col-sm-6 col-lg-3 p-3 bg-dark rounded border border-secondary">
+                    <span class="text-sub d-block small">VALOR DO CONTRATO:</span>
+                    <strong class="text-warning fs-6">R$ 3.200.000,00</strong>
+                </div>
+                <div class="col-sm-6 col-lg-3 p-3 bg-dark rounded border border-secondary">
+                    <span class="text-sub d-block small">PRAZO CONTRATUAL:</span>
+                    <strong class="text-danger fs-5">20h00</strong>
+                </div>
+                <div class="col-12 p-3 bg-dark rounded border border-secondary">
+                    <span class="text-sub d-block small">LOCAL:</span>
+                    <strong class="text-light">VÉRTICE PRODUÇÕES DIGITAIS — BELO HORIZONTE/MG</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. O INCIDENTE -->
+        <section class="card-custom shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <h3 class="h4 text-warning fw-bold mb-3 font-mono">1. O INCIDENTE</h3>
+
+            <p>19h42.</p>
+            <p>A chuva bate contra os vidros da fachada da Vértice Produções Digitais.</p>
+            <p>O prédio, normalmente movimentado até tarde, está quase vazio.</p>
+            <p>No terceiro andar, entretanto, a situação é completamente diferente.</p>
+            <p>A sala de guerra permanece iluminada.</p>
+            <p>O vídeo institucional do Falcon-X está sendo exibido em um monitor de 85 polegadas. O material representa
+                o trabalho de semanas de modelagem, iluminação, animação, simulação, renderização e composição.</p>
+            <p>A entrega está prevista para 20h00.</p>
+            <p>O cliente aguarda o arquivo.</p>
+            <p>A equipe acredita que o projeto está encerrado.</p>
+            <p>Até que Clara Mendes percebe uma diferença.</p>
+            <p>O vídeo chega à tomada traseira da aeronave.</p>
+            <p>A câmera se aproxima lentamente do sistema de propulsão.</p>
+            <p>Clara franze a testa.</p>
+
+            <div class="dialogo-bloco">
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Clara Mendes:</span>
+                    <p class="dialogo-texto">— Beatriz, interrompa a reprodução exatamente quando a câmera terminar o
+                        movimento para a direita. Quero visualizar a região da turbina em resolução máxima antes de
+                        continuarmos a revisão.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Beatriz Nogueira:</span>
+                    <p class="dialogo-texto">— A reprodução está parada no frame 6.312. Se você quiser, posso abrir
+                        também o EXR correspondente na minha ilha para verificar se essa característica já estava
+                        presente antes da composição.</p>
+                </div>
+            </div>
+
+            <p>Clara não responde imediatamente.</p>
+            <p>Ela continua olhando para a tela.</p>
+            <p>Daniel Azevedo percebe a expressão dela.</p>
+
+            <div class="dialogo-bloco">
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Daniel Azevedo:</span>
+                    <p class="dialogo-texto">— O que você encontrou, Clara?</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Clara Mendes:</span>
+                    <p class="dialogo-texto">— Estou vendo uma geometria que não reconheço.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Daniel Azevedo:</span>
+                    <p class="dialogo-texto">— Aumente a escala da imagem, Beatriz. Não quero analisar isso comprimido
+                        pelo MP4.</p>
+                </div>
+            </div>
+
+            <p>Beatriz amplia a região na suíte de VFX.</p>
+            <p>As aletas aparecem claramente.</p>
+            <p>Daniel fica alguns segundos em silêncio.</p>
+            <p>Marina Valente percebe que algo mudou na sala.</p>
+
+            <div class="dialogo-bloco">
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Marina Valente:</span>
+                    <p class="dialogo-texto">— Daniel, você reconheceu alguma coisa?</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Daniel Azevedo:</span>
+                    <p class="dialogo-texto">— Reconheci.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Clara Mendes:</span>
+                    <p class="dialogo-texto">— Então diga exatamente o que estamos vendo.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Daniel Azevedo:</span>
+                    <p class="dialogo-texto">— Essa geometria não pertence à versão homologada do Falcon-X.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Beatriz Nogueira:</span>
+                    <p class="dialogo-texto">— Você está falando da turbina?<br>— Estou falando especificamente das
+                        aletas do conjunto traseiro.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Marina Valente:</span>
+                    <p class="dialogo-texto">— Esperem. Eu conheço essa geometria.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Clara Mendes:</span>
+                    <p class="dialogo-texto">— De onde?</p>
+                </div>
+            </div>
+
+            <p>Marina permanece alguns segundos em silêncio antes de responder.</p>
+
+            <div class="dialogo-bloco">
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Marina Valente:</span>
+                    <p class="dialogo-texto">— De um estudo que foi feito hoje.</p>
+                </div>
+            </div>
+
+            <p>A sala fica silenciosa.</p>
+            <p>Clara se vira lentamente.</p>
+
+            <div class="dialogo-bloco">
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Clara Mendes:</span>
+                    <p class="dialogo-texto">— Que estudo?</p>
+                </div>
+            </div>
+
+            <p>Marina percebe imediatamente a gravidade da pergunta.</p>
+
+            <div class="dialogo-bloco">
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Marina Valente:</span>
+                    <p class="dialogo-texto">— Uma variação visual da turbina.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Daniel Azevedo:</span>
+                    <p class="dialogo-texto">— Qual versão?<br>— Não era uma versão oficial.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Clara Mendes:</span>
+                    <p class="dialogo-texto">— Marina, qual versão?</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Marina Valente:</span>
+                    <p class="dialogo-texto">— A v05.</p>
+                </div>
+            </div>
+
+            <p>Beatriz olha para Daniel.</p>
+            <p>Daniel olha para Clara.</p>
+            <p>Clara volta para a tela.</p>
+
+            <div class="dialogo-bloco">
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Clara Mendes:</span>
+                    <p class="dialogo-texto">— A v05 não foi homologada pela AeroTech.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Daniel Azevedo:</span>
+                    <p class="dialogo-texto">— Não.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Clara Mendes:</span>
+                    <p class="dialogo-texto">— Então explique por que a v05 está no master.</p>
+                </div>
+            </div>
+
+            <p>Ninguém responde.</p>
+            <p>O relógio da sala marca: <strong>19h42min37s</strong></p>
+            <p>Clara pega o tablet e abre a documentação contratual.</p>
+
+            <div class="dialogo-bloco">
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Clara Mendes:</span>
+                    <p class="dialogo-texto">— A AeroTech approved a v04 às 17h40. A aprovação está registrada, assinada
+                        por mim e armazenada na documentação oficial. A v05 não recebeu autorização de substituição.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Marina Valente:</span>
+                    <p class="dialogo-texto">— Clara, eu preciso esclarecer uma coisa antes que vocês concluam qualquer
+                        coisa. Eu realmente pedi um estudo visual, mas a minha orientação era que ele permanecesse na
+                        estação local do Bruno. Eu nunca pedi que essa geometria fosse incorporada à entrega oficial.
+                    </p>
+                </div>
+            </div>
+
+            <p>Bruno Prado permanece sentado em silêncio.</p>
+            <p>Clara percebe.</p>
+
+            <div class="dialogo-bloco">
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Clara Mendes:</span>
+                    <p class="dialogo-texto">— Bruno, você está muito quieto.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Bruno Prado:</span>
+                    <p class="dialogo-texto">— Estou tentando entender como isso foi parar no master.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Daniel Azevedo:</span>
+                    <p class="dialogo-texto">— Nós vamos descobrir.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Clara Mendes:</span>
+                    <p class="dialogo-texto">— Guga, preciso dos registros do Storage SAN.<br>— De qual período?<br>—
+                        Desde 17h30. Quero criação, alteração, leitura, cópia, renomeação, movimentação e acesso aos
+                        arquivos do Falcon-X.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Gustavo "Guga" Lima:</span>
+                    <p class="dialogo-texto">— Isso vai gerar bastante informação.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Clara Mendes:</span>
+                    <p class="dialogo-texto">— Hoje, quanto mais informação tivermos, melhor.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Beatriz Nogueira:</span>
+                    <p class="dialogo-texto">— E o master?</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Clara Mendes:</span>
+                    <p class="dialogo-texto">— Ninguém envia esse arquivo para a AeroTech.<br>— Mas a entrega está
+                        prevista para oito da noite.<br>— Eu sei exatamente qual é o horário da entrega.</p>
+                </div>
+            </div>
+
+            <p>Ela olha para o relógio.</p>
+            <p>— Por isso temos dezoito minutos para descobrir como isso aconteceu.</p>
+        </section>
+
+        <!-- 2. O QUE ESTAVA EM JOGO -->
+        <section class="card-custom shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <h3 class="h4 text-warning fw-bold mb-3 font-mono">2. O QUE ESTAVA EM JOGO</h3>
+            <p>O Falcon-X não era uma animação comum.</p>
+            <p>A AeroTech Systems havia contratado a Vértice Produções Digitais para produzir uma apresentação técnica e
+                institucional de uma aeronave não tripulada de alto valor tecnológico.</p>
+            <p>O projeto envolvia informações de engenharia, geometria proprietária, características de propulsão e
+                elementos visuais considerados confidenciais.</p>
+            <p>A turbina homologada utilizava um bocal cônico identificado internamente como v04.</p>
+            <p>A versão v05 apresentava uma modificação significativa: as aletas traseiras tinham uma configuração
+                serrilhada dente-de-tubarão, inspirada em conceitos de redução de assinatura e controle de fluxo.</p>
+            <p>A diferença poderia parecer apenas estética para um leigo. Para a AeroTech, não era. A geometria v05
+                fazia parte de uma linha experimental stealth que ainda não havia sido liberada para divulgação.</p>
+            <p>O contrato permitia à Vértice produzir o material utilizando exclusivamente a configuração homologada. A
+                entrega da v05 poderia gerar questionamentos jurídicos, suspensão contratual e rescisão por violação de
+                propriedade intelectual.</p>
+            <p>O valor financeiro do contrato era de R$ 3.200.000,00.</p>
+            <p>Mas o problema era ainda maior: a Vértice precisava explicar como uma versão não autorizada atravessou
+                todo o pipeline de produção sem ser bloqueada pelos filtros de conformidade.</p>
+        </section>
+
+        <!-- 3. A VÉRTICE PRODUÇÕES DIGITAIS -->
+        <section class="card-custom shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <h3 class="h4 text-warning fw-bold mb-3 font-mono">3. A VÉRTICE PRODUÇÕES DIGITAIS</h3>
+            <p>A Vértice opera sob um pipeline rigoroso de produção dividido em setores especializados para evitar
+                contaminações em cadeia:</p>
+
+            <div class="terminal-callout text-center my-3 font-mono">
+                <span class="text-info fw-bold">[MODELAGEM 3D]</span> ➔
+                <span class="text-info fw-bold">[CENA &amp; TAKEOFF]</span> ➔
+                <span class="text-warning fw-bold">[RENDER FARM]</span> ➔
+                <span class="text-info fw-bold">[COMPOSIÇÃO VFX]</span> ➔
+                <span class="text-success fw-bold">[MASTER EXPORT]</span>
+            </div>
+
+            <p>Um modelo produzido na Ilha 3D alimenta a cena de tomada. A cena alimenta a Render Farm. A Render Farm
+                gera passes OpenEXR. A suíte de VFX compõe os passes em imagem final. O editor exporta o master MP4.</p>
+            <p>Se uma falha ocorre na raiz, ela avança silenciosamente por todas as etapas subsequentes até o cliente.
+            </p>
+        </section>
+
+        <!-- 4. ZONAS E ESTRUTURA FÍSICA DA EMPRESA -->
+        <section class="card-custom shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <h3 class="h4 text-warning fw-bold mb-3 font-mono">4. ZONAS E ESTRUTURA FÍSICA DA EMPRESA</h3>
+            <ul class="list-unstyled font-mono small mb-4">
+                <li class="p-2 mb-2 bg-dark rounded border border-secondary">
+                    <strong class="text-primary">ZONA 01 — RECEPÇÃO E CONTROLE BIOMÉTRICO:</strong> Entrada da Vértice
+                    com controle rigoroso de acesso e log de presença.
+                </li>
+                <li class="p-2 mb-2 bg-dark rounded border border-secondary">
+                    <strong class="text-info">ZONA 03 — ILHA 3D E MODELAGEM (WS-3D-01 a WS-3D-12):</strong> Estações de
+                    alto desempenho. Bruno Prado (Modelador Senior Hard-Surface) opera a estação WS-3D-07.
+                </li>
+                <li class="p-2 mb-2 bg-dark rounded border border-secondary">
+                    <strong class="text-warning">ZONA 05 — SUÍTE DE VFX E COMPOSIÇÃO (WS-COMP-01 e WS-COMP-02):</strong>
+                    Ilha de pós-produção onde Beatriz Nogueira (Lead de Composição) e Larissa Mendonça operam monitores
+                    calibrados.
+                </li>
+                <li class="p-2 mb-2 bg-dark rounded border border-secondary">
+                    <strong class="text-success">ZONA 07 — DATACENTER E STORAGE SAN (//VERTICE_STORAGE/):</strong>
+                    Storage central em RAID 60 mantido por Gustavo "Guga" Lima (SysAdmin) e Mateus Xavier (Operador de
+                    Render Farm).
+                </li>
+                <li class="p-2 mb-2 bg-dark rounded border border-danger">
+                    <strong class="text-danger">A COPA (ZONA CEGA):</strong> Área de convivência sem câmeras de CFTV.
+                    Local onde trocas de ideias e brainstorms informais acontecem.
+                </li>
+            </ul>
+
+            <!-- 4.1 Mapeamento da Árvore de Diretórios -->
+            <h4 class="h5 text-info fw-bold mb-2 font-mono">4.1. Mapeamento da Árvore de Diretórios (//VERTICE_STORAGE/)
+            </h4>
+            <p class="text-sub small">A estrutura completa do repositório do projeto no Storage SAN central reflete o
+                estado técnico da infraestrutura no momento da auditoria às 19h42:</p>
+
+            <div class="p-3 file-tree-box font-mono text-light">
+                <pre class="m-0" style="font-size: 0.84rem;">//VERTICE_STORAGE/PROJECTS/AEROTECH_FALCON_X/
+├── 01_DOCUMENTACAO/
+│   ├── homologacao_turbina_aerotech.pdf      [17:40 - Assinado: Clara Mendes - LOCK]
+│   └── solicitacao_estudo_stealth.pdf        [18:20 - Rascunho / Sem Assinatura]
+├── 02_CONCEITO_VISUAL/
+│   ├── refs_stealth_copa.psd                 [18:30 - Autor: Marina Valente]
+│   └── moodboard_propulsao.pdf               [15:10 - Autor: Marina Valente]
+├── 03_ASSETS/
+│   └── PROPULSAO/
+│       ├── drone_turbine_v01.blend           [14:00 - Obsoleto]
+│       ├── drone_turbine_v02.blend           [15:30 - Obsoleto]
+│       ├── drone_turbine_v03.blend           [16:45 - Rejeitado]
+│       ├── drone_turbine_v04.blend           [17:40 - HASH: APPROVED - Ativo Oficial]
+│       └── drone_turbine_v05.blend           [18:46 - HASH: UNAPPROVED - Autor: bruno.prado]
+├── 04_CENAS/
+│   └── TAKEOFF/
+│       ├── shot_01_v02.blend                 [16:20 - Ref: drone_body_v02]
+│       ├── shot_02_v01.blend                 [17:10 - Ref: drone_wing_v01]
+│       ├── shot_03_v03.blend                 [17:50 - Ref: drone_turbine_v04.blend]
+│       └── shot_03_v04.blend                 [18:53 - Ref: drone_turbine_v05.blend - CONTAMINADO]
+├── 05_SIMULACAO_CACHE/
+│   └── VDB_SMOKE/
+│       └── exhaust_plume_v01.0001.vdb        [18:10 - Cache de Fumaça]
+├── 06_RENDERS/
+│   └── ACEScg/
+│       ├── shot_03_v02/                      [18:05 - Render Limpo - 240 EXR]
+│       └── shot_03_v03/                      [19:08 - Job #99140 - CONTAMINADO]
+│           ├── render_shot03_v03.0001.exr
+│           ├── render_shot03_v03.0002.exr
+│           ├── [...]
+│           └── render_shot03_v03.0240.exr
+├── 07_COMPOSICAO/
+│   └── NUKE/
+│       ├── shot03_comp_v01.nk                [18:15 - Read: render_shot03_v02]
+│       └── shot03_comp_v02.nk                [19:18 - Read: render_shot03_v03 - Autor: Beatriz Nogueira]
+└── 08_EXPORTACAO/
+    └── MASTERS/
+        ├── drone_master_v01.mp4              [19:06 - Valido / V04]
+        └── drone_master_v02.mp4              [19:31 - MASTER CONTAMINADO / V05]</pre>
+            </div>
+        </section>
+
+        <!-- 5. OS PERSONAGENS ENVOLVIDOS -->
+        <section class="card-custom shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <h3 class="h4 text-warning fw-bold mb-3 font-mono">5. OS PERSONAGENS ENVOLVIDOS</h3>
+            <ul class="list-unstyled font-mono small mb-0">
+                <li class="mb-2"><strong class="text-primary">• CLARA MENDES:</strong> Produtora Executiva e Responsável
+                    pela Conformidade Jurídica.</li>
+                <li class="mb-2"><strong class="text-primary">• DANIEL AZEVEDO:</strong> Diretor Técnico, Sócio-Fundador
+                    e Engenheiro de Pipeline.</li>
+                <li class="mb-2"><strong class="text-primary">• MARINA VALENTE:</strong> Diretora de Arte e
+                    Sócia-Fundadora.</li>
+                <li class="mb-2"><strong class="text-primary">• BRUNO PRADO:</strong> Modelador Senior Hard-Surface
+                    (Estação WS-3D-07).</li>
+                <li class="mb-2"><strong class="text-primary">• BEATRIZ NOGUEIRA:</strong> Lead de Composição e VFX
+                    (Estação WS-COMP-01).</li>
+                <li class="mb-2"><strong class="text-primary">• THIAGO NEVES:</strong> Artista de Shading e Texturas.
+                </li>
+                <li class="mb-2"><strong class="text-primary">• JULIANA COSTA:</strong> TD de Rigging e Simulação de
+                    Física.</li>
+                <li><strong class="text-primary">• GUSTAVO "GUGA" LIMA:</strong> Chefe de TI e Administrador do Storage
+                    SAN.</li>
+            </ul>
+        </section>
+
+        <!-- 6. 17h40 — O PROJETO ESTAVA CORRETO -->
+        <section class="card-custom shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <h3 class="h4 text-warning fw-bold mb-3 font-mono">6. 17h40 — O PROJETO ESTAVA CORRETO</h3>
+            <p>Antes de investigar o erro, é necessário estabelecer o estado oficial do projeto.</p>
+            <p>17h40.</p>
+            <p>Daniel Azevedo chama a equipe da Ilha 3D.</p>
+
+            <div class="dialogo-bloco">
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Daniel Azevedo:</span>
+                    <p class="dialogo-texto">— Pessoal, preciso que vocês parem alguns minutos para alinharmos a versão
+                        da turbina. Recebi agora a confirmação da AeroTech e não quero ninguém trabalhando com arquivos
+                        desatualizados.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Bruno Prado:</span>
+                    <p class="dialogo-texto">— A aprovação saiu?</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Daniel Azevedo:</span>
+                    <p class="dialogo-texto">— Saiu. A AeroTech confirmou a v04.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Marina Valente:</span>
+                    <p class="dialogo-texto">— Finalmente aprovaram o bocal cônico?<br>— Sim. É exatamente essa
+                        configuração que está liberada para a entrega.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Clara Mendes:</span>
+                    <p class="dialogo-texto">— Existe uma cláusula restritiva na documentação jurídica. A AeroTech
+                        proíbe expressamente a divulgação da configuração experimental stealth.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Bruno Prado:</span>
+                    <p class="dialogo-texto">— Você está falando da v05?</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Clara Mendes:</span>
+                    <p class="dialogo-texto">— Estou falando de qualquer versão diferente da v04.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Daniel Azevedo:</span>
+                    <p class="dialogo-texto">— Se alguém criar variações para estudo, mantenha o arquivo isolado do
+                        repositório oficial. O ativo homologado está no Storage em
+                        03_ASSETS/PROPULSAO/drone_turbine_v04.blend.</p>
+                </div>
+            </div>
+
+            <!-- ETAPA 01 -->
+            <div class="etapa-card font-mono">
+                <span class="etapa-badge">ETAPA 01 — O MARCO OFICIAL DE CONFORMIDADE</span>
+                <p class="small text-sub mb-2">Consulte os arquivos de documentação e identifique o ativo homologado e o
+                    documento jurídico referente às 17h40.</p>
+                <div class="text-light small">
+                    <strong>Pergunta:</strong> Qual é o nome exato do arquivo .blend da turbina homologada e qual
+                    documento em 01_DOCUMENTACAO comprova sua aprovação jurídica?
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. 18h30 — A IDEIA -->
+        <section class="card-custom shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <h3 class="h4 text-warning fw-bold mb-3 font-mono">7. 18h30 — A IDEIA</h3>
+            <p>18h30. O projeto avança normalmente. Na copa, Marina Valente mostra uma referência visual em seu tablet.
+            </p>
+            <p>Thiago Neves observa a imagem.</p>
+
+            <div class="dialogo-bloco">
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Thiago Neves:</span>
+                    <p class="dialogo-texto">— Essa geometria tem um perfil bem mais agressivo do que a peça atual.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Juliana Costa:</span>
+                    <p class="dialogo-texto">— Essas aletas dente-de-tubarão ficariam incríveis na iluminação da cena.
+                        Você quer usar no Falcon-X?</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Marina Valente:</span>
+                    <p class="dialogo-texto">— Não no material oficial do cliente.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Bruno Prado:</span>
+                    <p class="dialogo-texto">— Mas ficaria muito melhor na tomada traseira.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Marina Valente:</span>
+                    <p class="dialogo-texto">— Esteticamente sim. Mas a AeroTech não aprovou esse desenho.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Bruno Prado:</span>
+                    <p class="dialogo-texto">— Posso fazer um teste rápido na minha máquina.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Marina Valente:</span>
+                    <p class="dialogo-texto">— Pode fazer um estudo local no seu viewport. Quero apenas avaliar a
+                        silhueta. Mas mantenha isso separado da produção.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Bruno Prado:</span>
+                    <p class="dialogo-texto">— Pode deixar.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. 18h46 — A V05 NASCE -->
+        <section class="card-custom shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <h3 class="h4 text-warning fw-bold mb-3 font-mono">8. 18h46 — A V05 NASCE</h3>
+            <p>Na estação WS-3D-07, Bruno Prado abre drone_turbine_v04.blend.</p>
+            <p>Ele duplica a geometria, altera os vértices e constrói o perfil serrilhado stealth.</p>
+            <p>Gira a câmera no viewport. O resultado visual fica impressionante.</p>
+            <p>Marina passa pela ilha de modelagem.</p>
+
+            <div class="dialogo-bloco">
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Marina Valente:</span>
+                    <p class="dialogo-texto">— Conseguiu montar?</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Bruno Prado:</span>
+                    <p class="dialogo-texto">— Olha isso. Quando a câmera passar pela traseira, essas aletas vão
+                        destacar muito mais na luz.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Marina Valente:</span>
+                    <p class="dialogo-texto">— A leitura ficou ótima. Mas lembre-se: é apenas um estudo interno. Salve
+                        como variação de trabalho.</p>
+                </div>
+            </div>
+
+            <p>Bruno abre a janela de salvamento e digita: <code>drone_turbine_v05.blend</code></p>
+            <p>O sistema registra a gravação às 18h46.</p>
+
+            <!-- ETAPA 02 -->
+            <div class="etapa-card font-mono">
+                <span class="etapa-badge">ETAPA 02 — A CRIAÇÃO CLANDESTINA</span>
+                <p class="small text-sub mb-2">Consulte os logs do sistema e identifique a autoria do novo ativo.</p>
+                <div class="text-light small">
+                    <strong>Pergunta:</strong> Quem criou a nova versão e qual foi o nome exato do arquivo gerado?
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. 18h48 — A PRIMEIRA DÚVIDA -->
+        <section class="card-custom shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <h3 class="h4 text-warning fw-bold mb-3 font-mono">9. 18h48 — A PRIMEIRA DÚVIDA</h3>
+            <p>Às 18h48, o sistema de auditoria envia um alerta automático para Clara Mendes:</p>
+            <div class="terminal-callout text-danger font-mono my-2">
+                NEW ASSET DETECTED: drone_turbine_v05.blend
+            </div>
+
+            <p>Clara chama Daniel Azevedo.</p>
+
+            <div class="dialogo-bloco">
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Clara Mendes:</span>
+                    <p class="dialogo-texto">— Você autorizou alguma nova versão da turbina?</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Daniel Azevedo:</span>
+                    <p class="dialogo-texto">— Não. Para estudo pessoal alguém pode ter salvo, mas nada foi homologado.
+                    </p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Clara Mendes:</span>
+                    <p class="dialogo-texto">— Existe formulário de Override assinado?</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Daniel Azevedo:</span>
+                    <p class="dialogo-texto">— Não deveria existir.</p>
+                </div>
+            </div>
+
+            <!-- ETAPA 03 -->
+            <div class="etapa-card font-mono">
+                <span class="etapa-badge">ETAPA 03 — A VALIDADE CONTRATUAL DA V05</span>
+                <p class="small text-sub mb-2">Analise o diretório 01_DOCUMENTACAO.</p>
+                <div class="text-light small">
+                    <strong>Pergunta:</strong> Existe formulário de Override assinado autorizando a substituição da v04
+                    pela v05?
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. 18h49 — O DOCUMENTO -->
+        <section class="card-custom shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <h3 class="h4 text-warning fw-bold mb-3 font-mono">10. 18h49 — O DOCUMENTO</h3>
+            <p>18h49. Os logs do servidor registram um evento crítico na estação WS-3D-07:</p>
+            <div class="terminal-callout text-warning font-mono my-2">
+                WS-3D-07 [bruno.prado] ➔ READ: /01_DOCUMENTACAO/homologacao_turbina_aerotech.pdf (Duração: 38 segundos)
+            </div>
+            <p>O leitor de PDF permanece aberto por 38 segundos.</p>
+            <p>O documento aberto deixava explícito que a versão v04 era a única legalmente permitida e que o uso de
+                geometrias stealth violaria o contrato com a AeroTech.</p>
+            <p>Bruno fecha o PDF e retorna ao software 3D.</p>
+        </section>
+
+        <!-- 11. 18h53 — A DECISÃO -->
+        <section class="card-custom shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <h3 class="h4 text-warning fw-bold mb-3 font-mono">11. 18h53 — A DECISÃO</h3>
+            <p>18h53. Bruno Prado abre o arquivo de cena oficial em <code>04_CENAS/TAKEOFF/</code>.</p>
+            <p>Observa o viewport. A cena está vinculada à turbina v04 homologada.</p>
+            <p>Bruno abre o gerenciador de referências externas (External Links).</p>
+            <p>A referência atual indica: <code>drone_turbine_v04.blend</code>.</p>
+            <p>Ele altera a referência para: <code>drone_turbine_v05.blend</code>.</p>
+            <p>Salva o arquivo da cena como <code>shot_03_v04.blend</code>.</p>
+            <p>O relógio do servidor marca <strong>18h53</strong>.</p>
+            <p>A partir desse segundo, a tomada oficial da animação passa a depender do ativo clandestino.</p>
+
+            <!-- ETAPA 04 -->
+            <div class="etapa-card font-mono">
+                <span class="etapa-badge">ETAPA 04 — A INFECÇÃO DA CENA OFICIAL</span>
+                <p class="small text-sub mb-2">Identifique o arquivo de cena adulterado.</p>
+                <div class="text-light small">
+                    <strong>Pergunta:</strong> Qual arquivo .blend em 04_CENAS/TAKEOFF/ recebeu a referência da v05 e em
+                    qual horário ocorreu o salvamento?
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. O PONTO DE MUDANÇA & A RENDER FARM -->
+        <section class="card-custom shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <h3 class="h4 text-warning fw-bold mb-3 font-mono">12. O PONTO DE MUDANÇA &amp; A RENDER FARM</h3>
+            <p>Daniel explica para Clara:</p>
+
+            <div class="dialogo-bloco">
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Daniel Azevedo:</span>
+                    <p class="dialogo-texto">— Até 18h46 tínhamos apenas um arquivo de estudo inerte no disco. Às 18h53,
+                        quando a referência da cena oficial foi trocada para a v05, o pipeline foi contaminado. Esse foi
+                        o ponto de ruptura.</p>
+                </div>
+            </div>
+
+            <p>19h08.</p>
+            <p>O gerenciador Deadline recebe o Job #99140 para renderizar a cena <code>shot_03_v04.blend</code>.</p>
+            <p>O cluster de renderização executa o cálculo de iluminação e geometria sem interpretar contratos.</p>
+            <p>Às 19h08, o sistema conclui o processamento dos 240 frames OpenEXR de 32 bits no diretório
+                <code>06_RENDERS/ACEScg/shot_03_v03/</code>.
+            </p>
+
+            <!-- ETAPA 05 -->
+            <div class="etapa-card font-mono">
+                <span class="etapa-badge">ETAPA 05 — O PROCESSAMENTO NA RENDER FARM</span>
+                <p class="small text-sub mb-2">Verifique o arquivo de render gerado pelo Deadline.</p>
+                <div class="text-light small">
+                    <strong>Pergunta:</strong> Qual arquivo .exr foi gerado e qual foi o horário de conclusão do Job na
+                    Render Farm?
+                </div>
+            </div>
+        </section>
+
+        <!-- 13. 19h18 — O RENDER CHEGA À COMPOSIÇÃO -->
+        <section class="card-custom shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <h3 class="h4 text-warning fw-bold mb-3 font-mono">13. 19h18 — O RENDER CHEGA À COMPOSIÇÃO</h3>
+            <p>Na estação WS-COMP-01, Beatriz Nogueira abre o script do Nuke <code>shot03_comp_v02.nk</code>.</p>
+            <p>Ela atualiza o Read Node para carregar a nova sequência EXR entregue pela Farm.</p>
+            <p>A imagem da aeronave aparece no monitor calibrado. Beatriz ajusta os passes de cor e brilho do motor.</p>
+
+            <div class="dialogo-bloco">
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Beatriz Nogueira:</span>
+                    <p class="dialogo-texto">— O render veio pronto da Farm. Como compositora, eu trabalho os pixels e a
+                        iluminação, não abro malhas no Blender.</p>
+                </div>
+            </div>
+
+            <p>Beatriz salva o script de composição às 19h18.</p>
+
+            <!-- ETAPA 06 -->
+            <div class="etapa-card font-mono">
+                <span class="etapa-badge">ETAPA 06 — O AVANÇO PELA COMPOSIÇÃO</span>
+                <p class="small text-sub mb-2">Identifique o script de pós-produção.</p>
+                <div class="text-light small">
+                    <strong>Pergunta:</strong> Qual o nome do script .nk, o horário de salvamento e o compositor
+                    responsável?
+                </div>
+            </div>
+        </section>
+
+        <!-- 14. 19h31 — A EXPORTAÇÃO MASTER -->
+        <section class="card-custom shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <h3 class="h4 text-warning fw-bold mb-3 font-mono">14. 19h31 — A EXPORTAÇÃO MASTER</h3>
+            <p>Beatriz conclui a renderização do vídeo e exporta o arquivo master para o diretório
+                <code>08_EXPORTACAO/MASTERS/</code>.
+            </p>
+            <p>O arquivo <code>drone_master_v02.mp4</code> é gravado no storage às 19h31.</p>
+            <p>Ela notifica a sala de guerra que o material está pronto para a revisão final das 19h42.</p>
+
+            <!-- ETAPA 07 -->
+            <div class="etapa-card font-mono">
+                <span class="etapa-badge">ETAPA 07 — O MASTER DE ENTREGA</span>
+                <p class="small text-sub mb-2">Identifique o arquivo de vídeo apresentado na revisão.</p>
+                <div class="text-light small">
+                    <strong>Pergunta:</strong> Qual arquivo .mp4 foi apresentado na reunião de revisão?
+                </div>
+            </div>
+        </section>
+
+        <!-- 15. 19h42 — A DESCOBERTA DA FRAUDE -->
+        <section class="card-custom shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <h3 class="h4 text-warning fw-bold mb-3 font-mono">15. 19h42 — A DESCOBERTA DA FRAUDE</h3>
+            <p>A revisão trava no frame 6.312.</p>
+            <p>Daniel, Clara, Marina e Beatriz confirmam que a geometria incorreta já estava embutida nos passes brutos
+                de renderização antes da composição.</p>
+            <p>Clara vira-se para Bruno Prado:</p>
+
+            <div class="dialogo-bloco">
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Clara Mendes:</span>
+                    <p class="dialogo-texto">— Bruno, você criou a v05. Você colocou esse arquivo na cena oficial?</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Bruno Prado:</span>
+                    <p class="dialogo-texto">Bruno hesita.</p>
+                </div>
+            </div>
+
+            <!-- ETAPA 08 -->
+            <div class="etapa-card font-mono">
+                <span class="etapa-badge">ETAPA 08 — O MINUTO DA RUPTURA OPERACIONAL</span>
+                <p class="small text-sub mb-2">Determine o marco de contaminação.</p>
+                <div class="text-light small">
+                    <strong>Pergunta:</strong> Qual ação técnica e horário representam o momento exato em que o ativo
+                    clandestino infectou o pipeline?
+                </div>
+            </div>
+        </section>
+
+        <!-- 16. O QUE MARINA REALMENTE PEDIU? -->
+        <section class="card-custom shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <h3 class="h4 text-warning fw-bold mb-3 font-mono">16. O QUE MARINA REALMENTE PEDIU?</h3>
+            <p>Às 19h45, Clara toma o depoimento formal de Marina Valente.</p>
+
+            <div class="dialogo-bloco">
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Clara Mendes:</span>
+                    <p class="dialogo-texto">— Marina, o que exatamente você pediu ao Bruno?</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Marina Valente:</span>
+                    <p class="dialogo-texto">— Pedi uma prova de conceito local para avaliar a silhueta no viewport
+                        dele.</p>
+                </div>
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Clara Mendes:</span>
+                    <p class="dialogo-texto">— Você pediu para substituir a v04 na produção?<br>— Jamais.<br>— Você
+                        deixou claro que era um estudo interno?<br>— Sim, deixei registrado em conversa na copa.</p>
+                </div>
+            </div>
+
+            <!-- ETAPA 09 -->
+            <div class="etapa-card font-mono">
+                <span class="etapa-badge">ETAPA 09 — O CÍRCULO DO CONHECIMENTO INFORMAL</span>
+                <p class="small text-sub mb-2">Mapeie a rede humana ciente da ideia.</p>
+                <div class="text-light small">
+                    <strong>Pergunta:</strong> Quais cinco colaboradores sabiam que um estudo stealth havia sido
+                    comentado informalmente?
+                </div>
+            </div>
+        </section>
+
+        <!-- 17. A DIFERENÇA ENTRE IDEIA E AUTORIZAÇÃO -->
+        <section class="card-custom shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <h3 class="h4 text-warning fw-bold mb-3 font-mono">17. A DIFERENÇA ENTRE IDEIA E AUTORIZAÇÃO</h3>
+
+            <!-- ETAPA 10 -->
+            <div class="etapa-card font-mono">
+                <span class="etapa-badge">ETAPA 10 — PEDIDO OU AUTORIZAÇÃO?</span>
+                <p class="small text-sub mb-2">Analise os depoimentos de direção.</p>
+                <div class="text-light small">
+                    <strong>Pergunta:</strong> Quem sugeriu avaliar a silhueta e qual a frase exata do seu depoimento
+                    que comprova a finalidade do teste?
+                </div>
+            </div>
+        </section>
+
+        <!-- 18. A EVIDÊNCIA DA MÁ-FÉ -->
+        <section class="card-custom shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <h3 class="h4 text-warning fw-bold mb-3 font-mono">18. A EVIDÊNCIA DA MÁ-FÉ</h3>
+            <p>Guga Lima confirma a auditoria do servidor:</p>
+
+            <div class="dialogo-bloco">
+                <div class="dialogo-fala">
+                    <span class="dialogo-nome">Gustavo "Guga" Lima:</span>
+                    <p class="dialogo-texto">— O log do sistema é indiscutível. Às 18h49, a estação WS-3D-07 logada como
+                        bruno.prado abriu o PDF de homologação por 38 segundos.</p>
+                </div>
+            </div>
+
+            <p>Isso levanta a suspeita de que a proibição contratual era do conhecimento do operador quatro minutos
+                antes da alteração da cena oficial.</p>
+
+            <!-- ETAPA 11 -->
+            <div class="etapa-card font-mono">
+                <span class="etapa-badge">ETAPA 11 — A PROVA DA INTENÇÃO</span>
+                <p class="small text-sub mb-2">Identifique o log de auditoria do PDF.</p>
+                <div class="text-light small">
+                    <strong>Pergunta:</strong> Qual registro demonstra que o operador consultou a proibição jurídica
+                    antes de alterar a cena?
+                </div>
+            </div>
+        </section>
+
+        <!-- 19. RECONSTRUÇÃO E SOLUÇÃO DO CASO -->
+        <section class="card-custom shadow-sm mb-4 mb-md-5 p-4 p-md-5">
+            <h3 class="h4 text-warning fw-bold mb-3 font-mono">19. RECONSTRUÇÃO E SOLUÇÃO DO CASO</h3>
+
+            <!-- ETAPA 12 -->
+            <div class="etapa-card font-mono mb-4">
+                <span class="etapa-badge">ETAPA 12 — A CADEIA CRONOLÓGICA</span>
+                <p class="small text-sub mb-2">Apresente a sequência técnica dos 5 marcos atrelados ao responsável.</p>
+                <div class="text-light small">
+                    <strong>Pergunta:</strong> Apresente os 5 horários e ações do responsável.
+                </div>
+            </div>
+
+            <!-- ETAPA 13 -->
+            <div class="etapa-card font-mono mb-0">
+                <span class="etapa-badge">ETAPA 13 — A ACUSAÇÃO FORMAL</span>
+                <p class="small text-sub mb-2">Conclua o laudo pericial com base nas evidências apresentadas.</p>
+                <div class="text-light small">
+                    <strong>Pergunta:</strong> Quem foi o responsável pela contaminação do pipeline e qual foi o motivo
+                    real da infração?
+                </div>
+            </div>
+        </section>
+
+        <!-- 20. A ÚLTIMA PERGUNTA DA VÉRTICE -->
+        <section class="card-custom shadow-sm mb-4 mb-md-5 p-4 p-md-5 font-mono">
+            <h3 class="h4 text-warning fw-bold mb-3 font-mono">20. A ÚLTIMA PERGUNTA DA VÉRTICE</h3>
+            <p class="text-light-sub">Para evitar que o incidente se repita no pipeline da Vértice Produções Digitais,
+                em qual ponto da cadeia o processo deveria ter bloqueado a v05 automaticamente?</p>
+
+            <div class="terminal-callout text-light mt-3">
+                <strong class="text-warning d-block mb-1">Pergunta:</strong>
+                Qual é a resposta técnica para a implementação do controle de pipeline que evitaria a falha?
+            </div>
+        </section>
+
+        <!-- Botão de Ação -->
+        <div class="text-center my-4 my-md-5">
+            <a href="index.html" class="btn btn-warning btn-lg px-5 py-3 fw-bold text-dark font-mono shadow">
+                ASSUMIR TERMINAL &amp; INSERIR LAUDOS ➔
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="text-center py-4 text-secondary font-mono small border-top border-secondary px-3">
+        Vértice Produções Digitais Ltda. • Sistema Forense de Pipeline // Caso 02: Projeto Asa Oculta
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
